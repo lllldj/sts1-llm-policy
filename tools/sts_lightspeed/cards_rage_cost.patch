@@ -1,0 +1,11 @@
+diff --git a/include/constants/Cards.h b/include/constants/Cards.h
+--- a/include/constants/Cards.h
++++ b/include/constants/Cards.h
+@@ -734,6 +734,7 @@ namespace sts {
+             case CardId::PANIC_BUTTON:
+             case CardId::PURITY:
++            case CardId::RAGE:
+             case CardId::RECKLESS_CHARGE:
+             case CardId::SADISTIC_NATURE:
+             case CardId::SECRET_TECHNIQUE:
+             case CardId::SECRET_WEAPON:

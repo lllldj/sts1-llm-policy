@@ -1,0 +1,169 @@
+{
+  "schema_version": "continuous_combat_panel_generation_v1",
+  "run_id": "teacher_act1_candidate_pool_v1",
+  "purpose": "fresh_teacher_candidate_pool_for_plan_certification",
+  "strategies": {
+    "card_pick": "teacher_counterfactual",
+    "card_remove": "starter_alternating",
+    "card_upgrade": "teacher_combat_priority",
+    "route": "configured_act1_survival"
+  },
+  "scope": "configs/env/d_expansion_card_selection_v1_scope.json",
+  "picker_database": "assets/picker/card_pick_metrics_v1.sqlite3",
+  "picker": {
+    "epsilon": 0.02
+  },
+  "upgrade_policy": {
+    "target_groups": [
+      {
+        "encounter_family": "elite",
+        "selection": "all"
+      },
+      {
+        "encounter_family": "boss",
+        "selection": "route_selected"
+      }
+    ],
+    "combat_seeds_per_target": 3,
+    "teacher_protocol": {
+      "search_budget": 2048,
+      "search_seed": 101,
+      "hidden_order_seeds": [
+        1103
+      ]
+    }
+  },
+  "observation_version": "observation_v7",
+  "interaction_contract": "combat_card_selection_v1",
+  "required_simulator_capabilities": [
+    "combat_card_selection_v1"
+  ],
+  "arms": [
+    {
+      "id": "teacher",
+      "policy": "teacher_search",
+      "search_budget": 8192,
+      "search_seed": 101
+    }
+  ],
+  "route_count": 800,
+  "combat_seed_groups_per_route": 4,
+  "route": {
+    "act": 1,
+    "ascension": 0,
+    "stage": "continuous_pre_boss",
+    "initial_relics": [
+      "BURNING_BLOOD"
+    ],
+    "operations": [
+      "combat:normal_weak",
+      "card_pick",
+      "combat:normal_weak",
+      "card_pick",
+      "combat:normal_weak",
+      "card_pick",
+      "upgrade",
+      "remove",
+      "random_relic",
+      "combat:normal_strong",
+      "card_pick",
+      "upgrade",
+      "combat:elite",
+      "random_relic",
+      "card_pick",
+      "combat:normal_strong",
+      "card_pick",
+      "remove",
+      "heal:24",
+      "upgrade",
+      "combat:elite",
+      "random_relic",
+      "card_pick",
+      "upgrade",
+      "combat:boss"
+    ],
+    "combat_floors": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15
+    ],
+    "relic_pool": [
+      "VAJRA",
+      "ANCHOR",
+      "BAG_OF_MARBLES",
+      "BRONZE_SCALES",
+      "LANTERN",
+      "ODDLY_SMOOTH_STONE",
+      "ORICHALCUM",
+      "AKABEKO",
+      "PRESERVED_INSECT",
+      "THE_BOOT",
+      "STRIKE_DUMMY",
+      "PAPER_PHROG",
+      "CHAMPION_BELT",
+      "CHEMICAL_X",
+      "TUNGSTEN_ROD",
+      "TORII",
+      "RED_SKULL",
+      "CENTENNIAL_PUZZLE",
+      "GREMLIN_HORN",
+      "HAPPY_FLOWER",
+      "NUNCHAKU",
+      "PEN_NIB",
+      "ART_OF_WAR",
+      "INK_BOTTLE",
+      "KUNAI",
+      "SHURIKEN"
+    ]
+  },
+  "seeds": {
+    "route": 202610000000,
+    "encounter": 202611000000,
+    "relic": 202612000000,
+    "reward": 202613000000,
+    "combat": 202614000000,
+    "policy": 202615000000,
+    "picker": 202616000000,
+    "upgrade": 202617000000,
+    "remove": 202618000000,
+    "upgrade_combat": 202619000000
+  },
+  "protocol": {
+    "opening_damage_multiplier": 1.5,
+    "search_budget": 8192,
+    "search_seed": 101,
+    "hidden_order_seeds": [
+      701,
+      809,
+      907
+    ],
+    "required_pair_wins_vs_skip": 2,
+    "conflict_combat_seed_offsets": [
+      100000,
+      200000
+    ],
+    "strategic_weights": {
+      "search": 0.5,
+      "intrinsic": 0.35,
+      "optionality": 0.15,
+      "current_target": 0.7,
+      "future_target": 0.3,
+      "duplicate_penalty": 0.08,
+      "premium_override_margin": 0.15,
+      "strong_override_margin": 0.08
+    }
+  },
+  "max_decisions": 1000,
+  "output_dir": "outputs/generation/teacher-act1-candidate-pool-v1",
+  "data_source": {
+    "evidence_class": "teacher_candidate_pool",
+    "excluded_sources": [
+      "assets/datasets/continuous/development-exclusions.json"
+    ]
+  }
+}

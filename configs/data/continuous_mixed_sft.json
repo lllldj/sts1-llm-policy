@@ -1,0 +1,19 @@
+{
+  "schema_version": "mixed_sft_export_v1",
+  "dataset_id": "gold_teacher_mixed_sft_v7_v1",
+  "gold_manifest": "assets/datasets/continuous/gold-sft-v7/manifest.json",
+  "source_report": "outputs/generation/teacher-act1-candidate-pool-v1/formal/report.json",
+  "source_selection": "assets/datasets/continuous/gold-selection.json",
+  "output": "outputs/datasets/gold-teacher-mixed-sft-v7-v1",
+  "combat_indices": [1, 2, 3],
+  "encounter_families": ["normal_weak"],
+  "source_weights": {"gold": 0.7, "teacher_strategy": 0.25, "forced_end": 0.05},
+  "smoke_combats": [
+    {"route": 3, "group": 1, "combat": 1},
+    {"route": 3, "group": 1, "combat": 2},
+    {"route": 3, "group": 1, "combat": 3},
+    {"route": 4, "group": 1, "combat": 3},
+    {"route": 5, "group": 3, "combat": 3},
+    {"route": 17, "group": 0, "combat": 2}
+  ]
+}

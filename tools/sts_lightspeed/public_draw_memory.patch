@@ -1,0 +1,74 @@
+--- a/src/combat/CardManager.cpp
++++ b/src/combat/CardManager.cpp
+@@ -3,6 +3,7 @@
+ //
+ 
+ #include "combat/CardManager.h"
++#include "public_draw_memory.h"
+ #include "combat/BattleContext.h"
+ 
+ #include "game/GameContext.h"
+@@ -85,6 +86,7 @@
+ }
+ 
+ void CardManager::createTempCardInDrawPile(int idx, CardInstance c) {
++    public_draw::notify(this, public_draw::Event::randomized);
+ #ifdef sts_asserts
+     if (c.getId() == CardId::INVALID) {
+         std::cerr << *g_debug_bc << '\n';
+@@ -133,11 +135,13 @@
+ // **************** START Remove Methods ****************
+ 
+ void CardManager::removeFromDrawPileAtIdx(int idx) {
++    public_draw::notify(this, public_draw::Event::removed, drawPile[idx].getUniqueId());
+     notifyRemoveFromDrawPile(drawPile[idx]);
+     drawPile.erase(drawPile.begin()+idx);
+ }
+ 
+ CardInstance CardManager::popFromDrawPile() {
++    public_draw::notify(this, public_draw::Event::removed, drawPile.back().getUniqueId());
+     auto c = drawPile.back();
+     notifyRemoveFromDrawPile(c);
+     drawPile.pop_back();
+@@ -186,6 +190,7 @@
+ 
+ 
+ void CardManager::insertToDrawPile(int drawPileIdx, const CardInstance &c) {
++    public_draw::notify(this, public_draw::Event::randomized);
+ #ifdef sts_asserts
+     if (c.getId() == CardId::INVALID) {
+         std::cerr << *g_debug_bc << '\n';
+@@ -200,6 +205,7 @@
+ }
+ 
+ void CardManager::moveToDrawPileTop(const CardInstance &c) {
++    public_draw::notify(this, public_draw::Event::top, c.getUniqueId());
+ #ifdef sts_asserts
+     if (c.getId() == CardId::INVALID) {
+         std::cerr << *g_debug_bc << '\n';
+@@ -248,6 +254,7 @@
+ 
+     discardPileBloodCardCount = 0;
+     discardPile.clear();
++    public_draw::notify(this, public_draw::Event::randomized);
+ }
+ 
+ // **************** END Move Methods ****************
+--- a/src/combat/Actions.cpp
++++ b/src/combat/Actions.cpp
+@@ -3,6 +3,7 @@
+ //
+ 
+ #include "combat/Actions.h"
++#include "public_draw_memory.h"
+ #include "combat/BattleContext.h"
+ #include "game/Game.h"
+ 
+@@ -192,6 +193,7 @@
+ 
+ Action Actions::ShuffleDrawPile() {
+     return {[=] (BattleContext &bc) {
++        public_draw::notify(&bc.cards, public_draw::Event::randomized);
+         java::Collections::shuffle(
+                 bc.cards.drawPile.begin(),
+                 bc.cards.drawPile.end(),

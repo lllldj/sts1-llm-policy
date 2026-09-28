@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Python 3.11 / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    defaults:
+      run:
+        shell: bash
+    env:
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.9.30"
+          python-version: "3.11"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Install locked dependencies
+        run: uv sync --locked
+      - name: Run behavior tests
+        run: uv run --locked python -m unittest discover -s tests -v
+      - name: Check Python CLI entrypoints
+        run: |
+          for script in scripts/*.py; do
+            uv run --locked python "$script" --help
+          done

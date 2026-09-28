@@ -1,0 +1,9 @@
+{
+  "schema_version": "gold_sft_export_v1",
+  "dataset_id": "gold_sft_v7_v1",
+  "source_report": "outputs/generation/teacher-gold-collection-v4/formal/report.json",
+  "verification": "outputs/generation/teacher-gold-collection-v4/formal/verification.json",
+  "output": "outputs/datasets/gold-sft-v7-v1",
+  "hp_tolerance": 1.0,
+  "nonbasic_weight": 1.5
+}

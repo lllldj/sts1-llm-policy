@@ -1,0 +1,37 @@
+{
+  "schema_version": "real_game_capture_preflight_v1",
+  "profile_id": "sts1_p0_clean_parity_v1",
+  "evidence_class": "parity_clean",
+  "mechanics_manifest": "configs/env/supported_mechanics_v1.json",
+  "requirements": {
+    "turn": 1,
+    "player_current_hp": 80,
+    "player_max_hp": 80,
+    "player_block": 0,
+    "player_energy": 3,
+    "hand_size": 5,
+    "draw_pile_size": 5,
+    "empty_piles": ["discard_pile", "exhaust_pile", "limbo"],
+    "room_type": "MonsterRoom",
+    "require_no_player_powers": true,
+    "require_empty_potion_slots": true
+  },
+  "scenarios": {
+    "cultist": {
+      "monster_count": 1,
+      "allowed_monster_ids": ["Cultist"]
+    },
+    "jaw_worm": {
+      "monster_count": 1,
+      "allowed_monster_ids": ["JawWorm"]
+    },
+    "two_louse": {
+      "monster_count": 2,
+      "allowed_monster_ids": [
+        "FuzzyLouseDefensive",
+        "FuzzyLouseNormal"
+      ],
+      "duplicates_allowed": true
+    }
+  }
+}

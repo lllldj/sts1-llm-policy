@@ -1,0 +1,19 @@
+{
+  "schema_version": "single_observation_v5_migration_v1",
+  "sources": {
+    "gold_sft": {
+      "manifest": "outputs/datasets/single-rebuilt-v4/gold_sft.manifest.json",
+      "dataset_id": "public_information_teacher_v2_gold_sft_observation_v5_v1"
+    },
+    "silver_preferences": {
+      "manifest": "outputs/datasets/single-rebuilt-v4/silver_preferences.manifest.json",
+      "dataset_id": "public_information_teacher_v2_silver_preferences_observation_v5_v1"
+    }
+  },
+  "development": {
+    "path": "outputs/expanded_sft/expanded-sft-data-v3-8192-full-4680/eligible_source_records.jsonl",
+    "sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "dataset_id": "historical_teacher_v0_development_observation_v5_v1"
+  },
+  "output": "outputs/datasets/single-rebuilt-v5"
+}

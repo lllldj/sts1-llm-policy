@@ -1,0 +1,89 @@
+{
+  "schema_version": "continuous_source_exclusions_v1",
+  "origins": [
+    {
+      "configuration": "configs/generation/qwen2_5_7b_base_teacher_act1_continuous_v1.json",
+      "run_id": "qwen2_5_7b_base_teacher_act1_continuous_v1",
+      "output_dir": "outputs/generation/qwen2-5-7b-base-teacher-act1-continuous-v1",
+      "route_executions": 80
+    },
+    {
+      "configuration": "configs/generation/qwen2_5_7b_base_teacher_act1_continuous_v7.json",
+      "run_id": "qwen2_5_7b_base_teacher_act1_continuous_v7_upgrade_fix",
+      "output_dir": "outputs/generation/qwen2-5-7b-base-teacher-act1-continuous-v7-upgrade-fix",
+      "route_executions": 80
+    }
+  ],
+  "source_route_ids": [
+    "1811a85de83d3b2aca3542a5343ffe333a33a90eb72f585b05529f8dd03eebb1",
+    "18de2bf6f7794a555e983b69d1fc572b4c2cee48f6d03cb90a73aac67c3b2dd0",
+    "1bcd10c1030036054b66ef0f895bc1074d2d2dbf25132d4dde6740421e7d1c9c",
+    "3a879eb6d6e76be5fc252495ee62f48f0e6b4e6c74a572f321da74f387e72389",
+    "43ba46cd96d9e88703cdfb5398d2246accae0165f4228e91f1394926c8ecb3d1",
+    "446c834fd3999c3d7ce78c2e014d6bb1e6edc3ac25d99f9a90de20c1934bfaf5",
+    "4e5052bbe994596aeb9ca99861211f0ffdc5f4faf9238dcda72120d480eaa754",
+    "573748242fc33e789ee886cc13fbcb63494c7ff4a7c5ff3f9f82caa5c5d4a088",
+    "695857b4c5ff5a32a3e9b3c90bf6ce40f7b1ba8297112d0009bcc7de11462f4b",
+    "6cf941b70920300e815d2a2e8d5b7cf2304ee8fe7ee579b4e4bed204cbf362e9",
+    "700c815d03818d4b7a8c58cbca7404fa0f33eb2fdcad32e2911579a1d0fa5c13",
+    "a02de108191248d08b3e100590b9f87af3c5f89fbcdeeac6a9e5bdbbe8d96e2a",
+    "a2eaf31f515e8b34c998f4f6ce1ac6698e7f492ff27b0452663615395df5d9cf",
+    "a4df064eec8b4a936b1371bac6303647fbe061fc7906c548e2903b4c311c706e",
+    "abc315b597d828230ed2e8749f37a669ee51c4ec11bd92fb4127b050adc95e87",
+    "c29807b725b8f0a7c3da8925d43a3e1f0c966170fedd484ad3b15d53c326453f",
+    "c2ef02c58be0d81040eef80fbad89a2ff26a7569ca250d179bd68d020ae3d60d",
+    "e5c3957a8967ab55f46577fd2db317d7062d53897fb88a5d87618a13cc6026fb",
+    "fde6d067a011e8222067da6b3967fec07392361313324671aa7461bcd0e13ea6",
+    "fe819d021a2694f84d499f39f081b6e1a49416b866423da0cfd5a039b21ad83b"
+  ],
+  "seed_intervals": [
+    [
+      202609070000,
+      202609070019
+    ],
+    [
+      202609070100,
+      202609070119
+    ],
+    [
+      202609070200,
+      202609070219
+    ],
+    [
+      202609071000,
+      202609071019
+    ],
+    [
+      202609072000,
+      202609072639
+    ],
+    [
+      202609073000,
+      202609073639
+    ],
+    [
+      202609074000,
+      202609074019
+    ],
+    [
+      202609075000,
+      202609075019
+    ],
+    [
+      202609076000,
+      202609076019
+    ],
+    [
+      202609077000,
+      202609077959
+    ],
+    [
+      202609172000,
+      202609172639
+    ],
+    [
+      202609272000,
+      202609272639
+    ]
+  ]
+}

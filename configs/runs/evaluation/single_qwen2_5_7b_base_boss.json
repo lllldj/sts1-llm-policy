@@ -1,0 +1,16 @@
+{
+  "schema_version": "frozen_policy_panel_evaluation_v1",
+  "run_id": "qwen2_5_7b_base_act1_a0_boss_corrected_v1",
+  "simulator_mechanics": "corrected_v1",
+  "purpose": "qwen2_5_7b_base_on_frozen_act1_a0_boss_development_panel",
+  "arm": "qwen2_5_7b_base",
+  "model_runtime": "configs/runtime/base_model_runtime_7b_v2.json",
+  "execution_profile": "configs/runtime/training_cuda_bf16.json",
+  "observation_version": "observation_v5",
+  "panel_manifest": "assets/eval/qwen2_5_7b_base_act1_a0_boss_inputs_v1.json",
+  "expected_routes": 24,
+  "expected_combats": 192,
+  "expected_panel_sha256": "fed8c5b2d3330308dbcc66cd530e95057c4c8f222db03e9a89003e4f6e0b7d56",
+  "max_decisions": 1000,
+  "output_dir": "outputs/eval/qwen2-5-7b-base-act1-a0-boss-corrected-v1"
+}

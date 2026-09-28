@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "run_id": "expanded_sft_backward_preflight_v3",
+  "purpose": "expanded_sft_longest_eligible_backward_only",
+  "status": "passed",
+  "config_sha256": "19fc55a09df409fb2c93ecc888839acf8ffb6c8b5c96a84aae9af2b8272995be",
+  "source": {
+    "report_path": "report/expanded_sft_medium_v3.json",
+    "report_sha256": "c6b50b2e9fa1b1b7b312c2236e1b307a37e5a3e34b9f731e2d3aaf79b7c38051",
+    "eligible_path": "outputs/expanded_sft/expanded-sft-data-v3-8192-medium/eligible_source_records.jsonl",
+    "eligible_sha256": "51b9892abe0d8f2a22bedf9bd7d765286bae6389f9958d7a8d86edd34f9a1480",
+    "source_records": 15633,
+    "accepted_records": 2531,
+    "accepted_by_split": {
+      "dev": 861,
+      "train": 1670
+    },
+    "sequence_tokens": {
+      "p95": 1310,
+      "p99": 1486,
+      "max": 1683
+    }
+  },
+  "runtime": {
+    "runtime_id": "qwen2_5_1_5b_instruct_base_v1",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5060",
+    "dtype": "bfloat16"
+  },
+  "lora": {
+    "spec": {
+      "target_module_suffixes": [
+        "q_proj",
+        "v_proj"
+      ],
+      "rank": 8,
+      "alpha": 16.0,
+      "dropout": 0.0,
+      "expected_replaced_modules": 56,
+      "expected_trainable_parameters": 1089536
+    },
+    "replaced_module_count": 56,
+    "parameters": {
+      "total_parameters": 1544803840,
+      "trainable_parameters": 1089536,
+      "trainable_fraction": 0.0007052908413277896
+    }
+  },
+  "preflight": {
+    "record_id": "249839b343115aec8d65db7ba4d5c6e1497c08c9d55f754efb9bc8924a775933",
+    "sequence_tokens": 1683,
+    "loss": 0.42328134179115295,
+    "finite_loss": true,
+    "finite_gradients": true,
+    "peak_memory_allocated_bytes": 6351795712,
+    "peak_memory_reserved_bytes": 7463763968
+  },
+  "memory": {
+    "total_device_memory_bytes": 8546484224,
+    "free_before_model_load_bytes": 7372537856,
+    "free_before_backward_bytes": 4063232000,
+    "peak_memory_allocated_bytes": 6351795712,
+    "peak_memory_reserved_bytes": 7463763968,
+    "peak_allocated_fraction_of_device": 0.7432056908457239,
+    "allocated_headroom_bytes": 2194688512,
+    "allocated_after_unload_bytes": 67108864
+  },
+  "checks": {
+    "source_report_hash_matches": true,
+    "eligible_source_hash_matches": true,
+    "medium_audit_complete_with_quarantine": true,
+    "medium_audit_checks_pass": true,
+    "eligible_artifact_bound": true,
+    "test_data_not_read": true,
+    "training_not_started": true,
+    "all_eligible_records_within_sequence_ceiling": true,
+    "reported_longest_record_selected": true,
+    "finite_loss": true,
+    "finite_gradients": true,
+    "only_expected_lora_parameters_trainable": true,
+    "expected_lora_modules_replaced": true,
+    "peak_allocated_memory_within_device_capacity": true,
+    "optimizer_step_not_performed": true,
+    "checkpoint_not_written": true
+  },
+  "model_weights_loaded": true,
+  "backward_performed": true,
+  "optimizer_step_performed": false,
+  "checkpoint_written": false,
+  "test_data_read": false,
+  "training_started": false,
+  "base_git_revision": "6e1ab01e1d0fbae44c61040dc27e09bb09ed0ab6"
+}

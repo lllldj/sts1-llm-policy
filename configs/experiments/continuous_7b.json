@@ -1,0 +1,24 @@
+{
+  "schema_version": "experiment_preparation_v1",
+  "training": [
+    "configs/runs/training/continuous_qwen2_5_7b_gold_sft.json",
+    "configs/runs/training/continuous_qwen2_5_7b_mixed_sft.json",
+    "configs/runs/training/continuous_qwen2_5_7b_dpo_a.json",
+    "configs/runs/training/continuous_qwen2_5_7b_dpo_b.json",
+    "configs/runs/training/continuous_qwen2_5_7b_dpo_c.json"
+  ],
+  "evaluation": [
+    "configs/runs/evaluation/continuous_qwen2_5_7b_base_gold_sft.json",
+    "configs/runs/evaluation/continuous_qwen2_5_7b_mixed_sft.json",
+    "configs/runs/evaluation/continuous_qwen2_5_7b_dpo_a.json",
+    "configs/runs/evaluation/continuous_qwen2_5_7b_dpo_b.json",
+    "configs/runs/evaluation/continuous_qwen2_5_7b_dpo_c.json"
+  ],
+  "reference_checkpoints": {
+    "assets/adapters/continuous/qwen2_5_7b_gold_sft_v7_v1": "configs/runs/training/continuous_qwen2_5_7b_gold_sft.json",
+    "assets/adapters/continuous/qwen2_5_7b_gold_teacher_mixed_sft_v7_v1": "configs/runs/training/continuous_qwen2_5_7b_mixed_sft.json",
+    "assets/adapters/continuous/qwen2_5_7b_gold_dpo_a_v7_v1": "configs/runs/training/continuous_qwen2_5_7b_dpo_a.json",
+    "assets/adapters/continuous/qwen2_5_7b_gold_dpo_b_v7_v1": "configs/runs/training/continuous_qwen2_5_7b_dpo_b.json",
+    "assets/adapters/continuous/qwen2_5_7b_gold_dpo_c_v7_v1": "configs/runs/training/continuous_qwen2_5_7b_dpo_c.json"
+  }
+}

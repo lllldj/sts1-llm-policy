@@ -1,0 +1,22 @@
+{
+  "schema_version": "d_expansion_card_selection_v1_scope",
+  "extends": "configs/env/d_expansion_v1_scope.json",
+  "reward_cards": {
+    "add_enum_ids": [
+      "ARMAMENTS",
+      "HEADBUTT",
+      "EXHUME",
+      "BURNING_PACT",
+      "TRUE_GRIT",
+      "WARCRY",
+      "DUAL_WIELD"
+    ],
+    "excluded": [
+      {
+        "enum_id": "INFERNAL_BLADE",
+        "reason": "may generate a card outside the configured reward and interaction scope"
+      }
+    ]
+  },
+  "interaction_contract": "combat_card_selection_v1"
+}

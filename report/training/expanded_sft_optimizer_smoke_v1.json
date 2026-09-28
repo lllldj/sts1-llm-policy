@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "run_id": "expanded_sft_optimizer_smoke_v1",
+  "purpose": "expanded_sft_optimizer_checkpoint_fresh_load_smoke",
+  "status": "passed",
+  "timestamp_utc": "2026-08-28T16:59:35.838203+00:00",
+  "binding": {
+    "config_sha256": "bd41ead894ff0453b7fce799e23203f235e90a1f62b75d3f842fef45d6e48507",
+    "data_report_sha256": "193076a90dd3ef25fb1432b9887d7f5da3cd491f70d0bfa3a6b50be1dc1222a2",
+    "train_sha256": "e53a7a96c1ea6ce831fe21e25790b566273cb64004ed96924c5f3d0b66095d3d",
+    "dev_sha256": "1406330408284cb2a3d19d7fc32e45ae9f2476f030a1d310ec547949f3f17c0f",
+    "backward_report_sha256": "a3589e9488b33a4f0899b0b7ef8b5d2f01759a6223b8809fca236b3d48744912",
+    "runtime_sha256": "e4409a09730e90b545bab7d494b36b96dce353a4c92e425287b14b0433389983"
+  },
+  "selection": [
+    {
+      "record_id": "47e23c6f4fadcfe61867a0adcaabfe015de92a4a83b617879e52abc1440f0053",
+      "semantic": "Bash",
+      "sequence_tokens": 496
+    },
+    {
+      "record_id": "91f2a037adffe209093d06874e7e4e48f6883613713e37bb2e430e3b77a839fe",
+      "semantic": "Strike",
+      "sequence_tokens": 724
+    },
+    {
+      "record_id": "117d898854becb114e36828b30bccfd14b50aeca630c449441d493f6913963af",
+      "semantic": "Defend",
+      "sequence_tokens": 807
+    },
+    {
+      "record_id": "190f35411ebc3699ff017d381c22a82ad9792f18908fbd7ddd6b5e0c603f57cb",
+      "semantic": "Hemokinesis",
+      "sequence_tokens": 882
+    },
+    {
+      "record_id": "0d7f43e68cf8954152a73e96f4453dcda97068eafee47d63f68cb3c49a15bcff",
+      "semantic": "Impervious",
+      "sequence_tokens": 962
+    },
+    {
+      "record_id": "7877611032177df42b23407e7b6eae07e2319fc4f1228df0ef53a01443e86e8e",
+      "semantic": "Bludgeon",
+      "sequence_tokens": 1051
+    },
+    {
+      "record_id": "1587a408b28b4c8d12917790f1be0945ca2aea535b84ae5e68f37876f316ba72",
+      "semantic": "Whirlwind",
+      "sequence_tokens": 1170
+    },
+    {
+      "record_id": "8badb9f091247d889670d9f8727b5b44219fc7d90056fc6cfb10655efdba7bcd",
+      "semantic": "Second Wind",
+      "sequence_tokens": 1812
+    }
+  ],
+  "runtime": {
+    "runtime_id": "qwen2_5_1_5b_instruct_base_v1",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "device": "cuda:0",
+    "dtype": "bfloat16"
+  },
+  "lora": {
+    "spec": {
+      "target_module_suffixes": [
+        "q_proj",
+        "v_proj"
+      ],
+      "rank": 8,
+      "alpha": 16.0,
+      "dropout": 0.0,
+      "expected_replaced_modules": 56,
+      "expected_trainable_parameters": 1089536
+    },
+    "replaced_module_count": 56,
+    "parameters": {
+      "total_parameters": 1544803840,
+      "trainable_parameters": 1089536,
+      "trainable_fraction": 0.0007052908413277896
+    },
+    "initial_adapter_state_sha256": "fdeb7af57f1bf80baa20556cd99003206b6edb8afc08ac632cb899e81fbb42f1",
+    "trained_adapter_state_sha256": "d72ab82c2aa55d8741e6b6815c7baa3a30846723c0ac268b81ba5e2d9641fb1a",
+    "reload_adapter_state_sha256": "d72ab82c2aa55d8741e6b6815c7baa3a30846723c0ac268b81ba5e2d9641fb1a"
+  },
+  "loss": {
+    "initial_mean": 0.297082033357583,
+    "post_step_mean": 0.29010060167638585,
+    "reload_mean": 0.29010060167638585,
+    "post_step_ratio": 0.9764999868814216
+  },
+  "generation": {
+    "initial": [
+      {
+        "record_id": "47e23c6f4fadcfe61867a0adcaabfe015de92a4a83b617879e52abc1440f0053",
+        "semantic": "Bash",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "91f2a037adffe209093d06874e7e4e48f6883613713e37bb2e430e3b77a839fe",
+        "semantic": "Strike",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "117d898854becb114e36828b30bccfd14b50aeca630c449441d493f6913963af",
+        "semantic": "Defend",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "190f35411ebc3699ff017d381c22a82ad9792f18908fbd7ddd6b5e0c603f57cb",
+        "semantic": "Hemokinesis",
+        "target": "ACTION_2",
+        "decoded": "ACTION_3",
+        "parsed": "ACTION_3",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "0d7f43e68cf8954152a73e96f4453dcda97068eafee47d63f68cb3c49a15bcff",
+        "semantic": "Impervious",
+        "target": "ACTION_2",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "7877611032177df42b23407e7b6eae07e2319fc4f1228df0ef53a01443e86e8e",
+        "semantic": "Bludgeon",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "1587a408b28b4c8d12917790f1be0945ca2aea535b84ae5e68f37876f316ba72",
+        "semantic": "Whirlwind",
+        "target": "ACTION_3",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "8badb9f091247d889670d9f8727b5b44219fc7d90056fc6cfb10655efdba7bcd",
+        "semantic": "Second Wind",
+        "target": "ACTION_10",
+        "decoded": "ACTION_10",
+        "parsed": "ACTION_10",
+        "strict": true,
+        "target_match": true
+      }
+    ],
+    "post_step": [
+      {
+        "record_id": "47e23c6f4fadcfe61867a0adcaabfe015de92a4a83b617879e52abc1440f0053",
+        "semantic": "Bash",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "91f2a037adffe209093d06874e7e4e48f6883613713e37bb2e430e3b77a839fe",
+        "semantic": "Strike",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "117d898854becb114e36828b30bccfd14b50aeca630c449441d493f6913963af",
+        "semantic": "Defend",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "190f35411ebc3699ff017d381c22a82ad9792f18908fbd7ddd6b5e0c603f57cb",
+        "semantic": "Hemokinesis",
+        "target": "ACTION_2",
+        "decoded": "ACTION_3",
+        "parsed": "ACTION_3",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "0d7f43e68cf8954152a73e96f4453dcda97068eafee47d63f68cb3c49a15bcff",
+        "semantic": "Impervious",
+        "target": "ACTION_2",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "7877611032177df42b23407e7b6eae07e2319fc4f1228df0ef53a01443e86e8e",
+        "semantic": "Bludgeon",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "1587a408b28b4c8d12917790f1be0945ca2aea535b84ae5e68f37876f316ba72",
+        "semantic": "Whirlwind",
+        "target": "ACTION_3",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "8badb9f091247d889670d9f8727b5b44219fc7d90056fc6cfb10655efdba7bcd",
+        "semantic": "Second Wind",
+        "target": "ACTION_10",
+        "decoded": "ACTION_10",
+        "parsed": "ACTION_10",
+        "strict": true,
+        "target_match": true
+      }
+    ],
+    "reload": [
+      {
+        "record_id": "47e23c6f4fadcfe61867a0adcaabfe015de92a4a83b617879e52abc1440f0053",
+        "semantic": "Bash",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "91f2a037adffe209093d06874e7e4e48f6883613713e37bb2e430e3b77a839fe",
+        "semantic": "Strike",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "117d898854becb114e36828b30bccfd14b50aeca630c449441d493f6913963af",
+        "semantic": "Defend",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "190f35411ebc3699ff017d381c22a82ad9792f18908fbd7ddd6b5e0c603f57cb",
+        "semantic": "Hemokinesis",
+        "target": "ACTION_2",
+        "decoded": "ACTION_3",
+        "parsed": "ACTION_3",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "0d7f43e68cf8954152a73e96f4453dcda97068eafee47d63f68cb3c49a15bcff",
+        "semantic": "Impervious",
+        "target": "ACTION_2",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "7877611032177df42b23407e7b6eae07e2319fc4f1228df0ef53a01443e86e8e",
+        "semantic": "Bludgeon",
+        "target": "ACTION_0",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": true
+      },
+      {
+        "record_id": "1587a408b28b4c8d12917790f1be0945ca2aea535b84ae5e68f37876f316ba72",
+        "semantic": "Whirlwind",
+        "target": "ACTION_3",
+        "decoded": "ACTION_0",
+        "parsed": "ACTION_0",
+        "strict": true,
+        "target_match": false
+      },
+      {
+        "record_id": "8badb9f091247d889670d9f8727b5b44219fc7d90056fc6cfb10655efdba7bcd",
+        "semantic": "Second Wind",
+        "target": "ACTION_10",
+        "decoded": "ACTION_10",
+        "parsed": "ACTION_10",
+        "strict": true,
+        "target_match": true
+      }
+    ]
+  },
+  "training": {
+    "micro_steps": 8,
+    "optimizer_step_count": 1,
+    "first_20_mean_loss": 0.297082033357583,
+    "last_20_mean_loss": 0.297082033357583,
+    "minimum_loss": 0.010177779011428356,
+    "maximum_loss": 0.8344559669494629,
+    "optimizer_steps": [
+      {
+        "optimizer_step": 1,
+        "micro_step": 8,
+        "epoch": 1,
+        "loss": 0.5620774626731873,
+        "grad_norm": 0.9296875
+      }
+    ],
+    "peak_memory_allocated_bytes": 6632532480,
+    "peak_memory_reserved_bytes": 14308868096
+  },
+  "checkpoint": {
+    "path": "outputs/sft/expanded-sft-optimizer-smoke-v1-20260828T165926Z/checkpoint",
+    "metadata": {
+      "schema_version": 1,
+      "adapter_type": "project_lora_v1",
+      "base_model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "base_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "spec": {
+        "target_module_suffixes": [
+          "q_proj",
+          "v_proj"
+        ],
+        "rank": 8,
+        "alpha": 16.0,
+        "dropout": 0.0
+      },
+      "replaced_modules": [
+        "model.layers.0.self_attn.q_proj",
+        "model.layers.0.self_attn.v_proj",
+        "model.layers.1.self_attn.q_proj",
+        "model.layers.1.self_attn.v_proj",
+        "model.layers.2.self_attn.q_proj",
+        "model.layers.2.self_attn.v_proj",
+        "model.layers.3.self_attn.q_proj",
+        "model.layers.3.self_attn.v_proj",
+        "model.layers.4.self_attn.q_proj",
+        "model.layers.4.self_attn.v_proj",
+        "model.layers.5.self_attn.q_proj",
+        "model.layers.5.self_attn.v_proj",
+        "model.layers.6.self_attn.q_proj",
+        "model.layers.6.self_attn.v_proj",
+        "model.layers.7.self_attn.q_proj",
+        "model.layers.7.self_attn.v_proj",
+        "model.layers.8.self_attn.q_proj",
+        "model.layers.8.self_attn.v_proj",
+        "model.layers.9.self_attn.q_proj",
+        "model.layers.9.self_attn.v_proj",
+        "model.layers.10.self_attn.q_proj",
+        "model.layers.10.self_attn.v_proj",
+        "model.layers.11.self_attn.q_proj",
+        "model.layers.11.self_attn.v_proj",
+        "model.layers.12.self_attn.q_proj",
+        "model.layers.12.self_attn.v_proj",
+        "model.layers.13.self_attn.q_proj",
+        "model.layers.13.self_attn.v_proj",
+        "model.layers.14.self_attn.q_proj",
+        "model.layers.14.self_attn.v_proj",
+        "model.layers.15.self_attn.q_proj",
+        "model.layers.15.self_attn.v_proj",
+        "model.layers.16.self_attn.q_proj",
+        "model.layers.16.self_attn.v_proj",
+        "model.layers.17.self_attn.q_proj",
+        "model.layers.17.self_attn.v_proj",
+        "model.layers.18.self_attn.q_proj",
+        "model.layers.18.self_attn.v_proj",
+        "model.layers.19.self_attn.q_proj",
+        "model.layers.19.self_attn.v_proj",
+        "model.layers.20.self_attn.q_proj",
+        "model.layers.20.self_attn.v_proj",
+        "model.layers.21.self_attn.q_proj",
+        "model.layers.21.self_attn.v_proj",
+        "model.layers.22.self_attn.q_proj",
+        "model.layers.22.self_attn.v_proj",
+        "model.layers.23.self_attn.q_proj",
+        "model.layers.23.self_attn.v_proj",
+        "model.layers.24.self_attn.q_proj",
+        "model.layers.24.self_attn.v_proj",
+        "model.layers.25.self_attn.q_proj",
+        "model.layers.25.self_attn.v_proj",
+        "model.layers.26.self_attn.q_proj",
+        "model.layers.26.self_attn.v_proj",
+        "model.layers.27.self_attn.q_proj",
+        "model.layers.27.self_attn.v_proj"
+      ],
+      "weights_file": "adapter_model.safetensors",
+      "weights_sha256": "b6ef51caf44b3bbaef3d4876309bef84224d6bbb9cfc6d246345ab10c627b3e3"
+    },
+    "reload_exact": true
+  },
+  "timing": {
+    "total_seconds": 44.5
+  },
+  "checks": {
+    "exactly_one_optimizer_step": true,
+    "adapter_state_changed": true,
+    "post_step_loss_below_initial": true,
+    "checkpoint_reload_exact": true,
+    "finite_training_metrics": true,
+    "formal_training_not_started": true,
+    "no_test_data_read": true
+  },
+  "local_output": "outputs/sft/expanded-sft-optimizer-smoke-v1-20260828T165926Z",
+  "model_weights_loaded": true,
+  "optimizer_step_performed": true,
+  "checkpoint_written": true,
+  "fresh_load_performed": true,
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "formal_training_started": false,
+  "stable_sft_claim": false,
+  "git_revision": "dc0156e4db85fa358676691b8639df595089ff52"
+}

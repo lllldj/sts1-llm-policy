@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "run_id": "expanded_sft_offline_v1",
+  "purpose": "expanded_sft_offline_development_evaluation",
+  "status": "completed",
+  "timestamp_utc": "2026-08-29T01:53:00.510702+00:00",
+  "binding": {
+    "config_sha256": "f51c630e29abb23776613507090dee8e3255865d22c4695b9f25b7d8bed64e1c",
+    "freeze_report_sha256": "815c3ea2d5070a8f9359b000c12036691ec0491a41e6226122d633898ac96558",
+    "dev_artifact_sha256": "0861e9cb6d8bf9d71a3468fab9e8bb6b111ef0278750f029fd6d807ffdfa780f",
+    "runtime_config_sha256": "e4409a09730e90b545bab7d494b36b96dce353a4c92e425287b14b0433389983",
+    "implementation_sha256": "24af3100070b47a2717390172f74fd7d537777c7cb8c567be9969ee145cbef32",
+    "training_report_sha256": "95168ce12c75f6c8b7bb56f54861082f6211511d6a9323967c27d6dbdbfcdf3c",
+    "checkpoint_config_sha256": "6fe385337ba79853b883d1144cf0f6acc2f064e3d7202cb412bbd7eb43ae1d9d",
+    "checkpoint_weights_sha256": "f562ac115242397585e9b6b937213c559affdef1f62a5fed59788d07b3601023",
+    "base_report_sha256": "a54269b27793fe97e8cfb3e8d32457351689e2a551a775ab38b870d2d1fe8ff2"
+  },
+  "dataset": {
+    "record_count": 2406,
+    "formal_record_count": 2406,
+    "smoke_only": false
+  },
+  "runtime": {
+    "runtime_id": "qwen2_5_1_5b_instruct_base_v1",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 8
+  },
+  "adapter": {
+    "summary": {
+      "record_count": 2406,
+      "mean_loss": 0.14488399731285997,
+      "strict_parse_count": 2406,
+      "strict_parse_rate": 1.0,
+      "legal_count": 2406,
+      "legal_rate": 1.0,
+      "target_match_count": 1745,
+      "target_match_rate": 0.7252701579384871
+    },
+    "by_semantic": {
+      "Anger": {
+        "record_count": 68,
+        "mean_loss": 0.07223560586092337,
+        "strict_parse_count": 68,
+        "strict_parse_rate": 1.0,
+        "legal_count": 68,
+        "legal_rate": 1.0,
+        "target_match_count": 56,
+        "target_match_rate": 0.8235294117647058
+      },
+      "Barricade": {
+        "record_count": 2,
+        "mean_loss": 0.5257267355918884,
+        "strict_parse_count": 2,
+        "strict_parse_rate": 1.0,
+        "legal_count": 2,
+        "legal_rate": 1.0,
+        "target_match_count": 0,
+        "target_match_rate": 0.0
+      },
+      "Bash": {
+        "record_count": 317,
+        "mean_loss": 0.1265196627970309,
+        "strict_parse_count": 317,
+        "strict_parse_rate": 1.0,
+        "legal_count": 317,
+        "legal_rate": 1.0,
+        "target_match_count": 244,
+        "target_match_rate": 0.7697160883280757
+      },
+      "Battle Trance": {
+        "record_count": 36,
+        "mean_loss": 0.25036690456585753,
+        "strict_parse_count": 36,
+        "strict_parse_rate": 1.0,
+        "legal_count": 36,
+        "legal_rate": 1.0,
+        "target_match_count": 21,
+        "target_match_rate": 0.5833333333333334
+      },
+      "Berserk": {
+        "record_count": 2,
+        "mean_loss": 0.029390506446361542,
+        "strict_parse_count": 2,
+        "strict_parse_rate": 1.0,
+        "legal_count": 2,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 1.0
+      },
+      "Blood for Blood": {
+        "record_count": 14,
+        "mean_loss": 0.2765399294107088,
+        "strict_parse_count": 14,
+        "strict_parse_rate": 1.0,
+        "legal_count": 14,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 0.42857142857142855
+      },
+      "Bloodletting": {
+        "record_count": 19,
+        "mean_loss": 0.259991381513445,
+        "strict_parse_count": 19,
+        "strict_parse_rate": 1.0,
+        "legal_count": 19,
+        "legal_rate": 1.0,
+        "target_match_count": 13,
+        "target_match_rate": 0.6842105263157895
+      },
+      "Bludgeon": {
+        "record_count": 29,
+        "mean_loss": 0.12392074473459146,
+        "strict_parse_count": 29,
+        "strict_parse_rate": 1.0,
+        "legal_count": 29,
+        "legal_rate": 1.0,
+        "target_match_count": 21,
+        "target_match_rate": 0.7241379310344828
+      },
+      "Body Slam": {
+        "record_count": 52,
+        "mean_loss": 0.14934481718899825,
+        "strict_parse_count": 52,
+        "strict_parse_rate": 1.0,
+        "legal_count": 52,
+        "legal_rate": 1.0,
+        "target_match_count": 40,
+        "target_match_rate": 0.7692307692307693
+      },
+      "Brutality": {
+        "record_count": 1,
+        "mean_loss": 0.0628645271062851,
+        "strict_parse_count": 1,
+        "strict_parse_rate": 1.0,
+        "legal_count": 1,
+        "legal_rate": 1.0,
+        "target_match_count": 1,
+        "target_match_rate": 1.0
+      },
+      "Carnage": {
+        "record_count": 53,
+        "mean_loss": 0.1506984795197704,
+        "strict_parse_count": 53,
+        "strict_parse_rate": 1.0,
+        "legal_count": 53,
+        "legal_rate": 1.0,
+        "target_match_count": 39,
+        "target_match_rate": 0.7358490566037735
+      },
+      "Clash": {
+        "record_count": 1,
+        "mean_loss": 0.006029336713254452,
+        "strict_parse_count": 1,
+        "strict_parse_rate": 1.0,
+        "legal_count": 1,
+        "legal_rate": 1.0,
+        "target_match_count": 1,
+        "target_match_rate": 1.0
+      },
+      "Cleave": {
+        "record_count": 19,
+        "mean_loss": 0.0719863060665758,
+        "strict_parse_count": 19,
+        "strict_parse_rate": 1.0,
+        "legal_count": 19,
+        "legal_rate": 1.0,
+        "target_match_count": 17,
+        "target_match_rate": 0.8947368421052632
+      },
+      "Clothesline": {
+        "record_count": 4,
+        "mean_loss": 0.16467452541110106,
+        "strict_parse_count": 4,
+        "strict_parse_rate": 1.0,
+        "legal_count": 4,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.5
+      },
+      "Combust": {
+        "record_count": 6,
+        "mean_loss": 0.11019463262831171,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 5,
+        "target_match_rate": 0.8333333333333334
+      },
+      "Corruption": {
+        "record_count": 8,
+        "mean_loss": 0.3004609737545252,
+        "strict_parse_count": 8,
+        "strict_parse_rate": 1.0,
+        "legal_count": 8,
+        "legal_rate": 1.0,
+        "target_match_count": 4,
+        "target_match_rate": 0.5
+      },
+      "Dark Embrace": {
+        "record_count": 11,
+        "mean_loss": 0.09802444643256339,
+        "strict_parse_count": 11,
+        "strict_parse_rate": 1.0,
+        "legal_count": 11,
+        "legal_rate": 1.0,
+        "target_match_count": 8,
+        "target_match_rate": 0.7272727272727273
+      },
+      "Defend": {
+        "record_count": 169,
+        "mean_loss": 0.21486946801550288,
+        "strict_parse_count": 169,
+        "strict_parse_rate": 1.0,
+        "legal_count": 169,
+        "legal_rate": 1.0,
+        "target_match_count": 105,
+        "target_match_rate": 0.621301775147929
+      },
+      "Demon Form": {
+        "record_count": 22,
+        "mean_loss": 0.14515121348879553,
+        "strict_parse_count": 22,
+        "strict_parse_rate": 1.0,
+        "legal_count": 22,
+        "legal_rate": 1.0,
+        "target_match_count": 16,
+        "target_match_rate": 0.7272727272727273
+      },
+      "Disarm": {
+        "record_count": 14,
+        "mean_loss": 0.2905420504643449,
+        "strict_parse_count": 14,
+        "strict_parse_rate": 1.0,
+        "legal_count": 14,
+        "legal_rate": 1.0,
+        "target_match_count": 5,
+        "target_match_rate": 0.35714285714285715
+      },
+      "Double Tap": {
+        "record_count": 2,
+        "mean_loss": 0.29175110533833504,
+        "strict_parse_count": 2,
+        "strict_parse_rate": 1.0,
+        "legal_count": 2,
+        "legal_rate": 1.0,
+        "target_match_count": 1,
+        "target_match_rate": 0.5
+      },
+      "Dropkick": {
+        "record_count": 3,
+        "mean_loss": 0.13475304459764934,
+        "strict_parse_count": 3,
+        "strict_parse_rate": 1.0,
+        "legal_count": 3,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.6666666666666666
+      },
+      "END_TURN": {
+        "record_count": 65,
+        "mean_loss": 0.5673480822489811,
+        "strict_parse_count": 65,
+        "strict_parse_rate": 1.0,
+        "legal_count": 65,
+        "legal_rate": 1.0,
+        "target_match_count": 0,
+        "target_match_rate": 0.0
+      },
+      "Entrench": {
+        "record_count": 3,
+        "mean_loss": 0.1072239950299263,
+        "strict_parse_count": 3,
+        "strict_parse_rate": 1.0,
+        "legal_count": 3,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.6666666666666666
+      },
+      "Evolve": {
+        "record_count": 6,
+        "mean_loss": 0.29729978181421757,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 1,
+        "target_match_rate": 0.16666666666666666
+      },
+      "Feed": {
+        "record_count": 8,
+        "mean_loss": 0.14254848242853768,
+        "strict_parse_count": 8,
+        "strict_parse_rate": 1.0,
+        "legal_count": 8,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 0.75
+      },
+      "Feel No Pain": {
+        "record_count": 7,
+        "mean_loss": 0.2802637719682285,
+        "strict_parse_count": 7,
+        "strict_parse_rate": 1.0,
+        "legal_count": 7,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.2857142857142857
+      },
+      "Fiend Fire": {
+        "record_count": 29,
+        "mean_loss": 0.14672960684602632,
+        "strict_parse_count": 29,
+        "strict_parse_rate": 1.0,
+        "legal_count": 29,
+        "legal_rate": 1.0,
+        "target_match_count": 20,
+        "target_match_rate": 0.6896551724137931
+      },
+      "Fire Breathing": {
+        "record_count": 12,
+        "mean_loss": 0.2156360149383545,
+        "strict_parse_count": 12,
+        "strict_parse_rate": 1.0,
+        "legal_count": 12,
+        "legal_rate": 1.0,
+        "target_match_count": 7,
+        "target_match_rate": 0.5833333333333334
+      },
+      "Flame Barrier": {
+        "record_count": 19,
+        "mean_loss": 0.11364463942223474,
+        "strict_parse_count": 19,
+        "strict_parse_rate": 1.0,
+        "legal_count": 19,
+        "legal_rate": 1.0,
+        "target_match_count": 14,
+        "target_match_rate": 0.7368421052631579
+      },
+      "Flex": {
+        "record_count": 4,
+        "mean_loss": 0.4546188861131668,
+        "strict_parse_count": 4,
+        "strict_parse_rate": 1.0,
+        "legal_count": 4,
+        "legal_rate": 1.0,
+        "target_match_count": 0,
+        "target_match_rate": 0.0
+      },
+      "Ghostly Armor": {
+        "record_count": 6,
+        "mean_loss": 0.27150567683080834,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.3333333333333333
+      },
+      "Havoc": {
+        "record_count": 15,
+        "mean_loss": 0.05542459537585576,
+        "strict_parse_count": 15,
+        "strict_parse_rate": 1.0,
+        "legal_count": 15,
+        "legal_rate": 1.0,
+        "target_match_count": 14,
+        "target_match_rate": 0.9333333333333333
+      },
+      "Heavy Blade": {
+        "record_count": 4,
+        "mean_loss": 0.03355909022502601,
+        "strict_parse_count": 4,
+        "strict_parse_rate": 1.0,
+        "legal_count": 4,
+        "legal_rate": 1.0,
+        "target_match_count": 4,
+        "target_match_rate": 1.0
+      },
+      "Hemokinesis": {
+        "record_count": 30,
+        "mean_loss": 0.14973431114728253,
+        "strict_parse_count": 30,
+        "strict_parse_rate": 1.0,
+        "legal_count": 30,
+        "legal_rate": 1.0,
+        "target_match_count": 25,
+        "target_match_rate": 0.8333333333333334
+      },
+      "Immolate": {
+        "record_count": 59,
+        "mean_loss": 0.049111064570813864,
+        "strict_parse_count": 59,
+        "strict_parse_rate": 1.0,
+        "legal_count": 59,
+        "legal_rate": 1.0,
+        "target_match_count": 58,
+        "target_match_rate": 0.9830508474576272
+      },
+      "Impervious": {
+        "record_count": 12,
+        "mean_loss": 0.32109302817843854,
+        "strict_parse_count": 12,
+        "strict_parse_rate": 1.0,
+        "legal_count": 12,
+        "legal_rate": 1.0,
+        "target_match_count": 3,
+        "target_match_rate": 0.25
+      },
+      "Inflame": {
+        "record_count": 24,
+        "mean_loss": 0.06499154221576948,
+        "strict_parse_count": 24,
+        "strict_parse_rate": 1.0,
+        "legal_count": 24,
+        "legal_rate": 1.0,
+        "target_match_count": 23,
+        "target_match_rate": 0.9583333333333334
+      },
+      "Intimidate": {
+        "record_count": 3,
+        "mean_loss": 0.0754128098487854,
+        "strict_parse_count": 3,
+        "strict_parse_rate": 1.0,
+        "legal_count": 3,
+        "legal_rate": 1.0,
+        "target_match_count": 3,
+        "target_match_rate": 1.0
+      },
+      "Iron Wave": {
+        "record_count": 2,
+        "mean_loss": 0.14655636250972748,
+        "strict_parse_count": 2,
+        "strict_parse_rate": 1.0,
+        "legal_count": 2,
+        "legal_rate": 1.0,
+        "target_match_count": 1,
+        "target_match_rate": 0.5
+      },
+      "Juggernaut": {
+        "record_count": 5,
+        "mean_loss": 0.2963134661316872,
+        "strict_parse_count": 5,
+        "strict_parse_rate": 1.0,
+        "legal_count": 5,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 0.4
+      },
+      "Limit Break": {
+        "record_count": 7,
+        "mean_loss": 0.14304061925836972,
+        "strict_parse_count": 7,
+        "strict_parse_rate": 1.0,
+        "legal_count": 7,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 0.8571428571428571
+      },
+      "Metallicize": {
+        "record_count": 4,
+        "mean_loss": 0.12205620994791389,
+        "strict_parse_count": 4,
+        "strict_parse_rate": 1.0,
+        "legal_count": 4,
+        "legal_rate": 1.0,
+        "target_match_count": 3,
+        "target_match_rate": 0.75
+      },
+      "Offering": {
+        "record_count": 16,
+        "mean_loss": 0.2675280364928767,
+        "strict_parse_count": 16,
+        "strict_parse_rate": 1.0,
+        "legal_count": 16,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 0.375
+      },
+      "Perfected Strike": {
+        "record_count": 13,
+        "mean_loss": 0.1392167126536011,
+        "strict_parse_count": 13,
+        "strict_parse_rate": 1.0,
+        "legal_count": 13,
+        "legal_rate": 1.0,
+        "target_match_count": 9,
+        "target_match_rate": 0.6923076923076923
+      },
+      "Pommel Strike": {
+        "record_count": 100,
+        "mean_loss": 0.13449649569229222,
+        "strict_parse_count": 100,
+        "strict_parse_rate": 1.0,
+        "legal_count": 100,
+        "legal_rate": 1.0,
+        "target_match_count": 78,
+        "target_match_rate": 0.78
+      },
+      "Power Through": {
+        "record_count": 17,
+        "mean_loss": 0.2605063582167906,
+        "strict_parse_count": 17,
+        "strict_parse_rate": 1.0,
+        "legal_count": 17,
+        "legal_rate": 1.0,
+        "target_match_count": 7,
+        "target_match_rate": 0.4117647058823529
+      },
+      "Pummel": {
+        "record_count": 6,
+        "mean_loss": 0.19411743246018887,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 5,
+        "target_match_rate": 0.8333333333333334
+      },
+      "Rage": {
+        "record_count": 3,
+        "mean_loss": 0.33627720673878986,
+        "strict_parse_count": 3,
+        "strict_parse_rate": 1.0,
+        "legal_count": 3,
+        "legal_rate": 1.0,
+        "target_match_count": 0,
+        "target_match_rate": 0.0
+      },
+      "Rampage": {
+        "record_count": 15,
+        "mean_loss": 0.1000054980472972,
+        "strict_parse_count": 15,
+        "strict_parse_rate": 1.0,
+        "legal_count": 15,
+        "legal_rate": 1.0,
+        "target_match_count": 12,
+        "target_match_rate": 0.8
+      },
+      "Reaper": {
+        "record_count": 12,
+        "mean_loss": 0.15843902617537728,
+        "strict_parse_count": 12,
+        "strict_parse_rate": 1.0,
+        "legal_count": 12,
+        "legal_rate": 1.0,
+        "target_match_count": 7,
+        "target_match_rate": 0.5833333333333334
+      },
+      "Reckless Charge": {
+        "record_count": 10,
+        "mean_loss": 0.18135392535477876,
+        "strict_parse_count": 10,
+        "strict_parse_rate": 1.0,
+        "legal_count": 10,
+        "legal_rate": 1.0,
+        "target_match_count": 5,
+        "target_match_rate": 0.5
+      },
+      "Rupture": {
+        "record_count": 2,
+        "mean_loss": 0.07088298723101616,
+        "strict_parse_count": 2,
+        "strict_parse_rate": 1.0,
+        "legal_count": 2,
+        "legal_rate": 1.0,
+        "target_match_count": 2,
+        "target_match_rate": 1.0
+      },
+      "Searing Blow": {
+        "record_count": 6,
+        "mean_loss": 0.03166599323352178,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 1.0
+      },
+      "Second Wind": {
+        "record_count": 44,
+        "mean_loss": 0.21676312693902713,
+        "strict_parse_count": 44,
+        "strict_parse_rate": 1.0,
+        "legal_count": 44,
+        "legal_rate": 1.0,
+        "target_match_count": 22,
+        "target_match_rate": 0.5
+      },
+      "Seeing Red": {
+        "record_count": 6,
+        "mean_loss": 0.052220431777338185,
+        "strict_parse_count": 6,
+        "strict_parse_rate": 1.0,
+        "legal_count": 6,
+        "legal_rate": 1.0,
+        "target_match_count": 6,
+        "target_match_rate": 1.0
+      },
+      "Sever Soul": {
+        "record_count": 14,
+        "mean_loss": 0.11433936608955264,
+        "strict_parse_count": 14,
+        "strict_parse_rate": 1.0,
+        "legal_count": 14,
+        "legal_rate": 1.0,
+        "target_match_count": 10,
+        "target_match_rate": 0.7142857142857143
+      },
+      "Shockwave": {
+        "record_count": 38,
+        "mean_loss": 0.07929279640513032,
+        "strict_parse_count": 38,
+        "strict_parse_rate": 1.0,
+        "legal_count": 38,
+        "legal_rate": 1.0,
+        "target_match_count": 35,
+        "target_match_rate": 0.9210526315789473
+      },
+      "Shrug It Off": {
+        "record_count": 33,
+        "mean_loss": 0.18926540939983996,
+        "strict_parse_count": 33,
+        "strict_parse_rate": 1.0,
+        "legal_count": 33,
+        "legal_rate": 1.0,
+        "target_match_count": 20,
+        "target_match_rate": 0.6060606060606061
+      },
+      "Slimed": {
+        "record_count": 5,
+        "mean_loss": 0.07728832177817821,
+        "strict_parse_count": 5,
+        "strict_parse_rate": 1.0,
+        "legal_count": 5,
+        "legal_rate": 1.0,
+        "target_match_count": 5,
+        "target_match_rate": 1.0
+      },
+      "Spot Weakness": {
+        "record_count": 35,
+        "mean_loss": 0.22727644443511963,
+        "strict_parse_count": 35,
+        "strict_parse_rate": 1.0,
+        "legal_count": 35,
+        "legal_rate": 1.0,
+        "target_match_count": 20,
+        "target_match_rate": 0.5714285714285714
+      },
+      "Strike": {
+        "record_count": 747,
+        "mean_loss": 0.10195306439539904,
+        "strict_parse_count": 747,
+        "strict_parse_rate": 1.0,
+        "legal_count": 747,
+        "legal_rate": 1.0,
+        "target_match_count": 584,
+        "target_match_rate": 0.7817938420348058
+      },
+      "Sword Boomerang": {
+        "record_count": 13,
+        "mean_loss": 0.06459620623634411,
+        "strict_parse_count": 13,
+        "strict_parse_rate": 1.0,
+        "legal_count": 13,
+        "legal_rate": 1.0,
+        "target_match_count": 13,
+        "target_match_rate": 1.0
+      },
+      "Thunderclap": {
+        "record_count": 3,
+        "mean_loss": 0.05681350144247214,
+        "strict_parse_count": 3,
+        "strict_parse_rate": 1.0,
+        "legal_count": 3,
+        "legal_rate": 1.0,
+        "target_match_count": 3,
+        "target_match_rate": 1.0
+      },
+      "Twin Strike": {
+        "record_count": 11,
+        "mean_loss": 0.10910567598925396,
+        "strict_parse_count": 11,
+        "strict_parse_rate": 1.0,
+        "legal_count": 11,
+        "legal_rate": 1.0,
+        "target_match_count": 7,
+        "target_match_rate": 0.6363636363636364
+      },
+      "Uppercut": {
+        "record_count": 13,
+        "mean_loss": 0.08080590802889603,
+        "strict_parse_count": 13,
+        "strict_parse_rate": 1.0,
+        "legal_count": 13,
+        "legal_rate": 1.0,
+        "target_match_count": 12,
+        "target_match_rate": 0.9230769230769231
+      },
+      "Whirlwind": {
+        "record_count": 60,
+        "mean_loss": 0.03478726896767815,
+        "strict_parse_count": 60,
+        "strict_parse_rate": 1.0,
+        "legal_count": 60,
+        "legal_rate": 1.0,
+        "target_match_count": 58,
+        "target_match_rate": 0.9666666666666667
+      },
+      "Wild Strike": {
+        "record_count": 8,
+        "mean_loss": 0.05622530379332602,
+        "strict_parse_count": 8,
+        "strict_parse_rate": 1.0,
+        "legal_count": 8,
+        "legal_rate": 1.0,
+        "target_match_count": 8,
+        "target_match_rate": 1.0
+      }
+    },
+    "memory": {
+      "peak_memory_allocated_bytes": 5906968064,
+      "peak_memory_reserved_bytes": 23397924864
+    }
+  },
+  "timing": {
+    "model_load_seconds": 3.682,
+    "evaluation_seconds": 1594.533,
+    "total_seconds": 1598.216,
+    "records_per_second_excluding_load": 1.508906
+  },
+  "checks": {
+    "development_scope_only": true,
+    "freeze_report_bound": true,
+    "all_2406_dev_records_bound": true,
+    "record_ids_unique": true,
+    "no_test_data_read": true,
+    "training_not_started": true,
+    "training_report_passed": true,
+    "checkpoint_metadata_and_weights_match": true,
+    "fresh_base_offline_report_bound": true,
+    "evaluated_selected_records": true
+  },
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_sft_claim": false,
+  "comparison_to_frozen_base": {
+    "mean_loss_delta": -0.174399264,
+    "strict_parse_rate_delta": 0.032003325,
+    "legal_rate_delta": 0.032003325,
+    "target_match_rate_delta": 0.322527016
+  },
+  "details": {
+    "path": "outputs/eval/expanded-evaluation-v1/sft_offline_records.jsonl",
+    "sha256": "eabcdc374d2057a816c28da52d99f2b15329f1678a96d50578f566aafbe75690",
+    "record_count": 2406
+  },
+  "evaluation_git_revision": "f70d38301f94a9c057a618a5d3fdb51ff64a3160"
+}

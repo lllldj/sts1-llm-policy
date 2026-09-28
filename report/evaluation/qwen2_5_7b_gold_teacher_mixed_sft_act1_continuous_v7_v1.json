@@ -1,0 +1,268 @@
+{
+  "schema_version": "continuous_combat_panel_generation_report_v1",
+  "run_id": "qwen2_5_7b_gold_teacher_mixed_sft_act1_continuous_v7_v1",
+  "status": "completed",
+  "created_at_utc": "2026-09-17T01:28:02.491514+00:00",
+  "configuration": {
+    "schema_version": "continuous_combat_panel_generation_v1",
+    "run_id": "qwen2_5_7b_gold_teacher_mixed_sft_act1_continuous_v7_v1",
+    "purpose": "mixed_sft_on_existing_20_by_4_continuous_development_routes",
+    "strategies": {
+      "card_pick": "teacher_counterfactual",
+      "card_remove": "starter_alternating",
+      "card_upgrade": "teacher_combat_priority",
+      "route": "configured_act1_survival"
+    },
+    "scope": "configs/env/d_expansion_card_selection_v1_scope.json",
+    "picker_database": "data/private/card_pick/card_pick_metrics_v1.sqlite3",
+    "picker": {
+      "epsilon": 0.02
+    },
+    "upgrade_policy": {
+      "target_groups": [
+        {
+          "encounter_family": "elite",
+          "selection": "all"
+        },
+        {
+          "encounter_family": "boss",
+          "selection": "route_selected"
+        }
+      ],
+      "combat_seeds_per_target": 3,
+      "teacher_protocol": {
+        "search_budget": 2048,
+        "search_seed": 101,
+        "hidden_order_seeds": [
+          1103
+        ]
+      }
+    },
+    "observation_version": "observation_v7",
+    "interaction_contract": "combat_card_selection_v1",
+    "required_simulator_capabilities": [
+      "combat_card_selection_v1"
+    ],
+    "arms": [
+      {
+        "id": "qwen2_5_7b_gold_teacher_mixed_sft",
+        "policy": "llm",
+        "model_runtime": "configs/eval/base_model_runtime_7b_v2.json",
+        "execution_profile": "configs/env/training_cuda_sm120_v1.json",
+        "checkpoint": "outputs/training/qwen2_5_7b_gold_teacher_mixed_sft_v7_v1/checkpoint"
+      }
+    ],
+    "route_count": 20,
+    "combat_seed_groups_per_route": 4,
+    "route": {
+      "act": 1,
+      "ascension": 0,
+      "stage": "continuous_pre_boss",
+      "initial_relics": [
+        "BURNING_BLOOD"
+      ],
+      "operations": [
+        "combat:normal_weak",
+        "card_pick",
+        "combat:normal_weak",
+        "card_pick",
+        "combat:normal_weak",
+        "card_pick",
+        "upgrade",
+        "remove",
+        "random_relic",
+        "combat:normal_strong",
+        "card_pick",
+        "upgrade",
+        "combat:elite",
+        "random_relic",
+        "card_pick",
+        "combat:normal_strong",
+        "card_pick",
+        "remove",
+        "heal:24",
+        "upgrade",
+        "combat:elite",
+        "random_relic",
+        "card_pick",
+        "upgrade",
+        "combat:boss"
+      ],
+      "combat_floors": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "relic_pool": [
+        "VAJRA",
+        "ANCHOR",
+        "BAG_OF_MARBLES",
+        "BRONZE_SCALES",
+        "LANTERN",
+        "ODDLY_SMOOTH_STONE",
+        "ORICHALCUM",
+        "AKABEKO",
+        "PRESERVED_INSECT",
+        "THE_BOOT",
+        "STRIKE_DUMMY",
+        "PAPER_PHROG",
+        "CHAMPION_BELT",
+        "CHEMICAL_X",
+        "TUNGSTEN_ROD",
+        "TORII",
+        "RED_SKULL",
+        "CENTENNIAL_PUZZLE",
+        "GREMLIN_HORN",
+        "HAPPY_FLOWER",
+        "NUNCHAKU",
+        "PEN_NIB",
+        "ART_OF_WAR",
+        "INK_BOTTLE",
+        "KUNAI",
+        "SHURIKEN"
+      ]
+    },
+    "seeds": {
+      "route": 202609070000,
+      "encounter": 202609070100,
+      "relic": 202609070200,
+      "reward": 202609071000,
+      "combat": 202609072000,
+      "policy": 202609073000,
+      "picker": 202609074000,
+      "upgrade": 202609075000,
+      "remove": 202609076000,
+      "upgrade_combat": 202609077000
+    },
+    "protocol": {
+      "opening_damage_multiplier": 1.5,
+      "search_budget": 8192,
+      "search_seed": 101,
+      "hidden_order_seeds": [
+        701,
+        809,
+        907
+      ],
+      "required_pair_wins_vs_skip": 2,
+      "conflict_combat_seed_offsets": [
+        100000,
+        200000
+      ],
+      "strategic_weights": {
+        "search": 0.5,
+        "intrinsic": 0.35,
+        "optionality": 0.15,
+        "current_target": 0.7,
+        "future_target": 0.3,
+        "duplicate_penalty": 0.08,
+        "premium_override_margin": 0.15,
+        "strong_override_margin": 0.08
+      }
+    },
+    "max_decisions": 1000,
+    "output_dir": "outputs/generation/qwen2-5-7b-gold-teacher-mixed-sft-act1-continuous-v7-v1",
+    "test_data_read": false,
+    "sealed_test_run": false,
+    "training_started": false,
+    "stable_claim": false
+  },
+  "configuration_identity": {
+    "schema_version": "continuous_combat_configuration_identity_v1",
+    "semantics_sha256": "1817994e0222311f601427ba8a6a45ddc98c57a19d83fb1a43566d124fafef57",
+    "scope_sha256": "1a2628f70600da94ad907247b780a746a7a4c919632e995ba3079395428d495f",
+    "picker_database_sha256": "a78c615ac2b80ab8acaabc3ceef615dbd7cb4b29ee2c5e42c9ef2a5216f0a386",
+    "arm_runtime_sha256": {
+      "qwen2_5_7b_gold_teacher_mixed_sft": {
+        "model_runtime": "7b49e1d2bb2f5527b62caf9c89a5c46166156c639e96c080ed415081cb376240",
+        "execution_profile": "708397e3c2acf4ade33406c15bbe02ed1b563ab53674f68097e87503b32e2d91",
+        "checkpoint": "dc3dd0fea1fe3b611ca0aca33e20713bb286715734dbb64756ec06e935ad17f2"
+      }
+    },
+    "simulator_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+    "native_bridge_sha256": "7f238988d206bcb2aa7e8eb2550282a91285326ff988ba8eea1112528600557b"
+  },
+  "execution": {
+    "schema_version": "simulator_execution_v1",
+    "target": "linux",
+    "machine": "x86_64",
+    "project_root": ".",
+    "required_capabilities": [
+      "combat_card_selection_v1",
+      "simulator"
+    ],
+    "config": "configs/env/sts_lightspeed_build_linux.json",
+    "config_sha256": "254c579d1786933cc78af690066c4bca53671cce21b3f3db3508f10631d5e1f5",
+    "revision": "7476a81954020087da31d41d16fddf475746ec2d",
+    "build_commands": [
+      [
+        ".venv/bin/python3",
+        "scripts/build_sts_lightspeed_linux.py",
+        "--config",
+        "configs/env/sts_lightspeed_build_linux.json"
+      ]
+    ],
+    "status": "resolved"
+  },
+  "source_validation": {
+    "evidence_class": "development_evaluation"
+  },
+  "scope": {
+    "routes": 20,
+    "combat_seed_groups_per_route": 4,
+    "route_executions": 80,
+    "arms": 1
+  },
+  "metrics": {
+    "qwen2_5_7b_gold_teacher_mixed_sft": {
+      "route_count": 20,
+      "route_execution_count": 80,
+      "combat_seed_groups_per_route": 4,
+      "boss_victories": 26,
+      "truncated_routes": 0,
+      "boss_arrivals": 44,
+      "combat_count": 531,
+      "combat_victories": 477,
+      "death_combat_index_counts": {
+        "4": 9,
+        "5": 22,
+        "6": 2,
+        "7": 3,
+        "8": 18
+      },
+      "death_combat_index_mean": 5.981,
+      "decisions": 9880,
+      "retry_count": 0,
+      "fallback_count": 0
+    }
+  },
+  "timing": {
+    "qwen2_5_7b_gold_teacher_mixed_sft": {
+      "model_load_seconds": 20.679,
+      "new_routes": 80
+    },
+    "workers": 1,
+    "run_seconds": 2265.962
+  },
+  "artifact": "inputs.json",
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_claim": false,
+  "publication": {
+    "kind": "path_redacted_copy",
+    "original_file_sha256": "cc305587490529b421f7a814604ddce21d1d912b508648aa2420a940732c6d3e",
+    "changed_fields": [
+      "/execution/project_root",
+      "/execution/config",
+      "/execution/build_commands/0/0",
+      "/execution/build_commands/0/1",
+      "/execution/build_commands/0/3"
+    ],
+    "path_base": "project_root"
+  }
+}

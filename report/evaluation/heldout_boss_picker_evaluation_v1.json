@@ -1,0 +1,4620 @@
+{
+  "schema_version": "heldout_boss_picker_evaluation_report_v1",
+  "run_id": "heldout_boss_picker_evaluation_v1",
+  "status": "completed",
+  "timestamp_utc": "2026-09-02T00:43:10.187693+00:00",
+  "binding": {
+    "config_sha256": "75ba8663c9b68c1cf3cfe915364c6523a9e58e68605c58fe70c47439dbb27945",
+    "teacher_config": "c7d356000800f03ee2bf06bcd14487ca25f6939f6562461fcd4fb7304b3b6c30",
+    "counterfactual_config": "e5c9315097d837d392d1666fc3b58a082bf34738d3d1bf9419dd35a4880d8022",
+    "counterfactual_report": "a091e48aeb0f7be22df3fccbe41fe4bef56ead263ed466c350e55ec6a3577750",
+    "boss_picker_module": "02c57f5053655c351ea4f6d910f0a7150ee10a4229a5c8519d68c19a4a07604f",
+    "counterfactual_picker_module": "59bed7fbae5b7aa136f56c995b88720740c7b8ddec741437381f1a37afa6692c",
+    "reward_integration_module": "350ad6bd95ce27dd2d65d5523c82c3b2961cbf4af260525520f41bed6ff99aa2",
+    "counterfactual_panel_sha256": "e6551c4678d760a1a498076395b3d436d0952f85203619728cba3623cd8b1778",
+    "source_manifest_sha256": "76c1a9095a5a26ea54e810755b21600dfbb5e0f120b5ceb3a815dc8b6ef818b2",
+    "source_schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61",
+    "simulator_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+    "search_budget": 8192,
+    "search_seed": 101,
+    "arms": [
+      "sampled",
+      "argmax",
+      "constrained_argmax",
+      "counterfactual"
+    ]
+  },
+  "scope": {
+    "routes": 24,
+    "formal_routes": 24,
+    "heldout_seeds_per_route": 2,
+    "combat_identities": 48,
+    "combats": 192,
+    "formal_combats": 192,
+    "smoke_only": false
+  },
+  "arms": {
+    "sampled": {
+      "combat": {
+        "combat_count": 48,
+        "outcome_counts": {
+          "defeat": 21,
+          "victory": 27
+        },
+        "win_rate": 0.5625,
+        "total_hp_loss": {
+          "mean": 61.562,
+          "median": 68.0,
+          "min": 0,
+          "max": 80
+        },
+        "victory_hp_loss_mean": 52.296,
+        "enemy_damage_taken_mean": 60.125,
+        "self_hp_loss_mean": 1.438,
+        "decisions": 1532,
+        "decisions_mean": 31.917,
+        "accounting_consistent_count": 48,
+        "protocol": {
+          "retry_count": 0,
+          "fallback_count": 0,
+          "first_pass_legal_rate": 1.0,
+          "inference_ms_mean": 53.815
+        }
+      },
+      "deck": {
+        "routes": 24,
+        "final_deck_size_mean": 12.958,
+        "final_deck_size_min": 9,
+        "final_deck_size_max": 17,
+        "card_picks_mean": 5.458
+      },
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 6,
+            "victory": 2
+          },
+          "win_rate": 0.25,
+          "total_hp_loss": {
+            "mean": 75.625,
+            "median": 73.5,
+            "min": 73,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 76.5,
+          "enemy_damage_taken_mean": 73.75,
+          "self_hp_loss_mean": 1.875,
+          "decisions": 253,
+          "decisions_mean": 31.625,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 47.748
+          }
+        },
+        "champ": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 4,
+            "victory": 4
+          },
+          "win_rate": 0.5,
+          "total_hp_loss": {
+            "mean": 59.125,
+            "median": 73.0,
+            "min": 22,
+            "max": 77
+          },
+          "victory_hp_loss_mean": 45.25,
+          "enemy_damage_taken_mean": 55.75,
+          "self_hp_loss_mean": 3.375,
+          "decisions": 294,
+          "decisions_mean": 36.75,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 68.846
+          }
+        },
+        "collector": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 62.5,
+            "median": 71.5,
+            "min": 30,
+            "max": 77
+          },
+          "victory_hp_loss_mean": 56.2,
+          "enemy_damage_taken_mean": 61.375,
+          "self_hp_loss_mean": 1.125,
+          "decisions": 248,
+          "decisions_mean": 31,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 44.465
+          }
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "victory": 8
+          },
+          "win_rate": 1.0,
+          "total_hp_loss": {
+            "mean": 52.375,
+            "median": 54.5,
+            "min": 30,
+            "max": 64
+          },
+          "victory_hp_loss_mean": 52.375,
+          "enemy_damage_taken_mean": 52.375,
+          "self_hp_loss_mean": 0,
+          "decisions": 247,
+          "decisions_mean": 30.875,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 58.945
+          }
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 5,
+            "victory": 3
+          },
+          "win_rate": 0.375,
+          "total_hp_loss": {
+            "mean": 52.25,
+            "median": 68.0,
+            "min": 0,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 18,
+          "enemy_damage_taken_mean": 52.25,
+          "self_hp_loss_mean": 0,
+          "decisions": 220,
+          "decisions_mean": 27.5,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 51.048
+          }
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 67.5,
+            "median": 68.0,
+            "min": 52,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 64.8,
+          "enemy_damage_taken_mean": 65.25,
+          "self_hp_loss_mean": 2.25,
+          "decisions": 270,
+          "decisions_mean": 33.75,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 49.284
+          }
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 5,
+            "victory": 19
+          },
+          "win_rate": 0.791667,
+          "total_hp_loss": {
+            "mean": 59.333,
+            "median": 66.5,
+            "min": 0,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 53.895,
+          "enemy_damage_taken_mean": 58.083,
+          "self_hp_loss_mean": 1.25,
+          "decisions": 790,
+          "decisions_mean": 32.917,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 62.238
+          }
+        },
+        "20": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 16,
+            "victory": 8
+          },
+          "win_rate": 0.333333,
+          "total_hp_loss": {
+            "mean": 63.792,
+            "median": 68.0,
+            "min": 28,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 48.5,
+          "enemy_damage_taken_mean": 62.167,
+          "self_hp_loss_mean": 1.625,
+          "decisions": 742,
+          "decisions_mean": 30.917,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 44.847
+          }
+        }
+      }
+    },
+    "argmax": {
+      "combat": {
+        "combat_count": 48,
+        "outcome_counts": {
+          "defeat": 20,
+          "victory": 28
+        },
+        "win_rate": 0.583333,
+        "total_hp_loss": {
+          "mean": 59.729,
+          "median": 67.0,
+          "min": 5,
+          "max": 80
+        },
+        "victory_hp_loss_mean": 49.643,
+        "enemy_damage_taken_mean": 58.208,
+        "self_hp_loss_mean": 1.521,
+        "decisions": 1556,
+        "decisions_mean": 32.417,
+        "accounting_consistent_count": 48,
+        "protocol": {
+          "retry_count": 0,
+          "fallback_count": 0,
+          "first_pass_legal_rate": 1.0,
+          "inference_ms_mean": 60.28
+        }
+      },
+      "deck": {
+        "routes": 24,
+        "final_deck_size_mean": 12.458,
+        "final_deck_size_min": 9,
+        "final_deck_size_max": 15,
+        "card_picks_mean": 4.958
+      },
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 4,
+            "victory": 4
+          },
+          "win_rate": 0.5,
+          "total_hp_loss": {
+            "mean": 56.125,
+            "median": 59.5,
+            "min": 29,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 39.25,
+          "enemy_damage_taken_mean": 55.75,
+          "self_hp_loss_mean": 0.375,
+          "decisions": 318,
+          "decisions_mean": 39.75,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 61.882
+          }
+        },
+        "champ": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 61,
+            "median": 71.0,
+            "min": 37,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 53.8,
+          "enemy_damage_taken_mean": 60.25,
+          "self_hp_loss_mean": 0.75,
+          "decisions": 322,
+          "decisions_mean": 40.25,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 79.387
+          }
+        },
+        "collector": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 5,
+            "victory": 3
+          },
+          "win_rate": 0.375,
+          "total_hp_loss": {
+            "mean": 71,
+            "median": 76.0,
+            "min": 43,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 60.667,
+          "enemy_damage_taken_mean": 69.125,
+          "self_hp_loss_mean": 1.875,
+          "decisions": 213,
+          "decisions_mean": 26.625,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 48.95
+          }
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "victory": 8
+          },
+          "win_rate": 1.0,
+          "total_hp_loss": {
+            "mean": 49.25,
+            "median": 52.0,
+            "min": 32,
+            "max": 61
+          },
+          "victory_hp_loss_mean": 49.25,
+          "enemy_damage_taken_mean": 47.5,
+          "self_hp_loss_mean": 1.75,
+          "decisions": 225,
+          "decisions_mean": 28.125,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 59.472
+          }
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 5,
+            "victory": 3
+          },
+          "win_rate": 0.375,
+          "total_hp_loss": {
+            "mean": 56.5,
+            "median": 68.0,
+            "min": 5,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 25.333,
+          "enemy_damage_taken_mean": 56.25,
+          "self_hp_loss_mean": 0.25,
+          "decisions": 231,
+          "decisions_mean": 28.875,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 54.07
+          }
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 64.5,
+            "median": 67.0,
+            "min": 52,
+            "max": 69
+          },
+          "victory_hp_loss_mean": 62.4,
+          "enemy_damage_taken_mean": 60.375,
+          "self_hp_loss_mean": 4.125,
+          "decisions": 247,
+          "decisions_mean": 30.875,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 49.62
+          }
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 6,
+            "victory": 18
+          },
+          "win_rate": 0.75,
+          "total_hp_loss": {
+            "mean": 56.625,
+            "median": 56.5,
+            "min": 5,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 48.833,
+          "enemy_damage_taken_mean": 55.25,
+          "self_hp_loss_mean": 1.375,
+          "decisions": 815,
+          "decisions_mean": 33.958,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 66.784
+          }
+        },
+        "20": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 14,
+            "victory": 10
+          },
+          "win_rate": 0.416667,
+          "total_hp_loss": {
+            "mean": 62.833,
+            "median": 68.0,
+            "min": 32,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 51.1,
+          "enemy_damage_taken_mean": 61.167,
+          "self_hp_loss_mean": 1.667,
+          "decisions": 741,
+          "decisions_mean": 30.875,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 53.126
+          }
+        }
+      }
+    },
+    "constrained_argmax": {
+      "combat": {
+        "combat_count": 48,
+        "outcome_counts": {
+          "defeat": 16,
+          "victory": 32
+        },
+        "win_rate": 0.666667,
+        "total_hp_loss": {
+          "mean": 52.667,
+          "median": 58.5,
+          "min": 10,
+          "max": 80
+        },
+        "victory_hp_loss_mean": 42.844,
+        "enemy_damage_taken_mean": 51.438,
+        "self_hp_loss_mean": 1.229,
+        "decisions": 1552,
+        "decisions_mean": 32.333,
+        "accounting_consistent_count": 48,
+        "protocol": {
+          "retry_count": 0,
+          "fallback_count": 0,
+          "first_pass_legal_rate": 1.0,
+          "inference_ms_mean": 61.322
+        }
+      },
+      "deck": {
+        "routes": 24,
+        "final_deck_size_mean": 13.333,
+        "final_deck_size_min": 10,
+        "final_deck_size_max": 16,
+        "card_picks_mean": 5.833
+      },
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 48.5,
+            "median": 55.0,
+            "min": 10,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 33.8,
+          "enemy_damage_taken_mean": 46.25,
+          "self_hp_loss_mean": 2.25,
+          "decisions": 284,
+          "decisions_mean": 35.5,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 63.157
+          }
+        },
+        "champ": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 3,
+            "victory": 5
+          },
+          "win_rate": 0.625,
+          "total_hp_loss": {
+            "mean": 61,
+            "median": 71.0,
+            "min": 37,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 53.8,
+          "enemy_damage_taken_mean": 58.5,
+          "self_hp_loss_mean": 2.5,
+          "decisions": 332,
+          "decisions_mean": 41.5,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 77.88
+          }
+        },
+        "collector": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 4,
+            "victory": 4
+          },
+          "win_rate": 0.5,
+          "total_hp_loss": {
+            "mean": 62.25,
+            "median": 73.0,
+            "min": 33,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 49.75,
+          "enemy_damage_taken_mean": 61.75,
+          "self_hp_loss_mean": 0.5,
+          "decisions": 241,
+          "decisions_mean": 30.125,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 44.922
+          }
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "victory": 8
+          },
+          "win_rate": 1.0,
+          "total_hp_loss": {
+            "mean": 45.125,
+            "median": 37.0,
+            "min": 29,
+            "max": 70
+          },
+          "victory_hp_loss_mean": 45.125,
+          "enemy_damage_taken_mean": 43.375,
+          "self_hp_loss_mean": 1.75,
+          "decisions": 214,
+          "decisions_mean": 26.75,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 58.769
+          }
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 2,
+            "victory": 6
+          },
+          "win_rate": 0.75,
+          "total_hp_loss": {
+            "mean": 34.875,
+            "median": 29.5,
+            "min": 13,
+            "max": 68
+          },
+          "victory_hp_loss_mean": 23.833,
+          "enemy_damage_taken_mean": 34.5,
+          "self_hp_loss_mean": 0.375,
+          "decisions": 216,
+          "decisions_mean": 27,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 72.962
+          }
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 4,
+            "victory": 4
+          },
+          "win_rate": 0.5,
+          "total_hp_loss": {
+            "mean": 64.25,
+            "median": 67.0,
+            "min": 47,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 57.5,
+          "enemy_damage_taken_mean": 64.25,
+          "self_hp_loss_mean": 0,
+          "decisions": 265,
+          "decisions_mean": 33.125,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 46.099
+          }
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 2,
+            "victory": 22
+          },
+          "win_rate": 0.916667,
+          "total_hp_loss": {
+            "mean": 45.042,
+            "median": 39.5,
+            "min": 10,
+            "max": 80
+          },
+          "victory_hp_loss_mean": 41.864,
+          "enemy_damage_taken_mean": 44.792,
+          "self_hp_loss_mean": 0.25,
+          "decisions": 791,
+          "decisions_mean": 32.958,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 69.963
+          }
+        },
+        "20": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 14,
+            "victory": 10
+          },
+          "win_rate": 0.416667,
+          "total_hp_loss": {
+            "mean": 60.292,
+            "median": 68.0,
+            "min": 27,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 45,
+          "enemy_damage_taken_mean": 58.083,
+          "self_hp_loss_mean": 2.208,
+          "decisions": 761,
+          "decisions_mean": 31.708,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 52.34
+          }
+        }
+      }
+    },
+    "counterfactual": {
+      "combat": {
+        "combat_count": 48,
+        "outcome_counts": {
+          "defeat": 11,
+          "victory": 37
+        },
+        "win_rate": 0.770833,
+        "total_hp_loss": {
+          "mean": 41.854,
+          "median": 39.0,
+          "min": 0,
+          "max": 73
+        },
+        "victory_hp_loss_mean": 33,
+        "enemy_damage_taken_mean": 40.375,
+        "self_hp_loss_mean": 1.479,
+        "decisions": 1284,
+        "decisions_mean": 26.75,
+        "accounting_consistent_count": 48,
+        "protocol": {
+          "retry_count": 0,
+          "fallback_count": 0,
+          "first_pass_legal_rate": 1.0,
+          "inference_ms_mean": 55.796
+        }
+      },
+      "deck": {
+        "routes": 24,
+        "final_deck_size_mean": 15.708,
+        "final_deck_size_min": 12,
+        "final_deck_size_max": 20,
+        "card_picks_mean": 8.208
+      },
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 4,
+            "victory": 4
+          },
+          "win_rate": 0.5,
+          "total_hp_loss": {
+            "mean": 60.875,
+            "median": 72.0,
+            "min": 23,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 48.75,
+          "enemy_damage_taken_mean": 58.125,
+          "self_hp_loss_mean": 2.75,
+          "decisions": 283,
+          "decisions_mean": 35.375,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 54.932
+          }
+        },
+        "champ": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 2,
+            "victory": 6
+          },
+          "win_rate": 0.75,
+          "total_hp_loss": {
+            "mean": 41.5,
+            "median": 30.5,
+            "min": 17,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 31,
+          "enemy_damage_taken_mean": 40.25,
+          "self_hp_loss_mean": 1.25,
+          "decisions": 208,
+          "decisions_mean": 26,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 56.343
+          }
+        },
+        "collector": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 2,
+            "victory": 6
+          },
+          "win_rate": 0.75,
+          "total_hp_loss": {
+            "mean": 44.875,
+            "median": 40.0,
+            "min": 16,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 35.5,
+          "enemy_damage_taken_mean": 44.125,
+          "self_hp_loss_mean": 0.75,
+          "decisions": 167,
+          "decisions_mean": 20.875,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 51.698
+          }
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "victory": 8
+          },
+          "win_rate": 1.0,
+          "total_hp_loss": {
+            "mean": 23.5,
+            "median": 24.5,
+            "min": 6,
+            "max": 37
+          },
+          "victory_hp_loss_mean": 23.5,
+          "enemy_damage_taken_mean": 22.5,
+          "self_hp_loss_mean": 1,
+          "decisions": 192,
+          "decisions_mean": 24,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 65.399
+          }
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 2,
+            "victory": 6
+          },
+          "win_rate": 0.75,
+          "total_hp_loss": {
+            "mean": 31.25,
+            "median": 26.5,
+            "min": 0,
+            "max": 68
+          },
+          "victory_hp_loss_mean": 19,
+          "enemy_damage_taken_mean": 30.75,
+          "self_hp_loss_mean": 0.5,
+          "decisions": 203,
+          "decisions_mean": 25.375,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 59.946
+          }
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "outcome_counts": {
+            "defeat": 1,
+            "victory": 7
+          },
+          "win_rate": 0.875,
+          "total_hp_loss": {
+            "mean": 49.125,
+            "median": 49.5,
+            "min": 37,
+            "max": 68
+          },
+          "victory_hp_loss_mean": 46.429,
+          "enemy_damage_taken_mean": 46.5,
+          "self_hp_loss_mean": 2.625,
+          "decisions": 231,
+          "decisions_mean": 28.875,
+          "accounting_consistent_count": 8,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 47.694
+          }
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "victory": 24
+          },
+          "win_rate": 1.0,
+          "total_hp_loss": {
+            "mean": 30.5,
+            "median": 25.5,
+            "min": 0,
+            "max": 71
+          },
+          "victory_hp_loss_mean": 30.5,
+          "enemy_damage_taken_mean": 30.5,
+          "self_hp_loss_mean": 0,
+          "decisions": 638,
+          "decisions_mean": 26.583,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 65.789
+          }
+        },
+        "20": {
+          "combat_count": 24,
+          "outcome_counts": {
+            "defeat": 11,
+            "victory": 13
+          },
+          "win_rate": 0.541667,
+          "total_hp_loss": {
+            "mean": 53.208,
+            "median": 60.0,
+            "min": 22,
+            "max": 73
+          },
+          "victory_hp_loss_mean": 37.615,
+          "enemy_damage_taken_mean": 50.25,
+          "self_hp_loss_mean": 2.958,
+          "decisions": 646,
+          "decisions_mean": 26.917,
+          "accounting_consistent_count": 24,
+          "protocol": {
+            "retry_count": 0,
+            "fallback_count": 0,
+            "first_pass_legal_rate": 1.0,
+            "inference_ms_mean": 45.926
+          }
+        }
+      }
+    }
+  },
+  "paired_vs_sampled": {
+    "argmax": {
+      "combat_count": 48,
+      "loss_to_win": 6,
+      "win_to_loss": 5,
+      "net_wins": 1,
+      "gross_hp_loss_delta_mean": -1.833,
+      "gross_hp_loss_lower_same_higher": [
+        17,
+        18,
+        13
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -19.5,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            4,
+            0
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": 1.875,
+          "gross_hp_loss_lower_same_higher": [
+            3,
+            3,
+            2
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 3,
+          "net_wins": -2,
+          "gross_hp_loss_delta_mean": 8.5,
+          "gross_hp_loss_lower_same_higher": [
+            1,
+            2,
+            5
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -3.125,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            1,
+            1
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 1,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": 4.25,
+          "gross_hp_loss_lower_same_higher": [
+            1,
+            4,
+            3
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 1,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -3,
+          "gross_hp_loss_lower_same_higher": [
+            2,
+            4,
+            2
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 3,
+          "win_to_loss": 4,
+          "net_wins": -1,
+          "gross_hp_loss_delta_mean": -2.708,
+          "gross_hp_loss_lower_same_higher": [
+            12,
+            4,
+            8
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 3,
+          "win_to_loss": 1,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -0.958,
+          "gross_hp_loss_lower_same_higher": [
+            5,
+            14,
+            5
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 54
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 5
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 5
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -30
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -9
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -18
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 1
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 2
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -2
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -1
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -21
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -21
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 26
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -33
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -36
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -36
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -51
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 17
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 3
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 9
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 39
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -13
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 13
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 11
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -6
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 50
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    },
+    "constrained_argmax": {
+      "combat_count": 48,
+      "loss_to_win": 8,
+      "win_to_loss": 3,
+      "net_wins": 5,
+      "gross_hp_loss_delta_mean": -8.896,
+      "gross_hp_loss_lower_same_higher": [
+        24,
+        13,
+        11
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -27.125,
+          "gross_hp_loss_lower_same_higher": [
+            5,
+            3,
+            0
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": 1.875,
+          "gross_hp_loss_lower_same_higher": [
+            3,
+            3,
+            2
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 2,
+          "net_wins": -1,
+          "gross_hp_loss_delta_mean": -0.25,
+          "gross_hp_loss_lower_same_higher": [
+            3,
+            2,
+            3
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -7.25,
+          "gross_hp_loss_lower_same_higher": [
+            5,
+            0,
+            3
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -17.375,
+          "gross_hp_loss_lower_same_higher": [
+            5,
+            2,
+            1
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 1,
+          "net_wins": -1,
+          "gross_hp_loss_delta_mean": -3.25,
+          "gross_hp_loss_lower_same_higher": [
+            3,
+            3,
+            2
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 4,
+          "win_to_loss": 1,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -14.292,
+          "gross_hp_loss_lower_same_higher": [
+            16,
+            1,
+            7
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 4,
+          "win_to_loss": 2,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -3.5,
+          "gross_hp_loss_lower_same_higher": [
+            8,
+            12,
+            4
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -62
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -48
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -6
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 13
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -1
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -35
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -14
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -10
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -5
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 1
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 2
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 20
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 24
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -35
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -28
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -21
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 3
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -18
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -69
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -64
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -11
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -41
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -32
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -29
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -44
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 9
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 39
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 43
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -20
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 11
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -6
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 50
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    },
+    "counterfactual": {
+      "combat_count": 48,
+      "loss_to_win": 10,
+      "win_to_loss": 0,
+      "net_wins": 10,
+      "gross_hp_loss_delta_mean": -19.708,
+      "gross_hp_loss_lower_same_higher": [
+        35,
+        12,
+        1
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -14.75,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            4,
+            0
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -17.625,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": -17.625,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -28.875,
+          "gross_hp_loss_lower_same_higher": [
+            8,
+            0,
+            0
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -21,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            3,
+            1
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -18.375,
+          "gross_hp_loss_lower_same_higher": [
+            7,
+            1,
+            0
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 5,
+          "win_to_loss": 0,
+          "net_wins": 5,
+          "gross_hp_loss_delta_mean": -28.833,
+          "gross_hp_loss_lower_same_higher": [
+            23,
+            0,
+            1
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 5,
+          "win_to_loss": 0,
+          "net_wins": 5,
+          "gross_hp_loss_delta_mean": -10.583,
+          "gross_hp_loss_lower_same_higher": [
+            12,
+            12,
+            0
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -55
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -70
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -26
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 13
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -30
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -19
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -19
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -13
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -14
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -29
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -33
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -58
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -27
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -27
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -25
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -34
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -8
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -16
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -57
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -54
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -2
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -9
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -30
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -54
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -7
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -38
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    }
+  },
+  "counterfactual_vs": {
+    "sampled": {
+      "combat_count": 48,
+      "loss_to_win": 10,
+      "win_to_loss": 0,
+      "net_wins": 10,
+      "gross_hp_loss_delta_mean": -19.708,
+      "gross_hp_loss_lower_same_higher": [
+        35,
+        12,
+        1
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -14.75,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            4,
+            0
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -17.625,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": -17.625,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -28.875,
+          "gross_hp_loss_lower_same_higher": [
+            8,
+            0,
+            0
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -21,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            3,
+            1
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -18.375,
+          "gross_hp_loss_lower_same_higher": [
+            7,
+            1,
+            0
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 5,
+          "win_to_loss": 0,
+          "net_wins": 5,
+          "gross_hp_loss_delta_mean": -28.833,
+          "gross_hp_loss_lower_same_higher": [
+            23,
+            0,
+            1
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 5,
+          "win_to_loss": 0,
+          "net_wins": 5,
+          "gross_hp_loss_delta_mean": -10.583,
+          "gross_hp_loss_lower_same_higher": [
+            12,
+            12,
+            0
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -55
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -70
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -26
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 13
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -30
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -19
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -19
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -13
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -14
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -29
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -33
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -58
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -27
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -27
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -25
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -34
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -8
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -16
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -57
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -54
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -2
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -9
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -30
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -3
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -54
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -7
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -38
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    },
+    "argmax": {
+      "combat_count": 48,
+      "loss_to_win": 9,
+      "win_to_loss": 0,
+      "net_wins": 9,
+      "gross_hp_loss_delta_mean": -17.875,
+      "gross_hp_loss_lower_same_higher": [
+        33,
+        12,
+        3
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": 4.75,
+          "gross_hp_loss_lower_same_higher": [
+            2,
+            4,
+            2
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": -19.5,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -26.125,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -25.75,
+          "gross_hp_loss_lower_same_higher": [
+            8,
+            0,
+            0
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -25.25,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            3,
+            1
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -15.375,
+          "gross_hp_loss_lower_same_higher": [
+            7,
+            1,
+            0
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 6,
+          "win_to_loss": 0,
+          "net_wins": 6,
+          "gross_hp_loss_delta_mean": -26.125,
+          "gross_hp_loss_lower_same_higher": [
+            21,
+            0,
+            3
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -9.625,
+          "gross_hp_loss_lower_same_higher": [
+            12,
+            12,
+            0
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -55
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -70
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -80
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 8
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -5
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -10
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -13
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -19
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -13
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -14
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -37
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -4
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -29
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -34
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 25
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 20
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -1
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -6
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -40
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -40
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -63
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -41
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -9
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -16
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -20
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -53
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -17
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -7
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -35
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    },
+    "constrained_argmax": {
+      "combat_count": 48,
+      "loss_to_win": 7,
+      "win_to_loss": 2,
+      "net_wins": 5,
+      "gross_hp_loss_delta_mean": -10.812,
+      "gross_hp_loss_lower_same_higher": [
+        28,
+        10,
+        10
+      ],
+      "by_scenario": {
+        "automaton": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 1,
+          "net_wins": -1,
+          "gross_hp_loss_delta_mean": 12.375,
+          "gross_hp_loss_lower_same_higher": [
+            2,
+            3,
+            3
+          ]
+        },
+        "champ": {
+          "combat_count": 8,
+          "loss_to_win": 1,
+          "win_to_loss": 0,
+          "net_wins": 1,
+          "gross_hp_loss_delta_mean": -19.5,
+          "gross_hp_loss_lower_same_higher": [
+            6,
+            2,
+            0
+          ]
+        },
+        "collector": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 1,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -17.375,
+          "gross_hp_loss_lower_same_higher": [
+            4,
+            1,
+            3
+          ]
+        },
+        "hexaghost": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -21.625,
+          "gross_hp_loss_lower_same_higher": [
+            7,
+            0,
+            1
+          ]
+        },
+        "slime_boss": {
+          "combat_count": 8,
+          "loss_to_win": 0,
+          "win_to_loss": 0,
+          "net_wins": 0,
+          "gross_hp_loss_delta_mean": -3.625,
+          "gross_hp_loss_lower_same_higher": [
+            2,
+            3,
+            3
+          ]
+        },
+        "the_guardian": {
+          "combat_count": 8,
+          "loss_to_win": 3,
+          "win_to_loss": 0,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -15.125,
+          "gross_hp_loss_lower_same_higher": [
+            7,
+            1,
+            0
+          ]
+        }
+      },
+      "by_ascension": {
+        "0": {
+          "combat_count": 24,
+          "loss_to_win": 2,
+          "win_to_loss": 0,
+          "net_wins": 2,
+          "gross_hp_loss_delta_mean": -14.542,
+          "gross_hp_loss_lower_same_higher": [
+            17,
+            1,
+            6
+          ]
+        },
+        "20": {
+          "combat_count": 24,
+          "loss_to_win": 5,
+          "win_to_loss": 2,
+          "net_wins": 3,
+          "gross_hp_loss_delta_mean": -7.083,
+          "gross_hp_loss_lower_same_higher": [
+            11,
+            9,
+            4
+          ]
+        }
+      },
+      "episodes": [
+        {
+          "episode_index": 0,
+          "route_index": 0,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 7
+        },
+        {
+          "episode_index": 1,
+          "route_index": 0,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 2,
+          "route_index": 1,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -20
+        },
+        {
+          "episode_index": 3,
+          "route_index": 1,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 4,
+          "route_index": 2,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 1
+        },
+        {
+          "episode_index": 5,
+          "route_index": 2,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 5
+        },
+        {
+          "episode_index": 6,
+          "route_index": 3,
+          "heldout_seed_index": 0,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 7,
+          "route_index": 3,
+          "heldout_seed_index": 1,
+          "scenario_id": "slime_boss",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 8,
+          "route_index": 4,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -5
+        },
+        {
+          "episode_index": 9,
+          "route_index": 4,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 10,
+          "route_index": 5,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -9
+        },
+        {
+          "episode_index": 11,
+          "route_index": 5,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -8
+        },
+        {
+          "episode_index": 12,
+          "route_index": 6,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 13,
+          "route_index": 6,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -14
+        },
+        {
+          "episode_index": 14,
+          "route_index": 7,
+          "heldout_seed_index": 0,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 15,
+          "route_index": 7,
+          "heldout_seed_index": 1,
+          "scenario_id": "the_guardian",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -31
+        },
+        {
+          "episode_index": 16,
+          "route_index": 8,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -53
+        },
+        {
+          "episode_index": 17,
+          "route_index": 8,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -48
+        },
+        {
+          "episode_index": 18,
+          "route_index": 9,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -23
+        },
+        {
+          "episode_index": 19,
+          "route_index": 9,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 1
+        },
+        {
+          "episode_index": 20,
+          "route_index": 10,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 21,
+          "route_index": 10,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -4
+        },
+        {
+          "episode_index": 22,
+          "route_index": 11,
+          "heldout_seed_index": 0,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -6
+        },
+        {
+          "episode_index": 23,
+          "route_index": 11,
+          "heldout_seed_index": 1,
+          "scenario_id": "hexaghost",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -16
+        },
+        {
+          "episode_index": 24,
+          "route_index": 12,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 61
+        },
+        {
+          "episode_index": 25,
+          "route_index": 12,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 48
+        },
+        {
+          "episode_index": 26,
+          "route_index": 13,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -26
+        },
+        {
+          "episode_index": 27,
+          "route_index": 13,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -16
+        },
+        {
+          "episode_index": 28,
+          "route_index": 14,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 29,
+          "route_index": 14,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 30,
+          "route_index": 15,
+          "heldout_seed_index": 0,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 32
+        },
+        {
+          "episode_index": 31,
+          "route_index": 15,
+          "heldout_seed_index": 1,
+          "scenario_id": "automaton",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 32,
+          "route_index": 16,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 6
+        },
+        {
+          "episode_index": 33,
+          "route_index": 16,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": 7
+        },
+        {
+          "episode_index": 34,
+          "route_index": 17,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -63
+        },
+        {
+          "episode_index": 35,
+          "route_index": 17,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 0,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -41
+        },
+        {
+          "episode_index": 36,
+          "route_index": 18,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -22
+        },
+        {
+          "episode_index": 37,
+          "route_index": 18,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -46
+        },
+        {
+          "episode_index": 38,
+          "route_index": 19,
+          "heldout_seed_index": 0,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 20
+        },
+        {
+          "episode_index": 39,
+          "route_index": 19,
+          "heldout_seed_index": 1,
+          "scenario_id": "collector",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 40,
+          "route_index": 20,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -20
+        },
+        {
+          "episode_index": 41,
+          "route_index": 20,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -24
+        },
+        {
+          "episode_index": 42,
+          "route_index": 21,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -53
+        },
+        {
+          "episode_index": 43,
+          "route_index": 21,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 0,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -17
+        },
+        {
+          "episode_index": 44,
+          "route_index": 22,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -7
+        },
+        {
+          "episode_index": 45,
+          "route_index": 22,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "victory",
+          "candidate_outcome": "victory",
+          "gross_hp_loss_delta": -35
+        },
+        {
+          "episode_index": 46,
+          "route_index": 23,
+          "heldout_seed_index": 0,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        },
+        {
+          "episode_index": 47,
+          "route_index": 23,
+          "heldout_seed_index": 1,
+          "scenario_id": "champ",
+          "ascension": 20,
+          "baseline_outcome": "defeat",
+          "candidate_outcome": "defeat",
+          "gross_hp_loss_delta": 0
+        }
+      ]
+    }
+  },
+  "timing": {
+    "run_seconds": 368.643,
+    "combats_per_minute": 31.249748
+  },
+  "resume": {
+    "completed_before_run": 0,
+    "completed_after_run": 192,
+    "rerun_same_command_to_resume": true
+  },
+  "checks": {
+    "development_scope_only": true,
+    "exact_four_arms": true,
+    "exact_24_routes": true,
+    "two_heldout_seeds_per_route": true,
+    "heldout_seeds_unique": true,
+    "heldout_disjoint_from_collection": true,
+    "heldout_disjoint_from_frozen_dev": true,
+    "heldout_disjoint_from_label_search": true,
+    "counterfactual_route_artifacts_bound": true,
+    "teacher_contract_bound": true,
+    "no_test_data_read": true,
+    "training_not_started": true,
+    "all_selected_combats_completed": true,
+    "all_combat_accounting_consistent": true,
+    "all_arms_share_combat_identities": true
+  },
+  "local_output": "outputs/eval/heldout-boss-picker-evaluation-v1",
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_claim": false
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "report_type": "sts_lightspeed_real_parity",
+  "gate_id": "sts_lightspeed_real_parity_v1",
+  "status": "promoted",
+  "promotion_decision": "promote",
+  "source": "real_game_fixtures_and_simulator_replay",
+  "backend": "sts_lightspeed",
+  "backend_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "mechanics_manifest": {
+    "manifest_id": "sts_lightspeed_p0_supported_mechanics_v1",
+    "sha256": "5e245b0b90b38ed4eeafae0ab53a77f64ffe9196db3df50a67fe59002f891252"
+  },
+  "fixture_set": {
+    "path": "data/eval/sts_lightspeed_real_parity_v1.jsonl",
+    "sha256": "5d8613016d9f9e69f47709d5524f792b151b61859a7d42d12509e5803278638c",
+    "records": 43,
+    "fixtures": 4
+  },
+  "comparison_contract": {
+    "compared_fields": [
+      "run metadata and turn",
+      "player HP, max HP, block, energy, and powers",
+      "monster identity, HP, max HP, block, powers, intent, move damage, and lifecycle flags",
+      "ordered hand, draw, discard, and exhaust pile card fields",
+      "chosen canonical action",
+      "terminal outcome"
+    ],
+    "normalizations": [
+      "power arrays are compared by stable power identity rather than source order",
+      "STS1 Java signed-long seeds and simulator uint64 seeds are compared by their shared 64-bit pattern"
+    ],
+    "excluded_fields": [
+      {
+        "field": "card.uuid",
+        "reason": "source-private execution identity differs by design"
+      },
+      {
+        "field": "card.description",
+        "reason": "CommunicationMod emits dynamically modified display text while the P0 simulator adapter owns static canonical text; descriptions are not serialized to the model"
+      },
+      {
+        "field": "post-combat reward state",
+        "reason": "the P0 boundary ends at the explicit combat outcome"
+      }
+    ]
+  },
+  "gates": {
+    "executable_transition_parity": {
+      "required": true,
+      "passed": true,
+      "compared_transitions": 42,
+      "matched_transitions": 42
+    },
+    "required_real_encounter_coverage": {
+      "required": true,
+      "passed": true,
+      "required_encounters": [
+        "cultist",
+        "jaw_worm",
+        "two_louse"
+      ],
+      "executable_encounters": [
+        "cultist",
+        "jaw_worm",
+        "two_louse"
+      ],
+      "missing_executable_encounters": []
+    },
+    "supported_mechanic_mismatches": {
+      "required": true,
+      "passed": true,
+      "unresolved_mismatch_count": 0
+    }
+  },
+  "fixtures": [
+    {
+      "fixture_id": "real_cultist_6348084784025133319_full_combat",
+      "encounter": "cultist",
+      "status": "passed",
+      "compared_transitions": 13,
+      "matched_transitions": 13,
+      "terminal_seen": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "real_two_louse_6348084784025133319_opening",
+      "encounter": "two_louse",
+      "status": "excluded",
+      "transitions_preserved": 1,
+      "blockers": [
+        "real deck contains Carnage, outside supported_mechanics_v1",
+        "real relic set contains Vajra, outside supported_mechanics_v1",
+        "the P0 bridge cannot inject arbitrary deck, relic, floor, monster, pile, or RNG state"
+      ]
+    },
+    {
+      "fixture_id": "real_two_louse_13559323965839304697_full_combat",
+      "encounter": "two_louse",
+      "status": "passed",
+      "compared_transitions": 10,
+      "matched_transitions": 10,
+      "terminal_seen": true,
+      "mismatches": []
+    },
+    {
+      "fixture_id": "real_jaw_worm_4131980159346025098_full_combat",
+      "encounter": "jaw_worm",
+      "status": "passed",
+      "compared_transitions": 19,
+      "matched_transitions": 19,
+      "terminal_seen": true,
+      "mismatches": []
+    }
+  ],
+  "environment": {
+    "bridge_sha256": "aad7b9964b505d438aaa56aa6a878547e508eb81851c7f505833555f90dd20bf",
+    "transport": "native_process_jsonl_stdio"
+  }
+}

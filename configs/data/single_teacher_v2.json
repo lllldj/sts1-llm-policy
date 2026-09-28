@@ -1,0 +1,10 @@
+{
+  "schema_version": "teacher_v2_dataset_export_v1",
+  "teacher_report": "report/data/public_information_teacher_train_collection_v1.json",
+  "historical_source": "outputs/expanded_sft/expanded-sft-data-v3-8192-full-4680/eligible_source_records.jsonl",
+  "dataset_ids": {
+    "gold_sft": "public_information_teacher_v2_gold_sft_v1",
+    "silver_preferences": "public_information_teacher_v2_silver_preferences_v1"
+  },
+  "output": "outputs/datasets/single-rebuilt-v4"
+}

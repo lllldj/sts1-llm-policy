@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "gate_id": "sts_lightspeed_real_parity_v1",
+  "backend": "sts_lightspeed",
+  "backend_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "mechanics_manifest": "configs/env/supported_mechanics_v1.json",
+  "fixture_path": "assets/eval/sts_lightspeed_real_parity_v1.jsonl",
+  "required_real_encounters": ["cultist", "jaw_worm", "two_louse"],
+  "promotion_requirements": {
+    "all_executable_transitions_match": true,
+    "all_required_real_encounters_executable": true,
+    "no_unresolved_supported_mechanic_mismatch": true
+  }
+}

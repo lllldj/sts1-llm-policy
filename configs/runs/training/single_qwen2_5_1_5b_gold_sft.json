@@ -1,0 +1,40 @@
+{
+  "schema_version": "training_run_v1",
+  "run_id": "qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1",
+  "allowed_modes": ["preflight", "smoke", "run"],
+  "implementation_components": [
+    "scripts/run_training.py",
+    "src/sts1_llm_policy/train/configured_training.py",
+    "src/sts1_llm_policy/train/configured_adapters.py",
+    "src/sts1_llm_policy/train/configured_runner.py",
+    "src/sts1_llm_policy/train/identity.py",
+    "src/sts1_llm_policy/train/readiness.py",
+    "src/sts1_llm_policy/execution_environment.py",
+    "src/sts1_llm_policy/train/sft_data.py",
+    "src/sts1_llm_policy/train/runtime.py",
+    "src/sts1_llm_policy/train/dpo.py",
+    "src/sts1_llm_policy/train/lora.py",
+    "src/sts1_llm_policy/model_runtime.py",
+    "src/sts1_llm_policy/artifacts.py",
+    "src/sts1_llm_policy/configuration.py",
+    "src/sts1_llm_policy/data/manifest.py"
+  ],
+  "training_recipe": "configs/profiles/training/sft_lora_v1.json",
+  "expected_training_recipe_sha256": "a018c15fecd757c4ab703ca43e0f3605dc9c84b21ebc94dac20e570ff5ea4761",
+  "model_runtime": "configs/runtime/base_model_runtime_1_5b_v2.json",
+  "expected_model_runtime_sha256": "5f161ad7d9782eb8d1759d8841b3f24b7a4c72ca3ecda82cf00d69a9208fe3d9",
+  "dataset_manifest": "assets/datasets/single/observation-v5/gold_sft.manifest.json",
+  "expected_dataset_manifest_sha256": "8e139ca56b8d5b83868e79e83186878379aa45e91eccb434df9d0c36be6bd0a1",
+  "seed": 2026090302,
+  "initial_checkpoint": null,
+  "output_dir": "outputs/training/qwen2-5-1-5b-teacher-v2-gold-sft-observation-v5-v1",
+  "report": "report/training/qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1.json",
+  "smoke": {
+    "output_dir": "outputs/training-smoke/qwen2-5-1-5b-teacher-v2-gold-sft-observation-v5-v1",
+    "report": "report/training/qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_smoke_v1.json"
+  },
+  "development_evaluation_required": true,
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "stable_training_claim": false
+}

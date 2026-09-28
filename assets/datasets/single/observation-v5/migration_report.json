@@ -1,0 +1,57 @@
+{
+  "artifacts": {
+    "development_sft": {
+      "artifact": {
+        "bytes": 689331,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/observation-v5-training-and-dev-v1/development_sft.jsonl.gz",
+        "records": 2406,
+        "sha256": "f3b284888faa90ae94280ebf2c801939863e349a40dc2261b48287b96ccf1e3d"
+      },
+      "manifest": "outputs/datasets/observation-v5-training-and-dev-v1/development_sft.manifest.json",
+      "manifest_sha256": "4ba2286793d144b6d2cc9abd223b880199d6ad1dcc77abad14fd80e74adbab45"
+    },
+    "gold_sft": {
+      "artifact": {
+        "bytes": 2391732,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/observation-v5-training-and-dev-v1/gold_sft.jsonl.gz",
+        "records": 8221,
+        "sha256": "e42f6adda8a3ba283bffa619e83b2062907860e209d5c40e0a1bfc51e9daf41c"
+      },
+      "manifest": "outputs/datasets/observation-v5-training-and-dev-v1/gold_sft.manifest.json",
+      "manifest_sha256": "6bf4b9d666d5f1ad43ab8be5bb97ae5f3a3b860b4bacfb9298993b6e6d392277"
+    },
+    "silver_preferences": {
+      "artifact": {
+        "bytes": 178627,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/observation-v5-training-and-dev-v1/silver_preferences.jsonl.gz",
+        "records": 471,
+        "sha256": "b872deb7b2bbb30b47863bdfdffe4ec69642087c44fe7b275a625e20c9b5a9f1"
+      },
+      "manifest": "outputs/datasets/observation-v5-training-and-dev-v1/silver_preferences.manifest.json",
+      "manifest_sha256": "af5c87997f7a9943c4b97b487d207c51938e43615581a79e789c49b0f4edc24d"
+    }
+  },
+  "created_at_utc": "2026-09-03T15:28:22.727045+00:00",
+  "mode": "build",
+  "model_action_space_changed": false,
+  "observation_version": "observation_v5",
+  "records": {
+    "development_sft": 2406,
+    "gold_sft": 8221,
+    "silver_preferences": 471
+  },
+  "run_id": "observation_v5_training_and_dev_migration_v1",
+  "schema_version": "observation_v5_migration_report_v1",
+  "sealed_test_read": false,
+  "source_observation_version": "observation_v4",
+  "status": "completed",
+  "teacher_labels_changed": false,
+  "teacher_search_run": false,
+  "test_data_read": false
+}

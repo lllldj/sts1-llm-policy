@@ -1,0 +1,162 @@
+{
+  "checks": {
+    "a_c_same_pairs": true,
+    "common_ordered_states": true,
+    "state_weights_mean_one": true
+  },
+  "configuration": {
+    "coarse_hp_gap": 3.0,
+    "dataset_ids": {
+      "a": "gold_dpo_a_v7_v1",
+      "b": "gold_dpo_b_v7_v1",
+      "c": "gold_dpo_c_v7_v1"
+    },
+    "hp_tolerance": 1.0,
+    "minimum_adjusted_hp_gap": 1.0,
+    "minimum_paired_trials": 64,
+    "output": "outputs/datasets/gold-dpo-v7-v1",
+    "report": "report/data/gold_dpo_v7_v1.json",
+    "schema_version": "gold_dpo_export_v1",
+    "se_multiplier": 2.0,
+    "source_report": "outputs/generation/teacher-gold-collection-v4/formal/report.json",
+    "verification": "outputs/generation/teacher-gold-collection-v4/formal/verification.json",
+    "weight_hp_cap": 5.0
+  },
+  "datasets": {
+    "a": {
+      "counts": {
+        "families": {
+          "boss": {
+            "pairs": 3212,
+            "states": 780
+          },
+          "elite": {
+            "pairs": 6283,
+            "states": 1213
+          },
+          "normal_strong": {
+            "pairs": 7610,
+            "states": 1098
+          },
+          "normal_weak": {
+            "pairs": 3614,
+            "states": 1049
+          }
+        },
+        "gap_at_most_coarse_threshold_loss_mass": 0.12452900921407493,
+        "loss_weight_max": 1.0,
+        "loss_weight_min": 1.0,
+        "loss_weight_sum": 4140.0,
+        "max_pairs_per_state": 70,
+        "pairs": 20719,
+        "rejected_end_loss_mass": 0.5990145168651664,
+        "routes": 480,
+        "states": 4140
+      },
+      "dataset_id": "gold_dpo_a_v7_v1",
+      "manifest": "outputs/datasets/gold-dpo-v7-v1/a/manifest.json",
+      "train": {
+        "bytes": 1799460,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/gold-dpo-v7-v1/a/train.jsonl.gz",
+        "records": 4140,
+        "sha256": "83284a17ab88adf1d3e1c41bb87b36ce01610294edfca8f9657d9b0845905170"
+      }
+    },
+    "b": {
+      "counts": {
+        "families": {
+          "boss": {
+            "pairs": 2770,
+            "states": 780
+          },
+          "elite": {
+            "pairs": 5344,
+            "states": 1213
+          },
+          "normal_strong": {
+            "pairs": 6289,
+            "states": 1098
+          },
+          "normal_weak": {
+            "pairs": 3146,
+            "states": 1049
+          }
+        },
+        "gap_at_most_coarse_threshold_loss_mass": 0.0,
+        "loss_weight_max": 1.0,
+        "loss_weight_min": 1.0,
+        "loss_weight_sum": 4140.0,
+        "max_pairs_per_state": 70,
+        "pairs": 17549,
+        "rejected_end_loss_mass": 0.686370437090261,
+        "routes": 480,
+        "states": 4140
+      },
+      "dataset_id": "gold_dpo_b_v7_v1",
+      "manifest": "outputs/datasets/gold-dpo-v7-v1/b/manifest.json",
+      "train": {
+        "bytes": 1740042,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/gold-dpo-v7-v1/b/train.jsonl.gz",
+        "records": 4140,
+        "sha256": "2df7f674ff43f6541d685752b582615c0ed0c2eba54cf0486ac64b547dc217f5"
+      }
+    },
+    "c": {
+      "counts": {
+        "families": {
+          "boss": {
+            "pairs": 3212,
+            "states": 780
+          },
+          "elite": {
+            "pairs": 6283,
+            "states": 1213
+          },
+          "normal_strong": {
+            "pairs": 7610,
+            "states": 1098
+          },
+          "normal_weak": {
+            "pairs": 3614,
+            "states": 1049
+          }
+        },
+        "gap_at_most_coarse_threshold_loss_mass": 0.06468101770272948,
+        "loss_weight_max": 1.1195521526817989,
+        "loss_weight_min": 0.4415008085979029,
+        "loss_weight_sum": 4140.0,
+        "max_pairs_per_state": 70,
+        "pairs": 20719,
+        "rejected_end_loss_mass": 0.6522385416580452,
+        "routes": 480,
+        "states": 4140
+      },
+      "dataset_id": "gold_dpo_c_v7_v1",
+      "manifest": "outputs/datasets/gold-dpo-v7-v1/c/manifest.json",
+      "train": {
+        "bytes": 1909049,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/gold-dpo-v7-v1/c/train.jsonl.gz",
+        "records": 4140,
+        "sha256": "3c0e517594cd4a6f9b9e55a075966842f19a4abf8f6b9be63354ecae234f259e"
+      }
+    }
+  },
+  "schema_version": "gold_dpo_export_report_v1",
+  "screening": {
+    "fine_pairs_before_common_selection": 21923,
+    "fine_states_before_common_selection": 4537,
+    "gold_to_outside_pairs": 33003,
+    "insufficient_adjusted_gap": 3437,
+    "lower_chosen_win_count": 73,
+    "resource_conflict": 7570
+  },
+  "status": "completed",
+  "test_data_read": false,
+  "training_started": false
+}

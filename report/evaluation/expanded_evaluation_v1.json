@@ -1,0 +1,143 @@
+{
+  "schema_version": "expanded_evaluation_v1",
+  "run_id": "expanded_evaluation_v1",
+  "purpose": "freeze_expanded_base_sft_development_comparison",
+  "status": "prepared",
+  "binding": {
+    "config_sha256": "3041bf956a2e8ae56983294077b5ccc243977ffb21d66b63b613a0f9271933f4",
+    "source_plan_sha256": "58e93d15d805f1bce002e2da1f7792c447905d31c8e1da34a25cd0ee296fec1f",
+    "source_report_sha256": "5bde872a1a2a12f9dbfcca6a90ddde412ea689ff4e968bb7482c5322001ea6a5",
+    "eligible_source_sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "runtime_config_sha256": "e4409a09730e90b545bab7d494b36b96dce353a4c92e425287b14b0433389983",
+    "simulator_schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61"
+  },
+  "simulator": {
+    "status": "pass",
+    "checks": {
+      "expected_105_scenario_stage_cells": true,
+      "expected_420_combats": true,
+      "all_39_scenarios": true,
+      "both_ascensions": true,
+      "two_combat_seeds_per_scenario_stage_ascension": true,
+      "boss_only_pre_boss": true,
+      "non_boss_all_three_stages": true,
+      "episode_indices_unique_and_contiguous": true,
+      "evaluation_seeds_unique": true,
+      "evaluation_seeds_disjoint_from_collection": true
+    },
+    "combats": 420,
+    "scenario_stage_cells": 105,
+    "scenario_stage_ascension_cells": 210,
+    "combat_seeds_per_cell": 2,
+    "ascension_counts": {
+      "0": 210,
+      "20": 210
+    },
+    "family_counts": {
+      "boss": 24,
+      "elite": 72,
+      "normal_strong": 216,
+      "normal_weak": 108
+    },
+    "stage_counts": {
+      "entry": 132,
+      "mid": 132,
+      "pre-boss": 156
+    }
+  },
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_sft_claim": false,
+  "timestamp_utc": "2026-08-28T12:40:21.190522+00:00",
+  "git_revision_at_freeze": "ae8b28b4a416595f09d57b4eae863f0bdd50da56",
+  "offline": {
+    "source_eligible_records": 79029,
+    "accepted_dev_records": 2406,
+    "semantic_counts": {
+      "Anger": 68,
+      "Barricade": 2,
+      "Bash": 317,
+      "Battle Trance": 36,
+      "Berserk": 2,
+      "Blood for Blood": 14,
+      "Bloodletting": 19,
+      "Bludgeon": 29,
+      "Body Slam": 52,
+      "Brutality": 1,
+      "Carnage": 53,
+      "Clash": 1,
+      "Cleave": 19,
+      "Clothesline": 4,
+      "Combust": 6,
+      "Corruption": 8,
+      "Dark Embrace": 11,
+      "Defend": 169,
+      "Demon Form": 22,
+      "Disarm": 14,
+      "Double Tap": 2,
+      "Dropkick": 3,
+      "END_TURN": 65,
+      "Entrench": 3,
+      "Evolve": 6,
+      "Feed": 8,
+      "Feel No Pain": 7,
+      "Fiend Fire": 29,
+      "Fire Breathing": 12,
+      "Flame Barrier": 19,
+      "Flex": 4,
+      "Ghostly Armor": 6,
+      "Havoc": 15,
+      "Heavy Blade": 4,
+      "Hemokinesis": 30,
+      "Immolate": 59,
+      "Impervious": 12,
+      "Inflame": 24,
+      "Intimidate": 3,
+      "Iron Wave": 2,
+      "Juggernaut": 5,
+      "Limit Break": 7,
+      "Metallicize": 4,
+      "Offering": 16,
+      "Perfected Strike": 13,
+      "Pommel Strike": 100,
+      "Power Through": 17,
+      "Pummel": 6,
+      "Rage": 3,
+      "Rampage": 15,
+      "Reaper": 12,
+      "Reckless Charge": 10,
+      "Rupture": 2,
+      "Searing Blow": 6,
+      "Second Wind": 44,
+      "Seeing Red": 6,
+      "Sever Soul": 14,
+      "Shockwave": 38,
+      "Shrug It Off": 33,
+      "Slimed": 5,
+      "Spot Weakness": 35,
+      "Strike": 747,
+      "Sword Boomerang": 13,
+      "Thunderclap": 3,
+      "Twin Strike": 11,
+      "Uppercut": 13,
+      "Whirlwind": 60,
+      "Wild Strike": 8
+    },
+    "sequence_tokens": {
+      "min": 524,
+      "max": 1793
+    }
+  },
+  "artifacts": {
+    "offline_dev": {
+      "path": "outputs/eval/expanded-evaluation-v1/offline_dev.jsonl",
+      "sha256": "0861e9cb6d8bf9d71a3468fab9e8bb6b111ef0278750f029fd6d807ffdfa780f"
+    },
+    "simulator_manifest": {
+      "path": "outputs/eval/expanded-evaluation-v1/simulator_manifest.json",
+      "sha256": "76c1a9095a5a26ea54e810755b21600dfbb5e0f120b5ceb3a815dc8b6ef818b2",
+      "schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61"
+    }
+  }
+}

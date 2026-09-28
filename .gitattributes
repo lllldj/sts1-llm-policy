@@ -1,0 +1,23 @@
+# Pin maintained adaptation-layer inputs; live config byte bindings use the declared line endings.
+/src/sts1_llm_policy/env/simulator_execution.py text eol=lf
+/scripts/simulator.py text eol=lf
+/tests/simulator/test_simulator_execution.py text eol=lf
+/tools/sts_lightspeed/actions_upgrade_hand.patch text eol=lf
+# Portable execution inputs have stable bytes across supported platforms.
+/src/sts1_llm_policy/execution_environment.py text eol=lf
+/src/sts1_llm_policy/train/recovery.py text eol=lf
+/scripts/restore_training.py text eol=lf
+/tests/training/test_training_recovery.py text eol=lf
+/configs/runtime/training_cuda_bf16.json text eol=lf
+/configs/runtime/base_model_runtime_7b_v2.json text eol=lf
+
+# Preserve the existing LF bytes referenced by frozen observation/live contracts.
+/configs/runtime/base_model_runtime_1_5b_v2.json text eol=lf
+/configs/profiles/training/sft_lora_v1.json text eol=lf
+/configs/runs/training/single_qwen2_5_1_5b_gold_sft.json text eol=lf
+/report/training/qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1.json text eol=lf
+/src/sts1_llm_policy/env/mechanics_catalog.py text eol=lf
+/src/sts1_llm_policy/env/observation_v5_catalog.py text eol=lf
+
+# Preserve distributed asset bytes and manifest bindings on every platform.
+/assets/** -text whitespace=cr-at-eol

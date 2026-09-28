@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "run_id": "expanded_base_simulator_v1",
+  "purpose": "expanded_base_on_policy_development_baseline",
+  "status": "completed",
+  "timestamp_utc": "2026-08-28T15:01:21.953271+00:00",
+  "binding": {
+    "config_sha256": "44997aac90039e7d57b731ba78e5104315f15e45a0b1ac9d326059ed809afbb8",
+    "freeze_report_sha256": "815c3ea2d5070a8f9359b000c12036691ec0491a41e6226122d633898ac96558",
+    "manifest_sha256": "76c1a9095a5a26ea54e810755b21600dfbb5e0f120b5ceb3a815dc8b6ef818b2",
+    "schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61",
+    "source_plan_sha256": "58e93d15d805f1bce002e2da1f7792c447905d31c8e1da34a25cd0ee296fec1f",
+    "runtime_config_sha256": "e4409a09730e90b545bab7d494b36b96dce353a4c92e425287b14b0433389983",
+    "simulator_revision": "7476a81954020087da31d41d16fddf475746ec2d"
+  },
+  "scope": {
+    "combat_count": 420,
+    "formal_combat_count": 420,
+    "smoke_only": false
+  },
+  "base": {
+    "metrics": {
+      "combat_count": 420,
+      "outcome_counts": {
+        "defeat": 105,
+        "victory": 315
+      },
+      "win_rate": 0.75,
+      "total_hp_loss": {
+        "mean": 41.488,
+        "median": 36.0,
+        "min": 0,
+        "max": 88
+      },
+      "victory_hp_loss_mean": 30.121,
+      "enemy_damage_taken_mean": 40.74,
+      "self_hp_loss_mean": 0.748,
+      "decisions": 8660,
+      "decisions_mean": 20.619,
+      "accounting_consistent_count": 420,
+      "protocol": {
+        "retry_count": 1291,
+        "fallback_count": 49,
+        "first_pass_legal_rate": 0.850924,
+        "inference_ms_mean": 282.285
+      }
+    },
+    "by_ascension": {
+      "0": {
+        "combat_count": 210,
+        "outcome_counts": {
+          "defeat": 47,
+          "victory": 163
+        },
+        "win_rate": 0.77619,
+        "total_hp_loss": {
+          "mean": 40.867,
+          "median": 35.0,
+          "min": 0,
+          "max": 88
+        },
+        "victory_hp_loss_mean": 29.485,
+        "enemy_damage_taken_mean": 40.171,
+        "self_hp_loss_mean": 0.695,
+        "decisions": 4339,
+        "decisions_mean": 20.662,
+        "accounting_consistent_count": 210,
+        "protocol": {
+          "retry_count": 592,
+          "fallback_count": 32,
+          "first_pass_legal_rate": 0.863563,
+          "inference_ms_mean": 278.034
+        }
+      },
+      "20": {
+        "combat_count": 210,
+        "outcome_counts": {
+          "defeat": 58,
+          "victory": 152
+        },
+        "win_rate": 0.72381,
+        "total_hp_loss": {
+          "mean": 42.11,
+          "median": 39.0,
+          "min": 0,
+          "max": 76
+        },
+        "victory_hp_loss_mean": 30.803,
+        "enemy_damage_taken_mean": 41.31,
+        "self_hp_loss_mean": 0.8,
+        "decisions": 4321,
+        "decisions_mean": 20.576,
+        "accounting_consistent_count": 210,
+        "protocol": {
+          "retry_count": 699,
+          "fallback_count": 17,
+          "first_pass_legal_rate": 0.838232,
+          "inference_ms_mean": 286.554
+        }
+      }
+    },
+    "by_family": {
+      "boss": {
+        "combat_count": 24,
+        "outcome_counts": {
+          "defeat": 21,
+          "victory": 3
+        },
+        "win_rate": 0.125,
+        "total_hp_loss": {
+          "mean": 73.583,
+          "median": 74.5,
+          "min": 46,
+          "max": 85
+        },
+        "victory_hp_loss_mean": 56,
+        "enemy_damage_taken_mean": 71.833,
+        "self_hp_loss_mean": 1.75,
+        "decisions": 735,
+        "decisions_mean": 30.625,
+        "accounting_consistent_count": 24,
+        "protocol": {
+          "retry_count": 91,
+          "fallback_count": 5,
+          "first_pass_legal_rate": 0.87619,
+          "inference_ms_mean": 296.434
+        }
+      },
+      "elite": {
+        "combat_count": 72,
+        "outcome_counts": {
+          "defeat": 31,
+          "victory": 41
+        },
+        "win_rate": 0.569444,
+        "total_hp_loss": {
+          "mean": 57.417,
+          "median": 65.0,
+          "min": 21,
+          "max": 88
+        },
+        "victory_hp_loss_mean": 43.805,
+        "enemy_damage_taken_mean": 56.361,
+        "self_hp_loss_mean": 1.056,
+        "decisions": 1643,
+        "decisions_mean": 22.819,
+        "accounting_consistent_count": 72,
+        "protocol": {
+          "retry_count": 291,
+          "fallback_count": 13,
+          "first_pass_legal_rate": 0.822885,
+          "inference_ms_mean": 285.817
+        }
+      },
+      "normal_strong": {
+        "combat_count": 216,
+        "outcome_counts": {
+          "defeat": 44,
+          "victory": 172
+        },
+        "win_rate": 0.796296,
+        "total_hp_loss": {
+          "mean": 39.5,
+          "median": 33.0,
+          "min": 0,
+          "max": 80
+        },
+        "victory_hp_loss_mean": 30.407,
+        "enemy_damage_taken_mean": 38.981,
+        "self_hp_loss_mean": 0.519,
+        "decisions": 4502,
+        "decisions_mean": 20.843,
+        "accounting_consistent_count": 216,
+        "protocol": {
+          "retry_count": 689,
+          "fallback_count": 22,
+          "first_pass_legal_rate": 0.846957,
+          "inference_ms_mean": 282.126
+        }
+      },
+      "normal_weak": {
+        "combat_count": 108,
+        "outcome_counts": {
+          "defeat": 9,
+          "victory": 99
+        },
+        "win_rate": 0.916667,
+        "total_hp_loss": {
+          "mean": 27.713,
+          "median": 16.0,
+          "min": 0,
+          "max": 80
+        },
+        "victory_hp_loss_mean": 23.172,
+        "enemy_damage_taken_mean": 26.935,
+        "self_hp_loss_mean": 0.778,
+        "decisions": 1780,
+        "decisions_mean": 16.481,
+        "accounting_consistent_count": 108,
+        "protocol": {
+          "retry_count": 220,
+          "fallback_count": 9,
+          "first_pass_legal_rate": 0.876404,
+          "inference_ms_mean": 273.585
+        }
+      }
+    },
+    "by_stage": {
+      "entry": {
+        "combat_count": 132,
+        "outcome_counts": {
+          "defeat": 35,
+          "victory": 97
+        },
+        "win_rate": 0.734848,
+        "total_hp_loss": {
+          "mean": 44.121,
+          "median": 41.5,
+          "min": 0,
+          "max": 88
+        },
+        "victory_hp_loss_mean": 32.629,
+        "enemy_damage_taken_mean": 43.652,
+        "self_hp_loss_mean": 0.47,
+        "decisions": 2635,
+        "decisions_mean": 19.962,
+        "accounting_consistent_count": 132,
+        "protocol": {
+          "retry_count": 411,
+          "fallback_count": 15,
+          "first_pass_legal_rate": 0.844023,
+          "inference_ms_mean": 268.862
+        }
+      },
+      "mid": {
+        "combat_count": 132,
+        "outcome_counts": {
+          "defeat": 28,
+          "victory": 104
+        },
+        "win_rate": 0.787879,
+        "total_hp_loss": {
+          "mean": 39.947,
+          "median": 32.0,
+          "min": 0,
+          "max": 83
+        },
+        "victory_hp_loss_mean": 30.587,
+        "enemy_damage_taken_mean": 39.303,
+        "self_hp_loss_mean": 0.644,
+        "decisions": 2789,
+        "decisions_mean": 21.129,
+        "accounting_consistent_count": 132,
+        "protocol": {
+          "retry_count": 410,
+          "fallback_count": 9,
+          "first_pass_legal_rate": 0.852994,
+          "inference_ms_mean": 279.508
+        }
+      },
+      "pre-boss": {
+        "combat_count": 156,
+        "outcome_counts": {
+          "defeat": 42,
+          "victory": 114
+        },
+        "win_rate": 0.730769,
+        "total_hp_loss": {
+          "mean": 40.564,
+          "median": 36.0,
+          "min": 0,
+          "max": 85
+        },
+        "victory_hp_loss_mean": 27.561,
+        "enemy_damage_taken_mean": 39.494,
+        "self_hp_loss_mean": 1.071,
+        "decisions": 3236,
+        "decisions_mean": 20.744,
+        "accounting_consistent_count": 156,
+        "protocol": {
+          "retry_count": 470,
+          "fallback_count": 25,
+          "first_pass_legal_rate": 0.854759,
+          "inference_ms_mean": 295.609
+        }
+      }
+    }
+  },
+  "timing": {
+    "model_load_seconds": 24.105,
+    "run_seconds": 2485.217,
+    "total_seconds": 2509.322,
+    "combats_per_minute_excluding_load": 10.139959
+  },
+  "resume": {
+    "completed_before_run": 0,
+    "completed_after_run": 420,
+    "rerun_same_command_to_resume": true
+  },
+  "checks": {
+    "development_scope_only": true,
+    "frozen_420_combat_manifest_bound": true,
+    "fresh_seed_schedule_bound": true,
+    "simulator_revision_matches": true,
+    "no_test_data_read": true,
+    "training_not_started": true,
+    "all_selected_combats_completed": true,
+    "all_combat_accounting_consistent": true
+  },
+  "local_output": "outputs/eval/expanded-evaluation-v1/base-simulator",
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_sft_claim": false,
+  "evaluation_git_revision": "06a7801c8e73639026e800ac32cfceb4809f32f1"
+}

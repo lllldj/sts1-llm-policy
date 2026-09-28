@@ -1,0 +1,114 @@
+diff --git a/include/sim/search/BattleScumSearcher2.h b/include/sim/search/BattleScumSearcher2.h
+--- a/include/sim/search/BattleScumSearcher2.h
++++ b/include/sim/search/BattleScumSearcher2.h
+@@ -15,5 +15,7 @@ namespace sts::search {
+ 
+     typedef std::function<double (const BattleContext&)> EvalFnc;
++    typedef std::function<void (BattleContext&, const Action&)> TransitionFnc;
++    typedef std::function<void (const Action&, const BattleContext&, double)> SimulationObserverFnc;
+ 
+     // to find a solution to a battle with tree pruning
+     struct BattleScumSearcher2 {
+@@ -35,5 +37,9 @@ namespace sts::search {
+         Node root;
+ 
+         EvalFnc evalFnc;
++        TransitionFnc transitionFnc;
++        SimulationObserverFnc simulationObserverFnc;
+         double explorationParameter = 3*sqrt(2);
++        bool forceRootActionCoverage = false;
++        int minimumRootActionVisits = 0;
+ 
+         double bestActionValue = std::numeric_limits<double>::min();
+diff --git a/src/sim/search/BattleScumSearcher2.cpp b/src/sim/search/BattleScumSearcher2.cpp
+--- a/src/sim/search/BattleScumSearcher2.cpp
++++ b/src/sim/search/BattleScumSearcher2.cpp
+@@ -20,14 +20,18 @@ namespace sts::search {
+ 
+ 
+ search::BattleScumSearcher2::BattleScumSearcher2(const BattleContext &bc, search::EvalFnc _evalFnc)
+-    : rootState(new BattleContext(bc)), evalFnc(std::move(_evalFnc)), randGen(bc.seed+bc.floorNum) {
++    : rootState(new BattleContext(bc)),
++      evalFnc(std::move(_evalFnc)),
++      transitionFnc([](BattleContext &state, const Action &action) { action.execute(state); }),
++      simulationObserverFnc(nullptr),
++      randGen(bc.seed+bc.floorNum) {
+ }
+ 
+ void search::BattleScumSearcher2::search(int64_t simulations) {
+     g_debug_scum_search = this;
+ 
+     if (isTerminalState(*rootState)) {
+-        auto evaluation = evaluateEndState(*rootState);
++        auto evaluation = evalFnc(*rootState);
+         outcomePlayerHp = rootState->player.curHp;
+         bestActionSequence = {};
+ 
+@@ -59,7 +63,7 @@ void search::BattleScumSearcher2::step() {
+             auto &edgeTaken = curNode.edges[selectIdx];
+ 
+ //            edgeTaken.action.printDesc(std::cout, curState) << std::endl;
+-            edgeTaken.action.execute(curState);
++            transitionFnc(curState, edgeTaken.action);
+ 
+             actionStack.push_back(edgeTaken.action);
+             searchStack.push_back(&edgeTaken.node);
+@@ -72,7 +76,7 @@ void search::BattleScumSearcher2::step() {
+             auto &edgeTaken = curNode.edges[selectIdx];
+ 
+ //            edgeTaken.action.printDesc(std::cout, curState) << std::endl;
+-            edgeTaken.action.execute(curState);
++            transitionFnc(curState, edgeTaken.action);
+ 
+             actionStack.push_back(edgeTaken.action);
+             searchStack.push_back(&edgeTaken.node);
+@@ -86,7 +90,10 @@ void search::BattleScumSearcher2::step() {
+ }
+ 
+ void search::BattleScumSearcher2::updateFromPlayout(const std::vector<Node *> &stack, const std::vector<Action> &actionStack, const BattleContext &endState) {
+-    const auto evaluation = evaluateEndState(endState);
++    const auto evaluation = evalFnc(endState);
++    if (simulationObserverFnc && !actionStack.empty()) {
++        simulationObserverFnc(actionStack.front(), endState, evaluation);
++    }
+ 
+     if (evaluation > bestActionValue) {
+         bestActionSequence = actionStack;
+@@ -114,6 +121,8 @@ double search::BattleScumSearcher2::evaluateEdge(const search::BattleScumSearcher2::Node &parent, int edgeIdx) {
+     double qualityValue = 0;
+     if (!bestActionSequence.empty()) {
+         auto avgEvaluation = edge.node.evaluationSum / (edge.node.simulationCount+1);
+         double evalRange = bestActionValue - minActionValue;
+-        qualityValue = avgEvaluation / evalRange;
++        if (evalRange > 0.0) {
++            qualityValue = (avgEvaluation - minActionValue) / evalRange;
++        }
+     }
+@@ -129,6 +138,18 @@ int search::BattleScumSearcher2::selectBestEdgeToSearch(const search::BattleScumSearcher2::Node &cur) {
+         return 0;
+     }
+
++    const auto requiredRootVisits = std::max(
++        minimumRootActionVisits,
++        forceRootActionCoverage ? 1 : 0
++    );
++    if (requiredRootVisits > 0 && &cur == &root) {
++        for (int i = 0; i < cur.edges.size(); ++i) {
++            if (cur.edges[i].node.simulationCount < requiredRootVisits) {
++                return i;
++            }
++        }
++    }
++
+     auto bestEdge = 0;
+     auto bestEdgeValue = evaluateEdge(cur, bestEdge);
+
+@@ -165,7 +186,7 @@ void search::BattleScumSearcher2::playoutRandom(BattleContext &state, std::vector<Action> &actionStack) {
+         const auto action = tempNode.edges[selectedIdx].action;
+ //        action.printDesc(std::cout, state) << std::endl;
+         actionStack.push_back(action);
+-        action.execute(state);
++        transitionFnc(state, action);
+ 
+         tempNode.edges.clear();
+     }

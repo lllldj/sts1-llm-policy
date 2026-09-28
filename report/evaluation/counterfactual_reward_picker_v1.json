@@ -1,0 +1,229 @@
+{
+  "schema_version": "counterfactual_reward_picker_report_v1",
+  "run_id": "counterfactual_reward_picker_v1",
+  "status": "completed",
+  "timestamp_utc": "2026-09-02T00:21:26.174948+00:00",
+  "binding": {
+    "config_sha256": "e5c9315097d837d392d1666fc3b58a082bf34738d3d1bf9419dd35a4880d8022",
+    "teacher_config": "c7d356000800f03ee2bf06bcd14487ca25f6939f6562461fcd4fb7304b3b6c30",
+    "picker_module": "59bed7fbae5b7aa136f56c995b88720740c7b8ddec741437381f1a37afa6692c",
+    "reward_integration_module": "350ad6bd95ce27dd2d65d5523c82c3b2961cbf4af260525520f41bed6ff99aa2",
+    "source_manifest_sha256": "76c1a9095a5a26ea54e810755b21600dfbb5e0f120b5ceb3a815dc8b6ef818b2",
+    "source_schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61",
+    "picker_version": "counterfactual_boss_reward_picker_v1",
+    "panel_sha256": "e6551c4678d760a1a498076395b3d436d0952f85203619728cba3623cd8b1778"
+  },
+  "scope": {
+    "routes": 24,
+    "formal_routes": 24,
+    "smoke_only": false
+  },
+  "protocol": {
+    "opening_reward_count": 3,
+    "opening_damage_multiplier": 1.5,
+    "opening_skip_allowed": false,
+    "act_1_boss_assignment": "balanced_latin_v1",
+    "act_2_target_start_reward": 8,
+    "search_budget": 8192,
+    "search_seed": 101,
+    "hidden_order_seeds": [
+      701,
+      809,
+      907
+    ],
+    "required_pair_wins_vs_skip": 2,
+    "capability_order": [
+      "suggested_action_win_rate",
+      "suggested_action_victory_ending_hp_mean",
+      "suggested_action_mean_evaluation"
+    ]
+  },
+  "metrics": {
+    "routes": 24,
+    "reward_decisions": 264,
+    "opening_forced_decisions": 72,
+    "opening_attack_picks": 34,
+    "opening_damage_weight_changed_plain_card_argmax": 4,
+    "counterfactual_decisions": 187,
+    "no_allowed_card_decisions": 5,
+    "card_picks": 197,
+    "skip_like": 67,
+    "no_card_beats_skip": 62,
+    "target_decision_counts": {
+      "automaton": 31,
+      "champ": 32,
+      "collector": 29,
+      "hexaghost": 32,
+      "slime_boss": 32,
+      "the_guardian": 31
+    },
+    "selected_card_pair_wins_vs_skip": {
+      "2": 45,
+      "3": 80
+    },
+    "selected_card_counts": {
+      "ANGER": 8,
+      "BARRICADE": 1,
+      "BATTLE_TRANCE": 5,
+      "BERSERK": 1,
+      "BLOODLETTING": 3,
+      "BLOOD_FOR_BLOOD": 3,
+      "BLUDGEON": 4,
+      "BODY_SLAM": 3,
+      "BRUTALITY": 2,
+      "CARNAGE": 4,
+      "CLASH": 3,
+      "CLEAVE": 2,
+      "CLOTHESLINE": 6,
+      "COMBUST": 1,
+      "DARK_EMBRACE": 1,
+      "DEMON_FORM": 3,
+      "DISARM": 5,
+      "DOUBLE_TAP": 1,
+      "DROPKICK": 4,
+      "EVOLVE": 2,
+      "FEEL_NO_PAIN": 3,
+      "FIRE_BREATHING": 3,
+      "FLAME_BARRIER": 1,
+      "FLEX": 1,
+      "GHOSTLY_ARMOR": 2,
+      "HAVOC": 7,
+      "HEAVY_BLADE": 9,
+      "HEMOKINESIS": 5,
+      "IMMOLATE": 3,
+      "INFLAME": 4,
+      "INTIMIDATE": 2,
+      "IRON_WAVE": 2,
+      "METALLICIZE": 1,
+      "OFFERING": 2,
+      "PERFECTED_STRIKE": 5,
+      "POMMEL_STRIKE": 11,
+      "POWER_THROUGH": 3,
+      "PUMMEL": 3,
+      "RAMPAGE": 1,
+      "RECKLESS_CHARGE": 2,
+      "RUPTURE": 1,
+      "SEARING_BLOW": 1,
+      "SECOND_WIND": 2,
+      "SENTINEL": 2,
+      "SEVER_SOUL": 5,
+      "SHOCKWAVE": 5,
+      "SHRUG_IT_OFF": 9,
+      "SPOT_WEAKNESS": 4,
+      "SWORD_BOOMERANG": 13,
+      "THUNDERCLAP": 3,
+      "TWIN_STRIKE": 9,
+      "UPPERCUT": 2,
+      "WHIRLWIND": 4,
+      "WILD_STRIKE": 5
+    },
+    "by_reward_index": {
+      "1": {
+        "decisions": 24,
+        "card": 24
+      },
+      "2": {
+        "decisions": 24,
+        "card": 24
+      },
+      "3": {
+        "decisions": 24,
+        "card": 24
+      },
+      "4": {
+        "decisions": 24,
+        "card": 19,
+        "skip_like": 5
+      },
+      "5": {
+        "decisions": 24,
+        "card": 14,
+        "skip_like": 10
+      },
+      "6": {
+        "decisions": 24,
+        "card": 20,
+        "skip_like": 4
+      },
+      "7": {
+        "decisions": 24,
+        "skip_like": 9,
+        "card": 15
+      },
+      "8": {
+        "decisions": 12,
+        "card": 11,
+        "skip_like": 1
+      },
+      "9": {
+        "decisions": 12,
+        "card": 7,
+        "skip_like": 5
+      },
+      "10": {
+        "decisions": 12,
+        "card": 8,
+        "skip_like": 4
+      },
+      "11": {
+        "decisions": 12,
+        "card": 8,
+        "skip_like": 4
+      },
+      "12": {
+        "decisions": 12,
+        "card": 7,
+        "skip_like": 5
+      },
+      "13": {
+        "decisions": 12,
+        "skip_like": 7,
+        "card": 5
+      },
+      "14": {
+        "decisions": 12,
+        "skip_like": 6,
+        "card": 6
+      },
+      "15": {
+        "decisions": 12,
+        "card": 5,
+        "skip_like": 7
+      }
+    },
+    "teacher_search_calls": 1959,
+    "final_deck_size_mean": 15.708
+  },
+  "timing": {
+    "run_seconds": 167.011,
+    "routes_per_minute": 8.622173
+  },
+  "resume": {
+    "completed_before_run": 24,
+    "completed_after_run": 24,
+    "rerun_same_command_to_resume": true
+  },
+  "checks": {
+    "development_scope_only": true,
+    "exact_24_out_of_sample_routes": true,
+    "source_boss_factorial_preserved": true,
+    "balanced_act_1_boss_identity_on_act_2_routes": true,
+    "balanced_act_1_boss_by_ascension": true,
+    "reward_seeds_disjoint_from_collection": true,
+    "combat_seeds_disjoint_from_collection": true,
+    "reward_seeds_disjoint_from_frozen_dev": true,
+    "combat_seeds_disjoint_from_frozen_dev": true,
+    "teacher_contract_bound": true,
+    "no_test_data_read": true,
+    "training_not_started": true,
+    "all_selected_routes_completed": true,
+    "all_route_bindings_match": true,
+    "all_openings_forced_non_skip": true,
+    "all_act_2_routes_switch_target_on_reward_8": true
+  },
+  "local_output": "outputs/eval/counterfactual-reward-picker-v1",
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_claim": false
+}

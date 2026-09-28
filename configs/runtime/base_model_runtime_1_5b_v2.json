@@ -1,0 +1,91 @@
+{
+  "schema_version": "base_model_runtime_v2",
+  "runtime_id": "qwen2_5_1_5b_instruct_local_v2",
+  "experiment_protocol_id": "sts1_p0_model_experiment_v1",
+  "model": {
+    "id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "snapshot_path": ".model-cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "architecture": "Qwen2ForCausalLM",
+    "config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+    "generation_config_sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+    "weights_file": "model.safetensors",
+    "weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "tokenizer": {
+    "loader": "AutoTokenizer.from_pretrained",
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "use_fast": true,
+    "implementation_class": "Qwen2TokenizerFast",
+    "vocab_size": 151643,
+    "total_size": 151665,
+    "model_max_length": 131072,
+    "chat_template": {
+      "source": "tokenizer.chat_template",
+      "encoding": "utf-8",
+      "byte_length": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f"
+    },
+    "special_tokens": {
+      "bos_token": null,
+      "bos_token_id": null,
+      "eos_token": "<|im_end|>",
+      "eos_token_id": 151645,
+      "pad_token": "<|endoftext|>",
+      "pad_token_id": 151643,
+      "unk_token": null,
+      "unk_token_id": null
+    },
+    "asset_sha256": {
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "prompt_rendering": {
+    "message_roles": [
+      "system",
+      "user"
+    ],
+    "tools": null,
+    "add_generation_prompt": true,
+    "tokenize": true,
+    "add_special_tokens": false
+  },
+  "model_loading": {
+    "backend": "transformers",
+    "loader": "AutoModelForCausalLM.from_pretrained",
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "device_map": null,
+    "quantization": null,
+    "attention_implementation": "sdpa",
+    "eval_mode": true
+  },
+  "generation": {
+    "batch_size": 1,
+    "strategy": "greedy",
+    "temperature": 0.0,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "transformers_sampling_parameters": null,
+    "max_new_tokens": 8,
+    "use_cache": true,
+    "eos_token_ids": [
+      151645,
+      151643
+    ],
+    "pad_token_id": 151643,
+    "constrained_decoding": false,
+    "decode_skip_special_tokens": true,
+    "decode_clean_up_tokenization_spaces": false,
+    "independent_decisions": true,
+    "chat_history": false
+  },
+  "execution_profile": "configs/runtime/training_cuda_bf16.json"
+}

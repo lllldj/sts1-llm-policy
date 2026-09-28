@@ -1,0 +1,722 @@
+card_id,card_name,classpath,upgraded,color,rarity,type,min_ascension,found,pick_rate,first_pick_rate_f1,first_pick_rate_f2,first_pick_rate_f3,duplicate_pick_rate_f1,duplicate_pick_rate_f2,duplicate_pick_rate_f3,sample_players,sample_size,generated_time
+Immolate,燔祭,com.megacrit.cardcrawl.cards.red.Immolate,false,RED,RARE,ATTACK,20,true,37.25%,78.65%,39.88%,6.51%,11.30%,3.12%,1.82%,6084,67738,2026-08-27T20:16:11
+Immolate,燔祭+,com.megacrit.cardcrawl.cards.red.Immolate,true,RED,RARE,ATTACK,20,true,25.67%,72.28%,40.02%,8.54%,16.13%,8.41%,3.39%,1868,5021,2026-08-27T20:16:11
+Grand Finale,华丽收场,com.megacrit.cardcrawl.cards.green.GrandFinale,false,GREEN,RARE,ATTACK,20,true,34.54%,51.83%,35.85%,26.95%,21.07%,13.99%,8.74%,5244,46629,2026-08-27T20:16:11
+Grand Finale,华丽收场+,com.megacrit.cardcrawl.cards.green.GrandFinale,true,GREEN,RARE,ATTACK,20,true,34.92%,53.73%,40.57%,31.29%,21.43%,23.64%,20.41%,1334,3336,2026-08-27T20:16:11
+Regret,悔恨,com.megacrit.cardcrawl.cards.curses.Regret,false,CURSE,CURSE,CURSE,20,true,15.67%,35.90%,10.97%,11.51%,100.00%,42.86%,33.33%,167,351,2026-08-27T20:16:11
+Crippling Poison,致残毒云,com.megacrit.cardcrawl.cards.green.CripplingPoison,false,GREEN,UNCOMMON,SKILL,20,true,12.47%,17.94%,7.15%,2.70%,8.78%,5.11%,4.07%,5759,71921,2026-08-27T20:16:11
+Crippling Poison,致残毒云+,com.megacrit.cardcrawl.cards.green.CripplingPoison,true,GREEN,UNCOMMON,SKILL,20,true,12.39%,28.62%,15.82%,6.76%,24.62%,17.23%,13.50%,2960,12522,2026-08-27T20:16:11
+Storm,雷暴,com.megacrit.cardcrawl.cards.blue.Storm,false,BLUE,UNCOMMON,POWER,20,true,14.69%,13.73%,13.56%,11.77%,41.82%,37.98%,35.14%,4028,30868,2026-08-27T20:16:11
+Storm,雷暴+,com.megacrit.cardcrawl.cards.blue.Storm,true,BLUE,UNCOMMON,POWER,20,true,28.09%,31.93%,28.22%,20.72%,53.85%,45.81%,45.66%,1802,5283,2026-08-27T20:16:11
+DeusExMachina,机械降神,com.megacrit.cardcrawl.cards.purple.DeusExMachina,false,PURPLE,RARE,SKILL,20,true,43.74%,61.63%,50.89%,33.57%,20.31%,13.89%,10.99%,4717,45771,2026-08-27T20:16:11
+DeusExMachina,机械降神+,com.megacrit.cardcrawl.cards.purple.DeusExMachina,true,PURPLE,RARE,SKILL,20,true,39.25%,69.14%,49.20%,35.19%,16.13%,17.20%,14.90%,1397,4079,2026-08-27T20:16:11
+A Thousand Cuts,凌迟,com.megacrit.cardcrawl.cards.green.AThousandCuts,false,GREEN,RARE,POWER,20,true,8.96%,17.99%,7.06%,5.37%,11.67%,6.57%,8.50%,5153,45203,2026-08-27T20:16:11
+A Thousand Cuts,凌迟+,com.megacrit.cardcrawl.cards.green.AThousandCuts,true,GREEN,RARE,POWER,20,true,21.70%,42.90%,22.69%,16.00%,30.00%,22.58%,31.46%,1382,3488,2026-08-27T20:16:11
+Spot Weakness,观察弱点,com.megacrit.cardcrawl.cards.red.SpotWeakness,false,RED,UNCOMMON,SKILL,20,true,43.85%,61.90%,36.57%,13.97%,9.45%,8.57%,8.37%,6308,80991,2026-08-27T20:16:11
+Spot Weakness,观察弱点+,com.megacrit.cardcrawl.cards.red.SpotWeakness,true,RED,UNCOMMON,SKILL,20,true,29.25%,58.33%,44.87%,20.75%,18.98%,15.30%,13.53%,3214,13135,2026-08-27T20:16:11
+Genetic Algorithm,遗传算法,com.megacrit.cardcrawl.cards.blue.GeneticAlgorithm,false,BLUE,UNCOMMON,SKILL,20,true,40.00%,59.03%,21.99%,2.39%,19.47%,8.31%,3.28%,4121,31541,2026-08-27T20:16:11
+Genetic Algorithm,遗传算法+,com.megacrit.cardcrawl.cards.blue.GeneticAlgorithm,true,BLUE,UNCOMMON,SKILL,20,true,20.16%,56.13%,31.39%,3.90%,27.47%,20.00%,4.60%,1839,5377,2026-08-27T20:16:11
+Go for the Eyes,眼部攻击,com.megacrit.cardcrawl.cards.blue.GoForTheEyes,false,BLUE,COMMON,ATTACK,20,true,12.91%,17.65%,10.00%,5.43%,2.35%,1.49%,1.42%,5274,99699,2026-08-27T20:16:11
+Go for the Eyes,眼部攻击+,com.megacrit.cardcrawl.cards.blue.GoForTheEyes,true,BLUE,COMMON,ATTACK,20,true,19.73%,29.75%,29.48%,16.76%,11.48%,7.32%,5.86%,2910,14995,2026-08-27T20:16:11
+Zap,电击,com.megacrit.cardcrawl.cards.blue.Zap,false,BLUE,BASIC,SKILL,20,true,5.88%,0.00%,0.00%,0.00%,--%,100.00%,--%,12,17,2026-08-27T20:16:11
+Zap,电击+,com.megacrit.cardcrawl.cards.blue.Zap,true,BLUE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,2,3,2026-08-27T20:16:11
+Steam Power,超频,com.megacrit.cardcrawl.cards.blue.Overclock,false,BLUE,UNCOMMON,SKILL,20,true,4.60%,3.73%,5.53%,5.92%,8.82%,9.23%,13.80%,4153,31550,2026-08-27T20:16:11
+Steam Power,超频+,com.megacrit.cardcrawl.cards.blue.Overclock,true,BLUE,UNCOMMON,SKILL,20,true,15.08%,11.60%,15.28%,14.80%,27.78%,21.59%,23.32%,1850,5562,2026-08-27T20:16:11
+Wound,伤口,com.megacrit.cardcrawl.cards.status.Wound,false,COLORLESS,COMMON,STATUS,20,true,48.72%,25.00%,40.00%,10.53%,100.00%,84.62%,--%,16,78,2026-08-27T20:16:11
+Core Surge,核心电涌,com.megacrit.cardcrawl.cards.blue.CoreSurge,false,BLUE,RARE,ATTACK,20,true,55.82%,75.99%,55.76%,50.35%,49.21%,30.34%,24.71%,3916,24607,2026-08-27T20:16:11
+Core Surge,核心电涌+,com.megacrit.cardcrawl.cards.blue.CoreSurge,true,BLUE,RARE,ATTACK,20,true,52.73%,70.15%,56.29%,50.70%,53.85%,40.97%,39.94%,893,2238,2026-08-27T20:16:11
+Fission,裂变,com.megacrit.cardcrawl.cards.blue.Fission,false,BLUE,RARE,SKILL,20,true,38.10%,48.06%,35.60%,38.26%,30.57%,20.70%,24.71%,3801,23725,2026-08-27T20:16:11
+Fission,裂变+,com.megacrit.cardcrawl.cards.blue.Fission,true,BLUE,RARE,SKILL,20,true,51.12%,64.75%,51.21%,50.00%,50.00%,42.57%,45.54%,1036,2596,2026-08-27T20:16:11
+Writhe,苦恼,com.megacrit.cardcrawl.cards.curses.Writhe,false,CURSE,CURSE,CURSE,20,true,25.71%,35.56%,24.07%,19.05%,100.00%,66.67%,50.00%,166,354,2026-08-27T20:16:11
+Beta,贝塔,com.megacrit.cardcrawl.cards.tempCards.Beta,false,COLORLESS,SPECIAL,SKILL,20,true,4.76%,8.33%,0.00%,0.00%,0.00%,--%,--%,7,21,2026-08-27T20:16:11
+Beta,贝塔+,com.megacrit.cardcrawl.cards.tempCards.Beta,true,COLORLESS,SPECIAL,SKILL,20,true,50.00%,75.00%,--%,0.00%,100.00%,--%,--%,4,8,2026-08-27T20:16:11
+Hello World,你好，世界,com.megacrit.cardcrawl.cards.blue.HelloWorld,false,BLUE,UNCOMMON,POWER,20,true,6.06%,8.30%,2.08%,1.82%,13.19%,10.00%,6.79%,4023,30289,2026-08-27T20:16:11
+Hello World,你好，世界+,com.megacrit.cardcrawl.cards.blue.HelloWorld,true,BLUE,UNCOMMON,POWER,20,true,4.24%,6.86%,4.15%,2.77%,0.00%,15.48%,14.85%,1758,5140,2026-08-27T20:16:11
+Creative AI,创造性AI,com.megacrit.cardcrawl.cards.blue.CreativeAI,false,BLUE,RARE,POWER,20,true,42.82%,55.36%,41.38%,43.06%,21.89%,12.78%,17.09%,3771,23676,2026-08-27T20:16:11
+Creative AI,创造性AI+,com.megacrit.cardcrawl.cards.blue.CreativeAI,true,BLUE,RARE,POWER,20,true,52.16%,71.03%,52.71%,53.82%,61.90%,31.48%,33.45%,1006,2521,2026-08-27T20:16:11
+Dark Shackles,黑暗镣铐,com.megacrit.cardcrawl.cards.colorless.DarkShackles,false,COLORLESS,UNCOMMON,SKILL,20,true,37.91%,39.04%,37.69%,37.91%,50.00%,9.09%,30.88%,4169,15797,2026-08-27T20:16:11
+Dark Shackles,黑暗镣铐+,com.megacrit.cardcrawl.cards.colorless.DarkShackles,true,COLORLESS,UNCOMMON,SKILL,20,true,41.00%,41.94%,39.08%,40.77%,--%,50.00%,48.15%,1239,2273,2026-08-27T20:16:11
+Glass Knife,玻璃刀刃,com.megacrit.cardcrawl.cards.green.GlassKnife,false,GREEN,RARE,ATTACK,20,true,10.76%,40.13%,3.69%,0.42%,13.27%,1.96%,1.11%,5189,45599,2026-08-27T20:16:11
+Glass Knife,玻璃刀刃+,com.megacrit.cardcrawl.cards.green.GlassKnife,true,GREEN,RARE,ATTACK,20,true,9.14%,44.28%,10.92%,0.60%,25.00%,4.94%,1.74%,1331,3184,2026-08-27T20:16:11
+Consecrate,供奉,com.megacrit.cardcrawl.cards.purple.Consecrate,false,PURPLE,COMMON,ATTACK,20,true,4.46%,8.35%,0.78%,0.15%,1.69%,1.19%,0.63%,6249,161158,2026-08-27T20:16:11
+Consecrate,供奉+,com.megacrit.cardcrawl.cards.purple.Consecrate,true,PURPLE,COMMON,ATTACK,20,true,1.63%,8.95%,2.28%,0.30%,0.99%,2.24%,2.03%,3693,28653,2026-08-27T20:16:11
+Cloak And Dagger,斗篷与匕首,com.megacrit.cardcrawl.cards.green.CloakAndDagger,false,GREEN,COMMON,SKILL,20,true,4.22%,5.61%,2.16%,0.77%,13.03%,8.15%,4.70%,6919,195095,2026-08-27T20:16:11
+Cloak And Dagger,斗篷与匕首+,com.megacrit.cardcrawl.cards.green.CloakAndDagger,true,GREEN,COMMON,SKILL,20,true,8.13%,14.84%,9.58%,3.65%,23.00%,26.55%,17.99%,4267,32828,2026-08-27T20:16:11
+BowlingBash,碰撞连击,com.megacrit.cardcrawl.cards.purple.BowlingBash,false,PURPLE,COMMON,ATTACK,20,true,16.11%,33.31%,4.03%,0.20%,0.71%,0.26%,0.29%,6290,161339,2026-08-27T20:16:11
+BowlingBash,碰撞连击+,com.megacrit.cardcrawl.cards.purple.BowlingBash,true,PURPLE,COMMON,ATTACK,20,true,3.18%,20.74%,6.29%,0.34%,2.48%,0.92%,0.37%,3703,28750,2026-08-27T20:16:11
+Underhanded Strike,隐秘打击,com.megacrit.cardcrawl.cards.green.SneakyStrike,false,GREEN,COMMON,ATTACK,20,true,29.54%,51.82%,15.00%,2.99%,12.81%,5.27%,1.94%,6977,198622,2026-08-27T20:16:11
+Underhanded Strike,隐秘打击+,com.megacrit.cardcrawl.cards.green.SneakyStrike,true,GREEN,COMMON,ATTACK,20,true,12.80%,40.77%,22.41%,5.82%,20.65%,12.18%,4.33%,4158,30105,2026-08-27T20:16:11
+Anger,愤怒,com.megacrit.cardcrawl.cards.red.Anger,false,RED,COMMON,ATTACK,20,true,18.06%,32.74%,3.19%,0.49%,1.32%,0.62%,0.48%,7614,227859,2026-08-27T20:16:11
+Anger,愤怒+,com.megacrit.cardcrawl.cards.red.Anger,true,RED,COMMON,ATTACK,20,true,3.79%,21.07%,5.24%,0.75%,2.98%,1.77%,1.12%,4613,33696,2026-08-27T20:16:11
+Storm of Steel,钢铁风暴,com.megacrit.cardcrawl.cards.green.StormOfSteel,false,GREEN,RARE,SKILL,20,true,5.23%,10.21%,4.24%,2.91%,4.55%,5.07%,7.88%,5165,44879,2026-08-27T20:16:11
+Storm of Steel,钢铁风暴+,com.megacrit.cardcrawl.cards.green.StormOfSteel,true,GREEN,RARE,SKILL,20,true,5.55%,12.20%,6.54%,3.65%,0.00%,5.13%,9.62%,1535,4016,2026-08-27T20:16:11
+WheelKick,回环踢,com.megacrit.cardcrawl.cards.purple.WheelKick,false,PURPLE,UNCOMMON,ATTACK,20,true,30.02%,52.32%,16.68%,6.10%,3.19%,2.32%,3.24%,4986,56793,2026-08-27T20:16:11
+WheelKick,回环踢+,com.megacrit.cardcrawl.cards.purple.WheelKick,true,PURPLE,UNCOMMON,ATTACK,20,true,14.60%,46.12%,22.35%,8.88%,5.13%,5.56%,5.17%,2480,10425,2026-08-27T20:16:11
+Cleave,顺劈斩,com.megacrit.cardcrawl.cards.red.Cleave,false,RED,COMMON,ATTACK,20,true,5.69%,9.56%,0.66%,0.12%,1.46%,0.63%,0.53%,7580,228740,2026-08-27T20:16:11
+Cleave,顺劈斩+,com.megacrit.cardcrawl.cards.red.Cleave,true,RED,COMMON,ATTACK,20,true,1.69%,8.26%,2.14%,0.26%,4.84%,1.96%,0.76%,4668,34053,2026-08-27T20:16:11
+Ball Lightning,球状闪电,com.megacrit.cardcrawl.cards.blue.BallLightning,false,BLUE,COMMON,ATTACK,20,true,32.32%,54.95%,14.22%,3.46%,17.07%,5.37%,2.79%,5284,100032,2026-08-27T20:16:11
+Ball Lightning,球状闪电+,com.megacrit.cardcrawl.cards.blue.BallLightning,true,BLUE,COMMON,ATTACK,20,true,11.64%,32.34%,17.33%,4.51%,20.00%,10.74%,4.48%,2927,15068,2026-08-27T20:16:11
+Warcry,战吼,com.megacrit.cardcrawl.cards.red.Warcry,false,RED,COMMON,SKILL,20,true,2.65%,2.47%,2.81%,2.03%,7.70%,6.78%,5.48%,7584,227223,2026-08-27T20:16:11
+Warcry,战吼+,com.megacrit.cardcrawl.cards.red.Warcry,true,RED,COMMON,SKILL,20,true,41.19%,33.08%,45.27%,38.48%,34.45%,42.90%,44.28%,4701,36118,2026-08-27T20:16:11
+Sunder,分离,com.megacrit.cardcrawl.cards.blue.Sunder,false,BLUE,UNCOMMON,ATTACK,20,true,33.28%,53.54%,12.15%,2.04%,4.53%,3.29%,1.74%,4125,31662,2026-08-27T20:16:11
+Sunder,分离+,com.megacrit.cardcrawl.cards.blue.Sunder,true,BLUE,UNCOMMON,ATTACK,20,true,15.23%,43.12%,23.22%,4.14%,25.86%,9.29%,6.07%,1765,4943,2026-08-27T20:16:11
+Glacier,冰川,com.megacrit.cardcrawl.cards.blue.Glacier,false,BLUE,UNCOMMON,SKILL,20,true,68.47%,83.77%,72.76%,53.87%,32.94%,29.38%,23.08%,4111,31885,2026-08-27T20:16:11
+Glacier,冰川+,com.megacrit.cardcrawl.cards.blue.Glacier,true,BLUE,UNCOMMON,SKILL,20,true,52.92%,72.80%,72.08%,52.26%,32.95%,39.16%,30.34%,1863,5784,2026-08-27T20:16:11
+Inflame,燃烧,com.megacrit.cardcrawl.cards.red.Inflame,false,RED,UNCOMMON,POWER,20,true,46.05%,65.40%,32.15%,11.85%,32.76%,20.02%,12.22%,6378,82136,2026-08-27T20:16:11
+Inflame,燃烧+,com.megacrit.cardcrawl.cards.red.Inflame,true,RED,UNCOMMON,POWER,20,true,34.92%,68.86%,45.73%,21.74%,51.70%,38.59%,25.55%,3247,12991,2026-08-27T20:16:12
+Sadistic Nature,残虐天性,com.megacrit.cardcrawl.cards.colorless.SadisticNature,false,COLORLESS,RARE,POWER,20,true,11.28%,16.19%,12.24%,6.56%,30.00%,12.50%,49.23%,3918,13373,2026-08-27T20:16:12
+Sadistic Nature,残虐天性+,com.megacrit.cardcrawl.cards.colorless.SadisticNature,true,COLORLESS,RARE,POWER,20,true,14.84%,34.78%,26.79%,12.73%,0.00%,37.50%,47.83%,687,1078,2026-08-27T20:16:12
+J.A.X.,J.A.X.,com.megacrit.cardcrawl.cards.colorless.JAX,false,COLORLESS,SPECIAL,SKILL,20,true,92.80%,25.00%,98.25%,50.00%,0.00%,--%,--%,80,125,2026-08-27T20:16:12
+J.A.X.,J.A.X.+,com.megacrit.cardcrawl.cards.colorless.JAX,true,COLORLESS,SPECIAL,SKILL,20,true,82.61%,--%,94.12%,50.00%,--%,--%,--%,17,23,2026-08-27T20:16:12
+Offering,祭品,com.megacrit.cardcrawl.cards.red.Offering,false,RED,RARE,SKILL,20,true,81.21%,86.09%,87.33%,86.41%,70.24%,62.86%,59.92%,6109,68756,2026-08-27T20:16:12
+Offering,祭品+,com.megacrit.cardcrawl.cards.red.Offering,true,RED,RARE,SKILL,20,true,81.89%,92.46%,90.09%,86.47%,70.31%,66.42%,69.30%,1997,5958,2026-08-27T20:16:12
+Vengeance,怒火中烧,com.megacrit.cardcrawl.cards.purple.SimmeringFury,false,PURPLE,UNCOMMON,SKILL,20,true,4.25%,5.78%,3.17%,2.24%,1.27%,0.65%,0.43%,5019,56278,2026-08-27T20:16:12
+Vengeance,怒火中烧+,com.megacrit.cardcrawl.cards.purple.SimmeringFury,true,PURPLE,UNCOMMON,SKILL,20,true,4.51%,9.96%,5.13%,3.67%,0.00%,3.15%,0.86%,2431,10543,2026-08-27T20:16:12
+FlyingSleeves,流云飞袖,com.megacrit.cardcrawl.cards.purple.FlyingSleeves,false,PURPLE,COMMON,ATTACK,20,true,0.87%,1.61%,0.09%,0.05%,1.79%,0.76%,0.62%,6188,160297,2026-08-27T20:16:12
+FlyingSleeves,流云飞袖+,com.megacrit.cardcrawl.cards.purple.FlyingSleeves,true,PURPLE,COMMON,ATTACK,20,true,0.37%,1.97%,0.30%,0.13%,7.14%,4.46%,1.17%,3647,28318,2026-08-27T20:16:12
+Exhume,发掘,com.megacrit.cardcrawl.cards.red.Exhume,false,RED,RARE,SKILL,20,true,23.09%,21.14%,19.16%,31.95%,21.51%,17.52%,27.85%,6081,65877,2026-08-27T20:16:12
+Exhume,发掘+,com.megacrit.cardcrawl.cards.red.Exhume,true,RED,RARE,SKILL,20,true,43.58%,45.63%,38.99%,48.22%,18.18%,38.42%,40.17%,2024,5861,2026-08-27T20:16:12
+Streamline,精简改良,com.megacrit.cardcrawl.cards.blue.Streamline,false,BLUE,COMMON,ATTACK,20,true,8.03%,13.19%,1.14%,0.25%,1.96%,0.82%,0.38%,5283,99728,2026-08-27T20:16:12
+Streamline,精简改良+,com.megacrit.cardcrawl.cards.blue.Streamline,true,BLUE,COMMON,ATTACK,20,true,3.05%,11.47%,2.87%,1.04%,6.31%,4.50%,2.00%,2890,14873,2026-08-27T20:16:12
+Wireheading,先见之明,com.megacrit.cardcrawl.cards.purple.Foresight,false,PURPLE,UNCOMMON,POWER,20,true,1.64%,1.74%,1.32%,1.68%,7.03%,2.55%,2.88%,5019,56219,2026-08-27T20:16:12
+Wireheading,先见之明+,com.megacrit.cardcrawl.cards.purple.Foresight,true,PURPLE,UNCOMMON,POWER,20,true,3.38%,3.98%,3.24%,3.26%,0.00%,6.58%,6.29%,2421,10188,2026-08-27T20:16:12
+Consume,耗尽,com.megacrit.cardcrawl.cards.blue.Consume,false,BLUE,UNCOMMON,SKILL,20,true,48.35%,61.35%,46.49%,36.39%,5.06%,4.24%,5.46%,4119,31809,2026-08-27T20:16:12
+Consume,耗尽+,com.megacrit.cardcrawl.cards.blue.Consume,true,BLUE,UNCOMMON,SKILL,20,true,41.92%,51.65%,59.03%,43.80%,15.66%,14.15%,14.92%,1874,5558,2026-08-27T20:16:12
+Power Through,硬撑,com.megacrit.cardcrawl.cards.red.PowerThrough,false,RED,UNCOMMON,SKILL,20,true,56.07%,66.89%,68.03%,52.53%,12.43%,13.99%,12.95%,6346,82770,2026-08-27T20:16:12
+Power Through,硬撑+,com.megacrit.cardcrawl.cards.red.PowerThrough,true,RED,UNCOMMON,SKILL,20,true,53.23%,73.18%,75.52%,60.47%,23.31%,26.69%,22.77%,3302,13727,2026-08-27T20:16:12
+Dual Wield,双持,com.megacrit.cardcrawl.cards.red.DualWield,false,RED,UNCOMMON,SKILL,20,true,8.67%,6.27%,12.63%,13.14%,3.82%,1.77%,4.77%,6315,80573,2026-08-27T20:16:12
+Dual Wield,双持+,com.megacrit.cardcrawl.cards.red.DualWield,true,RED,UNCOMMON,SKILL,20,true,21.22%,16.33%,23.19%,22.00%,17.86%,7.66%,14.41%,3186,13065,2026-08-27T20:16:12
+Deadly Poison,致命毒药,com.megacrit.cardcrawl.cards.green.DeadlyPoison,false,GREEN,COMMON,SKILL,20,true,7.88%,12.24%,1.77%,0.66%,13.75%,4.72%,2.87%,6952,194964,2026-08-27T20:16:12
+Deadly Poison,致命毒药+,com.megacrit.cardcrawl.cards.green.DeadlyPoison,true,GREEN,COMMON,SKILL,20,true,4.25%,13.57%,4.01%,1.79%,17.05%,12.98%,6.88%,4229,32549,2026-08-27T20:16:12
+Leg Sweep,扫腿,com.megacrit.cardcrawl.cards.green.LegSweep,false,GREEN,UNCOMMON,SKILL,20,true,12.35%,16.67%,9.13%,3.87%,2.90%,3.55%,3.30%,5797,72112,2026-08-27T20:16:12
+Leg Sweep,扫腿+,com.megacrit.cardcrawl.cards.green.LegSweep,true,GREEN,UNCOMMON,SKILL,20,true,10.70%,18.18%,14.52%,7.33%,6.90%,9.79%,8.03%,2918,12183,2026-08-27T20:16:12
+PanicButton,应急按钮,com.megacrit.cardcrawl.cards.colorless.PanicButton,false,COLORLESS,UNCOMMON,SKILL,20,true,13.83%,13.99%,11.84%,13.72%,0.00%,0.00%,25.87%,3870,13819,2026-08-27T20:16:12
+PanicButton,应急按钮+,com.megacrit.cardcrawl.cards.colorless.PanicButton,true,COLORLESS,UNCOMMON,SKILL,20,true,15.61%,7.69%,15.12%,15.65%,--%,--%,20.00%,1157,2153,2026-08-27T20:16:12
+Flex,活动肌肉,com.megacrit.cardcrawl.cards.red.Flex,false,RED,COMMON,SKILL,20,true,4.90%,6.65%,2.52%,1.00%,9.13%,5.05%,4.45%,7605,228393,2026-08-27T20:16:12
+Flex,活动肌肉+,com.megacrit.cardcrawl.cards.red.Flex,true,RED,COMMON,SKILL,20,true,9.16%,17.18%,12.71%,4.66%,13.97%,12.24%,10.83%,4651,35731,2026-08-27T20:16:12
+Redo,递归,com.megacrit.cardcrawl.cards.blue.Recursion,false,BLUE,COMMON,SKILL,20,true,8.64%,10.08%,8.39%,4.83%,4.86%,4.34%,2.92%,5293,98356,2026-08-27T20:16:12
+Redo,递归+,com.megacrit.cardcrawl.cards.blue.Recursion,true,BLUE,COMMON,SKILL,20,true,24.85%,27.64%,35.03%,19.38%,22.62%,20.49%,15.76%,3028,16582,2026-08-27T20:16:12
+AscendersBane,进阶之灾,com.megacrit.cardcrawl.cards.curses.AscendersBane,false,CURSE,SPECIAL,CURSE,20,true,0.00%,--%,--%,--%,0.00%,0.00%,0.00%,11,19,2026-08-27T20:16:12
+Dagger Spray,匕首雨,com.megacrit.cardcrawl.cards.green.DaggerSpray,false,GREEN,COMMON,ATTACK,20,true,10.22%,18.29%,0.96%,0.16%,2.61%,0.68%,0.65%,6929,197949,2026-08-27T20:16:12
+Dagger Spray,匕首雨+,com.megacrit.cardcrawl.cards.green.DaggerSpray,true,GREEN,COMMON,ATTACK,20,true,2.66%,18.60%,2.90%,0.36%,2.86%,2.28%,1.36%,4131,29900,2026-08-27T20:16:12
+Bullet Time,子弹时间,com.megacrit.cardcrawl.cards.green.BulletTime,false,GREEN,RARE,SKILL,20,true,7.19%,10.86%,6.60%,5.61%,3.03%,3.47%,6.13%,5218,44710,2026-08-27T20:16:12
+Bullet Time,子弹时间+,com.megacrit.cardcrawl.cards.green.BulletTime,true,GREEN,RARE,SKILL,20,true,8.12%,16.61%,8.36%,6.76%,0.00%,2.50%,10.09%,1524,3943,2026-08-27T20:16:12
+Fusion,聚变,com.megacrit.cardcrawl.cards.blue.Fusion,false,BLUE,UNCOMMON,SKILL,20,true,9.92%,10.38%,10.75%,8.14%,4.64%,2.64%,2.96%,4068,31388,2026-08-27T20:16:12
+Fusion,聚变+,com.megacrit.cardcrawl.cards.blue.Fusion,true,BLUE,UNCOMMON,SKILL,20,true,29.96%,31.47%,38.20%,26.70%,4.00%,10.26%,14.00%,1863,5565,2026-08-27T20:16:12
+Catalyst,催化剂,com.megacrit.cardcrawl.cards.green.Catalyst,false,GREEN,UNCOMMON,SKILL,20,true,19.65%,19.89%,14.87%,8.45%,67.63%,62.27%,56.06%,5845,71892,2026-08-27T20:16:12
+Catalyst,催化剂+,com.megacrit.cardcrawl.cards.green.Catalyst,true,GREEN,UNCOMMON,SKILL,20,true,22.98%,27.26%,20.06%,12.50%,86.36%,71.16%,66.11%,3038,12683,2026-08-27T20:16:12
+Sanctity,圣洁,com.megacrit.cardcrawl.cards.purple.Sanctity,false,PURPLE,UNCOMMON,SKILL,20,true,1.82%,1.69%,1.86%,2.08%,1.84%,2.19%,1.57%,5051,56478,2026-08-27T20:16:12
+Sanctity,圣洁+,com.megacrit.cardcrawl.cards.purple.Sanctity,true,PURPLE,UNCOMMON,SKILL,20,true,4.19%,4.44%,4.62%,3.76%,16.67%,3.49%,9.04%,2476,10692,2026-08-27T20:16:12
+Halt,停顿,com.megacrit.cardcrawl.cards.purple.Halt,false,PURPLE,COMMON,SKILL,20,true,4.65%,5.50%,3.98%,3.77%,4.35%,2.64%,1.73%,6269,161378,2026-08-27T20:16:12
+Halt,停顿+,com.megacrit.cardcrawl.cards.purple.Halt,true,PURPLE,COMMON,SKILL,20,true,8.51%,12.37%,10.16%,7.46%,8.41%,7.46%,5.03%,3681,29642,2026-08-27T20:16:12
+Reaper,死亡收割,com.megacrit.cardcrawl.cards.red.Reaper,false,RED,RARE,ATTACK,20,true,50.55%,66.58%,53.33%,41.30%,38.48%,26.80%,26.95%,6133,67361,2026-08-27T20:16:12
+Reaper,死亡收割+,com.megacrit.cardcrawl.cards.red.Reaper,true,RED,RARE,ATTACK,20,true,50.43%,74.24%,59.36%,46.01%,40.00%,35.71%,32.52%,1854,5082,2026-08-27T20:16:12
+Shiv,小刀,com.megacrit.cardcrawl.cards.tempCards.Shiv,false,COLORLESS,SPECIAL,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,12,22,2026-08-27T20:16:12
+Shiv,小刀+,com.megacrit.cardcrawl.cards.tempCards.Shiv,true,COLORLESS,SPECIAL,ATTACK,20,true,0.00%,0.00%,0.00%,--%,--%,--%,--%,2,3,2026-08-27T20:16:12
+Bane,灾祸,com.megacrit.cardcrawl.cards.green.Bane,false,GREEN,COMMON,ATTACK,20,true,1.76%,2.72%,0.58%,0.08%,5.65%,1.07%,0.53%,6932,196958,2026-08-27T20:16:12
+Bane,灾祸+,com.megacrit.cardcrawl.cards.green.Bane,true,GREEN,COMMON,ATTACK,20,true,1.50%,4.62%,2.04%,0.44%,15.00%,6.93%,2.87%,4177,30011,2026-08-27T20:16:12
+Tactician,战术大师,com.megacrit.cardcrawl.cards.green.Tactician,false,GREEN,UNCOMMON,SKILL,20,true,63.11%,71.84%,83.56%,75.06%,20.77%,21.75%,17.80%,5755,72911,2026-08-27T20:16:12
+Tactician,战术大师+,com.megacrit.cardcrawl.cards.green.Tactician,true,GREEN,UNCOMMON,SKILL,20,true,62.62%,79.50%,88.43%,81.59%,33.88%,37.06%,29.66%,3032,13249,2026-08-27T20:16:12
+JustLucky,幸运一击,com.megacrit.cardcrawl.cards.purple.JustLucky,false,PURPLE,COMMON,ATTACK,20,true,0.31%,0.38%,0.19%,0.13%,7.00%,3.11%,4.93%,6273,160402,2026-08-27T20:16:12
+JustLucky,幸运一击+,com.megacrit.cardcrawl.cards.purple.JustLucky,true,PURPLE,COMMON,ATTACK,20,true,0.65%,1.10%,0.73%,0.37%,0.00%,5.59%,9.02%,3652,28901,2026-08-27T20:16:12
+Infernal Blade,地狱之刃,com.megacrit.cardcrawl.cards.red.InfernalBlade,false,RED,UNCOMMON,SKILL,20,true,7.46%,11.24%,2.34%,1.10%,5.98%,3.42%,3.54%,6267,80920,2026-08-27T20:16:12
+Infernal Blade,地狱之刃+,com.megacrit.cardcrawl.cards.red.InfernalBlade,true,RED,UNCOMMON,SKILL,20,true,9.15%,23.19%,11.73%,4.60%,7.41%,13.06%,10.85%,3231,12890,2026-08-27T20:16:12
+After Image,余像,com.megacrit.cardcrawl.cards.green.AfterImage,false,GREEN,RARE,POWER,20,true,78.66%,82.29%,79.08%,82.11%,74.84%,64.61%,68.82%,5283,47168,2026-08-27T20:16:12
+After Image,余像+,com.megacrit.cardcrawl.cards.green.AfterImage,true,GREEN,RARE,POWER,20,true,79.31%,87.82%,81.13%,83.79%,63.16%,68.95%,68.77%,1493,3838,2026-08-27T20:16:12
+Unload,乾坤一掷,com.megacrit.cardcrawl.cards.green.Unload,false,GREEN,RARE,ATTACK,20,true,3.08%,11.72%,0.90%,0.37%,8.57%,0.24%,0.56%,5147,45152,2026-08-27T20:16:12
+Unload,乾坤一掷+,com.megacrit.cardcrawl.cards.green.Unload,true,GREEN,RARE,ATTACK,20,true,2.89%,14.65%,2.21%,0.96%,14.29%,6.45%,2.50%,1338,3181,2026-08-27T20:16:12
+FlurryOfBlows,疾风连击,com.megacrit.cardcrawl.cards.purple.FlurryOfBlows,false,PURPLE,COMMON,ATTACK,20,true,15.16%,27.18%,6.28%,1.55%,7.85%,4.98%,2.98%,6294,162828,2026-08-27T20:16:12
+FlurryOfBlows,疾风连击+,com.megacrit.cardcrawl.cards.purple.FlurryOfBlows,true,PURPLE,COMMON,ATTACK,20,true,7.26%,26.05%,10.13%,3.09%,11.03%,9.55%,5.20%,3659,29288,2026-08-27T20:16:12
+Blade Dance,刀刃之舞,com.megacrit.cardcrawl.cards.green.BladeDance,false,GREEN,COMMON,SKILL,20,true,42.87%,69.29%,19.22%,4.09%,38.96%,21.00%,10.25%,6943,197522,2026-08-27T20:16:13
+Blade Dance,刀刃之舞+,com.megacrit.cardcrawl.cards.green.BladeDance,true,GREEN,COMMON,SKILL,20,true,21.80%,59.88%,25.31%,6.07%,41.57%,31.97%,17.57%,4338,33605,2026-08-27T20:16:13
+Deflect,偏折,com.megacrit.cardcrawl.cards.green.Deflect,false,GREEN,COMMON,SKILL,20,true,3.04%,2.61%,3.76%,3.11%,4.29%,5.04%,4.81%,6906,194849,2026-08-27T20:16:13
+Deflect,偏折+,com.megacrit.cardcrawl.cards.green.Deflect,true,GREEN,COMMON,SKILL,20,true,12.92%,10.76%,15.38%,11.00%,9.30%,17.84%,15.79%,4272,32916,2026-08-27T20:16:13
+Compile Driver,编译冲击,com.megacrit.cardcrawl.cards.blue.CompileDriver,false,BLUE,COMMON,ATTACK,20,true,20.45%,25.86%,19.53%,10.39%,6.97%,10.11%,9.60%,5235,99625,2026-08-27T20:16:13
+Compile Driver,编译冲击+,com.megacrit.cardcrawl.cards.blue.CompileDriver,true,BLUE,COMMON,ATTACK,20,true,19.74%,29.21%,26.62%,14.62%,11.97%,16.94%,14.63%,2920,14850,2026-08-27T20:16:13
+TalkToTheHand,以手拒之,com.megacrit.cardcrawl.cards.purple.TalkToTheHand,false,PURPLE,UNCOMMON,ATTACK,20,true,50.79%,60.73%,52.14%,42.63%,31.19%,25.85%,28.97%,5034,57893,2026-08-27T20:16:13
+TalkToTheHand,以手拒之+,com.megacrit.cardcrawl.cards.purple.TalkToTheHand,true,PURPLE,UNCOMMON,ATTACK,20,true,52.76%,68.87%,63.15%,50.84%,37.78%,39.79%,43.27%,2530,11035,2026-08-27T20:16:13
+BattleHymn,战歌,com.megacrit.cardcrawl.cards.purple.BattleHymn,false,PURPLE,UNCOMMON,POWER,20,true,5.55%,10.43%,0.87%,0.35%,1.22%,0.15%,0.61%,5026,56340,2026-08-27T20:16:13
+BattleHymn,战歌+,com.megacrit.cardcrawl.cards.purple.BattleHymn,true,PURPLE,UNCOMMON,POWER,20,true,1.47%,7.47%,1.84%,0.50%,8.00%,2.16%,1.82%,2459,10341,2026-08-27T20:16:13
+Protect,护身,com.megacrit.cardcrawl.cards.purple.Protect,false,PURPLE,COMMON,SKILL,20,true,0.47%,0.61%,0.34%,0.21%,1.80%,2.04%,1.11%,6248,160441,2026-08-27T20:16:13
+Protect,护身+,com.megacrit.cardcrawl.cards.purple.Protect,true,PURPLE,COMMON,SKILL,20,true,0.89%,1.64%,1.02%,0.59%,5.00%,3.85%,5.96%,3687,29244,2026-08-27T20:16:13
+Trip,绊倒,com.megacrit.cardcrawl.cards.colorless.Trip,false,COLORLESS,UNCOMMON,SKILL,20,true,15.17%,41.00%,21.28%,7.44%,0.00%,10.00%,3.33%,4282,15835,2026-08-27T20:16:13
+Trip,绊倒+,com.megacrit.cardcrawl.cards.colorless.Trip,true,COLORLESS,UNCOMMON,SKILL,20,true,12.77%,58.49%,30.56%,11.06%,--%,0.00%,5.41%,1190,2145,2026-08-27T20:16:13
+Indignation,义愤填膺,com.megacrit.cardcrawl.cards.purple.Indignation,false,PURPLE,UNCOMMON,SKILL,20,true,43.83%,66.19%,42.18%,21.38%,1.94%,1.11%,0.95%,5030,57300,2026-08-27T20:16:13
+Indignation,义愤填膺+,com.megacrit.cardcrawl.cards.purple.Indignation,true,PURPLE,UNCOMMON,SKILL,20,true,27.52%,64.17%,47.15%,25.46%,3.60%,3.63%,1.35%,2483,10887,2026-08-27T20:16:13
+Dagger Throw,投掷匕首,com.megacrit.cardcrawl.cards.green.DaggerThrow,false,GREEN,COMMON,ATTACK,20,true,20.43%,36.54%,6.02%,1.07%,6.25%,1.97%,0.76%,6947,198718,2026-08-27T20:16:13
+Dagger Throw,投掷匕首+,com.megacrit.cardcrawl.cards.green.DaggerThrow,true,GREEN,COMMON,ATTACK,20,true,6.19%,30.41%,10.35%,1.75%,7.78%,3.70%,1.48%,4170,30399,2026-08-27T20:16:13
+Amplify,增幅,com.megacrit.cardcrawl.cards.blue.Amplify,false,BLUE,RARE,SKILL,20,true,13.75%,15.10%,11.77%,17.45%,8.97%,4.23%,5.54%,3810,23799,2026-08-27T20:16:13
+Amplify,增幅+,com.megacrit.cardcrawl.cards.blue.Amplify,true,BLUE,RARE,SKILL,20,true,24.90%,33.07%,20.78%,28.11%,25.00%,20.00%,16.20%,1023,2578,2026-08-27T20:16:13
+ThirdEye,天眼,com.megacrit.cardcrawl.cards.purple.ThirdEye,false,PURPLE,COMMON,SKILL,20,true,0.50%,0.64%,0.34%,0.19%,4.00%,3.43%,2.22%,6314,160332,2026-08-27T20:16:13
+ThirdEye,天眼+,com.megacrit.cardcrawl.cards.purple.ThirdEye,true,PURPLE,COMMON,SKILL,20,true,0.97%,1.95%,1.11%,0.50%,15.63%,6.19%,10.78%,3644,29069,2026-08-27T20:16:13
+Brutality,残暴,com.megacrit.cardcrawl.cards.red.Brutality,false,RED,RARE,POWER,20,true,9.68%,13.50%,8.73%,8.43%,1.45%,3.57%,5.96%,6065,65993,2026-08-27T20:16:13
+Brutality,残暴+,com.megacrit.cardcrawl.cards.red.Brutality,true,RED,RARE,POWER,20,true,14.74%,29.88%,13.80%,12.99%,0.00%,12.66%,8.91%,1881,4974,2026-08-27T20:16:13
+Night Terror,夜魇,com.megacrit.cardcrawl.cards.green.Nightmare,false,GREEN,RARE,SKILL,20,true,18.09%,15.20%,14.91%,25.11%,17.28%,14.87%,22.11%,5181,44847,2026-08-27T20:16:13
+Night Terror,夜魇+,com.megacrit.cardcrawl.cards.green.Nightmare,true,GREEN,RARE,SKILL,20,true,31.29%,33.69%,26.71%,34.08%,25.00%,19.67%,35.50%,1583,4299,2026-08-27T20:16:13
+WindmillStrike,旋转打击,com.megacrit.cardcrawl.cards.purple.WindmillStrike,false,PURPLE,UNCOMMON,ATTACK,20,true,1.14%,1.86%,0.52%,0.18%,1.75%,0.84%,0.00%,4928,55352,2026-08-27T20:16:13
+WindmillStrike,旋转打击+,com.megacrit.cardcrawl.cards.purple.WindmillStrike,true,PURPLE,UNCOMMON,ATTACK,20,true,0.95%,3.05%,1.06%,0.57%,9.09%,6.78%,0.00%,2377,10081,2026-08-27T20:16:13
+Iron Wave,铁斩波,com.megacrit.cardcrawl.cards.red.IronWave,false,RED,COMMON,ATTACK,20,true,0.79%,1.18%,0.18%,0.09%,3.49%,2.82%,1.47%,7493,226335,2026-08-27T20:16:13
+Iron Wave,铁斩波+,com.megacrit.cardcrawl.cards.red.IronWave,true,RED,COMMON,ATTACK,20,true,1.13%,3.57%,1.17%,0.36%,16.98%,8.33%,5.60%,4561,33298,2026-08-27T20:16:13
+Reboot,重启,com.megacrit.cardcrawl.cards.blue.Reboot,false,BLUE,RARE,SKILL,20,true,33.47%,45.13%,29.68%,31.77%,36.28%,24.56%,23.55%,3770,23482,2026-08-27T20:16:13
+Reboot,重启+,com.megacrit.cardcrawl.cards.blue.Reboot,true,BLUE,RARE,SKILL,20,true,42.95%,54.25%,39.76%,44.33%,40.00%,38.18%,40.36%,1057,2580,2026-08-27T20:16:13
+Reckless Charge,无谋冲锋,com.megacrit.cardcrawl.cards.red.RecklessCharge,false,RED,UNCOMMON,ATTACK,20,true,14.99%,18.75%,12.59%,7.33%,7.96%,4.87%,3.43%,6313,81302,2026-08-27T20:16:13
+Reckless Charge,无谋冲锋+,com.megacrit.cardcrawl.cards.red.RecklessCharge,true,RED,UNCOMMON,ATTACK,20,true,14.74%,20.50%,19.86%,11.35%,5.77%,10.97%,5.85%,3255,12641,2026-08-27T20:16:13
+All For One,万物一心,com.megacrit.cardcrawl.cards.blue.AllForOne,false,BLUE,RARE,ATTACK,20,true,12.85%,20.77%,10.86%,8.26%,34.09%,21.45%,13.99%,3896,24498,2026-08-27T20:16:13
+All For One,万物一心+,com.megacrit.cardcrawl.cards.blue.AllForOne,true,BLUE,RARE,ATTACK,20,true,17.53%,33.48%,18.79%,11.32%,0.00%,25.00%,22.77%,814,1991,2026-08-27T20:16:13
+ForeignInfluence,他山之石,com.megacrit.cardcrawl.cards.purple.ForeignInfluence,false,PURPLE,UNCOMMON,SKILL,20,true,28.38%,49.62%,14.01%,3.59%,6.64%,3.24%,2.83%,4998,56828,2026-08-27T20:16:13
+ForeignInfluence,他山之石+,com.megacrit.cardcrawl.cards.purple.ForeignInfluence,true,PURPLE,UNCOMMON,SKILL,20,true,22.41%,57.86%,35.54%,11.56%,32.56%,19.41%,11.01%,2492,10814,2026-08-27T20:16:13
+Decay,腐朽,com.megacrit.cardcrawl.cards.curses.Decay,false,CURSE,CURSE,CURSE,20,true,26.93%,22.22%,24.63%,22.83%,50.00%,57.14%,70.59%,160,323,2026-08-27T20:16:13
+FameAndFortune,名利双收,com.megacrit.cardcrawl.cards.optionCards.FameAndFortune,false,COLORLESS,SPECIAL,SKILL,20,true,21.43%,50.00%,33.33%,0.00%,0.00%,0.00%,--%,7,14,2026-08-27T20:16:13
+FameAndFortune,名利双收+,com.megacrit.cardcrawl.cards.optionCards.FameAndFortune,true,COLORLESS,SPECIAL,SKILL,20,true,40.00%,100.00%,0.00%,0.00%,100.00%,--%,--%,4,5,2026-08-27T20:16:13
+Tools of the Trade,必备工具,com.megacrit.cardcrawl.cards.green.ToolsOfTheTrade,false,GREEN,RARE,POWER,20,true,31.28%,45.39%,32.85%,23.70%,9.57%,8.41%,7.86%,5225,45662,2026-08-27T20:16:13
+Tools of the Trade,必备工具+,com.megacrit.cardcrawl.cards.green.ToolsOfTheTrade,true,GREEN,RARE,POWER,20,true,44.22%,73.67%,50.28%,41.35%,12.50%,19.47%,19.26%,1468,3616,2026-08-27T20:16:13
+Aggregate,汇集,com.megacrit.cardcrawl.cards.blue.Aggregate,false,BLUE,UNCOMMON,SKILL,20,true,9.08%,7.66%,11.86%,10.66%,6.39%,8.33%,13.99%,4112,31090,2026-08-27T20:16:13
+Aggregate,汇集+,com.megacrit.cardcrawl.cards.blue.Aggregate,true,BLUE,UNCOMMON,SKILL,20,true,24.76%,20.30%,28.75%,22.61%,16.67%,22.95%,28.17%,1831,5396,2026-08-27T20:16:13
+Expertise,独门技术,com.megacrit.cardcrawl.cards.green.Expertise,false,GREEN,UNCOMMON,SKILL,20,true,8.98%,8.31%,12.00%,8.90%,2.20%,1.07%,2.64%,5753,71806,2026-08-27T20:16:13
+Expertise,独门技术+,com.megacrit.cardcrawl.cards.green.Expertise,true,GREEN,UNCOMMON,SKILL,20,true,18.90%,18.67%,23.62%,17.82%,0.00%,8.89%,6.68%,2970,12563,2026-08-27T20:16:13
+Dramatic Entrance,闪亮登场,com.megacrit.cardcrawl.cards.colorless.DramaticEntrance,false,COLORLESS,UNCOMMON,ATTACK,20,true,16.08%,53.65%,11.57%,2.45%,62.50%,50.00%,20.88%,4395,16427,2026-08-27T20:16:13
+Dramatic Entrance,闪亮登场+,com.megacrit.cardcrawl.cards.colorless.DramaticEntrance,true,COLORLESS,UNCOMMON,ATTACK,20,true,7.28%,53.45%,16.67%,4.84%,100.00%,33.33%,24.00%,954,1689,2026-08-27T20:16:13
+Hemokinesis,御血术,com.megacrit.cardcrawl.cards.red.Hemokinesis,false,RED,UNCOMMON,ATTACK,20,true,26.12%,44.80%,4.80%,0.80%,4.54%,1.34%,0.87%,6250,81473,2026-08-27T20:16:13
+Hemokinesis,御血术+,com.megacrit.cardcrawl.cards.red.Hemokinesis,true,RED,UNCOMMON,ATTACK,20,true,6.68%,31.17%,8.70%,1.28%,7.69%,3.84%,3.26%,3166,12540,2026-08-27T20:16:13
+Blizzard,暴雪,com.megacrit.cardcrawl.cards.blue.Blizzard,false,BLUE,UNCOMMON,ATTACK,20,true,5.25%,4.42%,5.78%,7.64%,12.69%,4.42%,6.18%,4112,31361,2026-08-27T20:16:13
+Blizzard,暴雪+,com.megacrit.cardcrawl.cards.blue.Blizzard,true,BLUE,UNCOMMON,ATTACK,20,true,12.47%,10.49%,13.54%,11.82%,0.00%,20.48%,13.66%,1749,4853,2026-08-27T20:16:13
+Chaos,混沌,com.megacrit.cardcrawl.cards.blue.Chaos,false,BLUE,UNCOMMON,SKILL,20,true,33.20%,43.89%,23.97%,11.79%,15.71%,9.46%,6.74%,4003,31385,2026-08-27T20:16:13
+Chaos,混沌+,com.megacrit.cardcrawl.cards.blue.Chaos,true,BLUE,UNCOMMON,SKILL,20,true,40.76%,52.87%,49.31%,33.44%,28.81%,42.45%,28.33%,1846,5513,2026-08-27T20:16:13
+LiveForever,永生不死,com.megacrit.cardcrawl.cards.optionCards.LiveForever,false,COLORLESS,SPECIAL,POWER,20,true,71.43%,66.67%,100.00%,66.67%,--%,--%,--%,5,7,2026-08-27T20:16:13
+LiveForever,永生不死+,com.megacrit.cardcrawl.cards.optionCards.LiveForever,true,COLORLESS,SPECIAL,POWER,20,true,83.33%,100.00%,--%,0.00%,--%,--%,100.00%,5,6,2026-08-27T20:16:13
+Intimidate,威吓,com.megacrit.cardcrawl.cards.red.Intimidate,false,RED,UNCOMMON,SKILL,20,true,7.28%,8.19%,7.15%,4.10%,5.20%,4.17%,7.80%,6261,80898,2026-08-27T20:16:13
+Intimidate,威吓+,com.megacrit.cardcrawl.cards.red.Intimidate,true,RED,UNCOMMON,SKILL,20,true,20.72%,24.08%,25.88%,17.02%,7.32%,11.65%,18.67%,3189,13043,2026-08-27T20:16:13
+Echo Form,回响形态,com.megacrit.cardcrawl.cards.blue.EchoForm,false,BLUE,RARE,POWER,20,true,69.28%,80.18%,73.95%,73.52%,36.13%,32.24%,32.79%,3880,24651,2026-08-27T20:16:13
+Echo Form,回响形态+,com.megacrit.cardcrawl.cards.blue.EchoForm,true,BLUE,RARE,POWER,20,true,70.96%,88.26%,79.20%,77.86%,45.71%,39.81%,48.28%,1058,2696,2026-08-27T20:16:13
+Necronomicurse,死灵诅咒,com.megacrit.cardcrawl.cards.curses.Necronomicurse,false,CURSE,SPECIAL,CURSE,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,6,10,2026-08-27T20:16:13
+Juggernaut,势不可当,com.megacrit.cardcrawl.cards.red.Juggernaut,false,RED,RARE,POWER,20,true,7.98%,11.26%,6.09%,8.08%,13.64%,10.00%,9.51%,6094,65708,2026-08-27T20:16:13
+Juggernaut,势不可当+,com.megacrit.cardcrawl.cards.red.Juggernaut,true,RED,RARE,POWER,20,true,18.11%,30.10%,15.69%,16.75%,55.56%,19.78%,22.94%,1843,5042,2026-08-27T20:16:13
+Choke,勒脖,com.megacrit.cardcrawl.cards.green.Choke,false,GREEN,UNCOMMON,ATTACK,20,true,3.63%,5.33%,1.56%,1.17%,1.08%,0.38%,1.79%,5795,72642,2026-08-27T20:16:14
+Choke,勒脖+,com.megacrit.cardcrawl.cards.green.Choke,true,GREEN,UNCOMMON,ATTACK,20,true,3.87%,9.49%,3.60%,3.24%,5.00%,3.65%,2.21%,2891,11312,2026-08-27T20:16:14
+Caltrops,铁蒺藜,com.megacrit.cardcrawl.cards.green.Caltrops,false,GREEN,UNCOMMON,POWER,20,true,3.97%,5.45%,1.45%,2.35%,8.35%,3.56%,5.91%,5775,72356,2026-08-27T20:16:14
+Caltrops,铁蒺藜+,com.megacrit.cardcrawl.cards.green.Caltrops,true,GREEN,UNCOMMON,POWER,20,true,8.90%,19.68%,6.63%,7.89%,33.33%,14.15%,18.04%,2862,11782,2026-08-27T20:16:14
+Impatience,急躁,com.megacrit.cardcrawl.cards.colorless.Impatience,false,COLORLESS,UNCOMMON,SKILL,20,true,15.39%,16.57%,15.19%,14.78%,14.29%,16.67%,35.36%,4268,15419,2026-08-27T20:16:14
+Impatience,急躁+,com.megacrit.cardcrawl.cards.colorless.Impatience,true,COLORLESS,UNCOMMON,SKILL,20,true,20.46%,29.73%,21.74%,19.47%,100.00%,33.33%,41.94%,1219,2214,2026-08-27T20:16:14
+DevaForm,天人形态,com.megacrit.cardcrawl.cards.purple.DevaForm,false,PURPLE,RARE,POWER,20,true,9.41%,11.33%,7.80%,10.65%,8.99%,7.08%,8.71%,4746,44895,2026-08-27T20:16:14
+DevaForm,天人形态+,com.megacrit.cardcrawl.cards.purple.DevaForm,true,PURPLE,RARE,POWER,20,true,17.59%,31.37%,13.93%,17.43%,33.33%,20.41%,25.98%,1357,3689,2026-08-27T20:16:14
+Poisoned Stab,带毒刺击,com.megacrit.cardcrawl.cards.green.PoisonedStab,false,GREEN,COMMON,ATTACK,20,true,5.27%,8.65%,0.59%,0.15%,9.94%,2.31%,1.11%,6980,197602,2026-08-27T20:16:14
+Poisoned Stab,带毒刺击+,com.megacrit.cardcrawl.cards.green.PoisonedStab,true,GREEN,COMMON,ATTACK,20,true,1.96%,8.48%,1.88%,0.44%,15.49%,7.99%,4.00%,4181,30006,2026-08-27T20:16:14
+The Bomb,炸弹,com.megacrit.cardcrawl.cards.colorless.TheBomb,false,COLORLESS,RARE,SKILL,20,true,11.84%,23.46%,3.43%,1.60%,0.00%,0.00%,10.00%,3967,13343,2026-08-27T20:16:14
+The Bomb,炸弹+,com.megacrit.cardcrawl.cards.colorless.TheBomb,true,COLORLESS,RARE,SKILL,20,true,3.63%,18.18%,14.71%,2.71%,--%,0.00%,25.00%,780,1185,2026-08-27T20:16:14
+Blur,残影,com.megacrit.cardcrawl.cards.green.Blur,false,GREEN,UNCOMMON,SKILL,20,true,10.35%,9.42%,11.16%,12.57%,9.66%,10.02%,11.00%,5733,71477,2026-08-27T20:16:14
+Blur,残影+,com.megacrit.cardcrawl.cards.green.Blur,true,GREEN,UNCOMMON,SKILL,20,true,23.99%,25.73%,25.00%,23.28%,21.62%,23.37%,22.18%,2991,12435,2026-08-27T20:16:14
+LikeWater,如水,com.megacrit.cardcrawl.cards.purple.LikeWater,false,PURPLE,UNCOMMON,POWER,20,true,1.70%,2.31%,1.03%,0.80%,6.83%,5.92%,3.96%,4971,56708,2026-08-27T20:16:14
+LikeWater,如水+,com.megacrit.cardcrawl.cards.purple.LikeWater,true,PURPLE,UNCOMMON,POWER,20,true,2.56%,4.01%,2.84%,1.93%,0.00%,12.05%,7.30%,2409,10174,2026-08-27T20:16:14
+Body Slam,全身撞击,com.megacrit.cardcrawl.cards.red.BodySlam,false,RED,COMMON,ATTACK,20,true,26.16%,29.85%,37.92%,36.96%,4.39%,3.10%,2.74%,7654,231105,2026-08-27T20:16:14
+Body Slam,全身撞击+,com.megacrit.cardcrawl.cards.red.BodySlam,true,RED,COMMON,ATTACK,20,true,38.15%,57.05%,62.30%,53.36%,19.52%,15.27%,11.36%,4681,34670,2026-08-27T20:16:14
+True Grit,坚毅,com.megacrit.cardcrawl.cards.red.TrueGrit,false,RED,COMMON,SKILL,20,true,25.18%,33.70%,28.86%,14.08%,3.99%,5.14%,4.69%,7671,230395,2026-08-27T20:16:14
+True Grit,坚毅+,com.megacrit.cardcrawl.cards.red.TrueGrit,true,RED,COMMON,SKILL,20,true,39.09%,54.56%,59.86%,38.64%,19.75%,27.39%,23.02%,4738,36937,2026-08-27T20:16:14
+Insight,洞见,com.megacrit.cardcrawl.cards.tempCards.Insight,false,COLORLESS,SPECIAL,SKILL,20,true,50.00%,50.00%,50.00%,50.00%,0.00%,100.00%,--%,10,26,2026-08-27T20:16:14
+Insight,洞见+,com.megacrit.cardcrawl.cards.tempCards.Insight,true,COLORLESS,SPECIAL,SKILL,20,true,50.00%,100.00%,100.00%,50.00%,--%,--%,0.00%,3,6,2026-08-27T20:16:14
+Setup,部署,com.megacrit.cardcrawl.cards.green.Setup,false,GREEN,UNCOMMON,SKILL,20,true,1.49%,1.16%,2.18%,1.70%,1.70%,0.54%,1.92%,5726,71426,2026-08-27T20:16:14
+Setup,部署+,com.megacrit.cardcrawl.cards.green.Setup,true,GREEN,UNCOMMON,SKILL,20,true,7.10%,5.77%,9.36%,6.00%,0.00%,1.79%,5.47%,2933,12350,2026-08-27T20:16:14
+Barrage,弹幕齐射,com.megacrit.cardcrawl.cards.blue.Barrage,false,BLUE,COMMON,ATTACK,20,true,3.96%,4.71%,2.98%,2.43%,4.13%,2.46%,2.90%,5234,98241,2026-08-27T20:16:14
+Barrage,弹幕齐射+,com.megacrit.cardcrawl.cards.blue.Barrage,true,BLUE,COMMON,ATTACK,20,true,7.78%,9.91%,8.51%,5.86%,13.89%,12.50%,10.74%,2914,14720,2026-08-27T20:16:14
+Crescendo,渐强,com.megacrit.cardcrawl.cards.purple.Crescendo,false,PURPLE,COMMON,SKILL,20,true,20.64%,35.95%,15.34%,5.76%,1.87%,1.31%,1.06%,6329,161742,2026-08-27T20:16:14
+Crescendo,渐强+,com.megacrit.cardcrawl.cards.purple.Crescendo,true,PURPLE,COMMON,SKILL,20,true,17.41%,44.80%,31.03%,14.43%,10.36%,7.17%,4.92%,3710,29797,2026-08-27T20:16:14
+SpiritShield,精神护盾,com.megacrit.cardcrawl.cards.purple.SpiritShield,false,PURPLE,RARE,SKILL,20,true,1.38%,1.88%,1.22%,1.25%,4.26%,3.49%,4.76%,4711,44712,2026-08-27T20:16:14
+SpiritShield,精神护盾+,com.megacrit.cardcrawl.cards.purple.SpiritShield,true,PURPLE,RARE,SKILL,20,true,2.93%,2.97%,2.51%,2.91%,50.00%,7.69%,12.77%,1311,3791,2026-08-27T20:16:14
+Blood for Blood,以血还血,com.megacrit.cardcrawl.cards.red.BloodForBlood,false,RED,UNCOMMON,ATTACK,20,true,19.94%,30.17%,9.75%,2.90%,5.12%,3.03%,1.67%,6314,81667,2026-08-27T20:16:14
+Blood for Blood,以血还血+,com.megacrit.cardcrawl.cards.red.BloodForBlood,true,RED,UNCOMMON,ATTACK,20,true,11.78%,27.00%,18.21%,6.01%,13.64%,7.58%,2.78%,3130,12318,2026-08-27T20:16:14
+Impervious,岿然不动,com.megacrit.cardcrawl.cards.red.Impervious,false,RED,RARE,SKILL,20,true,53.84%,64.09%,51.99%,53.61%,48.76%,40.36%,41.72%,6089,66859,2026-08-27T20:16:14
+Impervious,岿然不动+,com.megacrit.cardcrawl.cards.red.Impervious,true,RED,RARE,SKILL,20,true,58.14%,75.13%,58.06%,58.76%,42.86%,47.43%,50.90%,2038,5910,2026-08-27T20:16:14
+ClearTheMind,安宁,com.megacrit.cardcrawl.cards.purple.Tranquility,false,PURPLE,COMMON,SKILL,20,true,12.34%,18.24%,10.94%,3.55%,3.74%,2.66%,2.22%,6238,161655,2026-08-27T20:16:14
+ClearTheMind,安宁+,com.megacrit.cardcrawl.cards.purple.Tranquility,true,PURPLE,COMMON,SKILL,20,true,19.88%,38.02%,31.59%,14.36%,12.45%,14.20%,9.85%,3729,29979,2026-08-27T20:16:14
+EmptyBody,化体为空,com.megacrit.cardcrawl.cards.purple.EmptyBody,false,PURPLE,COMMON,SKILL,20,true,0.64%,0.92%,0.41%,0.22%,1.62%,1.30%,0.18%,6297,160588,2026-08-27T20:16:14
+EmptyBody,化体为空+,com.megacrit.cardcrawl.cards.purple.EmptyBody,true,PURPLE,COMMON,SKILL,20,true,1.11%,2.67%,1.24%,0.73%,4.35%,4.32%,5.26%,3689,29206,2026-08-27T20:16:14
+Shrug It Off,耸肩无视,com.megacrit.cardcrawl.cards.red.ShrugItOff,false,RED,COMMON,SKILL,20,true,42.32%,59.47%,54.63%,29.20%,15.45%,16.11%,12.38%,7641,230131,2026-08-27T20:16:14
+Shrug It Off,耸肩无视+,com.megacrit.cardcrawl.cards.red.ShrugItOff,true,RED,COMMON,SKILL,20,true,40.59%,65.04%,67.51%,44.25%,28.31%,34.13%,25.22%,4724,36751,2026-08-27T20:16:14
+Meteor Strike,陨石打击,com.megacrit.cardcrawl.cards.blue.MeteorStrike,false,BLUE,RARE,ATTACK,20,true,19.46%,22.14%,17.21%,20.98%,27.36%,20.80%,18.86%,3867,24429,2026-08-27T20:16:14
+Meteor Strike,陨石打击+,com.megacrit.cardcrawl.cards.blue.MeteorStrike,true,BLUE,RARE,ATTACK,20,true,29.21%,37.78%,26.52%,29.11%,22.22%,38.89%,28.00%,891,2109,2026-08-27T20:16:14
+Establishment,确立基础,com.megacrit.cardcrawl.cards.purple.Establishment,false,PURPLE,RARE,POWER,20,true,5.66%,6.36%,5.42%,5.85%,4.62%,0.76%,1.29%,4705,45105,2026-08-27T20:16:14
+Establishment,确立基础+,com.megacrit.cardcrawl.cards.purple.Establishment,true,PURPLE,RARE,POWER,20,true,7.71%,11.72%,8.79%,6.52%,0.00%,7.14%,4.41%,1287,3502,2026-08-27T20:16:14
+Fasting2,斋戒,com.megacrit.cardcrawl.cards.purple.Fasting,false,PURPLE,UNCOMMON,POWER,20,true,11.12%,10.49%,11.11%,14.69%,3.39%,3.89%,6.68%,4990,56710,2026-08-27T20:16:14
+Fasting2,斋戒+,com.megacrit.cardcrawl.cards.purple.Fasting,true,PURPLE,UNCOMMON,POWER,20,true,23.88%,28.36%,22.85%,25.65%,26.09%,14.34%,16.83%,2481,10827,2026-08-27T20:16:14
+Clash,交锋,com.megacrit.cardcrawl.cards.red.Clash,false,RED,COMMON,ATTACK,20,true,0.76%,1.02%,0.19%,0.09%,15.27%,6.26%,5.99%,7584,228140,2026-08-27T20:16:14
+Clash,交锋+,com.megacrit.cardcrawl.cards.red.Clash,true,RED,COMMON,ATTACK,20,true,0.61%,1.42%,0.50%,0.26%,21.88%,10.17%,7.87%,4638,33700,2026-08-27T20:16:14
+Stack,堆栈,com.megacrit.cardcrawl.cards.blue.Stack,false,BLUE,COMMON,SKILL,20,true,0.56%,0.36%,0.68%,0.75%,4.42%,4.93%,10.91%,5249,97200,2026-08-27T20:16:14
+Stack,堆栈+,com.megacrit.cardcrawl.cards.blue.Stack,true,BLUE,COMMON,SKILL,20,true,2.85%,1.41%,2.93%,2.43%,4.55%,9.46%,18.28%,2999,16080,2026-08-27T20:16:14
+Miracle,奇迹,com.megacrit.cardcrawl.cards.tempCards.Miracle,false,COLORLESS,SPECIAL,SKILL,20,true,16.67%,0.00%,20.00%,20.00%,100.00%,--%,--%,10,18,2026-08-27T20:16:14
+Miracle,奇迹+,com.megacrit.cardcrawl.cards.tempCards.Miracle,true,COLORLESS,SPECIAL,SKILL,20,true,66.67%,80.00%,60.00%,50.00%,--%,--%,--%,7,12,2026-08-27T20:16:14
+CarveReality,改造现实,com.megacrit.cardcrawl.cards.purple.CarveReality,false,PURPLE,UNCOMMON,ATTACK,20,true,4.97%,9.42%,0.53%,0.14%,1.64%,0.49%,0.00%,4974,56460,2026-08-27T20:16:14
+CarveReality,改造现实+,com.megacrit.cardcrawl.cards.purple.CarveReality,true,PURPLE,UNCOMMON,ATTACK,20,true,0.97%,7.47%,0.82%,0.27%,4.76%,1.49%,0.96%,2403,10110,2026-08-27T20:16:14
+Wallop,当头棒喝,com.megacrit.cardcrawl.cards.purple.Wallop,false,PURPLE,UNCOMMON,ATTACK,20,true,45.03%,70.66%,41.59%,17.66%,5.94%,5.08%,4.87%,5070,57311,2026-08-27T20:16:14
+Wallop,当头棒喝+,com.megacrit.cardcrawl.cards.purple.Wallop,true,PURPLE,UNCOMMON,ATTACK,20,true,28.70%,69.62%,48.80%,22.36%,21.43%,9.57%,8.31%,2499,10732,2026-08-27T20:16:14
+Thunderclap,闪电霹雳,com.megacrit.cardcrawl.cards.red.ThunderClap,false,RED,COMMON,ATTACK,20,true,2.07%,3.04%,0.89%,0.26%,2.77%,1.03%,1.31%,7614,229361,2026-08-27T20:16:14
+Thunderclap,闪电霹雳+,com.megacrit.cardcrawl.cards.red.ThunderClap,true,RED,COMMON,ATTACK,20,true,2.10%,6.28%,2.89%,0.70%,1.12%,3.17%,3.25%,4676,33872,2026-08-27T20:16:14
+Rebound,弹回,com.megacrit.cardcrawl.cards.blue.Rebound,false,BLUE,COMMON,ATTACK,20,true,2.29%,3.34%,0.80%,0.29%,2.11%,1.02%,1.02%,5270,99019,2026-08-27T20:16:14
+Rebound,弹回+,com.megacrit.cardcrawl.cards.blue.Rebound,true,BLUE,COMMON,ATTACK,20,true,1.64%,3.78%,1.82%,0.88%,0.00%,4.15%,2.80%,2952,14813,2026-08-27T20:16:14
+Flame Barrier,火焰屏障,com.megacrit.cardcrawl.cards.red.FlameBarrier,false,RED,UNCOMMON,SKILL,20,true,23.99%,33.06%,16.47%,6.90%,5.04%,7.90%,8.00%,6264,80895,2026-08-27T20:16:14
+Flame Barrier,火焰屏障+,com.megacrit.cardcrawl.cards.red.FlameBarrier,true,RED,UNCOMMON,SKILL,20,true,19.47%,38.56%,25.53%,12.57%,11.25%,15.14%,15.51%,3272,13238,2026-08-27T20:16:14
+Seek,搜寻,com.megacrit.cardcrawl.cards.blue.Seek,false,BLUE,RARE,SKILL,20,true,60.08%,69.38%,56.06%,65.50%,56.16%,44.05%,50.03%,3879,24108,2026-08-27T20:16:14
+Seek,搜寻+,com.megacrit.cardcrawl.cards.blue.Seek,true,BLUE,RARE,SKILL,20,true,61.11%,71.04%,60.34%,62.37%,61.76%,51.33%,57.24%,1082,2795,2026-08-27T20:16:14
+Endless Agony,无尽苦痛,com.megacrit.cardcrawl.cards.green.EndlessAgony,false,GREEN,UNCOMMON,ATTACK,20,true,14.38%,23.21%,4.01%,1.05%,10.76%,4.29%,3.33%,5815,72398,2026-08-27T20:16:14
+Endless Agony,无尽苦痛+,com.megacrit.cardcrawl.cards.green.EndlessAgony,true,GREEN,UNCOMMON,ATTACK,20,true,5.50%,19.02%,7.54%,1.56%,31.37%,9.56%,3.87%,2846,11207,2026-08-27T20:16:14
+WreathOfFlame,火焰纹,com.megacrit.cardcrawl.cards.purple.WreathOfFlame,false,PURPLE,UNCOMMON,SKILL,20,true,2.21%,2.63%,1.93%,1.34%,5.35%,5.58%,3.54%,5052,55690,2026-08-27T20:16:14
+WreathOfFlame,火焰纹+,com.megacrit.cardcrawl.cards.purple.WreathOfFlame,true,PURPLE,UNCOMMON,SKILL,20,true,3.44%,5.45%,4.61%,2.37%,0.00%,7.50%,6.45%,2449,10707,2026-08-27T20:16:14
+Collect,收集,com.megacrit.cardcrawl.cards.purple.Collect,false,PURPLE,UNCOMMON,SKILL,20,true,0.79%,0.90%,0.74%,0.55%,2.70%,1.55%,0.40%,4978,56263,2026-08-27T20:16:14
+Collect,收集+,com.megacrit.cardcrawl.cards.purple.Collect,true,PURPLE,UNCOMMON,SKILL,20,true,2.30%,3.87%,3.04%,1.57%,0.00%,11.54%,3.38%,2391,10677,2026-08-27T20:16:14
+SashWhip,腰带抽打,com.megacrit.cardcrawl.cards.purple.SashWhip,false,PURPLE,COMMON,ATTACK,20,true,0.23%,0.35%,0.09%,0.08%,1.98%,0.18%,0.25%,6254,160920,2026-08-27T20:16:14
+SashWhip,腰带抽打+,com.megacrit.cardcrawl.cards.purple.SashWhip,true,PURPLE,COMMON,ATTACK,20,true,0.47%,1.62%,0.38%,0.36%,11.11%,1.20%,1.75%,3695,28474,2026-08-27T20:16:14
+Wraith Form v2,幽魂形态,com.megacrit.cardcrawl.cards.green.WraithForm,false,GREEN,RARE,POWER,20,true,71.55%,74.85%,75.48%,69.46%,53.31%,59.35%,58.54%,5242,46824,2026-08-27T20:16:14
+Wraith Form v2,幽魂形态+,com.megacrit.cardcrawl.cards.green.WraithForm,true,GREEN,RARE,POWER,20,true,71.21%,79.49%,74.66%,68.89%,42.86%,66.32%,67.22%,1431,3595,2026-08-27T20:16:14
+Melter,熔化,com.megacrit.cardcrawl.cards.blue.Melter,false,BLUE,UNCOMMON,ATTACK,20,true,5.87%,8.42%,2.62%,0.80%,2.40%,0.71%,0.62%,4019,30703,2026-08-27T20:16:14
+Melter,熔化+,com.megacrit.cardcrawl.cards.blue.Melter,true,BLUE,UNCOMMON,ATTACK,20,true,3.65%,9.95%,5.23%,0.83%,0.00%,5.88%,2.20%,1684,4795,2026-08-27T20:16:14
+Berserk,狂暴,com.megacrit.cardcrawl.cards.red.Berserk,false,RED,RARE,POWER,20,true,11.93%,17.15%,9.67%,11.51%,10.30%,6.43%,9.50%,6064,65798,2026-08-27T20:16:14
+Berserk,狂暴+,com.megacrit.cardcrawl.cards.red.Berserk,true,RED,RARE,POWER,20,true,29.70%,53.75%,28.66%,27.01%,11.76%,23.20%,20.17%,1844,5034,2026-08-27T20:16:14
+Pummel,连续拳,com.megacrit.cardcrawl.cards.red.Pummel,false,RED,UNCOMMON,ATTACK,20,true,11.48%,15.07%,7.62%,3.26%,14.15%,10.83%,8.09%,6257,82029,2026-08-27T20:16:14
+Pummel,连续拳+,com.megacrit.cardcrawl.cards.red.Pummel,true,RED,UNCOMMON,ATTACK,20,true,11.57%,19.80%,14.92%,6.33%,29.31%,21.81%,15.93%,3195,12404,2026-08-27T20:16:14
+Burning Pact,燃烧契约,com.megacrit.cardcrawl.cards.red.BurningPact,false,RED,UNCOMMON,SKILL,20,true,61.73%,65.17%,76.62%,72.90%,17.45%,30.14%,35.25%,6331,83085,2026-08-27T20:16:14
+Burning Pact,燃烧契约+,com.megacrit.cardcrawl.cards.red.BurningPact,true,RED,UNCOMMON,SKILL,20,true,71.90%,73.76%,84.32%,81.48%,33.78%,50.76%,55.92%,3249,13855,2026-08-27T20:16:14
+Riddle With Holes,千穿百刺,com.megacrit.cardcrawl.cards.green.RiddleWithHoles,false,GREEN,UNCOMMON,ATTACK,20,true,2.10%,3.26%,0.61%,0.38%,3.61%,0.81%,1.26%,5759,72120,2026-08-27T20:16:14
+Riddle With Holes,千穿百刺+,com.megacrit.cardcrawl.cards.green.RiddleWithHoles,true,GREEN,UNCOMMON,ATTACK,20,true,1.82%,5.53%,2.14%,1.05%,0.00%,3.49%,0.68%,2854,11288,2026-08-27T20:16:14
+Metallicize,金属化,com.megacrit.cardcrawl.cards.red.Metallicize,false,RED,UNCOMMON,POWER,20,true,12.11%,16.69%,5.68%,3.32%,19.42%,14.63%,10.30%,6345,80868,2026-08-27T20:16:14
+Metallicize,金属化+,com.megacrit.cardcrawl.cards.red.Metallicize,true,RED,UNCOMMON,POWER,20,true,16.58%,35.57%,19.95%,8.81%,45.76%,29.23%,23.48%,3168,12324,2026-08-27T20:16:14
+Self Repair,自我修复,com.megacrit.cardcrawl.cards.blue.SelfRepair,false,BLUE,UNCOMMON,POWER,20,true,66.72%,83.75%,78.60%,39.08%,36.47%,31.44%,12.99%,3993,31029,2026-08-27T20:16:14
+Self Repair,自我修复+,com.megacrit.cardcrawl.cards.blue.SelfRepair,true,BLUE,UNCOMMON,POWER,20,true,51.85%,79.34%,79.97%,47.09%,37.12%,46.47%,21.19%,1818,5360,2026-08-27T20:16:14
+Pommel Strike,剑柄打击,com.megacrit.cardcrawl.cards.red.PommelStrike,false,RED,COMMON,ATTACK,20,true,45.20%,67.90%,53.91%,29.16%,19.61%,12.44%,6.87%,7641,230916,2026-08-27T20:16:14
+Pommel Strike,剑柄打击+,com.megacrit.cardcrawl.cards.red.PommelStrike,true,RED,COMMON,ATTACK,20,true,46.02%,77.34%,72.60%,53.92%,43.06%,39.29%,27.45%,4664,35062,2026-08-27T20:16:14
+Pain,疼痛,com.megacrit.cardcrawl.cards.curses.Pain,false,CURSE,CURSE,CURSE,20,true,19.00%,27.59%,15.71%,16.54%,0.00%,0.00%,69.23%,143,321,2026-08-27T20:16:14
+Rainbow,彩虹,com.megacrit.cardcrawl.cards.blue.Rainbow,false,BLUE,RARE,SKILL,20,true,18.39%,39.23%,14.01%,8.73%,23.53%,5.95%,4.90%,3791,23056,2026-08-27T20:16:14
+Rainbow,彩虹+,com.megacrit.cardcrawl.cards.blue.Rainbow,true,BLUE,RARE,SKILL,20,true,17.22%,38.04%,17.39%,11.28%,23.08%,19.48%,19.53%,989,2422,2026-08-27T20:16:14
+InnerPeace,内心宁静,com.megacrit.cardcrawl.cards.purple.InnerPeace,false,PURPLE,UNCOMMON,SKILL,20,true,68.42%,88.41%,88.04%,74.88%,21.71%,19.16%,14.41%,5092,58273,2026-08-27T20:16:14
+InnerPeace,内心宁静+,com.megacrit.cardcrawl.cards.purple.InnerPeace,true,PURPLE,UNCOMMON,SKILL,20,true,57.63%,89.22%,89.27%,79.76%,31.55%,27.46%,21.09%,2500,11380,2026-08-27T20:16:14
+Burst,爆发,com.megacrit.cardcrawl.cards.green.Burst,false,GREEN,RARE,SKILL,20,true,20.18%,25.43%,20.76%,17.48%,6.87%,5.46%,6.78%,5119,44891,2026-08-27T20:16:14
+Burst,爆发+,com.megacrit.cardcrawl.cards.green.Burst,true,GREEN,RARE,SKILL,20,true,26.36%,37.74%,29.65%,24.95%,10.00%,10.47%,11.49%,1545,4052,2026-08-27T20:16:14
+Acrobatics,杂技,com.megacrit.cardcrawl.cards.green.Acrobatics,false,GREEN,COMMON,SKILL,20,true,61.63%,74.67%,83.62%,71.33%,44.20%,48.10%,33.26%,6930,197602,2026-08-27T20:16:14
+Acrobatics,杂技+,com.megacrit.cardcrawl.cards.green.Acrobatics,true,GREEN,COMMON,SKILL,20,true,57.81%,74.77%,86.64%,74.92%,51.30%,57.84%,44.30%,4317,33672,2026-08-27T20:16:14
+Adaptation,猛虎下山,com.megacrit.cardcrawl.cards.purple.Rushdown,false,PURPLE,UNCOMMON,POWER,20,true,84.57%,96.40%,95.82%,91.40%,76.08%,69.31%,54.31%,5123,59178,2026-08-27T20:16:14
+Adaptation,猛虎下山+,com.megacrit.cardcrawl.cards.purple.Rushdown,true,PURPLE,UNCOMMON,POWER,20,true,78.60%,94.68%,96.23%,91.43%,84.28%,77.30%,62.90%,2511,11676,2026-08-27T20:16:14
+Loop,循环,com.megacrit.cardcrawl.cards.blue.Loop,false,BLUE,UNCOMMON,POWER,20,true,51.15%,55.92%,50.65%,41.96%,44.86%,39.17%,36.32%,4087,31913,2026-08-27T20:16:14
+Loop,循环+,com.megacrit.cardcrawl.cards.blue.Loop,true,BLUE,UNCOMMON,POWER,20,true,65.52%,69.18%,70.79%,62.57%,59.18%,63.01%,62.79%,1862,5650,2026-08-27T20:16:14
+Blind,致盲,com.megacrit.cardcrawl.cards.colorless.Blind,false,COLORLESS,UNCOMMON,SKILL,20,true,4.79%,10.53%,6.77%,3.26%,0.00%,0.00%,7.69%,4204,15039,2026-08-27T20:16:14
+Blind,致盲+,com.megacrit.cardcrawl.cards.colorless.Blind,true,COLORLESS,UNCOMMON,SKILL,20,true,6.48%,33.33%,15.00%,5.69%,--%,0.00%,18.75%,1142,2115,2026-08-27T20:16:14
+Doppelganger,双重存在,com.megacrit.cardcrawl.cards.green.Doppelganger,false,GREEN,RARE,SKILL,20,true,9.39%,15.71%,8.80%,5.93%,8.33%,6.70%,6.23%,5125,44963,2026-08-27T20:16:14
+Doppelganger,双重存在+,com.megacrit.cardcrawl.cards.green.Doppelganger,true,GREEN,RARE,SKILL,20,true,20.46%,37.34%,21.55%,17.36%,22.22%,16.92%,19.21%,1509,4140,2026-08-27T20:16:14
+Skewer,串刺,com.megacrit.cardcrawl.cards.green.Skewer,false,GREEN,UNCOMMON,ATTACK,20,true,5.08%,8.47%,0.72%,0.42%,1.89%,2.61%,0.44%,5725,72358,2026-08-27T20:16:14
+Skewer,串刺+,com.megacrit.cardcrawl.cards.green.Skewer,true,GREEN,UNCOMMON,ATTACK,20,true,2.38%,9.73%,2.23%,1.43%,0.00%,2.52%,2.90%,2880,11495,2026-08-27T20:16:14
+Omniscience,通晓万物,com.megacrit.cardcrawl.cards.purple.Omniscience,false,PURPLE,RARE,SKILL,20,true,14.06%,13.14%,11.01%,14.69%,38.96%,49.47%,52.79%,4700,45207,2026-08-27T20:16:14
+Omniscience,通晓万物+,com.megacrit.cardcrawl.cards.purple.Omniscience,true,PURPLE,RARE,SKILL,20,true,32.38%,43.69%,30.00%,28.15%,56.25%,55.56%,58.67%,1385,3860,2026-08-27T20:16:14
+Envenom,涂毒,com.megacrit.cardcrawl.cards.green.Envenom,false,GREEN,RARE,POWER,20,true,12.16%,21.01%,9.96%,9.14%,11.72%,10.84%,9.94%,5134,45380,2026-08-27T20:16:14
+Envenom,涂毒+,com.megacrit.cardcrawl.cards.green.Envenom,true,GREEN,RARE,POWER,20,true,26.78%,52.56%,27.81%,20.11%,31.82%,36.90%,26.18%,1424,3551,2026-08-27T20:16:14
+Chill,冰寒,com.megacrit.cardcrawl.cards.blue.Chill,false,BLUE,UNCOMMON,SKILL,20,true,53.05%,63.64%,56.73%,33.66%,24.06%,24.22%,14.86%,4117,31793,2026-08-27T20:16:14
+Chill,冰寒+,com.megacrit.cardcrawl.cards.blue.Chill,true,BLUE,UNCOMMON,SKILL,20,true,37.79%,46.18%,54.07%,32.55%,21.54%,25.20%,22.41%,1828,5567,2026-08-27T20:16:14
+Adrenaline,肾上腺素,com.megacrit.cardcrawl.cards.green.Adrenaline,false,GREEN,RARE,SKILL,20,true,78.32%,82.46%,76.84%,79.94%,78.89%,72.31%,75.19%,5142,46108,2026-08-27T20:16:14
+Adrenaline,肾上腺素+,com.megacrit.cardcrawl.cards.green.Adrenaline,true,GREEN,RARE,SKILL,20,true,81.99%,92.53%,82.17%,83.12%,92.50%,77.97%,76.34%,1648,4563,2026-08-27T20:16:14
+Quick Slash,快斩,com.megacrit.cardcrawl.cards.green.QuickSlash,false,GREEN,COMMON,ATTACK,20,true,1.40%,2.26%,0.22%,0.12%,2.85%,0.62%,0.48%,6963,198045,2026-08-27T20:16:14
+Quick Slash,快斩+,com.megacrit.cardcrawl.cards.green.QuickSlash,true,GREEN,COMMON,ATTACK,20,true,1.00%,4.13%,1.12%,0.31%,9.09%,2.16%,3.28%,4148,30056,2026-08-27T20:16:14
+Twin Strike,双重打击,com.megacrit.cardcrawl.cards.red.TwinStrike,false,RED,COMMON,ATTACK,20,true,5.25%,8.39%,0.97%,0.31%,4.09%,2.44%,2.30%,7567,228555,2026-08-27T20:16:14
+Twin Strike,双重打击+,com.megacrit.cardcrawl.cards.red.TwinStrike,true,RED,COMMON,ATTACK,20,true,2.50%,9.30%,2.89%,0.69%,7.14%,6.20%,3.39%,4582,33947,2026-08-27T20:16:14
+BootSequence,启动流程,com.megacrit.cardcrawl.cards.blue.BootSequence,false,BLUE,UNCOMMON,SKILL,20,true,28.67%,35.94%,26.87%,11.00%,5.62%,7.70%,6.28%,4045,31349,2026-08-27T20:16:14
+BootSequence,启动流程+,com.megacrit.cardcrawl.cards.blue.BootSequence,true,BLUE,UNCOMMON,SKILL,20,true,23.54%,31.34%,31.64%,18.48%,16.67%,14.23%,11.14%,1848,5386,2026-08-27T20:16:14
+Parasite,寄生,com.megacrit.cardcrawl.cards.curses.Parasite,false,CURSE,CURSE,CURSE,20,true,17.27%,31.58%,12.85%,11.67%,25.00%,75.00%,60.00%,167,359,2026-08-27T20:16:14
+Bash,痛击,com.megacrit.cardcrawl.cards.red.Bash,false,RED,BASIC,ATTACK,20,true,5.56%,12.50%,0.00%,0.00%,--%,--%,--%,10,18,2026-08-27T20:16:14
+Bash,痛击+,com.megacrit.cardcrawl.cards.red.Bash,true,RED,BASIC,ATTACK,20,true,0.00%,--%,0.00%,0.00%,--%,0.00%,--%,3,5,2026-08-27T20:16:14
+RitualDagger,仪式匕首,com.megacrit.cardcrawl.cards.colorless.RitualDagger,false,COLORLESS,SPECIAL,ATTACK,20,true,23.08%,60.00%,0.00%,0.00%,0.00%,--%,--%,8,13,2026-08-27T20:16:14
+RitualDagger,仪式匕首+,com.megacrit.cardcrawl.cards.colorless.RitualDagger,true,COLORLESS,SPECIAL,ATTACK,20,true,50.00%,--%,--%,50.00%,--%,--%,--%,2,2,2026-08-27T20:16:14
+Gash,爪击,com.megacrit.cardcrawl.cards.blue.Claw,false,BLUE,COMMON,ATTACK,20,true,6.24%,6.19%,1.93%,1.19%,57.93%,34.30%,23.85%,5297,99151,2026-08-27T20:16:15
+Gash,爪击+,com.megacrit.cardcrawl.cards.blue.Claw,true,BLUE,COMMON,ATTACK,20,true,9.27%,16.96%,4.15%,2.71%,70.74%,48.31%,40.69%,2911,14995,2026-08-27T20:16:15
+Wish,许愿,com.megacrit.cardcrawl.cards.purple.Wish,false,PURPLE,RARE,SKILL,20,true,14.53%,20.24%,13.59%,13.11%,23.47%,6.75%,10.68%,4697,44916,2026-08-27T20:16:15
+Wish,许愿+,com.megacrit.cardcrawl.cards.purple.Wish,true,PURPLE,RARE,SKILL,20,true,24.40%,39.88%,25.41%,21.12%,16.67%,20.93%,26.91%,1330,3980,2026-08-27T20:16:15
+Clothesline,金刚臂,com.megacrit.cardcrawl.cards.red.Clothesline,false,RED,COMMON,ATTACK,20,true,2.21%,3.35%,0.73%,0.29%,1.05%,0.75%,0.69%,7578,227940,2026-08-27T20:16:15
+Clothesline,金刚臂+,com.megacrit.cardcrawl.cards.red.Clothesline,true,RED,COMMON,ATTACK,20,true,1.88%,4.88%,2.33%,1.00%,2.63%,2.64%,2.35%,4531,33673,2026-08-27T20:16:15
+DeceiveReality,欺瞒现实,com.megacrit.cardcrawl.cards.purple.DeceiveReality,false,PURPLE,UNCOMMON,SKILL,20,true,0.93%,1.32%,0.62%,0.33%,3.13%,1.35%,2.30%,5001,56147,2026-08-27T20:16:15
+DeceiveReality,欺瞒现实+,com.megacrit.cardcrawl.cards.purple.DeceiveReality,true,PURPLE,UNCOMMON,SKILL,20,true,1.10%,3.01%,1.10%,0.76%,11.11%,6.52%,4.82%,2419,10541,2026-08-27T20:16:15
+MentalFortress,心灵堡垒,com.megacrit.cardcrawl.cards.purple.MentalFortress,false,PURPLE,UNCOMMON,POWER,20,true,66.66%,76.05%,85.62%,83.43%,29.13%,30.54%,32.86%,5083,58588,2026-08-27T20:16:15
+MentalFortress,心灵堡垒+,com.megacrit.cardcrawl.cards.purple.MentalFortress,true,PURPLE,UNCOMMON,POWER,20,true,68.42%,88.13%,89.91%,87.69%,48.28%,44.08%,45.25%,2471,11173,2026-08-27T20:16:15
+Shockwave,震荡波,com.megacrit.cardcrawl.cards.red.Shockwave,false,RED,UNCOMMON,SKILL,20,true,61.68%,78.27%,74.15%,58.73%,5.81%,7.80%,8.12%,6292,81095,2026-08-27T20:16:15
+Shockwave,震荡波+,com.megacrit.cardcrawl.cards.red.Shockwave,true,RED,UNCOMMON,SKILL,20,true,53.52%,76.97%,80.31%,69.23%,13.64%,16.69%,18.32%,3189,13313,2026-08-27T20:16:15
+BecomeAlmighty,力大无穷,com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty,false,COLORLESS,SPECIAL,POWER,20,true,54.55%,80.00%,25.00%,50.00%,--%,--%,--%,7,11,2026-08-27T20:16:15
+BecomeAlmighty,力大无穷+,com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty,true,COLORLESS,SPECIAL,POWER,20,true,33.33%,100.00%,--%,0.00%,--%,--%,0.00%,2,3,2026-08-27T20:16:15
+Rampage,暴走,com.megacrit.cardcrawl.cards.red.Rampage,false,RED,UNCOMMON,ATTACK,20,true,14.90%,23.35%,5.14%,1.72%,2.39%,0.87%,0.32%,6285,81318,2026-08-27T20:16:15
+Rampage,暴走+,com.megacrit.cardcrawl.cards.red.Rampage,true,RED,UNCOMMON,ATTACK,20,true,5.83%,18.99%,7.83%,2.60%,4.35%,1.97%,2.53%,3158,12189,2026-08-27T20:16:15
+Coolheaded,冷静头脑,com.megacrit.cardcrawl.cards.blue.Coolheaded,false,BLUE,COMMON,SKILL,20,true,58.07%,73.17%,68.01%,43.71%,46.81%,39.86%,25.06%,5354,100296,2026-08-27T20:16:15
+Coolheaded,冷静头脑+,com.megacrit.cardcrawl.cards.blue.Coolheaded,true,BLUE,COMMON,SKILL,20,true,61.22%,73.01%,74.95%,56.01%,62.91%,63.28%,53.65%,3126,17508,2026-08-27T20:16:15
+Static Discharge,静电释放,com.megacrit.cardcrawl.cards.blue.StaticDischarge,false,BLUE,UNCOMMON,POWER,20,true,12.14%,15.36%,7.35%,4.78%,16.32%,11.64%,11.84%,4170,31721,2026-08-27T20:16:15
+Static Discharge,静电释放+,com.megacrit.cardcrawl.cards.blue.StaticDischarge,true,BLUE,UNCOMMON,POWER,20,true,18.73%,30.94%,19.89%,12.11%,42.50%,27.80%,26.58%,1861,5472,2026-08-27T20:16:15
+Alpha,阿尔法,com.megacrit.cardcrawl.cards.purple.Alpha,false,PURPLE,RARE,SKILL,20,true,1.20%,2.51%,0.80%,0.92%,11.63%,7.14%,4.92%,4695,44489,2026-08-27T20:16:15
+Alpha,阿尔法+,com.megacrit.cardcrawl.cards.purple.Alpha,true,PURPLE,RARE,SKILL,20,true,2.27%,5.84%,1.51%,2.04%,33.33%,0.00%,19.23%,1284,3782,2026-08-27T20:16:15
+Heatsinks,散热片,com.megacrit.cardcrawl.cards.blue.Heatsinks,false,BLUE,UNCOMMON,POWER,20,true,23.07%,19.52%,29.42%,32.00%,18.31%,22.24%,19.94%,4055,31511,2026-08-27T20:16:15
+Heatsinks,散热片+,com.megacrit.cardcrawl.cards.blue.Heatsinks,true,BLUE,UNCOMMON,POWER,20,true,50.56%,49.12%,54.99%,51.57%,36.00%,45.91%,42.33%,1887,5579,2026-08-27T20:16:15
+Vault,腾跃,com.megacrit.cardcrawl.cards.purple.Vault,false,PURPLE,RARE,SKILL,20,true,84.23%,86.47%,86.39%,87.65%,73.24%,74.38%,73.82%,4833,47238,2026-08-27T20:16:15
+Vault,腾跃+,com.megacrit.cardcrawl.cards.purple.Vault,true,PURPLE,RARE,SKILL,20,true,84.16%,91.67%,88.30%,88.48%,72.73%,73.33%,74.18%,1397,4406,2026-08-27T20:16:15
+Bandage Up,包扎,com.megacrit.cardcrawl.cards.colorless.BandageUp,false,COLORLESS,UNCOMMON,SKILL,20,true,19.40%,37.58%,32.68%,15.66%,80.00%,43.75%,30.49%,4064,14397,2026-08-27T20:16:15
+Bandage Up,包扎+,com.megacrit.cardcrawl.cards.colorless.BandageUp,true,COLORLESS,UNCOMMON,SKILL,20,true,21.99%,33.33%,35.92%,20.53%,--%,33.33%,34.78%,1244,2246,2026-08-27T20:16:15
+Scrawl,潦草急就,com.megacrit.cardcrawl.cards.purple.Scrawl,false,PURPLE,RARE,SKILL,20,true,86.33%,88.72%,92.44%,91.01%,64.14%,71.17%,67.77%,4823,47730,2026-08-27T20:16:15
+Scrawl,潦草急就+,com.megacrit.cardcrawl.cards.purple.Scrawl,true,PURPLE,RARE,SKILL,20,true,86.22%,93.60%,92.74%,90.36%,70.59%,74.66%,74.65%,1405,4353,2026-08-27T20:16:15
+Sever Soul,断魂斩,com.megacrit.cardcrawl.cards.red.SeverSoul,false,RED,UNCOMMON,ATTACK,20,true,9.00%,11.60%,5.86%,5.56%,1.43%,0.81%,0.87%,6292,81644,2026-08-27T20:16:15
+Sever Soul,断魂斩+,com.megacrit.cardcrawl.cards.red.SeverSoul,true,RED,UNCOMMON,ATTACK,20,true,8.65%,12.79%,10.48%,7.20%,0.00%,2.69%,2.05%,3142,12434,2026-08-27T20:16:15
+Eruption,暴怒,com.megacrit.cardcrawl.cards.purple.Eruption,false,PURPLE,BASIC,ATTACK,20,true,18.75%,11.11%,16.67%,30.00%,50.00%,0.00%,0.00%,20,32,2026-08-27T20:16:15
+Eruption,暴怒+,com.megacrit.cardcrawl.cards.purple.Eruption,true,PURPLE,BASIC,ATTACK,20,true,12.50%,0.00%,10.00%,20.00%,--%,--%,--%,14,16,2026-08-27T20:16:15
+Whirlwind,旋风斩,com.megacrit.cardcrawl.cards.red.Whirlwind,false,RED,UNCOMMON,ATTACK,20,true,31.29%,49.48%,15.40%,3.15%,5.28%,4.25%,2.57%,6309,81920,2026-08-27T20:16:15
+Whirlwind,旋风斩+,com.megacrit.cardcrawl.cards.red.Whirlwind,true,RED,UNCOMMON,ATTACK,20,true,15.87%,50.74%,26.08%,4.91%,10.81%,8.65%,6.92%,3198,12390,2026-08-27T20:16:15
+Bite,噬咬,com.megacrit.cardcrawl.cards.colorless.Bite,false,COLORLESS,SPECIAL,ATTACK,20,true,7.69%,14.29%,0.00%,0.00%,0.00%,--%,--%,8,13,2026-08-27T20:16:15
+Bite,噬咬+,com.megacrit.cardcrawl.cards.colorless.Bite,true,COLORLESS,SPECIAL,ATTACK,20,true,33.33%,40.00%,--%,0.00%,--%,--%,--%,4,6,2026-08-27T20:16:15
+LessonLearned,勤学精进,com.megacrit.cardcrawl.cards.purple.LessonLearned,false,PURPLE,RARE,ATTACK,20,true,46.01%,83.68%,58.90%,26.17%,6.68%,2.46%,0.72%,4775,46971,2026-08-27T20:16:15
+LessonLearned,勤学精进+,com.megacrit.cardcrawl.cards.purple.LessonLearned,true,PURPLE,RARE,ATTACK,20,true,30.92%,68.10%,51.60%,21.64%,9.68%,2.80%,2.20%,1330,3606,2026-08-27T20:16:15
+Secret Technique,秘密技法,com.megacrit.cardcrawl.cards.colorless.SecretTechnique,false,COLORLESS,RARE,SKILL,20,true,27.32%,16.84%,28.13%,36.22%,0.00%,13.33%,46.05%,4086,14457,2026-08-27T20:16:15
+Secret Technique,秘密技法+,com.megacrit.cardcrawl.cards.colorless.SecretTechnique,true,COLORLESS,RARE,SKILL,20,true,30.44%,47.06%,31.91%,30.17%,0.00%,25.00%,21.43%,831,1337,2026-08-27T20:16:15
+Calculated Gamble,计算下注,com.megacrit.cardcrawl.cards.green.CalculatedGamble,false,GREEN,UNCOMMON,SKILL,20,true,62.89%,67.61%,77.57%,70.98%,26.58%,35.63%,34.21%,5842,73292,2026-08-27T20:16:15
+Calculated Gamble,计算下注+,com.megacrit.cardcrawl.cards.green.CalculatedGamble,true,GREEN,UNCOMMON,SKILL,20,true,61.92%,68.57%,80.44%,70.11%,34.56%,47.19%,40.71%,3044,13028,2026-08-27T20:16:15
+Tempest,暴风雨,com.megacrit.cardcrawl.cards.blue.Tempest,false,BLUE,UNCOMMON,SKILL,20,true,10.34%,12.93%,6.16%,5.16%,11.08%,9.73%,13.37%,4033,30823,2026-08-27T20:16:15
+Tempest,暴风雨+,com.megacrit.cardcrawl.cards.blue.Tempest,true,BLUE,UNCOMMON,SKILL,20,true,17.34%,22.84%,19.40%,13.43%,25.00%,21.62%,22.10%,1772,5249,2026-08-27T20:16:15
+Combust,自燃,com.megacrit.cardcrawl.cards.red.Combust,false,RED,UNCOMMON,POWER,20,true,5.98%,9.18%,1.58%,0.99%,3.17%,2.04%,3.05%,6272,81299,2026-08-27T20:16:15
+Combust,自燃+,com.megacrit.cardcrawl.cards.red.Combust,true,RED,UNCOMMON,POWER,20,true,3.62%,12.94%,3.44%,1.95%,17.86%,8.65%,3.47%,3125,12444,2026-08-27T20:16:15
+Deep Breath,深呼吸,com.megacrit.cardcrawl.cards.colorless.DeepBreath,false,COLORLESS,UNCOMMON,SKILL,20,true,39.31%,49.67%,36.22%,36.07%,70.00%,41.18%,44.43%,4343,16729,2026-08-27T20:16:15
+Deep Breath,深呼吸+,com.megacrit.cardcrawl.cards.colorless.DeepBreath,true,COLORLESS,UNCOMMON,SKILL,20,true,52.99%,53.73%,57.89%,52.45%,100.00%,33.33%,56.68%,1295,2561,2026-08-27T20:16:15
+Doubt,疑虑,com.megacrit.cardcrawl.cards.curses.Doubt,false,CURSE,CURSE,CURSE,20,true,21.33%,21.43%,14.29%,18.94%,66.67%,40.00%,80.00%,151,361,2026-08-27T20:16:15
+Escape Plan,逃脱计划,com.megacrit.cardcrawl.cards.green.EscapePlan,false,GREEN,UNCOMMON,SKILL,20,true,29.36%,30.82%,32.52%,20.45%,28.32%,27.97%,22.34%,5768,72211,2026-08-27T20:16:15
+Escape Plan,逃脱计划+,com.megacrit.cardcrawl.cards.green.EscapePlan,true,GREEN,UNCOMMON,SKILL,20,true,41.73%,45.43%,50.44%,35.49%,36.90%,42.01%,39.52%,2993,12635,2026-08-27T20:16:15
+CutThroughFate,斩破命运,com.megacrit.cardcrawl.cards.purple.CutThroughFate,false,PURPLE,COMMON,ATTACK,20,true,4.58%,7.94%,1.27%,0.50%,4.36%,3.14%,2.02%,6294,161785,2026-08-27T20:16:15
+CutThroughFate,斩破命运+,com.megacrit.cardcrawl.cards.purple.CutThroughFate,true,PURPLE,COMMON,ATTACK,20,true,2.54%,8.06%,3.04%,1.05%,11.21%,7.21%,5.13%,3685,28785,2026-08-27T20:16:15
+ReachHeaven,立地升天,com.megacrit.cardcrawl.cards.purple.ReachHeaven,false,PURPLE,UNCOMMON,ATTACK,20,true,4.64%,8.62%,0.70%,0.33%,0.65%,0.58%,0.85%,4994,56677,2026-08-27T20:16:15
+ReachHeaven,立地升天+,com.megacrit.cardcrawl.cards.purple.ReachHeaven,true,PURPLE,UNCOMMON,ATTACK,20,true,1.49%,7.56%,1.59%,0.72%,5.26%,2.38%,0.56%,2430,10314,2026-08-27T20:16:15
+Finisher,终结技,com.megacrit.cardcrawl.cards.green.Finisher,false,GREEN,UNCOMMON,ATTACK,20,true,23.62%,33.48%,16.94%,9.20%,3.85%,2.60%,2.48%,5821,72726,2026-08-27T20:16:15
+Finisher,终结技+,com.megacrit.cardcrawl.cards.green.Finisher,true,GREEN,UNCOMMON,ATTACK,20,true,18.18%,37.92%,25.23%,14.07%,19.00%,7.02%,6.08%,2866,11515,2026-08-27T20:16:15
+Dark Embrace,黑暗之拥,com.megacrit.cardcrawl.cards.red.DarkEmbrace,false,RED,UNCOMMON,POWER,20,true,66.71%,74.04%,85.09%,80.89%,19.18%,35.31%,40.06%,6344,83286,2026-08-27T20:16:15
+Dark Embrace,黑暗之拥+,com.megacrit.cardcrawl.cards.red.DarkEmbrace,true,RED,UNCOMMON,POWER,20,true,75.94%,89.24%,92.51%,86.31%,50.00%,61.72%,60.41%,3230,13493,2026-08-27T20:16:15
+Die Die Die,死吧死吧死吧,com.megacrit.cardcrawl.cards.green.DieDieDie,false,GREEN,RARE,ATTACK,20,true,18.31%,50.84%,13.69%,2.23%,22.71%,5.76%,1.79%,5154,45991,2026-08-27T20:16:15
+Die Die Die,死吧死吧死吧+,com.megacrit.cardcrawl.cards.green.DieDieDie,true,GREEN,RARE,ATTACK,20,true,14.53%,48.76%,20.35%,3.68%,50.00%,10.98%,5.50%,1318,3228,2026-08-27T20:16:15
+Well Laid Plans,计划妥当,com.megacrit.cardcrawl.cards.green.WellLaidPlans,false,GREEN,UNCOMMON,POWER,20,true,48.24%,64.29%,58.34%,39.85%,4.40%,3.95%,5.36%,5766,73070,2026-08-27T20:16:15
+Well Laid Plans,计划妥当+,com.megacrit.cardcrawl.cards.green.WellLaidPlans,true,GREEN,UNCOMMON,POWER,20,true,41.25%,68.03%,65.20%,47.34%,15.52%,13.76%,16.00%,2966,11965,2026-08-27T20:16:16
+Ragnarok,诸神之黄昏,com.megacrit.cardcrawl.cards.purple.Ragnarok,false,PURPLE,RARE,ATTACK,20,true,24.52%,57.46%,24.93%,9.08%,6.89%,3.17%,2.89%,4707,46100,2026-08-27T20:16:16
+Ragnarok,诸神之黄昏+,com.megacrit.cardcrawl.cards.purple.Ragnarok,true,PURPLE,RARE,ATTACK,20,true,25.71%,66.07%,36.13%,16.29%,17.14%,6.95%,7.05%,1341,3816,2026-08-27T20:16:16
+Buffer,缓冲,com.megacrit.cardcrawl.cards.blue.Buffer,false,BLUE,RARE,POWER,20,true,45.88%,65.15%,42.44%,40.57%,41.71%,27.12%,25.41%,3909,23952,2026-08-27T20:16:16
+Buffer,缓冲+,com.megacrit.cardcrawl.cards.blue.Buffer,true,BLUE,RARE,POWER,20,true,56.16%,75.24%,55.56%,54.41%,38.89%,47.52%,49.13%,1097,2596,2026-08-27T20:16:16
+Electrodynamics,电动力学,com.megacrit.cardcrawl.cards.blue.Electrodynamics,false,BLUE,RARE,POWER,20,true,63.84%,88.89%,76.57%,50.02%,20.41%,9.64%,7.92%,3891,24522,2026-08-27T20:16:16
+Electrodynamics,电动力学+,com.megacrit.cardcrawl.cards.blue.Electrodynamics,true,BLUE,RARE,POWER,20,true,52.35%,84.46%,71.21%,52.48%,19.05%,16.44%,15.52%,1050,2659,2026-08-27T20:16:16
+FearNoEvil,不惧妖邪,com.megacrit.cardcrawl.cards.purple.FearNoEvil,false,PURPLE,UNCOMMON,ATTACK,20,true,62.02%,89.55%,82.92%,63.37%,5.08%,2.68%,1.97%,5071,57521,2026-08-27T20:16:16
+FearNoEvil,不惧妖邪+,com.megacrit.cardcrawl.cards.purple.FearNoEvil,true,PURPLE,UNCOMMON,ATTACK,20,true,45.27%,87.65%,84.82%,67.99%,4.32%,6.88%,3.50%,2495,10744,2026-08-27T20:16:16
+Seeing Red,盛怒,com.megacrit.cardcrawl.cards.red.SeeingRed,false,RED,UNCOMMON,SKILL,20,true,30.90%,31.59%,34.24%,24.55%,24.75%,28.67%,26.89%,6358,81556,2026-08-27T20:16:16
+Seeing Red,盛怒+,com.megacrit.cardcrawl.cards.red.SeeingRed,true,RED,UNCOMMON,SKILL,20,true,49.59%,50.08%,55.55%,45.44%,42.86%,49.45%,48.53%,3299,13608,2026-08-27T20:16:16
+SandsOfTime,时之沙,com.megacrit.cardcrawl.cards.purple.SandsOfTime,false,PURPLE,UNCOMMON,ATTACK,20,true,12.35%,22.54%,3.19%,1.23%,3.03%,2.05%,1.37%,5015,56185,2026-08-27T20:16:16
+SandsOfTime,时之沙+,com.megacrit.cardcrawl.cards.purple.SandsOfTime,true,PURPLE,UNCOMMON,ATTACK,20,true,4.56%,18.13%,5.78%,2.14%,5.56%,4.35%,3.86%,2471,10289,2026-08-27T20:16:16
+Smite,惩恶,com.megacrit.cardcrawl.cards.tempCards.Smite,false,COLORLESS,SPECIAL,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,10,19,2026-08-27T20:16:16
+Smite,惩恶+,com.megacrit.cardcrawl.cards.tempCards.Smite,true,COLORLESS,SPECIAL,ATTACK,20,true,10.00%,25.00%,0.00%,0.00%,--%,--%,--%,9,10,2026-08-27T20:16:16
+Violence,暴力,com.megacrit.cardcrawl.cards.colorless.Violence,false,COLORLESS,RARE,SKILL,20,true,13.93%,11.77%,18.41%,15.46%,23.08%,23.08%,17.81%,3815,12921,2026-08-27T20:16:16
+Violence,暴力+,com.megacrit.cardcrawl.cards.colorless.Violence,true,COLORLESS,RARE,SKILL,20,true,19.23%,29.73%,23.53%,18.78%,50.00%,0.00%,12.50%,774,1222,2026-08-27T20:16:16
+Disarm,缴械,com.megacrit.cardcrawl.cards.red.Disarm,false,RED,UNCOMMON,SKILL,20,true,41.44%,46.53%,41.44%,39.36%,22.26%,17.84%,17.91%,6366,81802,2026-08-27T20:16:16
+Disarm,缴械+,com.megacrit.cardcrawl.cards.red.Disarm,true,RED,UNCOMMON,SKILL,20,true,50.18%,55.37%,56.97%,54.61%,21.57%,33.44%,31.83%,3241,13594,2026-08-27T20:16:16
+Turbo,内核加速,com.megacrit.cardcrawl.cards.blue.Turbo,false,BLUE,COMMON,SKILL,20,true,27.36%,31.23%,41.99%,27.85%,6.86%,7.33%,7.14%,5261,100031,2026-08-27T20:16:16
+Turbo,内核加速+,com.megacrit.cardcrawl.cards.blue.Turbo,true,BLUE,COMMON,SKILL,20,true,34.77%,40.81%,56.80%,39.70%,17.26%,20.48%,18.19%,3056,16960,2026-08-27T20:16:16
+Panache,神气制胜,com.megacrit.cardcrawl.cards.colorless.Panache,false,COLORLESS,RARE,POWER,20,true,18.71%,21.77%,20.95%,15.58%,20.00%,28.57%,37.04%,3983,13740,2026-08-27T20:16:16
+Panache,神气制胜+,com.megacrit.cardcrawl.cards.colorless.Panache,true,COLORLESS,RARE,POWER,20,true,34.35%,72.97%,24.39%,31.66%,0.00%,50.00%,64.71%,689,1086,2026-08-27T20:16:16
+Undo,均衡,com.megacrit.cardcrawl.cards.blue.Equilibrium,false,BLUE,UNCOMMON,SKILL,20,true,38.93%,48.48%,38.72%,21.68%,6.24%,7.45%,6.04%,4121,31774,2026-08-27T20:16:16
+Undo,均衡+,com.megacrit.cardcrawl.cards.blue.Equilibrium,true,BLUE,UNCOMMON,SKILL,20,true,31.05%,39.50%,45.19%,26.56%,11.11%,14.70%,10.53%,1831,5497,2026-08-27T20:16:16
+Fiend Fire,恶魔之焰,com.megacrit.cardcrawl.cards.red.FiendFire,false,RED,RARE,ATTACK,20,true,46.20%,69.66%,50.18%,34.25%,20.00%,11.81%,11.47%,6153,68763,2026-08-27T20:16:16
+Fiend Fire,恶魔之焰+,com.megacrit.cardcrawl.cards.red.FiendFire,true,RED,RARE,ATTACK,20,true,43.98%,72.97%,54.06%,40.07%,26.92%,19.14%,19.49%,1849,5020,2026-08-27T20:16:16
+Terror,恐怖,com.megacrit.cardcrawl.cards.green.Terror,false,GREEN,UNCOMMON,SKILL,20,true,58.67%,81.13%,68.69%,56.94%,1.40%,1.10%,1.34%,5809,72923,2026-08-27T20:16:16
+Terror,恐怖+,com.megacrit.cardcrawl.cards.green.Terror,true,GREEN,UNCOMMON,SKILL,20,true,45.72%,74.55%,75.55%,66.86%,6.67%,7.24%,5.51%,2968,13019,2026-08-27T20:16:16
+Force Field,力场,com.megacrit.cardcrawl.cards.blue.ForceField,false,BLUE,UNCOMMON,SKILL,20,true,4.64%,3.12%,7.05%,6.77%,9.56%,9.09%,11.29%,3987,30571,2026-08-27T20:16:16
+Force Field,力场+,com.megacrit.cardcrawl.cards.blue.ForceField,true,BLUE,UNCOMMON,SKILL,20,true,13.55%,6.90%,15.63%,13.72%,0.00%,7.32%,18.60%,1795,5151,2026-08-27T20:16:16
+Dazed,晕眩,com.megacrit.cardcrawl.cards.status.Dazed,false,COLORLESS,COMMON,STATUS,20,true,21.88%,13.33%,0.00%,20.00%,100.00%,--%,100.00%,16,32,2026-08-27T20:16:16
+Barricade,壁垒,com.megacrit.cardcrawl.cards.red.Barricade,false,RED,RARE,POWER,20,true,44.02%,46.09%,44.89%,59.26%,3.11%,1.76%,1.78%,6178,67067,2026-08-27T20:16:16
+Barricade,壁垒+,com.megacrit.cardcrawl.cards.red.Barricade,true,RED,RARE,POWER,20,true,56.01%,74.89%,64.76%,70.79%,0.00%,3.25%,3.96%,1939,5074,2026-08-27T20:16:16
+Armaments,武装,com.megacrit.cardcrawl.cards.red.Armaments,false,RED,COMMON,SKILL,20,true,32.02%,56.40%,23.71%,5.73%,1.93%,1.47%,1.03%,7577,228754,2026-08-27T20:16:16
+Armaments,武装+,com.megacrit.cardcrawl.cards.red.Armaments,true,RED,COMMON,SKILL,20,true,19.76%,46.32%,40.08%,17.27%,6.47%,8.06%,6.44%,4671,36249,2026-08-27T20:16:16
+Havoc,破灭,com.megacrit.cardcrawl.cards.red.Havoc,false,RED,COMMON,SKILL,20,true,11.02%,13.26%,11.31%,4.83%,5.02%,5.38%,4.31%,7584,228425,2026-08-27T20:16:16
+Havoc,破灭+,com.megacrit.cardcrawl.cards.red.Havoc,true,RED,COMMON,SKILL,20,true,30.84%,35.04%,41.87%,25.14%,23.19%,27.17%,23.16%,4629,35974,2026-08-27T20:16:16
+Secret Weapon,秘密武器,com.megacrit.cardcrawl.cards.colorless.SecretWeapon,false,COLORLESS,RARE,SKILL,20,true,8.77%,7.18%,14.55%,9.76%,11.11%,27.27%,15.00%,3948,13171,2026-08-27T20:16:16
+Secret Weapon,秘密武器+,com.megacrit.cardcrawl.cards.colorless.SecretWeapon,true,COLORLESS,RARE,SKILL,20,true,10.60%,29.03%,15.38%,9.47%,0.00%,66.67%,30.00%,829,1311,2026-08-27T20:16:16
+Apotheosis,神化,com.megacrit.cardcrawl.cards.colorless.Apotheosis,false,COLORLESS,RARE,SKILL,20,true,79.94%,95.90%,68.11%,59.26%,6.25%,10.53%,7.96%,4736,22572,2026-08-27T20:16:16
+Apotheosis,神化+,com.megacrit.cardcrawl.cards.colorless.Apotheosis,true,COLORLESS,RARE,SKILL,20,true,44.99%,88.50%,61.70%,44.08%,0.00%,27.27%,10.48%,864,1456,2026-08-27T20:16:16
+Sweeping Beam,扫荡射线,com.megacrit.cardcrawl.cards.blue.SweepingBeam,false,BLUE,COMMON,ATTACK,20,true,4.56%,6.94%,1.05%,0.47%,4.33%,1.89%,1.18%,5286,99352,2026-08-27T20:16:16
+Sweeping Beam,扫荡射线+,com.megacrit.cardcrawl.cards.blue.SweepingBeam,true,BLUE,COMMON,ATTACK,20,true,3.26%,10.88%,3.57%,0.95%,5.08%,4.77%,3.44%,2921,14861,2026-08-27T20:16:16
+Feel No Pain,无惧疼痛,com.megacrit.cardcrawl.cards.red.FeelNoPain,false,RED,UNCOMMON,POWER,20,true,66.86%,73.54%,77.79%,72.96%,29.66%,44.06%,48.51%,6354,82945,2026-08-27T20:16:16
+Feel No Pain,无惧疼痛+,com.megacrit.cardcrawl.cards.red.FeelNoPain,true,RED,UNCOMMON,POWER,20,true,73.15%,78.45%,83.55%,80.77%,52.38%,59.84%,63.29%,3294,13427,2026-08-27T20:16:16
+FTL,超越光速,com.megacrit.cardcrawl.cards.blue.FTL,false,BLUE,UNCOMMON,ATTACK,20,true,21.79%,30.86%,12.42%,4.00%,9.82%,6.20%,2.97%,4053,31046,2026-08-27T20:16:16
+FTL,超越光速+,com.megacrit.cardcrawl.cards.blue.FTL,true,BLUE,UNCOMMON,ATTACK,20,true,16.07%,31.62%,22.62%,8.34%,26.09%,8.05%,11.22%,1736,4842,2026-08-27T20:16:16
+Rip and Tear,狂乱撕扯,com.megacrit.cardcrawl.cards.blue.RipAndTear,false,BLUE,UNCOMMON,ATTACK,20,true,5.08%,7.93%,0.51%,0.37%,6.61%,1.64%,1.72%,4025,30892,2026-08-27T20:16:16
+Rip and Tear,狂乱撕扯+,com.megacrit.cardcrawl.cards.blue.RipAndTear,true,BLUE,UNCOMMON,ATTACK,20,true,2.40%,9.46%,1.73%,0.93%,18.75%,7.04%,1.52%,1656,4754,2026-08-27T20:16:16
+Darkness,漆黑,com.megacrit.cardcrawl.cards.blue.Darkness,false,BLUE,UNCOMMON,SKILL,20,true,27.30%,37.62%,14.99%,8.28%,17.37%,9.66%,4.41%,4102,31426,2026-08-27T20:16:16
+Darkness,漆黑+,com.megacrit.cardcrawl.cards.blue.Darkness,true,BLUE,UNCOMMON,SKILL,20,true,23.60%,35.24%,29.43%,16.31%,32.35%,22.15%,17.54%,1863,5390,2026-08-27T20:16:16
+Corruption,腐化,com.megacrit.cardcrawl.cards.red.Corruption,false,RED,RARE,POWER,20,true,35.98%,47.64%,39.79%,29.53%,4.51%,3.35%,5.72%,6117,66445,2026-08-27T20:16:16
+Corruption,腐化+,com.megacrit.cardcrawl.cards.red.Corruption,true,RED,RARE,POWER,20,true,38.18%,63.56%,47.22%,35.20%,7.32%,10.48%,11.61%,1835,4940,2026-08-27T20:16:16
+Heel Hook,足跟勾,com.megacrit.cardcrawl.cards.green.HeelHook,false,GREEN,UNCOMMON,ATTACK,20,true,2.64%,3.70%,1.38%,0.45%,13.48%,5.50%,1.93%,5757,72155,2026-08-27T20:16:16
+Heel Hook,足跟勾+,com.megacrit.cardcrawl.cards.green.HeelHook,true,GREEN,UNCOMMON,ATTACK,20,true,3.82%,14.63%,4.21%,1.43%,40.91%,14.06%,6.88%,2833,11206,2026-08-27T20:16:16
+Blasphemy,渎神,com.megacrit.cardcrawl.cards.purple.Blasphemy,false,PURPLE,RARE,SKILL,20,true,19.28%,42.46%,21.30%,5.80%,1.42%,1.12%,0.77%,4743,45461,2026-08-27T20:16:16
+Blasphemy,渎神+,com.megacrit.cardcrawl.cards.purple.Blasphemy,true,PURPLE,RARE,SKILL,20,true,19.65%,56.21%,30.02%,9.76%,0.00%,2.08%,1.06%,1338,3899,2026-08-27T20:16:16
+Injury,受伤,com.megacrit.cardcrawl.cards.curses.Injury,false,CURSE,CURSE,CURSE,20,true,34.28%,27.03%,40.51%,26.23%,33.33%,41.67%,42.86%,166,353,2026-08-27T20:16:16
+Double Energy,双倍能量,com.megacrit.cardcrawl.cards.blue.DoubleEnergy,false,BLUE,UNCOMMON,SKILL,20,true,26.07%,25.63%,29.16%,25.33%,16.19%,23.57%,23.83%,4078,31077,2026-08-27T20:16:16
+Double Energy,双倍能量+,com.megacrit.cardcrawl.cards.blue.DoubleEnergy,true,BLUE,UNCOMMON,SKILL,20,true,52.98%,43.28%,60.59%,53.47%,32.43%,46.10%,43.41%,1884,5662,2026-08-27T20:16:16
+Rage,狂怒,com.megacrit.cardcrawl.cards.red.Rage,false,RED,UNCOMMON,SKILL,20,true,17.76%,18.46%,20.61%,16.46%,3.35%,2.85%,2.34%,6278,82046,2026-08-27T20:16:16
+Rage,狂怒+,com.megacrit.cardcrawl.cards.red.Rage,true,RED,UNCOMMON,SKILL,20,true,26.57%,27.62%,34.38%,25.73%,6.00%,6.99%,7.10%,3201,13080,2026-08-27T20:16:16
+Headbutt,头槌,com.megacrit.cardcrawl.cards.red.Headbutt,false,RED,COMMON,ATTACK,20,true,10.76%,16.61%,5.40%,1.68%,1.04%,0.71%,0.69%,7615,228228,2026-08-27T20:16:16
+Headbutt,头槌+,com.megacrit.cardcrawl.cards.red.Headbutt,true,RED,COMMON,ATTACK,20,true,6.00%,16.30%,9.36%,3.07%,2.41%,1.54%,1.43%,4677,33906,2026-08-27T20:16:17
+Machine Learning,机器学习,com.megacrit.cardcrawl.cards.blue.MachineLearning,false,BLUE,RARE,POWER,20,true,20.18%,30.95%,16.64%,17.48%,26.92%,11.59%,15.03%,3815,23634,2026-08-27T20:16:17
+Machine Learning,机器学习+,com.megacrit.cardcrawl.cards.blue.MachineLearning,true,BLUE,RARE,POWER,20,true,26.91%,45.62%,27.26%,23.33%,18.18%,17.91%,19.77%,1005,2475,2026-08-27T20:16:17
+Reinforced Body,硬化机体,com.megacrit.cardcrawl.cards.blue.ReinforcedBody,false,BLUE,UNCOMMON,SKILL,20,true,17.86%,21.97%,15.19%,8.35%,3.85%,5.60%,7.10%,4072,30946,2026-08-27T20:16:17
+Reinforced Body,硬化机体+,com.megacrit.cardcrawl.cards.blue.ReinforcedBody,true,BLUE,UNCOMMON,SKILL,20,true,19.58%,22.72%,24.33%,17.12%,11.54%,11.96%,10.16%,1822,5455,2026-08-27T20:16:17
+Defend_P,防御,com.megacrit.cardcrawl.cards.purple.Defend_Watcher,false,PURPLE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,--%,--%,--%,--%,6,8,2026-08-27T20:16:17
+Defend_P,防御+,com.megacrit.cardcrawl.cards.purple.Defend_Watcher,true,PURPLE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,5,6,2026-08-27T20:16:17
+Limit Break,突破极限,com.megacrit.cardcrawl.cards.red.LimitBreak,false,RED,RARE,SKILL,20,true,31.31%,37.18%,30.52%,29.26%,30.12%,23.39%,24.25%,6065,65784,2026-08-27T20:16:17
+Limit Break,突破极限+,com.megacrit.cardcrawl.cards.red.LimitBreak,true,RED,RARE,SKILL,20,true,41.56%,55.79%,44.58%,38.05%,61.76%,36.47%,34.99%,2012,5893,2026-08-27T20:16:17
+Entrench,巩固,com.megacrit.cardcrawl.cards.red.Entrench,false,RED,UNCOMMON,SKILL,20,true,18.53%,13.13%,23.80%,32.65%,14.10%,18.13%,23.29%,6304,81820,2026-08-27T20:16:17
+Entrench,巩固+,com.megacrit.cardcrawl.cards.red.Entrench,true,RED,UNCOMMON,SKILL,20,true,45.99%,39.23%,47.06%,49.53%,37.29%,33.40%,38.69%,3269,13654,2026-08-27T20:16:17
+Noxious Fumes,毒雾,com.megacrit.cardcrawl.cards.green.NoxiousFumes,false,GREEN,UNCOMMON,POWER,20,true,25.49%,39.58%,10.02%,4.81%,19.51%,10.29%,6.18%,5802,72297,2026-08-27T20:16:17
+Noxious Fumes,毒雾+,com.megacrit.cardcrawl.cards.green.NoxiousFumes,true,GREEN,UNCOMMON,POWER,20,true,16.89%,44.98%,19.44%,9.25%,35.20%,23.88%,17.84%,2891,11649,2026-08-27T20:16:17
+Infinite Blades,无限刀刃,com.megacrit.cardcrawl.cards.green.InfiniteBlades,false,GREEN,UNCOMMON,POWER,20,true,5.37%,7.56%,2.60%,1.25%,13.11%,7.02%,6.00%,5751,73066,2026-08-27T20:16:17
+Infinite Blades,无限刀刃+,com.megacrit.cardcrawl.cards.green.InfiniteBlades,true,GREEN,UNCOMMON,POWER,20,true,4.82%,10.91%,5.30%,2.62%,24.14%,16.51%,11.84%,2876,11511,2026-08-27T20:16:17
+Phantasmal Killer,幻影杀手,com.megacrit.cardcrawl.cards.green.PhantasmalKiller,false,GREEN,RARE,SKILL,20,true,41.22%,60.74%,44.11%,34.87%,2.66%,2.18%,2.18%,5162,45376,2026-08-27T20:16:17
+Phantasmal Killer,幻影杀手+,com.megacrit.cardcrawl.cards.green.PhantasmalKiller,true,GREEN,RARE,SKILL,20,true,41.28%,67.66%,48.58%,42.59%,18.18%,9.79%,6.58%,1578,4235,2026-08-27T20:16:17
+WaveOfTheHand,摆手,com.megacrit.cardcrawl.cards.purple.WaveOfTheHand,false,PURPLE,UNCOMMON,SKILL,20,true,0.51%,0.47%,0.48%,0.62%,1.09%,0.00%,0.88%,5023,56411,2026-08-27T20:16:17
+WaveOfTheHand,摆手+,com.megacrit.cardcrawl.cards.purple.WaveOfTheHand,true,PURPLE,UNCOMMON,SKILL,20,true,1.79%,1.73%,1.66%,1.86%,0.00%,0.00%,3.85%,2432,10388,2026-08-27T20:16:17
+Malaise,萎靡,com.megacrit.cardcrawl.cards.green.Malaise,false,GREEN,RARE,SKILL,20,true,19.53%,30.77%,19.08%,13.64%,15.57%,8.81%,7.05%,5201,45036,2026-08-27T20:16:17
+Malaise,萎靡+,com.megacrit.cardcrawl.cards.green.Malaise,true,GREEN,RARE,SKILL,20,true,25.31%,39.60%,26.68%,23.44%,16.67%,12.35%,15.32%,1525,3982,2026-08-27T20:16:17
+Conserve Battery,充电,com.megacrit.cardcrawl.cards.blue.ConserveBattery,false,BLUE,COMMON,SKILL,20,true,10.00%,14.08%,5.46%,1.16%,7.16%,4.42%,3.16%,5306,97762,2026-08-27T20:16:17
+Conserve Battery,充电+,com.megacrit.cardcrawl.cards.blue.ConserveBattery,true,BLUE,COMMON,SKILL,20,true,9.76%,18.12%,13.21%,4.76%,12.88%,11.99%,7.00%,2989,16264,2026-08-27T20:16:17
+Defend_R,防御,com.megacrit.cardcrawl.cards.red.Defend_Red,false,RED,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,7,9,2026-08-27T20:16:17
+Defend_R,防御+,com.megacrit.cardcrawl.cards.red.Defend_Red,true,RED,BASIC,SKILL,20,true,0.00%,0.00%,--%,--%,--%,--%,0.00%,2,2,2026-08-27T20:16:17
+Mayhem,乱战,com.megacrit.cardcrawl.cards.colorless.Mayhem,false,COLORLESS,RARE,POWER,20,true,4.52%,5.36%,9.54%,3.36%,20.00%,8.33%,35.42%,3889,13604,2026-08-27T20:16:17
+Mayhem,乱战+,com.megacrit.cardcrawl.cards.colorless.Mayhem,true,COLORLESS,RARE,POWER,20,true,11.91%,25.64%,12.07%,10.89%,0.00%,--%,38.89%,691,1108,2026-08-27T20:16:17
+Reflex,本能反应,com.megacrit.cardcrawl.cards.green.Reflex,false,GREEN,UNCOMMON,SKILL,20,true,64.19%,71.81%,81.88%,75.23%,22.65%,31.21%,26.39%,5781,73487,2026-08-27T20:16:17
+Reflex,本能反应+,com.megacrit.cardcrawl.cards.green.Reflex,true,GREEN,UNCOMMON,SKILL,20,true,65.18%,79.25%,87.06%,81.54%,41.46%,44.78%,37.70%,3004,13072,2026-08-27T20:16:17
+Study,研习,com.megacrit.cardcrawl.cards.purple.Study,false,PURPLE,UNCOMMON,POWER,20,true,4.76%,2.65%,6.51%,7.71%,2.60%,3.70%,8.04%,5037,56411,2026-08-27T20:16:17
+Study,研习+,com.megacrit.cardcrawl.cards.purple.Study,true,PURPLE,UNCOMMON,POWER,20,true,16.32%,17.57%,19.24%,14.02%,18.75%,20.33%,19.91%,2470,10502,2026-08-27T20:16:17
+Expunger,灭除之刃,com.megacrit.cardcrawl.cards.tempCards.Expunger,false,COLORLESS,SPECIAL,ATTACK,20,true,5.00%,10.00%,0.00%,0.00%,--%,--%,--%,8,20,2026-08-27T20:16:17
+Expunger,灭除之刃+,com.megacrit.cardcrawl.cards.tempCards.Expunger,true,COLORLESS,SPECIAL,ATTACK,20,true,33.33%,--%,--%,50.00%,--%,--%,0.00%,2,3,2026-08-27T20:16:17
+Sentinel,哨卫,com.megacrit.cardcrawl.cards.red.Sentinel,false,RED,UNCOMMON,SKILL,20,true,9.75%,6.82%,13.70%,13.19%,12.47%,19.80%,18.79%,6296,80078,2026-08-27T20:16:17
+Sentinel,哨卫+,com.megacrit.cardcrawl.cards.red.Sentinel,true,RED,UNCOMMON,SKILL,20,true,31.60%,25.13%,32.93%,30.86%,38.71%,35.73%,36.24%,3221,13264,2026-08-27T20:16:17
+Survivor,生存者,com.megacrit.cardcrawl.cards.green.Survivor,false,GREEN,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,11,18,2026-08-27T20:16:17
+Survivor,生存者+,com.megacrit.cardcrawl.cards.green.Survivor,true,GREEN,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,5,6,2026-08-27T20:16:17
+Wild Strike,狂野打击,com.megacrit.cardcrawl.cards.red.WildStrike,false,RED,COMMON,ATTACK,20,true,2.17%,3.18%,0.66%,0.26%,6.59%,4.41%,2.82%,7610,228896,2026-08-27T20:16:17
+Wild Strike,狂野打击+,com.megacrit.cardcrawl.cards.red.WildStrike,true,RED,COMMON,ATTACK,20,true,1.72%,4.19%,1.92%,0.83%,11.76%,8.24%,5.32%,4599,33389,2026-08-27T20:16:17
+Defend_G,防御,com.megacrit.cardcrawl.cards.green.Defend_Green,false,GREEN,BASIC,SKILL,20,true,0.00%,0.00%,--%,0.00%,--%,--%,--%,5,5,2026-08-27T20:16:17
+Defend_G,防御+,com.megacrit.cardcrawl.cards.green.Defend_Green,true,GREEN,BASIC,SKILL,20,true,20.00%,50.00%,0.00%,--%,--%,--%,--%,4,5,2026-08-27T20:16:17
+HandOfGreed,贪婪之手,com.megacrit.cardcrawl.cards.colorless.HandOfGreed,false,COLORLESS,RARE,ATTACK,20,true,52.39%,84.04%,29.00%,4.21%,20.00%,16.00%,6.97%,4487,18533,2026-08-27T20:16:17
+HandOfGreed,贪婪之手+,com.megacrit.cardcrawl.cards.colorless.HandOfGreed,true,COLORLESS,RARE,ATTACK,20,true,14.84%,72.50%,44.00%,6.95%,100.00%,35.71%,11.43%,701,1112,2026-08-27T20:16:17
+Meditate,冥想,com.megacrit.cardcrawl.cards.purple.Meditate,false,PURPLE,UNCOMMON,SKILL,20,true,18.65%,27.59%,14.79%,6.60%,1.06%,0.64%,0.66%,5026,56293,2026-08-27T20:16:17
+Meditate,冥想+,com.megacrit.cardcrawl.cards.purple.Meditate,true,PURPLE,UNCOMMON,SKILL,20,true,14.22%,29.74%,22.89%,9.84%,3.03%,2.96%,1.37%,2447,10646,2026-08-27T20:16:17
+Eviscerate,内脏切除,com.megacrit.cardcrawl.cards.green.Eviscerate,false,GREEN,UNCOMMON,ATTACK,20,true,50.69%,73.11%,44.59%,23.53%,19.17%,12.84%,7.49%,5742,72547,2026-08-27T20:16:17
+Eviscerate,内脏切除+,com.megacrit.cardcrawl.cards.green.Eviscerate,true,GREEN,UNCOMMON,ATTACK,20,true,34.62%,66.78%,51.98%,29.87%,18.18%,22.60%,16.19%,2804,11258,2026-08-27T20:16:17
+Flash of Steel,亮剑,com.megacrit.cardcrawl.cards.colorless.FlashOfSteel,false,COLORLESS,UNCOMMON,ATTACK,20,true,37.41%,67.66%,47.61%,30.83%,80.00%,68.42%,52.88%,4139,15663,2026-08-27T20:16:17
+Flash of Steel,亮剑+,com.megacrit.cardcrawl.cards.colorless.FlashOfSteel,true,COLORLESS,UNCOMMON,ATTACK,20,true,42.87%,54.55%,48.75%,40.68%,100.00%,100.00%,63.64%,1068,1964,2026-08-27T20:16:17
+Defend_B,防御,com.megacrit.cardcrawl.cards.blue.Defend_Blue,false,BLUE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,10,15,2026-08-27T20:16:17
+Defend_B,防御+,com.megacrit.cardcrawl.cards.blue.Defend_Blue,true,BLUE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,3,4,2026-08-27T20:16:17
+Battle Trance,战斗专注,com.megacrit.cardcrawl.cards.red.BattleTrance,false,RED,UNCOMMON,SKILL,20,true,59.11%,76.76%,69.19%,41.59%,8.63%,9.79%,7.21%,6393,82480,2026-08-27T20:16:17
+Battle Trance,战斗专注+,com.megacrit.cardcrawl.cards.red.BattleTrance,true,RED,UNCOMMON,SKILL,20,true,45.91%,73.67%,71.29%,51.69%,14.38%,17.35%,14.31%,3247,13516,2026-08-27T20:16:17
+Forethought,预谋,com.megacrit.cardcrawl.cards.colorless.Forethought,false,COLORLESS,UNCOMMON,SKILL,20,true,2.03%,2.97%,2.49%,1.76%,0.00%,0.00%,15.79%,4186,15050,2026-08-27T20:16:17
+Forethought,预谋+,com.megacrit.cardcrawl.cards.colorless.Forethought,true,COLORLESS,UNCOMMON,SKILL,20,true,3.30%,8.00%,2.22%,3.29%,--%,0.00%,0.00%,1177,2123,2026-08-27T20:16:17
+Dualcast,双重释放,com.megacrit.cardcrawl.cards.blue.Dualcast,false,BLUE,BASIC,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,0.00%,--%,8,11,2026-08-27T20:16:17
+Dualcast,双重释放+,com.megacrit.cardcrawl.cards.blue.Dualcast,true,BLUE,BASIC,SKILL,20,true,0.00%,0.00%,--%,0.00%,--%,--%,--%,2,2,2026-08-27T20:16:17
+Auto Shields,自动护盾,com.megacrit.cardcrawl.cards.blue.AutoShields,false,BLUE,UNCOMMON,SKILL,20,true,8.44%,12.16%,3.84%,0.56%,2.70%,1.62%,0.00%,4005,30634,2026-08-27T20:16:17
+Auto Shields,自动护盾+,com.megacrit.cardcrawl.cards.blue.AutoShields,true,BLUE,UNCOMMON,SKILL,20,true,5.57%,10.18%,8.82%,2.03%,0.00%,1.35%,3.85%,1728,5060,2026-08-27T20:16:17
+Perseverance,坚韧,com.megacrit.cardcrawl.cards.purple.Perseverance,false,PURPLE,UNCOMMON,SKILL,20,true,0.68%,1.02%,0.36%,0.22%,1.63%,1.45%,1.35%,4995,56191,2026-08-27T20:16:17
+Perseverance,坚韧+,com.megacrit.cardcrawl.cards.purple.Perseverance,true,PURPLE,UNCOMMON,SKILL,20,true,1.17%,1.99%,1.37%,0.90%,0.00%,3.64%,3.09%,2411,10572,2026-08-27T20:16:17
+Swivel,旋身,com.megacrit.cardcrawl.cards.purple.Swivel,false,PURPLE,UNCOMMON,SKILL,20,true,0.71%,0.82%,0.62%,0.50%,0.84%,2.27%,3.97%,5042,55446,2026-08-27T20:16:17
+Swivel,旋身+,com.megacrit.cardcrawl.cards.purple.Swivel,true,PURPLE,UNCOMMON,SKILL,20,true,1.10%,1.25%,1.23%,0.84%,16.67%,0.00%,14.71%,2388,10353,2026-08-27T20:16:17
+Heavy Blade,重刃,com.megacrit.cardcrawl.cards.red.HeavyBlade,false,RED,COMMON,ATTACK,20,true,2.40%,2.68%,2.01%,1.40%,5.61%,4.84%,6.59%,7562,227993,2026-08-27T20:16:17
+Heavy Blade,重刃+,com.megacrit.cardcrawl.cards.red.HeavyBlade,true,RED,COMMON,ATTACK,20,true,4.99%,6.11%,5.52%,3.62%,14.46%,14.91%,12.24%,4599,33951,2026-08-27T20:16:17
+Slimed,黏液,com.megacrit.cardcrawl.cards.status.Slimed,false,COLORLESS,COMMON,STATUS,20,true,0.00%,0.00%,0.00%,--%,--%,--%,--%,16,22,2026-08-27T20:16:17
+Clumsy,笨拙,com.megacrit.cardcrawl.cards.curses.Clumsy,false,CURSE,CURSE,CURSE,20,true,45.50%,50.00%,44.16%,30.51%,100.00%,72.73%,86.96%,165,367,2026-08-27T20:16:17
+Biased Cognition,偏差认知,com.megacrit.cardcrawl.cards.blue.BiasedCognition,false,BLUE,RARE,POWER,20,true,72.43%,84.88%,76.00%,64.74%,66.78%,55.94%,51.16%,3954,24450,2026-08-27T20:16:17
+Biased Cognition,偏差认知+,com.megacrit.cardcrawl.cards.blue.BiasedCognition,true,BLUE,RARE,POWER,20,true,67.15%,76.90%,72.92%,64.52%,52.00%,62.64%,59.69%,1035,2621,2026-08-27T20:16:17
+Searing Blow,灼热攻击,com.megacrit.cardcrawl.cards.red.SearingBlow,false,RED,UNCOMMON,ATTACK,20,true,3.76%,6.04%,0.58%,0.29%,1.82%,1.04%,0.99%,6287,81942,2026-08-27T20:16:17
+Searing Blow,灼热攻击+1,com.megacrit.cardcrawl.cards.red.SearingBlow,true,RED,UNCOMMON,ATTACK,20,true,1.75%,7.90%,1.53%,0.63%,18.52%,5.79%,2.75%,3136,12201,2026-08-27T20:16:17
+Devotion,虔信,com.megacrit.cardcrawl.cards.purple.Devotion,false,PURPLE,RARE,POWER,20,true,2.95%,4.06%,2.66%,2.15%,16.67%,22.41%,11.59%,4701,44949,2026-08-27T20:16:17
+Devotion,虔信+,com.megacrit.cardcrawl.cards.purple.Devotion,true,PURPLE,RARE,POWER,20,true,7.91%,16.00%,6.41%,6.52%,75.00%,52.38%,21.95%,1297,3579,2026-08-27T20:16:17
+Reprogram,重编程,com.megacrit.cardcrawl.cards.blue.Reprogram,false,BLUE,UNCOMMON,SKILL,20,true,6.61%,7.22%,4.35%,3.70%,43.60%,32.13%,20.53%,4030,31108,2026-08-27T20:16:17
+Reprogram,重编程+,com.megacrit.cardcrawl.cards.blue.Reprogram,true,BLUE,UNCOMMON,SKILL,20,true,7.37%,8.00%,6.88%,5.61%,42.11%,35.53%,27.43%,1801,5403,2026-08-27T20:16:17
+Hologram,全息影像,com.megacrit.cardcrawl.cards.blue.Hologram,false,BLUE,COMMON,SKILL,20,true,24.44%,27.90%,30.37%,20.25%,8.77%,10.17%,11.15%,5300,99113,2026-08-27T20:16:17
+Hologram,全息影像+,com.megacrit.cardcrawl.cards.blue.Hologram,true,BLUE,COMMON,SKILL,20,true,30.58%,32.87%,40.74%,30.88%,20.00%,22.85%,21.92%,3063,16756,2026-08-27T20:16:17
+Corpse Explosion,尸爆术,com.megacrit.cardcrawl.cards.green.CorpseExplosion,false,GREEN,RARE,SKILL,20,true,36.71%,63.34%,43.33%,15.29%,5.19%,2.35%,1.42%,5164,45454,2026-08-27T20:16:17
+Corpse Explosion,尸爆术+,com.megacrit.cardcrawl.cards.green.CorpseExplosion,true,GREEN,RARE,SKILL,20,true,24.94%,52.62%,38.64%,15.79%,16.67%,6.29%,2.08%,1545,4110,2026-08-27T20:16:17
+Second Wind,重振精神,com.megacrit.cardcrawl.cards.red.SecondWind,false,RED,UNCOMMON,SKILL,20,true,67.11%,83.75%,85.13%,76.91%,5.82%,9.52%,12.27%,6361,82652,2026-08-27T20:16:17
+Second Wind,重振精神+,com.megacrit.cardcrawl.cards.red.SecondWind,true,RED,UNCOMMON,SKILL,20,true,58.93%,80.72%,87.06%,81.17%,17.35%,21.39%,22.95%,3282,13663,2026-08-27T20:16:17
+Enlightenment,开悟,com.megacrit.cardcrawl.cards.colorless.Enlightenment,false,COLORLESS,UNCOMMON,SKILL,20,true,14.71%,23.69%,19.47%,13.03%,9.09%,0.00%,8.19%,4085,14402,2026-08-27T20:16:17
+Enlightenment,开悟+,com.megacrit.cardcrawl.cards.colorless.Enlightenment,true,COLORLESS,UNCOMMON,SKILL,20,true,17.17%,38.89%,32.22%,16.19%,0.00%,33.33%,13.33%,1211,2219,2026-08-27T20:16:17
+Purity,净化,com.megacrit.cardcrawl.cards.colorless.Purity,false,COLORLESS,UNCOMMON,SKILL,20,true,58.50%,47.17%,40.70%,63.78%,28.57%,8.33%,36.20%,4578,18648,2026-08-27T20:16:17
+Purity,净化+,com.megacrit.cardcrawl.cards.colorless.Purity,true,COLORLESS,UNCOMMON,SKILL,20,true,59.70%,46.43%,49.43%,62.26%,100.00%,42.86%,33.73%,1331,2531,2026-08-27T20:16:17
+Panacea,万能药,com.megacrit.cardcrawl.cards.colorless.Panacea,false,COLORLESS,UNCOMMON,SKILL,20,true,33.24%,37.82%,36.96%,31.68%,0.00%,28.57%,35.69%,4376,16449,2026-08-27T20:16:17
+Panacea,万能药+,com.megacrit.cardcrawl.cards.colorless.Panacea,true,COLORLESS,UNCOMMON,SKILL,20,true,46.47%,59.26%,44.00%,46.78%,--%,100.00%,36.59%,1259,2380,2026-08-27T20:16:17
+Lockon,瞄准靶心,com.megacrit.cardcrawl.cards.blue.LockOn,false,BLUE,UNCOMMON,ATTACK,20,true,16.11%,22.60%,8.80%,4.78%,2.99%,1.52%,2.55%,4069,30703,2026-08-27T20:16:17
+Lockon,瞄准靶心+,com.megacrit.cardcrawl.cards.blue.LockOn,true,BLUE,UNCOMMON,ATTACK,20,true,13.06%,20.44%,16.70%,10.16%,9.52%,3.94%,2.77%,1718,4839,2026-08-27T20:16:17
+Dash,冲刺,com.megacrit.cardcrawl.cards.green.Dash,false,GREEN,UNCOMMON,ATTACK,20,true,14.81%,25.30%,2.63%,0.63%,3.09%,1.35%,1.73%,5718,72066,2026-08-27T20:16:17
+Dash,冲刺+,com.megacrit.cardcrawl.cards.green.Dash,true,GREEN,UNCOMMON,ATTACK,20,true,4.83%,22.94%,5.62%,1.62%,2.00%,4.27%,3.70%,2841,11209,2026-08-27T20:16:17
+Worship,敬拜,com.megacrit.cardcrawl.cards.purple.Worship,false,PURPLE,UNCOMMON,SKILL,20,true,1.31%,1.27%,1.19%,1.02%,19.13%,12.14%,13.61%,5041,56076,2026-08-27T20:16:17
+Worship,敬拜+,com.megacrit.cardcrawl.cards.purple.Worship,true,PURPLE,UNCOMMON,SKILL,20,true,2.77%,5.46%,2.63%,2.12%,10.00%,15.52%,18.52%,2401,10305,2026-08-27T20:16:17
+Conclude,结末,com.megacrit.cardcrawl.cards.purple.Conclude,false,PURPLE,UNCOMMON,ATTACK,20,true,28.84%,55.97%,10.01%,0.70%,0.49%,0.25%,0.35%,5050,56623,2026-08-27T20:16:17
+Conclude,结末+,com.megacrit.cardcrawl.cards.purple.Conclude,true,PURPLE,UNCOMMON,ATTACK,20,true,6.95%,43.20%,13.27%,0.60%,4.17%,0.65%,0.34%,2382,10267,2026-08-27T20:16:17
+ThroughViolence,以暴易暴,com.megacrit.cardcrawl.cards.tempCards.ThroughViolence,false,COLORLESS,SPECIAL,ATTACK,20,true,50.00%,50.00%,75.00%,25.00%,--%,100.00%,0.00%,8,18,2026-08-27T20:16:17
+ThroughViolence,以暴易暴+,com.megacrit.cardcrawl.cards.tempCards.ThroughViolence,true,COLORLESS,SPECIAL,ATTACK,20,true,66.67%,100.00%,50.00%,50.00%,--%,--%,--%,4,6,2026-08-27T20:16:17
+Transmutation,转化,com.megacrit.cardcrawl.cards.colorless.Transmutation,false,COLORLESS,RARE,SKILL,20,true,2.19%,3.27%,2.52%,1.25%,0.00%,7.69%,17.65%,3865,12842,2026-08-27T20:16:17
+Transmutation,转化+,com.megacrit.cardcrawl.cards.colorless.Transmutation,true,COLORLESS,RARE,SKILL,20,true,3.11%,4.35%,1.96%,3.06%,--%,0.00%,20.00%,769,1191,2026-08-27T20:16:17
+Ghostly,灵体,com.megacrit.cardcrawl.cards.colorless.Apparition,false,COLORLESS,SPECIAL,SKILL,20,true,60.00%,50.00%,100.00%,50.00%,100.00%,--%,0.00%,8,15,2026-08-27T20:16:17
+Ghostly,灵体+,com.megacrit.cardcrawl.cards.colorless.Apparition,true,COLORLESS,SPECIAL,SKILL,20,true,75.00%,--%,100.00%,66.67%,--%,--%,--%,4,4,2026-08-27T20:16:17
+Backstab,背刺,com.megacrit.cardcrawl.cards.green.Backstab,false,GREEN,UNCOMMON,ATTACK,20,true,29.95%,48.10%,12.67%,2.25%,17.66%,7.17%,4.50%,5797,72464,2026-08-27T20:16:17
+Backstab,背刺+,com.megacrit.cardcrawl.cards.green.Backstab,true,GREEN,UNCOMMON,ATTACK,20,true,12.50%,42.68%,19.05%,3.59%,16.67%,16.04%,7.49%,2880,11355,2026-08-27T20:16:17
+Chrysalis,结茧,com.megacrit.cardcrawl.cards.colorless.Chrysalis,false,COLORLESS,RARE,SKILL,20,true,5.05%,6.19%,6.23%,3.87%,12.50%,0.00%,42.11%,3750,12504,2026-08-27T20:16:17
+Chrysalis,结茧+,com.megacrit.cardcrawl.cards.colorless.Chrysalis,true,COLORLESS,RARE,SKILL,20,true,6.76%,8.00%,8.70%,6.63%,--%,0.00%,14.29%,738,1153,2026-08-27T20:16:17
+FollowUp,追击,com.megacrit.cardcrawl.cards.purple.FollowUp,false,PURPLE,COMMON,ATTACK,20,true,1.13%,1.95%,0.25%,0.12%,3.71%,1.61%,0.58%,6328,161553,2026-08-27T20:16:17
+FollowUp,追击+,com.megacrit.cardcrawl.cards.purple.FollowUp,true,PURPLE,COMMON,ATTACK,20,true,0.78%,3.77%,0.75%,0.34%,2.70%,3.03%,3.43%,3722,28716,2026-08-27T20:16:17
+Void,虚空,com.megacrit.cardcrawl.cards.status.VoidCard,false,COLORLESS,COMMON,STATUS,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,9,16,2026-08-27T20:16:17
+Scrape,刮削,com.megacrit.cardcrawl.cards.blue.Scrape,false,BLUE,UNCOMMON,ATTACK,20,true,3.20%,3.50%,2.46%,1.65%,23.44%,12.56%,9.42%,4112,31063,2026-08-27T20:16:17
+Scrape,刮削+,com.megacrit.cardcrawl.cards.blue.Scrape,true,BLUE,UNCOMMON,ATTACK,20,true,5.55%,10.02%,5.49%,3.02%,26.32%,20.34%,20.79%,1704,4738,2026-08-27T20:16:17
+Feed,狂宴,com.megacrit.cardcrawl.cards.red.Feed,false,RED,RARE,ATTACK,20,true,49.71%,82.57%,54.06%,25.59%,44.33%,19.62%,7.93%,6099,67509,2026-08-27T20:16:17
+Feed,狂宴+,com.megacrit.cardcrawl.cards.red.Feed,true,RED,RARE,ATTACK,20,true,43.86%,83.01%,58.41%,31.01%,59.57%,34.78%,15.21%,1923,5112,2026-08-27T20:16:17
+Vigilance,警惕,com.megacrit.cardcrawl.cards.purple.Vigilance,false,PURPLE,BASIC,SKILL,20,true,6.67%,25.00%,0.00%,0.00%,0.00%,--%,--%,10,15,2026-08-27T20:16:17
+Vigilance,警惕+,com.megacrit.cardcrawl.cards.purple.Vigilance,true,PURPLE,BASIC,SKILL,20,true,33.33%,100.00%,--%,0.00%,--%,--%,--%,2,3,2026-08-27T20:16:17
+Rupture,撕裂,com.megacrit.cardcrawl.cards.red.Rupture,false,RED,UNCOMMON,POWER,20,true,7.91%,8.20%,7.95%,5.65%,13.34%,13.18%,11.96%,6254,81099,2026-08-27T20:16:17
+Rupture,撕裂+,com.megacrit.cardcrawl.cards.red.Rupture,true,RED,UNCOMMON,POWER,20,true,15.83%,22.08%,15.68%,13.11%,35.56%,27.65%,25.73%,3155,12449,2026-08-27T20:16:17
+Venomology,炼制药水,com.megacrit.cardcrawl.cards.green.Alchemize,false,GREEN,RARE,SKILL,20,true,56.23%,79.14%,59.76%,43.54%,46.46%,31.60%,21.26%,5164,45409,2026-08-27T20:16:17
+Venomology,炼制药水+,com.megacrit.cardcrawl.cards.green.Alchemize,true,GREEN,RARE,SKILL,20,true,55.35%,80.95%,63.57%,49.68%,75.00%,53.99%,36.07%,1565,4282,2026-08-27T20:16:17
+Discovery,发现,com.megacrit.cardcrawl.cards.colorless.Discovery,false,COLORLESS,UNCOMMON,SKILL,20,true,15.72%,34.11%,22.82%,12.43%,50.00%,16.67%,39.50%,4011,13803,2026-08-27T20:16:17
+Discovery,发现+,com.megacrit.cardcrawl.cards.colorless.Discovery,true,COLORLESS,UNCOMMON,SKILL,20,true,17.76%,50.00%,22.73%,16.14%,0.00%,50.00%,45.28%,1198,2173,2026-08-27T20:16:17
+Beam Cell,光束射线,com.megacrit.cardcrawl.cards.blue.BeamCell,false,BLUE,COMMON,ATTACK,20,true,10.43%,15.47%,5.08%,1.88%,3.34%,2.22%,1.29%,5307,100369,2026-08-27T20:16:17
+Beam Cell,光束射线+,com.megacrit.cardcrawl.cards.blue.BeamCell,true,BLUE,COMMON,ATTACK,20,true,9.57%,22.62%,13.18%,4.94%,11.34%,6.00%,3.91%,2914,15220,2026-08-27T20:16:17
+Leap,飞跃,com.megacrit.cardcrawl.cards.blue.Leap,false,BLUE,COMMON,SKILL,20,true,1.70%,2.25%,0.92%,0.37%,3.90%,1.80%,2.15%,5255,97913,2026-08-27T20:16:17
+Leap,飞跃+,com.megacrit.cardcrawl.cards.blue.Leap,true,BLUE,COMMON,SKILL,20,true,3.40%,5.04%,4.49%,1.86%,4.17%,5.78%,7.32%,2995,16373,2026-08-27T20:16:17
+CurseOfTheBell,铃铛的诅咒,com.megacrit.cardcrawl.cards.curses.CurseOfTheBell,false,CURSE,SPECIAL,CURSE,20,true,16.00%,10.00%,10.71%,20.00%,0.00%,--%,100.00%,58,100,2026-08-27T20:16:17
+Bouncing Flask,弹跳药瓶,com.megacrit.cardcrawl.cards.green.BouncingFlask,false,GREEN,UNCOMMON,SKILL,20,true,19.68%,30.24%,7.00%,3.48%,14.74%,8.95%,6.61%,5750,71245,2026-08-27T20:16:17
+Bouncing Flask,弹跳药瓶+,com.megacrit.cardcrawl.cards.green.BouncingFlask,true,GREEN,UNCOMMON,SKILL,20,true,10.62%,28.72%,10.49%,6.08%,20.78%,21.36%,14.58%,3007,12339,2026-08-27T20:16:17
+PathToVictory,点穴,com.megacrit.cardcrawl.cards.purple.PressurePoints,false,PURPLE,COMMON,SKILL,20,true,1.23%,1.41%,0.24%,0.32%,49.06%,23.08%,17.39%,6213,158059,2026-08-27T20:16:17
+PathToVictory,点穴+,com.megacrit.cardcrawl.cards.purple.PressurePoints,true,PURPLE,COMMON,SKILL,20,true,1.24%,2.79%,0.53%,0.53%,60.00%,36.63%,25.28%,3627,28764,2026-08-27T20:16:18
+Bludgeon,重锤,com.megacrit.cardcrawl.cards.red.Bludgeon,false,RED,RARE,ATTACK,20,true,9.34%,31.21%,2.66%,1.28%,5.84%,4.32%,6.33%,6088,67674,2026-08-27T20:16:18
+Bludgeon,重锤+,com.megacrit.cardcrawl.cards.red.Bludgeon,true,RED,RARE,ATTACK,20,true,7.45%,31.53%,5.59%,2.88%,23.53%,11.11%,11.39%,1808,4817,2026-08-27T20:16:18
+Finesse,妙计,com.megacrit.cardcrawl.cards.colorless.Finesse,false,COLORLESS,UNCOMMON,SKILL,20,true,40.42%,54.94%,46.53%,34.88%,64.29%,57.14%,53.94%,4442,16783,2026-08-27T20:16:18
+Finesse,妙计+,com.megacrit.cardcrawl.cards.colorless.Finesse,true,COLORLESS,UNCOMMON,SKILL,20,true,44.09%,61.54%,44.00%,42.88%,0.00%,66.67%,54.23%,1285,2429,2026-08-27T20:16:18
+Slice,切割,com.megacrit.cardcrawl.cards.green.Slice,false,GREEN,COMMON,ATTACK,20,true,2.25%,3.51%,0.51%,0.15%,5.34%,2.97%,1.91%,6886,197381,2026-08-27T20:16:18
+Slice,切割+,com.megacrit.cardcrawl.cards.green.Slice,true,GREEN,COMMON,ATTACK,20,true,1.66%,6.81%,1.75%,0.53%,17.33%,5.62%,3.60%,4124,29897,2026-08-27T20:16:18
+Recycle,回收,com.megacrit.cardcrawl.cards.blue.Recycle,false,BLUE,UNCOMMON,SKILL,20,true,47.84%,48.90%,62.87%,59.94%,5.67%,7.77%,10.69%,4091,31830,2026-08-27T20:16:18
+Recycle,回收+,com.megacrit.cardcrawl.cards.blue.Recycle,true,BLUE,UNCOMMON,SKILL,20,true,57.01%,53.82%,72.44%,68.48%,24.29%,25.69%,25.30%,1884,5731,2026-08-27T20:16:18
+Backflip,后空翻,com.megacrit.cardcrawl.cards.green.Backflip,false,GREEN,COMMON,SKILL,20,true,24.18%,28.19%,28.47%,17.42%,10.64%,13.28%,12.20%,6964,196639,2026-08-27T20:16:18
+Backflip,后空翻+,com.megacrit.cardcrawl.cards.green.Backflip,true,GREEN,COMMON,SKILL,20,true,32.90%,44.29%,45.75%,29.25%,21.26%,27.23%,24.15%,4302,33501,2026-08-27T20:16:18
+Outmaneuver,抢占先机,com.megacrit.cardcrawl.cards.green.Outmaneuver,false,GREEN,COMMON,SKILL,20,true,1.56%,1.17%,2.22%,1.87%,2.31%,2.19%,2.28%,6907,195436,2026-08-27T20:16:18
+Outmaneuver,抢占先机+,com.megacrit.cardcrawl.cards.green.Outmaneuver,true,GREEN,COMMON,SKILL,20,true,8.69%,6.07%,10.63%,7.86%,7.27%,8.70%,8.01%,4274,32659,2026-08-27T20:16:18
+Bloodletting,放血,com.megacrit.cardcrawl.cards.red.Bloodletting,false,RED,UNCOMMON,SKILL,20,true,54.58%,62.31%,69.47%,58.74%,8.04%,9.81%,11.19%,6297,82024,2026-08-27T20:16:18
+Bloodletting,放血+,com.megacrit.cardcrawl.cards.red.Bloodletting,true,RED,UNCOMMON,SKILL,20,true,54.23%,69.99%,75.98%,67.06%,13.91%,18.75%,20.12%,3262,13499,2026-08-27T20:16:18
+Brilliance,光辉,com.megacrit.cardcrawl.cards.purple.Brilliance,false,PURPLE,RARE,ATTACK,20,true,3.26%,10.14%,1.87%,1.18%,11.30%,4.06%,3.75%,4696,45249,2026-08-27T20:16:18
+Brilliance,光辉+,com.megacrit.cardcrawl.cards.purple.Brilliance,true,PURPLE,RARE,ATTACK,20,true,3.66%,12.33%,3.56%,2.05%,16.67%,9.38%,7.81%,1334,3636,2026-08-27T20:16:18
+Magnetism,磁力,com.megacrit.cardcrawl.cards.colorless.Magnetism,false,COLORLESS,RARE,POWER,20,true,4.75%,5.65%,4.97%,3.79%,40.00%,0.00%,37.50%,3942,13693,2026-08-27T20:16:18
+Magnetism,磁力+,com.megacrit.cardcrawl.cards.colorless.Magnetism,true,COLORLESS,RARE,POWER,20,true,8.51%,9.09%,11.76%,8.00%,--%,0.00%,57.14%,682,1057,2026-08-27T20:16:18
+Concentrate,全神贯注,com.megacrit.cardcrawl.cards.green.Concentrate,false,GREEN,UNCOMMON,SKILL,20,true,25.35%,21.87%,36.94%,33.48%,4.32%,6.50%,8.27%,5751,72268,2026-08-27T20:16:18
+Concentrate,全神贯注+,com.megacrit.cardcrawl.cards.green.Concentrate,true,GREEN,UNCOMMON,SKILL,20,true,41.85%,41.22%,56.02%,45.20%,18.52%,14.81%,15.65%,2981,12823,2026-08-27T20:16:18
+Skim,快速检索,com.megacrit.cardcrawl.cards.blue.Skim,false,BLUE,UNCOMMON,SKILL,20,true,58.67%,61.08%,69.81%,68.08%,25.09%,34.93%,33.97%,4180,32417,2026-08-27T20:16:18
+Skim,快速检索+,com.megacrit.cardcrawl.cards.blue.Skim,true,BLUE,UNCOMMON,SKILL,20,true,65.52%,66.98%,74.41%,71.52%,43.16%,54.72%,51.95%,1890,5833,2026-08-27T20:16:18
+White Noise,白噪声,com.megacrit.cardcrawl.cards.blue.WhiteNoise,false,BLUE,UNCOMMON,SKILL,20,true,60.09%,66.27%,57.67%,44.99%,52.25%,48.39%,47.31%,4098,31489,2026-08-27T20:16:18
+White Noise,白噪声+,com.megacrit.cardcrawl.cards.blue.WhiteNoise,true,BLUE,UNCOMMON,SKILL,20,true,66.87%,62.10%,71.15%,62.78%,69.74%,70.81%,67.87%,1917,5834,2026-08-27T20:16:18
+Capacitor,扩容,com.megacrit.cardcrawl.cards.blue.Capacitor,false,BLUE,UNCOMMON,POWER,20,true,54.06%,55.15%,62.06%,57.54%,35.87%,40.14%,41.97%,4094,32009,2026-08-27T20:16:18
+Capacitor,扩容+,com.megacrit.cardcrawl.cards.blue.Capacitor,true,BLUE,UNCOMMON,POWER,20,true,61.90%,61.34%,71.64%,62.79%,52.99%,52.62%,53.71%,1912,5512,2026-08-27T20:16:18
+Cold Snap,寒流,com.megacrit.cardcrawl.cards.blue.ColdSnap,false,BLUE,COMMON,ATTACK,20,true,32.11%,51.21%,17.77%,4.27%,18.87%,9.25%,4.18%,5307,100416,2026-08-27T20:16:18
+Cold Snap,寒流+,com.megacrit.cardcrawl.cards.blue.ColdSnap,true,BLUE,COMMON,ATTACK,20,true,14.09%,33.13%,20.99%,4.97%,23.21%,15.19%,8.35%,2930,14857,2026-08-27T20:16:18
+CrushJoints,粉碎关节,com.megacrit.cardcrawl.cards.purple.CrushJoints,false,PURPLE,COMMON,ATTACK,20,true,14.30%,27.66%,5.16%,1.09%,0.54%,0.18%,0.10%,6304,161946,2026-08-27T20:16:18
+CrushJoints,粉碎关节+,com.megacrit.cardcrawl.cards.purple.CrushJoints,true,PURPLE,COMMON,ATTACK,20,true,7.08%,31.53%,13.29%,3.34%,2.32%,0.74%,0.26%,3735,29300,2026-08-27T20:16:18
+Master of Strategy,战略大师,com.megacrit.cardcrawl.cards.colorless.MasterOfStrategy,false,COLORLESS,RARE,SKILL,20,true,70.47%,48.55%,73.18%,86.72%,73.68%,52.27%,77.42%,4291,17034,2026-08-27T20:16:18
+Master of Strategy,战略大师+,com.megacrit.cardcrawl.cards.colorless.MasterOfStrategy,true,COLORLESS,RARE,SKILL,20,true,81.17%,74.42%,55.93%,82.90%,40.00%,55.56%,79.51%,965,1636,2026-08-27T20:16:18
+Flechettes,飞镖,com.megacrit.cardcrawl.cards.green.Flechettes,false,GREEN,UNCOMMON,ATTACK,20,true,3.48%,4.94%,1.90%,1.05%,0.88%,1.52%,0.79%,5789,72213,2026-08-27T20:16:18
+Flechettes,飞镖+,com.megacrit.cardcrawl.cards.green.Flechettes,true,GREEN,UNCOMMON,ATTACK,20,true,4.47%,9.81%,5.85%,2.80%,0.00%,7.38%,2.83%,2827,11444,2026-08-27T20:16:18
+Tantrum,发泄,com.megacrit.cardcrawl.cards.purple.Tantrum,false,PURPLE,UNCOMMON,ATTACK,20,true,60.50%,90.74%,77.69%,52.65%,8.75%,3.99%,2.91%,5029,57932,2026-08-27T20:16:18
+Tantrum,发泄+,com.megacrit.cardcrawl.cards.purple.Tantrum,true,PURPLE,UNCOMMON,ATTACK,20,true,43.86%,87.97%,80.90%,63.49%,21.64%,9.82%,6.18%,2505,10916,2026-08-27T20:16:18
+Perfected Strike,完美打击,com.megacrit.cardcrawl.cards.red.PerfectedStrike,false,RED,COMMON,ATTACK,20,true,2.82%,3.90%,0.21%,0.10%,28.27%,14.63%,13.85%,7590,229575,2026-08-27T20:16:18
+Perfected Strike,完美打击+,com.megacrit.cardcrawl.cards.red.PerfectedStrike,true,RED,COMMON,ATTACK,20,true,1.40%,2.96%,0.56%,0.25%,45.45%,30.53%,26.39%,4620,33672,2026-08-27T20:16:18
+Strike_B,打击,com.megacrit.cardcrawl.cards.blue.Strike_Blue,false,BLUE,BASIC,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,8,15,2026-08-27T20:16:18
+Strike_B,打击+,com.megacrit.cardcrawl.cards.blue.Strike_Blue,true,BLUE,BASIC,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,4,5,2026-08-27T20:16:18
+Thunder Strike,雷霆打击,com.megacrit.cardcrawl.cards.blue.ThunderStrike,false,BLUE,RARE,ATTACK,20,true,8.49%,12.06%,6.86%,8.52%,11.54%,3.65%,4.02%,3747,23777,2026-08-27T20:16:18
+Thunder Strike,雷霆打击+,com.megacrit.cardcrawl.cards.blue.ThunderStrike,true,BLUE,RARE,ATTACK,20,true,14.97%,20.83%,12.99%,14.70%,9.09%,22.73%,19.10%,852,1971,2026-08-27T20:16:18
+Carnage,残杀,com.megacrit.cardcrawl.cards.red.Carnage,false,RED,UNCOMMON,ATTACK,20,true,32.46%,56.41%,6.61%,0.91%,4.39%,1.67%,1.15%,6270,81407,2026-08-27T20:16:18
+Carnage,残杀+,com.megacrit.cardcrawl.cards.red.Carnage,true,RED,UNCOMMON,ATTACK,20,true,8.32%,42.02%,10.56%,1.65%,7.50%,6.64%,1.84%,3128,12103,2026-08-27T20:16:18
+Masterful Stab,精巧刺击,com.megacrit.cardcrawl.cards.green.MasterfulStab,false,GREEN,UNCOMMON,ATTACK,20,true,17.95%,31.11%,2.98%,0.33%,5.20%,1.12%,0.77%,5779,72688,2026-08-27T20:16:18
+Masterful Stab,精巧刺击+,com.megacrit.cardcrawl.cards.green.MasterfulStab,true,GREEN,UNCOMMON,ATTACK,20,true,4.43%,23.38%,5.61%,0.82%,4.08%,2.51%,1.64%,2830,11015,2026-08-27T20:16:18
+Nirvana,涅槃,com.megacrit.cardcrawl.cards.purple.Nirvana,false,PURPLE,UNCOMMON,POWER,20,true,0.38%,0.34%,0.33%,0.41%,7.06%,4.17%,3.78%,5006,56554,2026-08-27T20:16:18
+Nirvana,涅槃+,com.megacrit.cardcrawl.cards.purple.Nirvana,true,PURPLE,UNCOMMON,POWER,20,true,0.67%,0.58%,0.66%,0.53%,42.86%,13.33%,3.30%,2407,10193,2026-08-27T20:16:18
+Evaluate,评估,com.megacrit.cardcrawl.cards.purple.Evaluate,false,PURPLE,COMMON,SKILL,20,true,0.72%,0.89%,0.52%,0.46%,2.19%,2.10%,1.72%,6236,160896,2026-08-27T20:16:18
+Evaluate,评估+,com.megacrit.cardcrawl.cards.purple.Evaluate,true,PURPLE,COMMON,SKILL,20,true,2.06%,4.71%,2.31%,1.48%,10.26%,6.15%,3.73%,3736,29329,2026-08-27T20:16:18
+Prepared,早有准备,com.megacrit.cardcrawl.cards.green.Prepared,false,GREEN,COMMON,SKILL,20,true,38.32%,47.78%,53.56%,33.71%,19.61%,18.48%,11.21%,7011,198561,2026-08-27T20:16:18
+Prepared,早有准备+,com.megacrit.cardcrawl.cards.green.Prepared,true,GREEN,COMMON,SKILL,20,true,48.32%,67.28%,74.92%,56.19%,33.88%,41.17%,31.78%,4359,34215,2026-08-27T20:16:18
+Good Instincts,优秀直觉,com.megacrit.cardcrawl.cards.colorless.GoodInstincts,false,COLORLESS,UNCOMMON,SKILL,20,true,4.13%,7.41%,6.98%,3.27%,25.00%,--%,22.64%,4125,14585,2026-08-27T20:16:18
+Good Instincts,优秀直觉+,com.megacrit.cardcrawl.cards.colorless.GoodInstincts,true,COLORLESS,UNCOMMON,SKILL,20,true,6.97%,19.51%,10.77%,6.50%,--%,0.00%,15.79%,1149,2065,2026-08-27T20:16:18
+Dropkick,飞身踢,com.megacrit.cardcrawl.cards.red.Dropkick,false,RED,UNCOMMON,ATTACK,20,true,10.21%,11.74%,8.24%,4.36%,32.05%,22.33%,11.85%,6301,81254,2026-08-27T20:16:18
+Dropkick,飞身踢+,com.megacrit.cardcrawl.cards.red.Dropkick,true,RED,UNCOMMON,ATTACK,20,true,12.54%,18.50%,15.22%,7.41%,55.26%,34.28%,19.93%,3170,12380,2026-08-27T20:16:18
+Swift Strike,迅捷打击,com.megacrit.cardcrawl.cards.colorless.SwiftStrike,false,COLORLESS,UNCOMMON,ATTACK,20,true,2.57%,13.57%,3.79%,0.44%,50.00%,25.00%,17.24%,4108,14873,2026-08-27T20:16:18
+Swift Strike,迅捷打击+,com.megacrit.cardcrawl.cards.colorless.SwiftStrike,true,COLORLESS,UNCOMMON,ATTACK,20,true,2.80%,26.67%,5.97%,2.16%,--%,--%,16.67%,1002,1679,2026-08-27T20:16:18
+Normality,凡庸,com.megacrit.cardcrawl.cards.curses.Normality,false,CURSE,CURSE,CURSE,20,true,12.28%,39.29%,8.97%,8.61%,--%,100.00%,25.00%,141,342,2026-08-27T20:16:18
+Strike_G,打击,com.megacrit.cardcrawl.cards.green.Strike_Green,false,GREEN,BASIC,ATTACK,20,true,8.33%,25.00%,0.00%,0.00%,--%,--%,--%,6,12,2026-08-27T20:16:18
+Strike_G,打击+,com.megacrit.cardcrawl.cards.green.Strike_Green,true,GREEN,BASIC,ATTACK,20,true,0.00%,--%,0.00%,--%,--%,--%,--%,1,1,2026-08-27T20:16:18
+MasterReality,操控现实,com.megacrit.cardcrawl.cards.purple.MasterReality,false,PURPLE,RARE,POWER,20,true,3.15%,3.61%,2.66%,3.65%,2.00%,0.44%,1.22%,4761,45428,2026-08-27T20:16:18
+MasterReality,操控现实+,com.megacrit.cardcrawl.cards.purple.MasterReality,true,PURPLE,RARE,POWER,20,true,8.17%,13.67%,7.47%,8.02%,16.67%,4.00%,4.60%,1322,3573,2026-08-27T20:16:18
+Omega,欧米伽,com.megacrit.cardcrawl.cards.tempCards.Omega,false,COLORLESS,SPECIAL,POWER,20,true,33.33%,100.00%,0.00%,--%,--%,--%,--%,3,3,2026-08-27T20:16:19
+Omega,欧米伽+,com.megacrit.cardcrawl.cards.tempCards.Omega,true,COLORLESS,SPECIAL,POWER,20,true,0.00%,--%,--%,0.00%,--%,--%,--%,1,1,2026-08-27T20:16:19
+Hyperbeam,超能光束,com.megacrit.cardcrawl.cards.blue.Hyperbeam,false,BLUE,RARE,ATTACK,20,true,10.22%,27.41%,5.57%,2.11%,21.71%,13.35%,6.82%,3873,24516,2026-08-27T20:16:19
+Hyperbeam,超能光束+,com.megacrit.cardcrawl.cards.blue.Hyperbeam,true,BLUE,RARE,ATTACK,20,true,8.98%,25.74%,9.11%,3.43%,0.00%,28.13%,17.19%,860,2049,2026-08-27T20:16:19
+Accuracy,精准,com.megacrit.cardcrawl.cards.green.Accuracy,false,GREEN,UNCOMMON,POWER,20,true,31.35%,33.63%,26.24%,13.35%,53.53%,47.99%,39.07%,5797,73190,2026-08-27T20:16:19
+Accuracy,精准+,com.megacrit.cardcrawl.cards.green.Accuracy,true,GREEN,UNCOMMON,POWER,20,true,33.38%,42.04%,31.65%,17.78%,69.35%,62.45%,53.00%,2916,11861,2026-08-27T20:16:19
+Sword Boomerang,飞剑回旋镖,com.megacrit.cardcrawl.cards.red.SwordBoomerang,false,RED,COMMON,ATTACK,20,true,6.53%,8.82%,4.26%,1.90%,4.78%,3.52%,2.59%,7583,229129,2026-08-27T20:16:19
+Sword Boomerang,飞剑回旋镖+,com.megacrit.cardcrawl.cards.red.SwordBoomerang,true,RED,COMMON,ATTACK,20,true,7.45%,13.97%,9.37%,4.73%,11.70%,10.51%,6.04%,4637,33759,2026-08-27T20:16:19
+EmptyMind,化智为空,com.megacrit.cardcrawl.cards.purple.EmptyMind,false,PURPLE,UNCOMMON,SKILL,20,true,35.27%,42.36%,38.01%,23.45%,16.36%,19.61%,15.91%,5042,57589,2026-08-27T20:16:19
+EmptyMind,化智为空+,com.megacrit.cardcrawl.cards.purple.EmptyMind,true,PURPLE,UNCOMMON,SKILL,20,true,38.69%,53.50%,51.00%,34.07%,41.33%,29.97%,25.57%,2467,11031,2026-08-27T20:16:19
+Pride,傲慢,com.megacrit.cardcrawl.cards.curses.Pride,false,CURSE,SPECIAL,CURSE,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,6,11,2026-08-27T20:16:19
+Defragment,碎片整理,com.megacrit.cardcrawl.cards.blue.Defragment,false,BLUE,UNCOMMON,POWER,20,true,83.99%,90.62%,80.94%,63.24%,86.35%,78.09%,66.91%,4161,32473,2026-08-27T20:16:19
+Defragment,碎片整理+,com.megacrit.cardcrawl.cards.blue.Defragment,true,BLUE,UNCOMMON,POWER,20,true,83.31%,81.62%,86.16%,73.82%,91.26%,88.91%,84.29%,1941,5992,2026-08-27T20:16:19
+Jack Of All Trades,花样百出,com.megacrit.cardcrawl.cards.colorless.JackOfAllTrades,false,COLORLESS,UNCOMMON,SKILL,20,true,4.58%,12.41%,9.06%,2.90%,80.00%,16.67%,38.24%,4023,14260,2026-08-27T20:16:19
+Jack Of All Trades,花样百出+,com.megacrit.cardcrawl.cards.colorless.JackOfAllTrades,true,COLORLESS,UNCOMMON,SKILL,20,true,6.33%,8.57%,11.76%,5.84%,--%,100.00%,38.46%,1157,2102,2026-08-27T20:16:19
+Demon Form,恶魔形态,com.megacrit.cardcrawl.cards.red.DemonForm,false,RED,RARE,POWER,20,true,19.36%,35.17%,15.86%,13.16%,10.70%,6.44%,8.67%,6071,66692,2026-08-27T20:16:19
+Demon Form,恶魔形态+,com.megacrit.cardcrawl.cards.red.DemonForm,true,RED,RARE,POWER,20,true,27.40%,56.85%,27.45%,22.34%,5.00%,16.23%,24.45%,1849,4952,2026-08-27T20:16:19
+Fire Breathing,火焰吐息,com.megacrit.cardcrawl.cards.red.FireBreathing,false,RED,UNCOMMON,POWER,20,true,20.28%,31.15%,7.32%,3.59%,6.69%,6.53%,5.99%,6408,81629,2026-08-27T20:16:19
+Fire Breathing,火焰吐息+,com.megacrit.cardcrawl.cards.red.FireBreathing,true,RED,UNCOMMON,POWER,20,true,12.90%,38.25%,13.70%,7.05%,13.89%,17.45%,13.57%,3212,12399,2026-08-27T20:16:19
+Ghostly Armor,幽灵铠甲,com.megacrit.cardcrawl.cards.red.GhostlyArmor,false,RED,UNCOMMON,SKILL,20,true,21.20%,29.57%,14.30%,4.41%,6.72%,5.89%,5.24%,6288,80884,2026-08-27T20:16:19
+Ghostly Armor,幽灵铠甲+,com.megacrit.cardcrawl.cards.red.GhostlyArmor,true,RED,UNCOMMON,SKILL,20,true,15.97%,29.62%,23.53%,8.86%,18.33%,13.77%,10.82%,3192,12853,2026-08-27T20:16:19
+Weave,迂回,com.megacrit.cardcrawl.cards.purple.Weave,false,PURPLE,UNCOMMON,ATTACK,20,true,0.29%,0.37%,0.22%,0.10%,5.26%,2.11%,4.76%,4998,55502,2026-08-27T20:16:19
+Weave,迂回+,com.megacrit.cardcrawl.cards.purple.Weave,true,PURPLE,UNCOMMON,ATTACK,20,true,0.31%,0.73%,0.34%,0.18%,0.00%,5.41%,3.17%,2443,10020,2026-08-27T20:16:19
+Safety,平安,com.megacrit.cardcrawl.cards.tempCards.Safety,false,COLORLESS,SPECIAL,SKILL,20,true,25.00%,80.00%,0.00%,0.00%,0.00%,0.00%,0.00%,8,16,2026-08-27T20:16:19
+Safety,平安+,com.megacrit.cardcrawl.cards.tempCards.Safety,true,COLORLESS,SPECIAL,SKILL,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,6,6,2026-08-27T20:16:19
+Metamorphosis,羽化,com.megacrit.cardcrawl.cards.colorless.Metamorphosis,false,COLORLESS,RARE,SKILL,20,true,7.23%,12.57%,4.06%,2.18%,0.00%,7.69%,26.92%,3893,13519,2026-08-27T20:16:19
+Metamorphosis,羽化+,com.megacrit.cardcrawl.cards.colorless.Metamorphosis,true,COLORLESS,RARE,SKILL,20,true,4.34%,16.67%,6.67%,3.70%,0.00%,0.00%,42.86%,795,1245,2026-08-27T20:16:19
+Prostrate,五体投地,com.megacrit.cardcrawl.cards.purple.Prostrate,false,PURPLE,COMMON,SKILL,20,true,2.80%,2.46%,2.39%,2.89%,19.57%,14.20%,7.47%,6195,158102,2026-08-27T20:16:19
+Prostrate,五体投地+,com.megacrit.cardcrawl.cards.purple.Prostrate,true,PURPLE,COMMON,SKILL,20,true,8.18%,9.58%,7.71%,6.95%,31.43%,25.15%,16.96%,3705,29175,2026-08-27T20:16:19
+SignatureMove,招牌技,com.megacrit.cardcrawl.cards.purple.SignatureMove,false,PURPLE,UNCOMMON,ATTACK,20,true,10.17%,18.84%,2.40%,0.67%,0.28%,0.20%,0.13%,5000,56813,2026-08-27T20:16:19
+SignatureMove,招牌技+,com.megacrit.cardcrawl.cards.purple.SignatureMove,true,PURPLE,UNCOMMON,ATTACK,20,true,2.73%,12.38%,3.45%,1.37%,2.94%,0.00%,0.54%,2423,10223,2026-08-27T20:16:19
+Uppercut,上勾拳,com.megacrit.cardcrawl.cards.red.Uppercut,false,RED,UNCOMMON,ATTACK,20,true,13.21%,20.53%,4.68%,1.67%,1.56%,0.85%,0.55%,6359,82086,2026-08-27T20:16:19
+Uppercut,上勾拳+,com.megacrit.cardcrawl.cards.red.Uppercut,true,RED,UNCOMMON,ATTACK,20,true,11.00%,29.37%,15.13%,5.85%,1.47%,5.62%,4.80%,3128,12550,2026-08-27T20:16:19
+PiercingWail,尖啸,com.megacrit.cardcrawl.cards.green.PiercingWail,false,GREEN,COMMON,SKILL,20,true,32.92%,39.90%,45.45%,28.60%,9.87%,13.88%,9.67%,7018,197666,2026-08-27T20:16:19
+PiercingWail,尖啸+,com.megacrit.cardcrawl.cards.green.PiercingWail,true,GREEN,COMMON,SKILL,20,true,32.85%,40.94%,51.84%,35.70%,15.89%,22.79%,18.31%,4329,33885,2026-08-27T20:16:19
+Mind Blast,心灵震慑,com.megacrit.cardcrawl.cards.colorless.MindBlast,false,COLORLESS,UNCOMMON,ATTACK,20,true,0.77%,1.63%,0.90%,0.47%,100.00%,50.00%,68.18%,4024,14493,2026-08-27T20:16:19
+Mind Blast,心灵震慑+,com.megacrit.cardcrawl.cards.colorless.MindBlast,true,COLORLESS,UNCOMMON,ATTACK,20,true,2.41%,11.43%,1.43%,1.78%,100.00%,100.00%,75.00%,1009,1744,2026-08-27T20:16:19
+Neutralize,中和,com.megacrit.cardcrawl.cards.green.Neutralize,false,GREEN,BASIC,ATTACK,20,true,12.50%,16.67%,0.00%,20.00%,--%,--%,--%,10,16,2026-08-27T20:16:19
+Neutralize,中和+,com.megacrit.cardcrawl.cards.green.Neutralize,true,GREEN,BASIC,ATTACK,20,true,0.00%,--%,0.00%,0.00%,--%,0.00%,--%,13,14,2026-08-27T20:16:19
+Multi-Cast,多重释放,com.megacrit.cardcrawl.cards.blue.MultiCast,false,BLUE,RARE,SKILL,20,true,6.90%,9.98%,5.92%,5.80%,14.75%,6.14%,4.25%,3815,23261,2026-08-27T20:16:19
+Multi-Cast,多重释放+,com.megacrit.cardcrawl.cards.blue.MultiCast,true,BLUE,RARE,SKILL,20,true,12.06%,20.37%,11.41%,9.10%,50.00%,22.45%,18.18%,998,2513,2026-08-27T20:16:19
+Shame,羞耻,com.megacrit.cardcrawl.cards.curses.Shame,false,CURSE,CURSE,CURSE,20,true,19.71%,24.14%,17.90%,13.08%,33.33%,100.00%,70.00%,168,340,2026-08-27T20:16:19
+Doom and Gloom,愁云惨淡,com.megacrit.cardcrawl.cards.blue.DoomAndGloom,false,BLUE,UNCOMMON,ATTACK,20,true,26.68%,41.21%,11.16%,3.50%,4.17%,2.34%,1.57%,4108,31977,2026-08-27T20:16:19
+Doom and Gloom,愁云惨淡+,com.megacrit.cardcrawl.cards.blue.DoomAndGloom,true,BLUE,UNCOMMON,ATTACK,20,true,11.38%,32.41%,16.05%,5.22%,6.67%,2.11%,1.55%,1806,4992,2026-08-27T20:16:19
+Evolve,进化,com.megacrit.cardcrawl.cards.red.Evolve,false,RED,UNCOMMON,POWER,20,true,42.73%,51.56%,48.79%,44.92%,1.97%,1.68%,2.78%,6368,82425,2026-08-27T20:16:19
+Evolve,进化+,com.megacrit.cardcrawl.cards.red.Evolve,true,RED,UNCOMMON,POWER,20,true,44.52%,64.27%,62.73%,57.70%,11.43%,7.90%,8.09%,3267,12957,2026-08-27T20:16:19
+Double Tap,双发,com.megacrit.cardcrawl.cards.red.DoubleTap,false,RED,RARE,SKILL,20,true,10.35%,16.17%,9.89%,6.80%,5.43%,2.44%,2.17%,6061,65777,2026-08-27T20:16:19
+Double Tap,双发+,com.megacrit.cardcrawl.cards.red.DoubleTap,true,RED,RARE,SKILL,20,true,15.24%,33.87%,17.76%,10.75%,0.00%,8.33%,7.74%,1950,5566,2026-08-27T20:16:19
+Sucker Punch,突然一拳,com.megacrit.cardcrawl.cards.green.SuckerPunch,false,GREEN,COMMON,ATTACK,20,true,0.64%,1.02%,0.13%,0.08%,1.22%,0.31%,0.15%,6915,196938,2026-08-27T20:16:19
+Sucker Punch,突然一拳+,com.megacrit.cardcrawl.cards.green.SuckerPunch,true,GREEN,COMMON,ATTACK,20,true,1.01%,3.52%,1.26%,0.45%,5.88%,1.56%,1.25%,4123,29759,2026-08-27T20:16:19
+Burn,灼伤,com.megacrit.cardcrawl.cards.status.Burn,false,COLORLESS,COMMON,STATUS,20,true,6.52%,7.69%,0.00%,8.33%,20.00%,0.00%,0.00%,16,46,2026-08-27T20:16:19
+ConjureBlade,聚能成刃,com.megacrit.cardcrawl.cards.purple.ConjureBlade,false,PURPLE,RARE,SKILL,20,true,1.71%,3.83%,1.07%,1.37%,1.89%,2.18%,3.18%,4694,44596,2026-08-27T20:16:19
+ConjureBlade,聚能成刃+,com.megacrit.cardcrawl.cards.purple.ConjureBlade,true,PURPLE,RARE,SKILL,20,true,4.38%,9.24%,3.59%,4.23%,0.00%,3.85%,1.72%,1360,3769,2026-08-27T20:16:19
+Strike_R,打击,com.megacrit.cardcrawl.cards.red.Strike_Red,false,RED,BASIC,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,7,9,2026-08-27T20:16:19
+Strike_R,打击+,com.megacrit.cardcrawl.cards.red.Strike_Red,true,RED,BASIC,ATTACK,20,true,0.00%,0.00%,--%,--%,--%,--%,--%,1,1,2026-08-27T20:16:19
+Judgement,审判,com.megacrit.cardcrawl.cards.purple.Judgement,false,PURPLE,RARE,SKILL,20,true,3.19%,10.71%,2.24%,0.30%,1.15%,0.27%,0.29%,4692,44902,2026-08-27T20:16:19
+Judgement,审判+,com.megacrit.cardcrawl.cards.purple.Judgement,true,PURPLE,RARE,SKILL,20,true,2.50%,13.53%,2.97%,0.74%,0.00%,3.85%,2.08%,1297,3727,2026-08-27T20:16:19
+Footwork,灵动步法,com.megacrit.cardcrawl.cards.green.Footwork,false,GREEN,UNCOMMON,POWER,20,true,48.81%,58.68%,44.31%,30.48%,40.27%,35.56%,33.53%,5834,73845,2026-08-27T20:16:19
+Footwork,灵动步法+,com.megacrit.cardcrawl.cards.green.Footwork,true,GREEN,UNCOMMON,POWER,20,true,52.49%,71.63%,58.82%,42.82%,53.50%,57.16%,52.07%,2948,12031,2026-08-27T20:16:19
+Strike_P,打击,com.megacrit.cardcrawl.cards.purple.Strike_Purple,false,PURPLE,BASIC,ATTACK,20,true,0.00%,0.00%,0.00%,0.00%,--%,--%,--%,8,14,2026-08-27T20:16:19
+Strike_P,打击+,com.megacrit.cardcrawl.cards.purple.Strike_Purple,true,PURPLE,BASIC,ATTACK,20,true,100.00%,100.00%,--%,--%,--%,--%,--%,1,1,2026-08-27T20:16:19
+Steam,蒸汽护壁,com.megacrit.cardcrawl.cards.blue.SteamBarrier,false,BLUE,COMMON,SKILL,20,true,2.19%,2.69%,1.48%,0.53%,5.45%,6.19%,3.10%,5269,98042,2026-08-27T20:16:19
+Steam,蒸汽护壁+,com.megacrit.cardcrawl.cards.blue.SteamBarrier,true,BLUE,COMMON,SKILL,20,true,3.11%,3.40%,4.31%,1.48%,8.33%,10.24%,8.20%,2971,16266,2026-08-27T20:16:19
+Distraction,声东击西,com.megacrit.cardcrawl.cards.green.Distraction,false,GREEN,UNCOMMON,SKILL,20,true,0.98%,1.26%,0.63%,0.44%,4.42%,1.55%,1.94%,5711,71236,2026-08-27T20:16:19
+Distraction,声东击西+,com.megacrit.cardcrawl.cards.green.Distraction,true,GREEN,UNCOMMON,SKILL,20,true,5.13%,8.39%,6.59%,3.19%,25.00%,17.09%,10.71%,2918,12100,2026-08-27T20:16:19
+Dodge and Roll,闪躲翻滚,com.megacrit.cardcrawl.cards.green.DodgeAndRoll,false,GREEN,COMMON,SKILL,20,true,0.47%,0.42%,0.48%,0.48%,1.76%,2.71%,3.23%,6939,194454,2026-08-27T20:16:19
+Dodge and Roll,闪躲翻滚+,com.megacrit.cardcrawl.cards.green.DodgeAndRoll,true,GREEN,COMMON,SKILL,20,true,2.68%,2.94%,2.85%,2.22%,2.86%,9.23%,8.49%,4230,32510,2026-08-27T20:16:19
+Thinking Ahead,深谋远虑,com.megacrit.cardcrawl.cards.colorless.ThinkingAhead,false,COLORLESS,RARE,SKILL,20,true,19.69%,11.78%,21.82%,26.85%,10.00%,15.38%,46.09%,4052,14261,2026-08-27T20:16:19
+Thinking Ahead,深谋远虑+,com.megacrit.cardcrawl.cards.colorless.ThinkingAhead,true,COLORLESS,RARE,SKILL,20,true,21.15%,33.33%,12.00%,20.72%,0.00%,16.67%,57.14%,788,1248,2026-08-27T20:16:19
+EmptyFist,化拳为空,com.megacrit.cardcrawl.cards.purple.EmptyFist,false,PURPLE,COMMON,ATTACK,20,true,1.97%,3.51%,0.50%,0.13%,2.05%,0.58%,0.80%,6235,161548,2026-08-27T20:16:19
+EmptyFist,化拳为空+,com.megacrit.cardcrawl.cards.purple.EmptyFist,true,PURPLE,COMMON,ATTACK,20,true,0.94%,4.86%,1.19%,0.29%,7.27%,2.34%,0.53%,3670,28438,2026-08-27T20:16:19
+All Out Attack,全力攻击,com.megacrit.cardcrawl.cards.green.AllOutAttack,false,GREEN,UNCOMMON,ATTACK,20,true,16.26%,28.43%,2.03%,0.20%,2.10%,0.26%,0.11%,5750,72493,2026-08-27T20:16:19
+All Out Attack,全力攻击+,com.megacrit.cardcrawl.cards.green.AllOutAttack,true,GREEN,UNCOMMON,ATTACK,20,true,3.12%,18.44%,4.10%,0.33%,2.90%,1.64%,0.46%,2825,11216,2026-08-27T20:16:19
+Flying Knee,飞膝,com.megacrit.cardcrawl.cards.green.FlyingKnee,false,GREEN,COMMON,ATTACK,20,true,1.44%,2.38%,0.14%,0.07%,2.68%,0.63%,0.32%,6928,197770,2026-08-27T20:16:19
+Flying Knee,飞膝+,com.megacrit.cardcrawl.cards.green.FlyingKnee,true,GREEN,COMMON,ATTACK,20,true,0.60%,2.20%,0.75%,0.21%,2.08%,1.41%,1.77%,4191,29633,2026-08-27T20:16:19
+Predator,猎杀者,com.megacrit.cardcrawl.cards.green.Predator,false,GREEN,UNCOMMON,ATTACK,20,true,14.87%,25.59%,2.40%,0.81%,2.26%,1.08%,0.83%,5815,72437,2026-08-27T20:16:19
+Predator,猎杀者+,com.megacrit.cardcrawl.cards.green.Predator,true,GREEN,UNCOMMON,ATTACK,20,true,4.50%,23.29%,5.00%,1.58%,7.41%,2.58%,1.98%,2829,11169,2026-08-27T20:16:19
+Pray,祈祷,com.megacrit.cardcrawl.cards.purple.Pray,false,PURPLE,UNCOMMON,SKILL,20,true,3.65%,3.14%,3.89%,4.01%,19.47%,9.51%,7.42%,5038,56625,2026-08-27T20:16:19
+Pray,祈祷+,com.megacrit.cardcrawl.cards.purple.Pray,true,PURPLE,UNCOMMON,SKILL,20,true,9.31%,9.99%,9.89%,8.39%,25.00%,20.43%,15.00%,2441,10679,2026-08-27T20:16:19
+Madness,疯狂,com.megacrit.cardcrawl.cards.colorless.Madness,false,COLORLESS,UNCOMMON,SKILL,20,true,31.84%,33.72%,35.07%,30.38%,75.00%,71.43%,41.25%,4266,16202,2026-08-27T20:16:19
+Madness,疯狂+,com.megacrit.cardcrawl.cards.colorless.Madness,true,COLORLESS,UNCOMMON,SKILL,20,true,46.98%,59.57%,60.23%,45.84%,60.00%,37.50%,49.04%,1273,2418,2026-08-27T20:16:19

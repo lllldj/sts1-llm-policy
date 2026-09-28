@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "backend": "sts_lightspeed",
+  "mechanics": "corrected_v1",
+  "platform": "linux",
+  "upstream_url": "https://github.com/gamerpuppy/sts_lightspeed.git",
+  "revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "submodules": {
+    "json": "0b345b20c888f7dc8888485768e4bf9a6be29de0",
+    "pybind11": "787d2c88cafa4d07fb38c9519c485a86323cfcf4"
+  },
+  "isolation_root": ".simulator/sts_lightspeed-linux",
+  "source_dir": ".simulator/sts_lightspeed-linux/source",
+  "build_dir": ".simulator/sts_lightspeed-linux/build",
+  "manifest_path": ".simulator/sts_lightspeed-linux/build_manifest.json",
+  "artifacts": {
+    "bridge": ".simulator/sts_lightspeed-linux/bin/sts_lightspeed_bridge"
+  },
+  "features": [
+    "combat_card_selection_v1"
+  ],
+  "transport": "native_process"
+}

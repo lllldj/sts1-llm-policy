@@ -1,0 +1,16 @@
+{
+  "source": "STS Metrics",
+  "sts_metrics_mod_version": "0.1.3",
+  "retrieved_at_utc": "2026-08-27T12:16:30.358Z",
+  "min_ascension": 20,
+  "max_ascension": 99,
+  "vanilla_only": true,
+  "include_upgraded": true,
+  "target_color": null,
+  "batch_size": 64,
+  "requested_rows": 721,
+  "found_rows": 721,
+  "missing_rows": 0,
+  "failed_batches": 0,
+  "note": "Rate fields are the formatted values exposed by CardPickStatData (two decimal percentage strings)."
+}

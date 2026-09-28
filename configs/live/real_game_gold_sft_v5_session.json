@@ -1,0 +1,41 @@
+{
+  "schema_version": "real_game_session_v2",
+  "session_profile_id": "gold_sft_observation_v5_real_game_session_v1",
+  "policy": {
+    "policy_id": "qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1",
+    "policy_seed": 2026090302,
+    "observation_version": "observation_v5",
+    "model_runtime": "configs/runtime/base_model_runtime_1_5b_v2.json",
+    "expected_model_runtime_sha256": "5f161ad7d9782eb8d1759d8841b3f24b7a4c72ca3ecda82cf00d69a9208fe3d9",
+    "training_run_id": "qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1",
+    "training_config": "configs/runs/training/single_qwen2_5_1_5b_gold_sft.json",
+    "expected_training_config_sha256": "d5ebc7dbfd51cae8e1838900ed6fb7a9ca00bd44e60e8409ea263dda4da9d129",
+    "training_report": "report/training/qwen2_5_1_5b_teacher_v2_gold_sft_observation_v5_v1.json",
+    "expected_training_report_sha256": "9a0f9405e9e2f8f6dee10dbfb0a822d18837a265b4197a55121036635d953249",
+    "checkpoint_dir": "assets/adapters/single/qwen2-5-1-5b-teacher-v2-gold-sft-observation-v5-v1",
+    "expected_checkpoint_weights_sha256": "77dc386c7e135082c825bee86a53b47a3468b8e9373e5caf5ae506a155d405c0"
+  },
+  "safety": {
+    "max_combats": 64,
+    "max_steps_per_combat": 1000,
+    "state_poll_interval_seconds": 0.25
+  },
+  "mechanics_fallback": {
+    "mode": "communication_mod_descriptions_with_audited_powers_v2",
+    "native_id_crosswalk": "communication_mod_to_sts_lightspeed_v7",
+    "unknown_cards": "use_nonempty_description",
+    "unknown_relics": "use_nonempty_description",
+    "unknown_powers": "fail_closed",
+    "unknown_monster_moves": "fail_closed",
+    "unknown_monster_behaviors": "fail_closed"
+  },
+  "output_root": "outputs/real-game-sessions",
+  "log_path": "outputs/logs/real_game_session.log",
+  "evidence": {
+    "classification": "coverage_collection",
+    "test_data_read": false,
+    "sealed_test_run": false,
+    "stable_policy_claim": false,
+    "automatic_training_ingest": false
+  }
+}

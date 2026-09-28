@@ -1,0 +1,16 @@
+{
+  "schema_version": "experiment_preparation_v1",
+  "training": [
+    "configs/runs/training/single_qwen2_5_7b_gold_sft.json",
+    "configs/runs/training/single_qwen2_5_7b_silver_dpo.json"
+  ],
+  "evaluation": [
+    "configs/runs/evaluation/single_qwen2_5_7b_base_boss.json",
+    "configs/runs/evaluation/single_qwen2_5_7b_sft_boss.json",
+    "configs/runs/evaluation/single_qwen2_5_7b_dpo_boss.json"
+  ],
+  "reference_checkpoints": {
+    "assets/adapters/single/qwen2_5_7b_gold_sft_v1": "configs/runs/training/single_qwen2_5_7b_gold_sft.json",
+    "assets/adapters/single/qwen2_5_7b_silver_dpo_v1": "configs/runs/training/single_qwen2_5_7b_silver_dpo.json"
+  }
+}

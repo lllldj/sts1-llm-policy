@@ -1,0 +1,16 @@
+{
+  "schema_version": "continuous_combat_panel_generation_v1",
+  "run_id": "qwen2_5_7b_gold_dpo_c_act1_continuous_v7_v1",
+  "purpose": "gold_dpo_c_on_existing_20_by_4_continuous_development_routes",
+  "arms": [
+    {
+      "id": "qwen2_5_7b_gold_dpo_c",
+      "policy": "llm",
+      "model_runtime": "configs/runtime/base_model_runtime_7b_v2.json",
+      "execution_profile": "configs/runtime/training_cuda_bf16.json",
+      "checkpoint": "assets/adapters/continuous/qwen2_5_7b_gold_dpo_c_v7_v1"
+    }
+  ],
+  "output_dir": "outputs/generation/qwen2-5-7b-gold-dpo-c-act1-continuous-v7-v1",
+  "panel": "configs/panels/continuous_act1_development.json"
+}

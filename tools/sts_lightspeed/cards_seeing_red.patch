@@ -1,0 +1,12 @@
+diff --git a/include/constants/Cards.h b/include/constants/Cards.h
+--- a/include/constants/Cards.h
++++ b/include/constants/Cards.h
+@@ -539,6 +539,8 @@ namespace sts {
+             case CardId::PUMMEL:
+             case CardId::SHOCKWAVE:
+             case CardId::EXHUME:
++            case CardId::SEEING_RED:
++            case CardId::DOUBLE_TAP:
+             case CardId::FEED:
+             case CardId::FIEND_FIRE:
+             case CardId::IMPERVIOUS:

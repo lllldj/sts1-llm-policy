@@ -1,0 +1,62 @@
+{
+  "schema_version": "teacher_gold_probe_v3",
+  "source_report": "outputs/generation/teacher-act1-candidate-pool-v1/formal/report.json",
+  "output": "outputs/generation/teacher-gold-collection-v4",
+  "observation_version": "observation_v7",
+  "outer_trials": 128,
+  "hidden_samples": 4,
+  "search_budget": 2048,
+  "minimum_root_visits": 32,
+  "max_decisions": 1000,
+  "workers": 6,
+  "seed": 2026091004,
+  "minimum_win_rate": {
+    "boss": 0.8794836272040302,
+    "elite": 0.9879614238670221,
+    "normal_strong": 0.989311983987991,
+    "normal_weak": 0.989311983987991
+  },
+  "expected_hp_tolerance": 1.0,
+  "confidence": 0.95,
+  "smoke_samples": [
+    "collect-r046-g02-c08-s013",
+    "collect-r616-g03-c05-s000",
+    "collect-r636-g02-c04-s000",
+    "collect-r061-g02-c02-s000",
+    "collect-r005-g03-c08-s002",
+    "collect-r010-g03-c08-s008"
+  ],
+  "win_floor_rounding": "floor",
+  "card_statistics": "state_equal_cards_v1",
+  "continuation_policy": {
+    "mode": "win_floor_then_expected_hp",
+    "minimum_search_win_rate": {
+      "boss": 0.85,
+      "elite": 0.95,
+      "normal_strong": 0.95,
+      "normal_weak": 0.95
+    }
+  },
+  "sampling_ladder": {
+    "mode": "adaptive",
+    "stages": [
+      32,
+      64,
+      128
+    ],
+    "hp_boundary_band": 0.25,
+    "paired_se_multiplier_at_64": 2.0,
+    "audit_probability": 0.1,
+    "audit_seed": 2026091004
+  },
+  "trace_observation": "reconstruct",
+  "route_progress": true,
+  "continuation_storage": {
+    "mode": "compact_v1",
+    "full_trace_probability": 0.01,
+    "keep_first_trial": true,
+    "keep_boundary_trials": true
+  },
+  "resume_from": "outputs/generation/teacher-gold-collection-v3/formal",
+  "selection": "assets/datasets/continuous/gold-selection.json"
+}

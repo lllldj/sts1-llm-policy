@@ -1,0 +1,193 @@
+{
+  "binding": {
+    "dataset_artifact_sha256": "3338859dff576344eba5656742679a51d5caafea4f0058a979a079c552a51b97",
+    "dataset_manifest_sha256": "17ed1543ea9e5aea911bc35e4dcf1f0d7e7bbd4b990854c0fb4df8d03983341d",
+    "implementation_components_sha256": {
+      "scripts/run_training.py": "5130d2b81a2bb51e7e9d4c7d7421886f504666c7787286486ba0db5559b06370",
+      "src/sts1_llm_policy/eval/model_runtime.py": "23fb7d8128aa22a3bf96e0f35c9378411ee234778289140d64b3c58a12c25128",
+      "src/sts1_llm_policy/train/configured_adapters.py": "9b8175591a205fa9605eb36266d7d8396cd0c3a33548a51707673e67eab2fa55",
+      "src/sts1_llm_policy/train/configured_runner.py": "f8fb85a89bc640dae6710ce390a356981dcfc19f45525fcc17c88e9457e2d727",
+      "src/sts1_llm_policy/train/configured_training.py": "489bfbf17eac2b72ae21b6f1b82872bf9931999860c29202cd20bbee28b7c418",
+      "src/sts1_llm_policy/train/dpo.py": "422cec42a0ddd0ed55a5b6388d26f47d127457266dc7b94f7ee92ae82ba510fb",
+      "src/sts1_llm_policy/train/lora.py": "0cbbd75a4d5d09767ec367718104b1df6613de66cdb9463949f1aca58a78899c",
+      "src/sts1_llm_policy/train/sft_data.py": "b205b4f35e390c7b8cad14c706876f95a37cc82763e152f13a828f282ed874f1",
+      "src/sts1_llm_policy/train/sft_runtime.py": "915655791a64dda22cc3050021542e2ee3e8cceeab4bf9aac86d0d1c2a93e8f9",
+      "src/sts1_llm_policy/workflows/artifacts.py": "585a43843de925635e5046d1c6fd777519764ef8470f9581f8ff0d2b4087d712",
+      "src/sts1_llm_policy/workflows/configuration.py": "e385bc40aba4ca415bd336f1682b96835701b21da5d1573fdaabed442f8487f8",
+      "src/sts1_llm_policy/workflows/dataset_manifest.py": "fdb8a0a32015be8dfdce1aefb27690347cba361f7a126df88876ec5ace2452eb"
+    },
+    "mode": "smoke",
+    "model_runtime_sha256": "e4409a09730e90b545bab7d494b36b96dce353a4c92e425287b14b0433389983",
+    "run_config_sha256": "2acbab3d060e580b318c73a77c19d31fd771fb22ed2cc0194466bb98b36573b1",
+    "selected_units_sha256": "67b0c899fd2f793ea516c3f453c44f84aa45edd2888af01a1b690e9133449b31",
+    "training_recipe_sha256": "a018c15fecd757c4ab703ca43e0f3605dc9c84b21ebc94dac20e570ff5ea4761"
+  },
+  "checkpoint": {
+    "metadata": {
+      "adapter_type": "project_lora_v1",
+      "base_model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "base_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "replaced_modules": [
+        "model.layers.0.self_attn.q_proj",
+        "model.layers.0.self_attn.v_proj",
+        "model.layers.1.self_attn.q_proj",
+        "model.layers.1.self_attn.v_proj",
+        "model.layers.2.self_attn.q_proj",
+        "model.layers.2.self_attn.v_proj",
+        "model.layers.3.self_attn.q_proj",
+        "model.layers.3.self_attn.v_proj",
+        "model.layers.4.self_attn.q_proj",
+        "model.layers.4.self_attn.v_proj",
+        "model.layers.5.self_attn.q_proj",
+        "model.layers.5.self_attn.v_proj",
+        "model.layers.6.self_attn.q_proj",
+        "model.layers.6.self_attn.v_proj",
+        "model.layers.7.self_attn.q_proj",
+        "model.layers.7.self_attn.v_proj",
+        "model.layers.8.self_attn.q_proj",
+        "model.layers.8.self_attn.v_proj",
+        "model.layers.9.self_attn.q_proj",
+        "model.layers.9.self_attn.v_proj",
+        "model.layers.10.self_attn.q_proj",
+        "model.layers.10.self_attn.v_proj",
+        "model.layers.11.self_attn.q_proj",
+        "model.layers.11.self_attn.v_proj",
+        "model.layers.12.self_attn.q_proj",
+        "model.layers.12.self_attn.v_proj",
+        "model.layers.13.self_attn.q_proj",
+        "model.layers.13.self_attn.v_proj",
+        "model.layers.14.self_attn.q_proj",
+        "model.layers.14.self_attn.v_proj",
+        "model.layers.15.self_attn.q_proj",
+        "model.layers.15.self_attn.v_proj",
+        "model.layers.16.self_attn.q_proj",
+        "model.layers.16.self_attn.v_proj",
+        "model.layers.17.self_attn.q_proj",
+        "model.layers.17.self_attn.v_proj",
+        "model.layers.18.self_attn.q_proj",
+        "model.layers.18.self_attn.v_proj",
+        "model.layers.19.self_attn.q_proj",
+        "model.layers.19.self_attn.v_proj",
+        "model.layers.20.self_attn.q_proj",
+        "model.layers.20.self_attn.v_proj",
+        "model.layers.21.self_attn.q_proj",
+        "model.layers.21.self_attn.v_proj",
+        "model.layers.22.self_attn.q_proj",
+        "model.layers.22.self_attn.v_proj",
+        "model.layers.23.self_attn.q_proj",
+        "model.layers.23.self_attn.v_proj",
+        "model.layers.24.self_attn.q_proj",
+        "model.layers.24.self_attn.v_proj",
+        "model.layers.25.self_attn.q_proj",
+        "model.layers.25.self_attn.v_proj",
+        "model.layers.26.self_attn.q_proj",
+        "model.layers.26.self_attn.v_proj",
+        "model.layers.27.self_attn.q_proj",
+        "model.layers.27.self_attn.v_proj"
+      ],
+      "schema_version": 1,
+      "spec": {
+        "alpha": 16.0,
+        "dropout": 0.0,
+        "rank": 8,
+        "target_module_suffixes": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "weights_file": "adapter_model.safetensors",
+      "weights_sha256": "dcdde4cfd99f7b5ef02776ba0ec642e62430cb1eadb3822e8770b52bc33df65c"
+    },
+    "path": "outputs/training-smoke/qwen2-5-1-5b-teacher-v2-gold-sft-v1/checkpoint",
+    "reload_adapter_state_sha256": "4975cd495e2fe5b0e1cda8a731a661d260be4a7e80538a538720ceff7a631d56",
+    "reload_exact": true
+  },
+  "checks": {
+    "adapter_changed": true,
+    "all_selected_units_processed": true,
+    "checkpoint_reload_exact": true,
+    "derived_optimizer_steps_completed": true,
+    "finite_losses": true,
+    "manifest_and_artifact_bound": true,
+    "no_test_or_sealed_read": true,
+    "optimizer_steps_derived": true,
+    "record_count_derived_from_manifest": true,
+    "tokenization_without_truncation": true
+  },
+  "development_evaluation_required": false,
+  "git_revision": "f7b766952bb37bdd9c333b79f381089450b687ce",
+  "lora": {
+    "final_adapter_state_sha256": "4975cd495e2fe5b0e1cda8a731a661d260be4a7e80538a538720ceff7a631d56",
+    "initial_adapter_state_sha256": "1891c4fb3046fc2968850c8bafc80683444c4c4f5b308c5177c14a3a9d0b3f9a",
+    "parameters": {
+      "total_parameters": 1544803840,
+      "trainable_fraction": 0.0007052908413277896,
+      "trainable_parameters": 1089536
+    },
+    "replaced_module_count": 56,
+    "spec": {
+      "alpha": 16.0,
+      "dropout": 0.0,
+      "rank": 8,
+      "target_module_suffixes": [
+        "q_proj",
+        "v_proj"
+      ]
+    }
+  },
+  "mode": "smoke",
+  "model_weights_loaded": true,
+  "reference": {
+    "groups_computed": 0,
+    "groups_reused": 0
+  },
+  "run_id": "qwen2_5_1_5b_teacher_v2_gold_sft_v1_smoke",
+  "runtime": {
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "runtime_id": "qwen2_5_1_5b_instruct_base_v1"
+  },
+  "schema_version": "configured_training_report_v1",
+  "scope": {
+    "algorithm": "sft",
+    "available_units": 8221,
+    "dataset_id": "public_information_teacher_v2_gold_sft_v1",
+    "derived_optimizer_steps": 1,
+    "epochs": 1,
+    "gradient_accumulation_units": 8,
+    "selected_units": 8
+  },
+  "sealed_test_run": false,
+  "stable_training_claim": false,
+  "status": "smoke_passed",
+  "test_data_read": false,
+  "tokenization": {
+    "response_tokens_max": 6,
+    "response_tokens_min": 5,
+    "sequence_tokens_max": 1812,
+    "sequence_tokens_min": 496,
+    "truncated": false,
+    "units": 8221
+  },
+  "training": {
+    "maximum_loss": 0.7719837427139282,
+    "minimum_loss": 0.22380201518535614,
+    "optimizer_step_count": 1,
+    "optimizer_steps": [
+      {
+        "grad_norm": 1.3671875,
+        "group_mean_loss": 0.5026808176189661,
+        "next_order_offset": 8,
+        "optimizer_step": 1
+      }
+    ],
+    "peak_memory_allocated_bytes": 6632444928,
+    "peak_memory_reserved_bytes": 9317646336,
+    "processed_units": 8,
+    "resumed": false,
+    "seconds": 12.694
+  },
+  "training_started": true
+}

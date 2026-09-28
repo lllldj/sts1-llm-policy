@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "backend": "sts_lightspeed",
+  "mechanics": "legacy_v1",
+  "upstream_url": "https://github.com/gamerpuppy/sts_lightspeed.git",
+  "revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "submodules": {
+    "json": "0b345b20c888f7dc8888485768e4bf9a6be29de0",
+    "pybind11": "787d2c88cafa4d07fb38c9519c485a86323cfcf4"
+  },
+  "isolation_root": ".simulator/sts_lightspeed",
+  "source_dir": ".simulator/sts_lightspeed/source",
+  "build_dir": ".simulator/sts_lightspeed/build",
+  "manifest_path": ".simulator/sts_lightspeed/build_manifest.json",
+  "artifacts": {
+    "bridge": ".simulator/sts_lightspeed/bin/sts_lightspeed_bridge.exe"
+  },
+  "transport": "native_process"
+}

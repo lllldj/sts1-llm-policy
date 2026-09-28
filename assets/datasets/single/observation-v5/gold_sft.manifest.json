@@ -1,0 +1,39 @@
+{
+  "dataset_id": "public_information_teacher_v2_gold_sft_observation_v5_v1",
+  "identity_fields": [
+    "source_episode_index",
+    "source_decision_index"
+  ],
+  "lineage": {
+    "development_source_sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "implementation": "scripts/migrate_observation_v5.py",
+    "implementation_sha256": "9ba24834cad3621e895149545c612fe85d50e4f43fe5018c4da6a97b539cffe6",
+    "observation_contract": "configs/eval/observation_semantics_v5.json",
+    "observation_contract_sha256": "54471faebd3dd83498dfc82dc6311f3411a42c92fa4a9cefbc08ca3f1fca64c2",
+    "run_config": "configs/datasets/observation_v5_migration_v1.json",
+    "run_config_sha256": "95ea2426d2b3ef798863fc9983e0bf2e9416090fd09c5d509780ad89859670dd",
+    "v4_source_manifest_sha256": {
+      "gold_sft": "17ed1543ea9e5aea911bc35e4dcf1f0d7e7bbd4b990854c0fb4df8d03983341d",
+      "silver_preferences": "30aa469128333712b2b049e7765453faf063eb5f468771542eb6509e11eea7dd"
+    }
+  },
+  "observation_version": "observation_v5",
+  "schema_version": "dataset_manifest_v1",
+  "semantics": {
+    "migration": "observation_v4_to_v5_semantic_closure_v1",
+    "model_action_space_changed": false,
+    "target_field": "teacher_action_id",
+    "teacher_labels_changed": false
+  },
+  "splits": {
+    "train": {
+      "bytes": 2391732,
+      "compression": "gzip",
+      "format": "jsonl",
+      "path": "assets/datasets/single/observation-v5/gold_sft.jsonl.gz",
+      "records": 8221,
+      "sha256": "e42f6adda8a3ba283bffa619e83b2062907860e209d5c40e0a1bfc51e9daf41c"
+    }
+  },
+  "task_type": "sft"
+}

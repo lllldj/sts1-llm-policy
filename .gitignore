@@ -1,0 +1,51 @@
+# -----------------------------------------------------------------------------
+# OPEN-SOURCE / PRIVATE BOUNDARY
+# -----------------------------------------------------------------------------
+# Files are open-source candidates by default. Public Markdown belongs in
+# /docs/open_source/. Personal plans, handoff state, local credentials, raw
+# evidence, Base weights, and machine-local artifacts are ignored below.
+# Fixed public datasets, reference adapters and picker inputs live under /assets/.
+#
+# This is a forward-looking commit boundary, not encryption and not Git-history
+# erasure. Always inspect `git diff --cached` before publishing.
+
+# Designated private roots
+# /private/ also contains machine-specific operations, their tests and deployment records.
+/private/
+/docs/private/
+/configs/private/
+/report/private/
+/AGENTS.md
+
+# Local secrets and environment overrides
+/.env
+/.env.*
+!/.env.example
+*.pem
+*.key
+
+# Private/raw experiment artifacts
+/data/
+/outputs/
+
+# Project-local model and Hugging Face caches
+/.model-cache/
+
+# Isolated external simulator source and native build artifacts
+/.simulator/
+
+# Python and uv local environments/caches
+/.venv/
+/.uv-cache/
+__pycache__/
+*.py[cod]
+
+# IDE and operating-system metadata
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log

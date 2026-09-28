@@ -1,0 +1,129 @@
+{
+  "schema_version": "counterfactual_reward_picker_report_v2",
+  "run_id": "counterfactual_reward_picker_v2",
+  "status": "completed",
+  "timestamp_utc": "2026-09-02T03:58:11.804662+00:00",
+  "binding": {
+    "config_sha256": "a60a8a96f8910f0a08c848e17144de376a9bc369f3748614922e19cae56f28c1",
+    "teacher_config": "c7d356000800f03ee2bf06bcd14487ca25f6939f6562461fcd4fb7304b3b6c30",
+    "picker_module": "1bb00c0e5f2a320fd4a371c2bfe63ed8e10e423f0e980e5521612e653d35e6c5",
+    "reward_integration_module": "350ad6bd95ce27dd2d65d5523c82c3b2961cbf4af260525520f41bed6ff99aa2",
+    "source_manifest_sha256": "76c1a9095a5a26ea54e810755b21600dfbb5e0f120b5ceb3a815dc8b6ef818b2",
+    "source_schedule_sha256": "33a3c33cb73da81b9d5b896d9702927f64291e4fb44ce16a3432fdaa8d7ceb61",
+    "picker_version": "counterfactual_boss_reward_picker_v2",
+    "panel_sha256": "757e70b1bc1c2a68d9f853c089596e91c67644c61c871dcdc89d325c50d2e0ca"
+  },
+  "scope": {
+    "routes": 96,
+    "formal_routes": 96,
+    "routes_per_ascension": 48,
+    "smoke_only": false
+  },
+  "protocol": {
+    "opening_reward_count": 3,
+    "opening_damage_multiplier": 1.5,
+    "opening_skip_allowed": false,
+    "act_1_boss_assignment": "balanced_latin_v2",
+    "act_2_target_start_reward": 8,
+    "search_budget": 8192,
+    "search_seed": 101,
+    "hidden_order_seeds": [
+      701,
+      809,
+      907
+    ],
+    "required_pair_wins_vs_skip": 2,
+    "conflict_combat_seed_offsets": [
+      100000,
+      200000
+    ],
+    "strategic_weights": {
+      "search": 0.5,
+      "intrinsic": 0.35,
+      "optionality": 0.15,
+      "current_target": 0.7,
+      "future_target": 0.3,
+      "duplicate_penalty": 0.08,
+      "premium_override_margin": 0.15,
+      "strong_override_margin": 0.08
+    },
+    "dynamic_protection": {
+      "power_and_reusable": "first_then_duplicate",
+      "exhaust_first": "0.60_first_plus_0.40_overall",
+      "exhaust_duplicate": "0.60_duplicate_decay_0.70_plus_0.40_overall",
+      "premium": "score_gte_0.65_and_top_10pct",
+      "strong": "score_gte_0.40_and_top_25pct",
+      "reserve": "score_gte_0.25_and_top_40pct"
+    }
+  },
+  "metrics": {
+    "routes": 96,
+    "reward_decisions": 1056,
+    "card_picks": 877,
+    "skip_like": 179,
+    "selection_rules": {
+      "forced_non_skip_strategic_opening": 288,
+      "no_allowed_cards": 5,
+      "strategic_teacher_capability_v2": 763
+    },
+    "selected_tiers": {
+      "premium": 100,
+      "reserve": 119,
+      "strong": 179,
+      "unprotected": 479
+    },
+    "selection_reasons": {
+      "cross_seed_protected_prior_override": 40,
+      "maximum_strategic_utility": 538,
+      "no_eligible_card": 174,
+      "protected_prior_override": 11
+    },
+    "dual_target_decisions": 191,
+    "conflict_audits": 148,
+    "conflict_audit_passes": 46,
+    "teacher_search_calls": 12180,
+    "teacher_search_calls_by_offset": {
+      "0": 10008,
+      "100000": 1086,
+      "200000": 1086
+    },
+    "final_deck_size_mean": 16.635,
+    "final_deck_size_min": 12,
+    "final_deck_size_max": 22
+  },
+  "timing": {
+    "run_seconds": null,
+    "artifact_write_span_seconds": 992.644,
+    "routes_per_minute": 5.742241
+  },
+  "resume": {
+    "completed_before_run": 96,
+    "completed_after_run": 96,
+    "rerun_same_command_to_resume": true
+  },
+  "checks": {
+    "development_scope_only": true,
+    "exact_96_routes": true,
+    "exact_48_routes_per_ascension": true,
+    "boss_factorial_balanced": true,
+    "act_1_identity_balanced_on_act_2": true,
+    "act_1_identity_balanced_by_ascension": true,
+    "reward_seeds_disjoint_from_collection_and_dev": true,
+    "label_seeds_disjoint_from_collection_and_dev": true,
+    "conflict_seeds_disjoint": true,
+    "heldout_seeds_disjoint": true,
+    "teacher_contract_bound": true,
+    "no_test_data_read": true,
+    "training_not_started": true,
+    "all_selected_routes_completed": true,
+    "all_route_bindings_match": true,
+    "all_openings_forced_non_skip": true,
+    "all_act_2_routes_switch_on_reward_8": true,
+    "all_act_2_routes_use_dual_target_rewards_4_to_7": true
+  },
+  "local_output": "outputs/eval/counterfactual-reward-picker-v2",
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_claim": false
+}

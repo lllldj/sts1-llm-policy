@@ -1,0 +1,196 @@
+{
+  "schema_version": "supported_mechanics_v1",
+  "manifest_id": "sts_lightspeed_p0_supported_mechanics_v1",
+  "backend": "sts_lightspeed",
+  "backend_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "scope": {
+    "character": "IRONCLAD",
+    "ascension": 0,
+    "act": 1,
+    "floor": 1,
+    "combat_only": true,
+    "starter_relic": "Burning Blood",
+    "terminal_boundary": "combat outcome before reward processing"
+  },
+  "deck": [
+    {
+      "card_id": "Strike_R",
+      "name": "Strike",
+      "count": 5,
+      "upgrades": 0,
+      "cost": 1,
+      "action": "targeted attack",
+      "effect": "deal 6 base damage"
+    },
+    {
+      "card_id": "Defend_R",
+      "name": "Defend",
+      "count": 4,
+      "upgrades": 0,
+      "cost": 1,
+      "action": "non-targeted skill",
+      "effect": "gain 5 block"
+    },
+    {
+      "card_id": "Bash",
+      "name": "Bash",
+      "count": 1,
+      "upgrades": 0,
+      "cost": 2,
+      "action": "targeted attack",
+      "effect": "deal 8 base damage and apply 2 Vulnerable"
+    }
+  ],
+  "encounters": [
+    {
+      "scenario_id": "cultist",
+      "monsters": ["Cultist"],
+      "moves": [
+        {
+          "native_id": "CULTIST_INCANTATION",
+          "canonical_intent": "BUFF",
+          "effect": "apply Ritual(3) at the P0 hallway index"
+        },
+        {
+          "native_id": "CULTIST_DARK_STRIKE",
+          "canonical_intent": "ATTACK",
+          "effect": "deal 6 base damage"
+        }
+      ]
+    },
+    {
+      "scenario_id": "jaw_worm",
+      "monsters": ["JawWorm"],
+      "moves": [
+        {
+          "native_id": "JAW_WORM_CHOMP",
+          "canonical_intent": "ATTACK",
+          "effect": "deal 11 base damage at Ascension 0"
+        },
+        {
+          "native_id": "JAW_WORM_THRASH",
+          "canonical_intent": "ATTACK_DEFEND",
+          "effect": "deal 7 base damage and gain 5 block"
+        },
+        {
+          "native_id": "JAW_WORM_BELLOW",
+          "canonical_intent": "DEFEND_BUFF",
+          "effect": "gain 6 block and Strength(3) at the P0 hallway index"
+        }
+      ]
+    },
+    {
+      "scenario_id": "two_louse",
+      "monsters": ["FuzzyLouseDefensive", "FuzzyLouseNormal"],
+      "composition": {
+        "count": 2,
+        "allowed_monster_ids": [
+          "FuzzyLouseDefensive",
+          "FuzzyLouseNormal"
+        ],
+        "duplicates_allowed": true,
+        "ordering": "encounter-seeded"
+      },
+      "moves": [
+        {
+          "native_id": "GREEN_LOUSE_BITE",
+          "canonical_intent": "ATTACK",
+          "effect": "deal the encounter-seeded bite damage"
+        },
+        {
+          "native_id": "GREEN_LOUSE_SPIT_WEB",
+          "canonical_intent": "DEBUFF",
+          "effect": "apply Weak(2)"
+        },
+        {
+          "native_id": "RED_LOUSE_BITE",
+          "canonical_intent": "ATTACK",
+          "effect": "deal the encounter-seeded bite damage"
+        },
+        {
+          "native_id": "RED_LOUSE_GROW",
+          "canonical_intent": "BUFF",
+          "effect": "gain Strength(3) at Ascension 0"
+        }
+      ]
+    }
+  ],
+  "powers": [
+    {
+      "name": "Ritual",
+      "owner": "monster",
+      "reachable_from": ["cultist"]
+    },
+    {
+      "name": "Strength",
+      "owner": "monster",
+      "reachable_from": ["cultist", "jaw_worm", "two_louse"]
+    },
+    {
+      "name": "Vulnerable",
+      "owner": "monster",
+      "reachable_from": ["Bash"]
+    },
+    {
+      "name": "Curl Up",
+      "owner": "monster",
+      "reachable_from": ["two_louse"],
+      "effect": "gain seeded 3-7 block after the first attack and remove the power"
+    },
+    {
+      "name": "Weak",
+      "owner": "player",
+      "reachable_from": ["GREEN_LOUSE_SPIT_WEB"]
+    }
+  ],
+  "action_types": [
+    {
+      "name": "play_card",
+      "forms": ["targeted", "non-targeted"]
+    },
+    {
+      "name": "end_turn",
+      "forms": ["no target"]
+    }
+  ],
+  "parity_contract": {
+    "compared_fields": [
+      "run metadata and turn",
+      "player HP, max HP, block, energy, and powers",
+      "monster identity, HP, max HP, block, powers, intent, move damage, and lifecycle flags",
+      "ordered hand, draw, discard, and exhaust pile card fields",
+      "chosen canonical action",
+      "terminal outcome"
+    ],
+    "normalizations": [
+      "power arrays are compared by stable power identity rather than source order",
+      "STS1 Java signed-long seeds and simulator uint64 seeds are compared by their shared 64-bit pattern"
+    ],
+    "excluded_fields": [
+      {
+        "field": "card.uuid",
+        "reason": "source-private execution identity differs by design"
+      },
+      {
+        "field": "card.description",
+        "reason": "CommunicationMod emits dynamically modified display text while the P0 simulator adapter owns static canonical text; descriptions are not serialized to the model"
+      },
+      {
+        "field": "post-combat reward state",
+        "reason": "the P0 boundary ends at the explicit combat outcome"
+      }
+    ]
+  },
+  "explicit_exclusions": [
+    "all non-starter cards and all card upgrades",
+    "all relic effects except the starter relic being present outside the combat outcome boundary",
+    "potions",
+    "card-selection screens",
+    "rewards and post-combat healing",
+    "map, event, shop, rest-site, and deck-building decisions",
+    "arbitrary deck, relic, monster-state, pile-state, floor, and RNG-state injection",
+    "Ascension levels other than 0",
+    "encounters other than Cultist, Jaw Worm, and Two Louse",
+    "full-run and cross-combat claims"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "public_information_teacher_train_collection_report_v1",
+  "status": "completed",
+  "timestamp_utc": "2026-09-03T08:43:38.435313+00:00",
+  "binding": {
+    "config_sha256": "f46225ea2148ec38b29aa764ba99c4ca30829ab2d692b022df0eb092a15920e7",
+    "implementation_sha256": "880820b35009f0992fa860f9c58fee02a1238ec01750e313c252d77dcd1229ed",
+    "public_contract_config_sha256": "09e8afefc4187a5da094e814916d7ebf71a098e900036fec8bfb43cf685c07b8",
+    "source_sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "target_manifest_sha256": "ab6f821c8a29a1b10c02f44469cf76f4e73b71d0c97e23c9f528917f8765ea4e",
+    "simulator_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+    "mode": "formal",
+    "shard_count": 16,
+    "shard_index": null,
+    "target_set_sha256": "d0e0ac5f94fc094692f6b4e03756a8292949edf16c213bc254239a2c60e5105f"
+  },
+  "source": {
+    "source_sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "source_record_count": 79029,
+    "target_state_count": 10266,
+    "target_episode_count": 2859,
+    "target_manifest_sha256": "ab6f821c8a29a1b10c02f44469cf76f4e73b71d0c97e23c9f528917f8765ea4e"
+  },
+  "tiers": {
+    "abstain": 1574,
+    "gold": 8221,
+    "silver": 471
+  },
+  "artifacts": {
+    "certified_states": {
+      "path": "outputs/teacher/public-information-train-v1/artifacts/certified_states.jsonl.gz",
+      "sha256": "53e3840589e862d3bf8f78aff842cd7dbcd85ec8ce4f8740ea11ac48090c5b6d",
+      "records": 10266
+    },
+    "gold_sft": {
+      "path": "outputs/teacher/public-information-train-v1/artifacts/gold_sft.jsonl.gz",
+      "sha256": "847dc85cf5899654dfb8d2d13b419a0a02aee21a39bfe05783364cffe7333c78",
+      "records": 8221
+    },
+    "silver_preferences": {
+      "path": "outputs/teacher/public-information-train-v1/artifacts/silver_preferences.jsonl.gz",
+      "sha256": "959bf023869229b2b92328deb43819a09d502d16838bd832a9cc9a600c983ce9",
+      "records": 471
+    }
+  },
+  "checks": {
+    "exact_train_accepted_source_only": true,
+    "all_target_identities_unique_and_complete": true,
+    "episode_shards_disjoint": true,
+    "root_visit_minimum_enforced": true,
+    "silver_hp_stress_rule_enforced": true,
+    "finite_compressed_evidence": true,
+    "no_test_data_read": true
+  },
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "training_started": false,
+  "stable_dataset_claim": false
+}

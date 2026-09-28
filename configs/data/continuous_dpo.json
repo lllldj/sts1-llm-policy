@@ -1,0 +1,18 @@
+{
+  "schema_version": "gold_dpo_export_v1",
+  "source_report": "outputs/generation/teacher-gold-collection-v4/formal/report.json",
+  "verification": "outputs/generation/teacher-gold-collection-v4/formal/verification.json",
+  "output": "outputs/datasets/gold-dpo-v7-v1",
+  "report": "report/data/gold_dpo_v7_v1.json",
+  "dataset_ids": {
+    "a": "gold_dpo_a_v7_v1",
+    "b": "gold_dpo_b_v7_v1",
+    "c": "gold_dpo_c_v7_v1"
+  },
+  "hp_tolerance": 1.0,
+  "minimum_paired_trials": 64,
+  "se_multiplier": 2.0,
+  "minimum_adjusted_hp_gap": 1.0,
+  "coarse_hp_gap": 3.0,
+  "weight_hp_cap": 5.0
+}

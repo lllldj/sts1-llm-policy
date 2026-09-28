@@ -1,0 +1,196 @@
+{
+  "schema_version": "combat_panel_generation_v2",
+  "run_id": "counterfactual_v2_act1_a0_boss_inputs_corrected_v1",
+  "purpose": "generate_act1_a0_boss_inputs_under_corrected_mechanics",
+  "simulator_mechanics": "corrected_v1",
+  "strategies": {
+    "card_pick": "teacher_counterfactual",
+    "card_remove": "starter_alternating",
+    "card_upgrade": "value_priority",
+    "route": "act_topology"
+  },
+  "scope": "configs/env/d_expansion_v1_scope.json",
+  "picker_database": "assets/picker/card_pick_metrics_v1.sqlite3",
+  "expected_picker_database_sha256": "a78c615ac2b80ab8acaabc3ceef615dbd7cb4b29ee2c5e42c9ef2a5216f0a386",
+  "source_matrix": {
+    "ascensions": [
+      0,
+      20
+    ],
+    "combat_seeds_per_cell": 2,
+    "seed_bases": {
+      "reward": 202614010000,
+      "combat": 202614020000,
+      "policy": 4100000,
+      "picker": 4200000,
+      "relic": 4300000
+    }
+  },
+  "route_panel": {
+    "routes_per_ascension": 48,
+    "selected_act": 1,
+    "selected_ascension": 0,
+    "expected_selected_routes": 24,
+    "seed_bases": {
+      "reward": 202617010000,
+      "combat": 202617020000,
+      "picker": 7200000
+    }
+  },
+  "evaluation_panel": {
+    "original_combat_seed_base": 202620020000,
+    "original_policy_seed_base": 8200000,
+    "additional_combat_seed_base": 202640000000,
+    "additional_policy_seed_base": 8400000,
+    "seeds_per_route": 8,
+    "expected_combats": 192,
+    "original_seeds_per_route": 2,
+    "additional_episode_index_start": 192
+  },
+  "protocol": {
+    "opening_damage_multiplier": 1.5,
+    "search_budget": 8192,
+    "search_seed": 101,
+    "hidden_order_seeds": [
+      701,
+      809,
+      907
+    ],
+    "required_pair_wins_vs_skip": 2,
+    "conflict_combat_seed_offsets": [
+      100000,
+      200000
+    ],
+    "strategic_weights": {
+      "search": 0.5,
+      "intrinsic": 0.35,
+      "optionality": 0.15,
+      "current_target": 0.7,
+      "future_target": 0.3,
+      "duplicate_penalty": 0.08,
+      "premium_override_margin": 0.15,
+      "strong_override_margin": 0.08
+    }
+  },
+  "test_data_read": false,
+  "sealed_test_run": false,
+  "panel_id": "counterfactual_v2_act1_a0_boss_observation_v5_corrected_v1",
+  "observation_version": "observation_v5",
+  "simulator_revision": "7476a81954020087da31d41d16fddf475746ec2d",
+  "source_rules": {
+    "deck_stages": [
+      {
+        "stratum_id": "act1-entry",
+        "act": 1,
+        "stage": "entry",
+        "act_1_regular_rewards": 3,
+        "act_2_rewards": 0,
+        "ordinary_relic_count": 1,
+        "cumulative_upgrades": 1,
+        "cumulative_removals": 0,
+        "requires_boss_relic": false
+      },
+      {
+        "stratum_id": "act1-mid",
+        "act": 1,
+        "stage": "mid",
+        "act_1_regular_rewards": 5,
+        "act_2_rewards": 0,
+        "ordinary_relic_count": 2,
+        "cumulative_upgrades": 2,
+        "cumulative_removals": 1,
+        "requires_boss_relic": false
+      },
+      {
+        "stratum_id": "act1-pre-boss",
+        "act": 1,
+        "stage": "pre-boss",
+        "act_1_regular_rewards": 7,
+        "act_2_rewards": 0,
+        "ordinary_relic_count": 3,
+        "cumulative_upgrades": 4,
+        "cumulative_removals": 2,
+        "requires_boss_relic": false
+      },
+      {
+        "stratum_id": "act2-entry",
+        "act": 2,
+        "stage": "entry",
+        "act_1_regular_rewards": 7,
+        "act_2_rewards": 0,
+        "ordinary_relic_count": 3,
+        "cumulative_upgrades": 4,
+        "cumulative_removals": 2,
+        "requires_boss_relic": true
+      },
+      {
+        "stratum_id": "act2-mid",
+        "act": 2,
+        "stage": "mid",
+        "act_1_regular_rewards": 7,
+        "act_2_rewards": 4,
+        "ordinary_relic_count": 4,
+        "cumulative_upgrades": 5,
+        "cumulative_removals": 3,
+        "requires_boss_relic": true
+      },
+      {
+        "stratum_id": "act2-pre-boss",
+        "act": 2,
+        "stage": "pre-boss",
+        "act_1_regular_rewards": 7,
+        "act_2_rewards": 7,
+        "ordinary_relic_count": 5,
+        "cumulative_upgrades": 7,
+        "cumulative_removals": 4,
+        "requires_boss_relic": true
+      }
+    ],
+    "relic_pool": [
+      "BURNING_BLOOD",
+      "VAJRA",
+      "ANCHOR",
+      "BAG_OF_MARBLES",
+      "BRONZE_SCALES",
+      "LANTERN",
+      "ODDLY_SMOOTH_STONE",
+      "ORICHALCUM",
+      "AKABEKO",
+      "PRESERVED_INSECT",
+      "THE_BOOT",
+      "STRIKE_DUMMY",
+      "PAPER_PHROG",
+      "CHAMPION_BELT",
+      "CHEMICAL_X",
+      "TUNGSTEN_ROD",
+      "TORII",
+      "RED_SKULL",
+      "CENTENNIAL_PUZZLE",
+      "GREMLIN_HORN",
+      "HAPPY_FLOWER",
+      "NUNCHAKU",
+      "PEN_NIB",
+      "ART_OF_WAR",
+      "INK_BOTTLE",
+      "KUNAI",
+      "SHURIKEN",
+      "BUSTED_CROWN",
+      "PHILOSOPHERS_STONE",
+      "SLAVERS_COLLAR",
+      "VELVET_CHOKER",
+      "MARK_OF_PAIN"
+    ],
+    "boss_relic_pool": [
+      "BUSTED_CROWN",
+      "PHILOSOPHERS_STONE",
+      "SLAVERS_COLLAR",
+      "VELVET_CHOKER",
+      "MARK_OF_PAIN"
+    ],
+    "picker": {
+      "temperature": 0.85,
+      "exploration": 0.15,
+      "epsilon": 0.02
+    }
+  }
+}

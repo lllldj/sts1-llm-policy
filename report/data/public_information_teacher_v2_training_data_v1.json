@@ -1,0 +1,83 @@
+{
+  "artifacts": {
+    "gold_sft": {
+      "artifact": {
+        "bytes": 1965861,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/public-information-teacher-v2-training-v1/gold_sft.jsonl.gz",
+        "records": 8221,
+        "sha256": "3338859dff576344eba5656742679a51d5caafea4f0058a979a079c552a51b97"
+      },
+      "manifest": "outputs/datasets/public-information-teacher-v2-training-v1/gold_sft.manifest.json",
+      "manifest_sha256": "17ed1543ea9e5aea911bc35e4dcf1f0d7e7bbd4b990854c0fb4df8d03983341d"
+    },
+    "silver_preferences": {
+      "artifact": {
+        "bytes": 151137,
+        "compression": "gzip",
+        "format": "jsonl",
+        "path": "outputs/datasets/public-information-teacher-v2-training-v1/silver_preferences.jsonl.gz",
+        "records": 471,
+        "sha256": "3ae13c188db664ad4cae97229a304de018c01262fdaced7345a0d8fcb8169f7f"
+      },
+      "manifest": "outputs/datasets/public-information-teacher-v2-training-v1/silver_preferences.manifest.json",
+      "manifest_sha256": "30aa469128333712b2b049e7765453faf063eb5f468771542eb6509e11eea7dd"
+    }
+  },
+  "binding": {
+    "gold_source_sha256": "847dc85cf5899654dfb8d2d13b419a0a02aee21a39bfe05783364cffe7333c78",
+    "historical_source_sha256": "5dd0535b3090ba614764673a34c97abcb45aa76303d7d227037d8edbfc06c4ce",
+    "implementation": "scripts/prepare_dataset.py",
+    "implementation_components_sha256": {
+      "src/sts1_llm_policy/workflows/artifacts.py": "585a43843de925635e5046d1c6fd777519764ef8470f9581f8ff0d2b4087d712",
+      "src/sts1_llm_policy/workflows/configuration.py": "e385bc40aba4ca415bd336f1682b96835701b21da5d1573fdaabed442f8487f8",
+      "src/sts1_llm_policy/workflows/dataset_manifest.py": "fdb8a0a32015be8dfdce1aefb27690347cba361f7a126df88876ec5ace2452eb"
+    },
+    "implementation_sha256": "ad15a06cefe375619201cda712bdd7748cb896d854c70ca97be2f2ed795cc9af",
+    "run_config": "configs/datasets/public_information_teacher_v2_training_v1.json",
+    "run_config_sha256": "51297c0d37b4be01c8eece155d86460fd2efc9bebf117f046bf6fa0ff418dafe",
+    "silver_source_sha256": "959bf023869229b2b92328deb43819a09d502d16838bd832a9cc9a600c983ce9",
+    "teacher_profile": "public_information_teacher_contract_v2",
+    "teacher_profile_config_sha256": "09e8afefc4187a5da094e814916d7ebf71a098e900036fec8bfb43cf685c07b8",
+    "teacher_report": "report/public_information_teacher_train_collection_v1.json",
+    "teacher_report_sha256": "39a9f6ea253c264b6ecd7d453de352b53e742df3f8efae5e0e60fefc84337692"
+  },
+  "changes": {
+    "accepted_source_identities": 8692,
+    "gold_actions_changed": 15,
+    "gold_actions_unchanged": 8206
+  },
+  "checks": {
+    "all_actions_legal": true,
+    "development_excluded": true,
+    "forced_formatting_excluded": true,
+    "gold_identities_unique_and_source_bound": true,
+    "gold_silver_identities_disjoint": true,
+    "no_test_or_sealed_read": true,
+    "preference_weights_normalized": true,
+    "silver_identities_unique_and_source_bound": true,
+    "source_hash_and_counts_match": true,
+    "teacher_report_completed": true,
+    "training_not_started": true
+  },
+  "full_source_records": {
+    "gold_sft": 8221,
+    "silver_preferences": 471
+  },
+  "git_revision": "9e8759034c9f3665025548b334980d86c5831600",
+  "mode": "build",
+  "model_weights_loaded": false,
+  "records": {
+    "gold_sft": 8221,
+    "silver_edges": 471,
+    "silver_preferences": 471
+  },
+  "run_id": "public_information_teacher_v2_training_data_v1",
+  "schema_version": "dataset_build_report_v1",
+  "sealed_test_read": false,
+  "status": "completed",
+  "test_data_read": false,
+  "timestamp_utc": "2026-09-03T09:21:11.359334+00:00",
+  "training_started": false
+}
