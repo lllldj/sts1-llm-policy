@@ -288,7 +288,7 @@ class NativeRouteObservationTests(NativeSelectionTestCase):
             self.assertEqual(load_completed_route(path, identity=identity, arm="test", route=route, output_root=output), result)
             result["death_combat_index"] = 1
             path.write_text(json.dumps(result))
-            with self.assertRaisesRegex(ValueError, "truncation is invalid"):
+            with self.assertRaisesRegex(ValueError, "outcome is inconsistent"):
                 load_completed_route(path, identity=identity, arm="test", route=route, output_root=output)
 
     def test_victory_heal_and_relic_counter_feed_next_combat_behavior(self):
