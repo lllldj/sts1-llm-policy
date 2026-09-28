@@ -117,6 +117,7 @@ RUNNER = "sts1_llm_policy.train.configured_runner."
 
 
 def fixture(root):
+    root = root.resolve()
     raw = {"schema_version": "training_run_v2", "run_id": "fixture", "allowed_modes": ["preflight", "backward", "run"],
            "model_runtime": "runtime.json", "training_recipe": "recipe.json", "execution_profile": "execution.json",
            "dataset_manifest": "dataset.json", "seed": 7}

@@ -200,7 +200,7 @@ class SftGroupTests(unittest.TestCase):
             records.append(deepcopy(records[0]))
             records[1].update(record_id="other", loss_weight=1.5)
             run = replace(run, prepared=self.prepare(records), mode="run", runtime=replace(run.runtime, device="cpu"),
-                          output_dir=Path(tmp) / "formal", report_path=Path(tmp) / "formal/report.json")
+                          output_dir=run.project_root / "formal", report_path=run.project_root / "formal/report.json")
             manifest = deepcopy(run.dataset_document.value)
             manifest["splits"]["train"]["records"] = 2
             run = replace(run, dataset_document=replace(run.dataset_document, value=manifest))

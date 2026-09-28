@@ -86,7 +86,7 @@ class CombatPanelGenerationTests(unittest.TestCase):
 
     def test_preflight_uses_resolver_without_launching(self):
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
+            root = Path(directory).resolve()
             config_path = root / "config.json"
             scope_path, database_path = root / "scope.json", root / "picker.db"
             scope_path.write_text('{"reward_cards":{"included_enum_ids":[]}}', encoding="utf-8")
@@ -139,7 +139,7 @@ class CombatPanelGenerationTests(unittest.TestCase):
 
     def test_resumed_panel_uses_content_equality_and_checks_each_snapshot_once(self):
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
+            root = Path(directory).resolve()
             output = root / "output"
             route = {"route_index": 0}
             specs = [{"route_index": 0, "combat_seed": 10}]

@@ -40,7 +40,7 @@ class FrozenPanelEvaluationTests(unittest.TestCase):
     def setUp(self):
         temporary = TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        self.root = Path(temporary.name).resolve()
         path = self.root / "runtime.json"
         path.write_text(json.dumps(runtime_document(legacy=True)), encoding="utf-8")
         self.runtime = load_base_model_runtime_config(path, project_root=self.root)
