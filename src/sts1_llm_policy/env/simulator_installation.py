@@ -199,6 +199,19 @@ def discover_sts_lightspeed(
             "Simulator submodule revisions do not match the build config"
         )
 
+    overlays = manifest.get("source_overlays")
+    for name, filename in (
+        ("battle_scum_searcher2_bridge_patch", "battle_scum_searcher2_bridge.patch"),
+        ("cards_seeing_red_patch", "cards_seeing_red.patch"),
+    ):
+        binding = overlays.get(name) if isinstance(overlays, dict) else None
+        relative = f"tools/sts_lightspeed/{filename}"
+        if (not isinstance(binding, dict) or binding.get("path") != relative
+                or (verify_hashes and binding.get("sha256") != _sha256(root / relative))):
+            raise SimulatorInstallationError(
+                f"Simulator source binding changed or missing: {filename}; rebuild the simulator"
+            )
+
     manifest_artifacts = manifest.get("artifacts")
     if not isinstance(manifest_artifacts, dict):
         raise SimulatorInstallationError("Manifest artifacts must be an object")

@@ -65,6 +65,15 @@ class SimulatorInstallationTest(unittest.TestCase):
                 },
             },
         }
+        manifest["source_overlays"] = {}
+        for name in ("battle_scum_searcher2_bridge", "cards_seeing_red"):
+            relative = f"tools/sts_lightspeed/{name}.patch"
+            patch_path = root / relative
+            patch_path.parent.mkdir(parents=True, exist_ok=True)
+            patch_path.write_bytes(name.encode())
+            manifest["source_overlays"][f"{name}_patch"] = {
+                "path": relative, "sha256": hashlib.sha256(name.encode()).hexdigest(),
+            }
         (isolation / "build_manifest.json").write_text(
             json.dumps(manifest),
             encoding="utf-8",

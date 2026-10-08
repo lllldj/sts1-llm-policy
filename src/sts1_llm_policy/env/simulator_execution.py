@@ -153,6 +153,7 @@ class SimulatorExecution:
         for key, path in {
             "base_manifest_sha256": base.manifest_path,
             "bridge_source_sha256": source,
+            "cards_seeing_red_sha256": self.project_root / "tools/sts_lightspeed/cards_seeing_red.patch",
             "actions_upgrade_hand_sha256": self.project_root / "tools/sts_lightspeed/actions_upgrade_hand.patch",
             "cards_rage_cost_sha256": self.project_root / "tools/sts_lightspeed/cards_rage_cost.patch",
             "card_mechanics_sha256": self.project_root / "tools/sts_lightspeed/card_mechanics.patch",

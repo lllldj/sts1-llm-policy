@@ -46,6 +46,10 @@ class SimulatorExecutionTest(unittest.TestCase):
         memory_patch.write_bytes(b"public draw memory patch\n")
         memory_header = source.with_name("public_draw_memory.h")
         memory_header.write_bytes(b"public draw memory header\n")
+        search_patch = source.with_name("battle_scum_searcher2_bridge.patch")
+        search_patch.write_bytes(b"search patch\n")
+        cards_patch = source.with_name("cards_seeing_red.patch")
+        cards_patch.write_bytes(b"card exhaust patch\n")
         if installed:
             records = {}
             for name, relative in config["artifacts"].items():
@@ -72,6 +76,8 @@ class SimulatorExecutionTest(unittest.TestCase):
                 "path": "tools/sts_lightspeed/card_mechanics.patch", "sha256": digest(mechanics_patch),
             }
             manifest["source_overlays"].update({
+                "battle_scum_searcher2_bridge_patch": {"path": "tools/sts_lightspeed/battle_scum_searcher2_bridge.patch", "sha256": digest(search_patch)},
+                "cards_seeing_red_patch": {"path": "tools/sts_lightspeed/cards_seeing_red.patch", "sha256": digest(cards_patch)},
                 "public_draw_memory_patch": {"path": "tools/sts_lightspeed/public_draw_memory.patch", "sha256": digest(memory_patch)},
                 "public_draw_memory_header": {"path": "tools/sts_lightspeed/public_draw_memory.h", "sha256": digest(memory_header)},
             })
@@ -86,6 +92,7 @@ class SimulatorExecutionTest(unittest.TestCase):
                     "revision": config["revision"],
                     "base_manifest_sha256": digest(manifest_path),
                     "bridge_source_sha256": digest(source),
+                    "cards_seeing_red_sha256": digest(cards_patch),
                     "actions_upgrade_hand_sha256": digest(actions_patch),
                     "cards_rage_cost_sha256": digest(rage_patch),
                     "card_mechanics_sha256": digest(mechanics_patch),

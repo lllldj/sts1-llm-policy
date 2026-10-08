@@ -157,6 +157,11 @@ declaration are rejected. Rebuild using the platform builders: on Windows run
 on Linux run `uv run --locked python scripts/build_sts_lightspeed_linux.py`.
 Do not relabel old manifests to bypass validation. These are explicit rebuilds;
 the shared `build` command still refuses to overwrite an invalid retained binding.
+Both platforms validate the recorded Teacher search and card-exhaust patches
+against the current checkout. The Windows extension also records its own
+card-exhaust patch hash and checks the base patch bindings before writing outputs.
+An older extension missing that record requires an explicit extension rebuild;
+changed or missing base patch bindings require rebuilding the base first.
 Direct platform builders reuse the pinned checkout and recompile; allow the fresh
 build budget below. Ctrl+C can leave partial objects; there is no object-level
 resume contract. After a successful direct rebuild, use `simulator.py build` to

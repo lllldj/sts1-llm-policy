@@ -9,6 +9,22 @@ $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $baseRoot = Join-Path $projectRoot ".simulator\sts_lightspeed"
 $manifestPath = Join-Path $baseRoot "build_manifest.json"
 $manifest = Get-Content -Raw -Encoding UTF8 -LiteralPath $manifestPath | ConvertFrom-Json
+$basePatches = @{
+    battle_scum_searcher2_bridge_patch = "battle_scum_searcher2_bridge.patch"
+    cards_seeing_red_patch = "cards_seeing_red.patch"
+}
+foreach ($name in $basePatches.Keys) {
+    $relative = "tools/sts_lightspeed/" + $basePatches[$name]
+    try {
+        $binding = $manifest.source_overlays.$name
+        $basePatchMatches = $binding.path -eq $relative -and
+            $binding.sha256 -eq (Get-FileHash -LiteralPath (Join-Path $projectRoot $relative) -Algorithm SHA256).Hash.ToLowerInvariant()
+    } catch { $basePatchMatches = $false }
+    if (-not $basePatchMatches) {
+        throw "Base simulator source binding changed or missing: $relative. Rebuild the base simulator first."
+    }
+}
+$cardsPatch = Join-Path $projectRoot "tools\sts_lightspeed\cards_seeing_red.patch"
 $outputDir = Join-Path $projectRoot "outputs\card-selection"
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 $bridgeSource = Join-Path $projectRoot "tools\sts_lightspeed\decision_bridge.cpp"
@@ -47,7 +63,7 @@ Push-Location $projectRoot
 try {
     & git apply --directory=outputs/card-selection/source_overlay $actionsPatch
     if ($LASTEXITCODE -ne 0) { throw "Hand upgrade patch failed" }
-    & git apply --directory=outputs/card-selection/source_overlay (Join-Path $projectRoot "tools\sts_lightspeed\cards_seeing_red.patch")
+    & git apply --directory=outputs/card-selection/source_overlay $cardsPatch
     if ($LASTEXITCODE -ne 0) { throw "Retained card exhaust patch failed" }
     & git apply --directory=outputs/card-selection/source_overlay $ragePatch
     if ($LASTEXITCODE -ne 0) { throw "Rage cost patch failed" }
@@ -97,6 +113,7 @@ $result = [ordered]@{
     revision = $manifest.revision
     base_manifest_sha256 = (Get-FileHash -LiteralPath $manifestPath -Algorithm SHA256).Hash.ToLowerInvariant()
     bridge_source_sha256 = (Get-FileHash -LiteralPath $bridgeSource -Algorithm SHA256).Hash.ToLowerInvariant()
+    cards_seeing_red_sha256 = (Get-FileHash -LiteralPath $cardsPatch -Algorithm SHA256).Hash.ToLowerInvariant()
     actions_upgrade_hand_sha256 = (Get-FileHash -LiteralPath $actionsPatch -Algorithm SHA256).Hash.ToLowerInvariant()
     cards_rage_cost_sha256 = (Get-FileHash -LiteralPath $ragePatch -Algorithm SHA256).Hash.ToLowerInvariant()
     card_mechanics_sha256 = (Get-FileHash -LiteralPath $mechanicsPatch -Algorithm SHA256).Hash.ToLowerInvariant()
