@@ -39,12 +39,9 @@ record `combat_card_selection_v1` and preserve distinct card instances, even
 when their public descriptions match. UUIDs, native IDs and pile indices remain
 execution metadata; hidden draw order never enters the prompt.
 
-The new canonical types subclass the existing state/action records, so ordinary
-historical records gain no fields. Selection trajectories record the task,
-source index, exact action mapping and native choose/confirm command trace.
-They remain `coverage_collection` and are not training data. The V6 live profile
-uses the existing V5 Gold SFT checkpoint for exploratory execution; it does not
-claim that the checkpoint was trained on these new decisions.
+Selection trajectories retain the exact executed choice, but remain exploratory
+coverage evidence, not training data. The live V6 profile uses the existing V5
+Gold SFT adapter; it was not trained on these new choices.
 
 ## Simulator
 
@@ -55,66 +52,38 @@ checks and terminal accounting. Teacher search can also return a selection
 root action. Historical feature-deck recipes and collection manifests remain
 frozen; use an explicit `combat_snapshot_v1` deck for this extension.
 
-From the repository root, build a separate bridge from the installed engine objects:
+From the repository root, use the shared build entry on Windows or Linux after
+installing the [native prerequisites](runtime_and_simulator.md#native-build-prerequisites):
 
-```powershell
-.\scripts\build_card_selection_bridge.ps1
-uv run python -m unittest discover -s tests -p "*card_selection*.py"
+```text
+uv run --locked python scripts/simulator.py build --require combat_card_selection_v1
+uv run --locked python -m unittest discover -s tests -p "*card_selection*.py"
 ```
 
-The incremental build took 10.85 seconds locally; allow roughly 10–30 seconds
-for compilation/linking and 1–5 seconds for the focused tests. It requires the
-existing pinned base build and compiler. It writes only
-`outputs/card-selection/`, including source, engine-object and binary hashes.
-The old binary and `.simulator/sts_lightspeed/build_manifest.json` are unchanged.
-The build prints its output path and elapsed time; tests finish with `OK`.
-Ctrl+C stops either command; restart from the beginning after interruption.
+On Windows this builds a missing base, then the separate extension under
+`outputs/card-selection/`. The extension reuses the pinned base objects and does
+not modify its binary or manifest. Linux builds the bridge directly under
+`.simulator/sts_lightspeed-linux/`; no separate extension is needed.
+Existing valid builds are reused. Invalid bindings require the
+[explicit rebuild procedure](runtime_and_simulator.md#callable-native-environment-selection).
 
-On Linux, the separately isolated native build includes this current bridge
-directly and declares `combat_card_selection_v1`; no `.exe` extension build is
-required. The capability resolver verifies the Linux build manifest's bridge
-source binding before use. Run the focused native tests against the selected
-installation; a missing installation is not a passing native check.
+The build includes a bounded protocol smoke and reports `ready`; focused tests
+finish with `OK`. Check skips: a missing native installation is not a passing
+native check. Allow 1–5 seconds for the focused tests, plus the
+[platform build budget](runtime_and_simulator.md#callable-native-environment-selection).
+Ctrl+C stops either command; an interrupted build may need explicit recovery
+before rerunning.
 
-Python callers import `SELECTION` and `resolve_simulator` from
-`sts1_llm_policy.env.simulator_execution`, resolve with
-`required_capabilities={SELECTION}`, then call `create_environment()` and reset
-with an explicit combat snapshot. The resolver verifies binary/source and
-base-manifest bindings before enabling selection parsing. `create_client()`
-provides the equivalent raw client. The shared resolver defaults to corrected
-mechanics; omitting `SELECTION` keeps secondary selection disabled even though
-the same binary supports it. Historical `legacy_v1` is an explicit Windows-only
-choice without selection. See the [mechanics boundary](runtime_and_simulator.md#callable-native-environment-selection).
+The shared resolver separates corrected mechanics from enabling secondary choices.
+V5 experiments can use the corrected binary without selection actions. Native
+checks cover the seven cards, illegal/stale choices, terminal combat, and repeated
+Searing Blow upgrades.
 
-Native checks cover both versions of all seven cards, empty/single candidate
-cases, exact post-choice effects, stale/illegal commands, lethal Headbutt,
-Exhume's exclusion rule, repeated Searing Blow upgrades, and non-mutating
-Teacher selection search. The tiny all-exhausted fixture can terminate as an
-engine loss; no additional selection is invented for a terminal state.
-
-### Simulator exhaust auto-resolution audit
-
-The follow-up simulator audit verifies actual effects for zero, one and two
-exhaust candidates, including both card versions and drawing from an existing
-draw pile or after shuffling the discard pile.
-
-| Card | Zero candidates | One candidate | Multiple candidates |
-| --- | --- | --- | --- |
-| Burning Pact / + | Draw 2 / 3 automatically | Exhaust the sole card, then draw 2 / 3 automatically | Choose one to exhaust, then draw 2 / 3 |
-| True Grit | Gain 7 Block automatically | Gain 7 Block and exhaust the sole card automatically | Gain 7 Block and exhaust a random card |
-| True Grit+ | Gain 9 Block automatically | Gain 9 Block and exhaust the sole card automatically | Gain 9 Block and choose one to exhaust |
-
-Zero candidates skip exhaustion without suppressing the independent draw or
-Block effect. They do not trigger Feel No Pain. Automatically exhausting a
-single Sentinel does trigger its energy gain. Zero/one-candidate Burning Pact
-also passes through the canonical environment and a stub-backed LLMPolicy with
-one policy call and no secondary decision.
-
-This audit adds 29 scenarios across four test methods; the complete suite passes
-309 tests with zero failures, errors or skips. Evidence is retained in
-`report/mechanics/combat_card_selection_exhaust_edges_v1.json`. No runtime/config changes
-were needed, and the original implementation report remains unchanged. These
-results validate the simulator path; live validation remains pending.
+Zero/one-candidate effects can resolve automatically: Burning Pact still draws
+even when there is nothing to exhaust, and True Grit still grants Block. Automatic
+exhaustion triggers effects such as Sentinel's energy; an empty exhaustion does not
+trigger Feel No Pain. The [exhaust-edge audit](../../report/mechanics/combat_card_selection_exhaust_edges_v1.json)
+records the simulator evidence. It does not validate live behavior.
 
 ## Real-game adaptation and first retest
 
@@ -127,11 +96,9 @@ discard repeated snapshots, verify the selected UUID before sending one
 confirmation, and require the choice's effect before returning to ordinary play.
 Unknown actions and non-combat grids remain guarded stops.
 
-The transport fields and command ordering were checked against upstream
-[GameStateConverter](https://github.com/ForgottenArbiter/CommunicationMod/blob/master/src/main/java/communicationmod/GameStateConverter.java)
-and [ChoiceScreenUtils](https://github.com/ForgottenArbiter/CommunicationMod/blob/master/src/main/java/communicationmod/ChoiceScreenUtils.java).
-These sources describe HAND_SELECT/GRID candidates and their selection and
-confirmation behavior. Installed-build behavior still needs live validation.
+Transport behavior follows CommunicationMod's
+[choice handling](https://github.com/ForgottenArbiter/CommunicationMod/blob/master/src/main/java/communicationmod/ChoiceScreenUtils.java).
+Fixture checks still need confirmation against the installed game build.
 
 From the repository root, first run the binding-only preflight
 (typically under 5 seconds; no model/game):
@@ -167,11 +134,8 @@ Progress is logged as decisions and per-combat trajectories under
 legal selection, return to combat, and a terminal transition. Winning is not
 required for interface acceptance. Return to the main menu to finish normally;
 closing the game or Ctrl+C stops the session and retains partial evidence.
-Sessions do not resume; relaunching creates a new directory. After the run,
-report completion or the final error so the retained report can be checked.
+Sessions do not resume; relaunching creates a new directory. Inspect the final
+session report and retain its trajectories, including any interrupted combat.
 
-No live session, model inference, new training, large evaluation, or sealed
-data read was started as part of implementation. Mechanical test results are
-recorded in `report/mechanics/combat_card_selection_v1.json`; live status remains pending.
-The completed suite has 305 passing tests, zero skips, 32 short native fixtures,
-and passing bindings for five historical evaluation configs plus both live profiles.
+The [implementation report](../../report/mechanics/combat_card_selection_v1.json)
+contains native/fixture checks, not a real-game selection retest.

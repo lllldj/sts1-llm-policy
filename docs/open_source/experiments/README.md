@@ -15,24 +15,14 @@ does not replace it.
 
 ## Names and configuration
 
-Formal configuration filenames use `single_` or `continuous_`, followed by the
-model and role where needed, without a stage version suffix. Configuration contents
-select the actual observation, dataset, algorithm, recipe, seeds and checkpoint;
-Git records configuration revisions. Shared interface/runtime/recipe versions
-retain their technical meanings and are not experiment-stage numbers.
+Configs use `single_` or `continuous_` names and select model, data, recipe,
+checkpoint and evaluation conditions. Prepare separate outputs for changed
+experiments. Historical reports retain their original names and conditions;
+early V7 results, for example, predate the draw-memory correction.
 
-Retained diagnostic and configuration-change trials may use versioned names.
-Their role and parent stage are listed below. An execution's recorded `run_id`,
-dataset ID, output path and original report retain their historical identity,
-including existing version suffixes. Renaming an entry config does not rename its
-artifacts or create a new run. Select new run/output identities before executing a
-changed experiment; do not overwrite frozen results.
-
-Original reports may name a config's former path. Reproducing that execution
-requires its original source revision, which is not included in a release snapshot. Current entry
-paths are listed on the stage pages. Fixed training datasets, reference adapters and picker inputs are included in Git.
-Other ignored raw reconstruction/replay assets are retained locally and are not distributed. A protocol name alone is insufficient:
-early V7 executions predate the public draw-prefix memory correction.
+The public Git history starts from a cleaned snapshot. Earlier commit hashes
+identify provenance, not available checkouts. Datasets and reference adapters
+are included; original raw reconstruction and replay collections are not.
 
 ## Supporting work
 
@@ -54,19 +44,11 @@ formal-stage asset availability is listed on the single and continuous pages.
 | continuous | `teacher_gold_collection_v2`, `teacher_gold_collection_v3` | Retired sampling/storage configurations; their reports and raw import sources retain their identities. The formal entry is now [continuous_gold_collection.json](../../../configs/generation/continuous_gold_collection.json); import/source dependencies must be preserved. |
 | Shared / corresponding run | Runtime acceptance, backward checks, optimizer smoke, mechanics and parity checks | Support a declared environment, implementation or run; they are not separate experiment stages. The versioned 7B acceptance config remains a preflight/backward entry. |
 
-The maintained execution surface follows the two formal experiment chains.
-Historical diagnostics retain original results and necessary interpretation;
-their dedicated preparers, run configs and tests do not require ongoing support
-when they have no core consumer. Git `4ba3057` retains the three retired panel
-preparers and their configs. This is source provenance, not a promise of a fully
-reproducible diagnostic environment. Existing raw diagnostic outputs remain local
-evidence; they are not removed by retiring their entry points.
+Earlier diagnostic preparers and configs are retired; their original results
+and interpretation remain available where listed. The three retired panel
+preparers were recorded at development commit `4ba3057`, outside the public
+history. Formal GOLD collection still needs its declared exclusions and raw
+import sources; retirement does not remove those dependencies.
 
-Formal data generation, training, evaluation, recovery and local verification
-retain their necessary inputs and interfaces. The source-bound exclusion list and original import
-assets remain where the formal chain needs them. Reusable behavior tests and
-runtime checks remain implementation coverage, not historical experiment runs.
-
-Cross-run interpretation remains in [stage results](../stageresult.md); original
-machine evidence remains in [report](../../../report/README.md). These pages index
-the evidence rather than replacing it with new summary reports.
+[Stage results](../stageresult.md) explains comparisons; [report/](../../../report/README.md)
+contains original execution reports.

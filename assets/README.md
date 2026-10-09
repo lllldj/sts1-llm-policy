@@ -74,8 +74,8 @@ provenance; candidate generation consumes them without old execution configs.
 
 ## Rebuilding the picker database
 
-Upstream attribution, snapshot provenance and the unverified redistribution
-terms are documented in [third-party notices](../THIRD_PARTY_NOTICES.md#sts-metrics-picker-statistics).
+The STS Metrics statistics are included with the author's redistribution permission;
+see [source and permission details](../THIRD_PARTY_NOTICES.md#sts-metrics-picker-statistics).
 The reconstruction below uses the included snapshot; fetching current online
 statistics would not establish the same historical input.
 

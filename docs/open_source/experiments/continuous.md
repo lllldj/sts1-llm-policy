@@ -157,82 +157,42 @@ whose evaluations and DPO inputs select the newly trained checkpoints.
 
 ## Shared evaluation panel
 
-The current Base/GOLD-only, mixed and DPO A/B/C evaluation configs reference
-[one continuous development panel](../../../configs/panels/continuous_act1_development.json).
-It owns route rules, seed streams, observation/interaction protocol, simulator
-capabilities, scope, picker inputs, noncombat strategies and the decision limit.
-Run configs own model/checkpoint arms and run/output identity; execution status
-flags belong in reports.
-
-A panel reference expands once before normal validation, route generation and
-source-isolation checks. Run-level overrides of panel fields, unknown panel fields
-and nested panel references are rejected. To change conditions, select another
-complete panel. Existing inline configs remain supported. Reports keep the fully
-expanded configuration; compatibility is computed from resolved behavior, so
-moving conditions into a panel does not change the existing execution identity.
-
-[Experiment preparation](../data_training.md#prepare-independent-training-and-evaluation-configs)
-creates independent, expanded config snapshots and connects the new training
-checkpoints. It performs no training or evaluation. Original reports and reference
-weights keep their recorded identities.
+All six arms use [one development panel](../../../configs/panels/continuous_act1_development.json)
+for routes, seeds, public inputs, simulator mechanics and non-combat strategies.
+Run configs select models and outputs. To change conditions, select a complete
+new panel; partial overrides and nested panels are rejected. Reports save the
+expanded settings. [Experiment preparation](../data_training.md#prepare-independent-training-and-evaluation-configs)
+connects new checkpoints without changing the reference configurations.
 
 ## Downloads and starting points
 
-[Asset acquisition](../../../assets/README.md) owns external downloads, installation
-paths and availability. This table connects the included stage inputs and the
-undistributed raw evidence to their generation entries.
+Datasets and reference adapters are included under `assets/datasets/continuous/`
+and `assets/adapters/continuous/`; see the [asset index](../../../assets/README.md)
+for all paths. Original Teacher pool trajectories, GOLD continuation evidence and
+evaluation trajectories are local only. The public selection files do not contain
+those raw inputs.
 
-| Asset | Repository path | Availability | Generation entry |
-| --- | --- | --- | --- |
-| GOLD SFT dataset | `assets/datasets/continuous/gold-sft-v7/manifest.json` and its split artifact | Included | `export_gold_sft.py` with `continuous_gold_sft` |
-| Mixed SFT dataset | `assets/datasets/continuous/mixed-sft-v7/manifest.json` and its split artifact | Included | `export_gold_sft.py` with `continuous_mixed_sft` |
-| DPO A/B/C datasets | `assets/datasets/continuous/dpo-v7/{a,b,c}/manifest.json` and each split artifact | Included | `export_gold_dpo.py` with `continuous_dpo` |
-| GOLD SFT adapter | `assets/adapters/continuous/qwen2_5_7b_gold_sft_v7_v1/` | Included | `run_training.py` with the listed GOLD SFT training config |
-| Mixed SFT adapter | `assets/adapters/continuous/qwen2_5_7b_gold_teacher_mixed_sft_v7_v1/` | Included | `run_training.py` with the listed mixed SFT training config |
-| DPO A/B/C adapters | `assets/adapters/continuous/qwen2_5_7b_gold_dpo_{a,b,c}_v7_v1/` | Included | `run_training.py` with the corresponding listed DPO training config |
-| Teacher source pool | `outputs/generation/teacher-act1-candidate-pool-v1/formal/`, including report, inputs, route records and trajectories | Local only; not distributed | `run_continuous.py` with `continuous_teacher_pool`; requires native assets and picker database |
-| GOLD collection evidence | `outputs/generation/teacher-gold-collection-v4/formal/`, including report, state results, referenced traces and replay evidence | Local only; not distributed | `collect_gold.py` with the declared collection config; historical import prerequisites apply |
-| Evaluation trajectories | Each evaluation config's `output_dir` with its complete `formal/` tree | Local only; not distributed | `run_continuous.py` with the listed evaluation config |
+For new data, generate an independent Teacher pool, prepare its GOLD selection,
+then collect, verify and export to separate destinations. Select rebuilt manifests
+explicitly in mixed export and training configs. Regeneration does not promise
+byte-identical historical data.
 
-Fixed published inputs live under `assets/`; rebuilding data writes to `outputs/`
-as listed below. Mixed export uses the supplied GOLD manifest by default; set its
-`gold_manifest` to the rebuilt manifest when rebuilding the entire chain. Likewise,
-select rebuilt dataset manifests explicitly when training on regenerated data.
+Historical GOLD reconstruction additionally requires the imported
+`teacher-gold-collection-v3/formal` state results. Older replay receipts lack the
+report binding required by current exports: with the raw inputs present, run
+`collect_gold.py --verify --verification-output` to write a new receipt and use it
+in a separate export config. Keep the original evidence. A sampled replay receipt
+requires explicit `verification_scope: sampled`; see [replay coverage](../teacher_gold.md#execution-verification-and-receipts).
 
-Use the [reference-evaluation](#evaluate-reference-adapters) or
-[new-training](#train-and-evaluate-new-models) paths with the included assets.
-To generate new data, use an explicitly separate Teacher source pool, prepare a
-new GOLD selection and use separate destinations. Sample positions and exclusions
-are bound to their source pool. Preparation removes inherited imports; see
-[selection and source isolation](#selection-and-source-isolation).
-A regenerated dataset does not establish byte-identical historical reconstruction.
+Local reconstruction on 2026-09-23 matched all GOLD SFT, DPO A/B/C and mixed SFT
+records. Mixed export replayed all 1,440 selected Teacher combats. GOLD replay
+covered 240 complete states—216 stratified random and 24 targeted—with 89,664
+continuations and 901,211 decisions. The remaining states were not replayed;
+full dataset equality is not full continuation verification. Raw inputs and the
+new receipt are not distributed.
 
-The historical GOLD config imports `teacher-gold-collection-v3/formal`; executing
-it as recorded requires those earlier state results as well as its declared pool.
-Old replay receipts lack the report-content binding required by current GOLD
-exports. With the original raw inputs available, write a new receipt through
-`collect_gold.py --verify --verification-output`, then point a separate
-export config at it. Preserve the original receipt and dataset. Using an
-included exported dataset bypasses reconstruction, not training-time validation.
-
-Replay can cover an explicit subset of complete states through
-`--verification-selection`. Such a receipt requires `verification_scope: "sampled"`
-in the new SFT/DPO export config. Dataset reconstruction still processes the full
-report; its lineage records the sampled replay coverage. Matching reconstructed
-records does not establish agreement for unselected continuations. See the
-[receipt contract](../teacher_gold.md#execution-verification-and-receipts).
-
-Local reconstruction on 2026-09-23 matched every GOLD SFT, DPO A/B/C and mixed SFT
-record. Mixed SFT replayed all 1,440 selected Teacher combats. GOLD replay checked
-240 complete states: 216 stratified random states and 24 targeted checks, totaling
-89,664 continuations and 901,211 decisions. The remaining GOLD states were not
-replayed in this check. The new receipt records `scope: "sampled"`; original
-reports and receipts retain their historical identities. Raw inputs and the new
-local receipt are not distributed.
-
-Current continuous execution rejects historical V1 resume identities. New runs
-use separate output directories; copied old reports do not enable V2 resume.
-See the [identity contract](../data_training.md#current-configuration-and-identity-implementation).
+Use new output directories for current runs. Historical V1 route caches cannot
+resume as current V2 executions; see [compatibility](../data_training.md#current-configuration-and-identity-implementation).
 
 ## Data and labels
 
@@ -263,45 +223,23 @@ report-bound replay receipt; old receipts are not upgraded by renaming configs.
 
 ### Selection and source isolation
 
-The collection config references [gold-selection.json](../../../assets/datasets/continuous/gold-selection.json),
-which owns ordered `samples`, `source_report` and `source_partition`. Mixed SFT
-export consumes the same file directly. The GOLD loader expands `selection` before
-validation and identity comparison; it rejects a different source or inline
-sample/partition overrides. The expanded historical configuration is unchanged,
-including its import source. Historical `exclude_configs` strings in the partition
-are provenance, not paths that execution opens.
+[The fixed selection](../../../assets/datasets/continuous/gold-selection.json)
+identifies ordered states and their source pool; mixed export uses the same file.
+For a new panel, `prepare_gold_collection.py` needs an explicit source and a
+matching exclusion document. The [included exclusions](../../../assets/datasets/continuous/gold-exclusions.json)
+apply only to their original pool. An empty list is valid only when the new pool
+has no tuning routes to exclude.
 
-For a new training-candidate selection, supply `--exclusions` to the preparer.
-The [included exclusions](../../../assets/datasets/continuous/gold-exclusions.json)
-contain `source_report`, its SHA-256 and `excluded_routes`. Preparation requires
-both source reference and content to match, then recomputes selected/excluded/reserved
-membership. These route numbers apply only to that pool. For a different pool,
-provide its own explicit exclusion document; an empty list is allowed only when
-that pool has no tuning routes to exclude. No old diagnostic config is needed.
-
-Preparation writes a short execution config pointing to the generated `selection.json`,
-which includes the ordered samples and selection evidence. It reads only execution
-settings from the template and clears inherited imports and old membership without
-opening the old selection. A new pool therefore needs no old sample files.
-Run collection, replay verification and export using
-separate destinations as described in the [GOLD contract](../teacher_gold.md#gold-execution-and-replay).
-Original source reports and trajectories are required; the fixed public selection
-and exclusions do not contain those raw inputs.
+Preparation clears inherited imports and old samples, then writes a new selection
+and execution config. It does not need the old raw pool. Subsequent collection
+still needs the newly declared source reports and trajectories. Use separate
+outputs for collection, [replay verification](../teacher_gold.md#gold-execution-and-replay)
+and export.
 
 ## Artifacts, checks and supporting experiments
 
-The run sections above specify the reports and raw output trees to retain.
-Training reports establish completion/reload, evaluation reports establish route
-outcomes, and trajectories support reanalysis. The [evidence contract](../data_training.md#evidence-and-tests)
-distinguishes these claims.
-
-Action-order, multi-target, continuation-policy and ladder probes are supporting
-experiments listed in the [stage index](README.md#supporting-work). Multi-target,
-continuation-policy and ladder preparers are retired; original results retain
-their tested choices. Fixed source-exclusion inputs remain under `assets/datasets/continuous/`. The formal GOLD config
-imports existing work from the earlier collection; that dependency is not a
-disposable smoke. Backward and optimizer-smoke modes belong to each declared
-training configuration, rather than separate experiment stages.
-
-Historical execution support and raw-evidence availability are described in
-[starting points](#downloads-and-starting-points); the live default is separate.
+Keep the reports and complete output trees specified above. Training completion,
+evaluation outcomes and action-level replay establish different things.
+[Supporting experiments](README.md#supporting-work) retain action-order,
+multi-target, continuation-policy and sampling-ladder results; retired preparers
+are not required to train from the included datasets.

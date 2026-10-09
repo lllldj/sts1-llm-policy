@@ -44,6 +44,8 @@ Resolved scope, database, runtime and native identities are recorded in the run.
 The current checkout retains their explicit route/seed exclusions in
 [development-exclusions.json](../../../assets/datasets/continuous/development-exclusions.json),
 without requiring these old execution configs.
+The recorded development revisions are provenance identifiers, outside the public
+Git history; the retired configs and their source are not separately distributed.
 
 Base is Qwen2.5-7B-Instruct revision `a09a35458c702b33eeacc393d103063234e8bc28`,
 without adapter. [Runtime](../../../configs/runtime/base_model_runtime_7b_v2.json):

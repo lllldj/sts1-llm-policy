@@ -24,3 +24,16 @@ Skipped classes do not count as simulator validation. Build instructions are in 
 
 Test ownership and retirement rules live only in the
 [configuration contract](../docs/open_source/data_training.md#evidence-and-tests).
+
+## Continuous integration
+
+The [CI workflow](../.github/workflows/ci.yml) runs locked dependency installation
+and test discovery on Ubuntu 24.04 and Windows Server 2022 with Python 3.11, then
+checks `--help` for every Python entry under `scripts/`. It runs on pull requests,
+pushes to `main`/`master`, and manual dispatch. Logs are in the repository's Actions tab.
+
+Tests use CPU models and synthetic inputs. CI does not download Base weights or
+build the native simulator; skipped native tests remain unverified. Actual runs
+still perform runtime input validation, and training requires
+[current-machine readiness](../docs/open_source/runtime_and_simulator.md#training-readiness-on-the-current-machine).
+CI success does not establish GPU readiness or reproduce experimental results.

@@ -1,7 +1,7 @@
 # Stage results
 
 Configuration, protocol, seed and lifecycle records are in the
-[large-experiment index](experiments/README.md). The Boss panel and continuous
+[experiment index](experiments/README.md). The Boss panel and continuous
 Base evaluations are frozen; the continuous V6 Teacher remains a historical
 comparison baseline.
 
@@ -431,8 +431,10 @@ remain one lineage; this targeted panel does not estimate population coverage.
 The historical continuation-policy comparison retains its original
 B (`outputs/inspection/teacher-continuation-policy-v1/arm-b/formal/report.json`)
 and C (`outputs/inspection/teacher-continuation-policy-v1/arm-c/formal/report.json`)
-reports. Its dedicated panel preparer and run configs are retired; source code
-remains at Git `4ba3057`, without a maintained diagnostic reproduction environment.
+reports. Its dedicated panel preparer and run configs are retired; development
+commit `4ba3057` identifies their historical source, which is outside the public
+Git history. No diagnostic source download or maintained reproduction environment
+is provided.
 The original preparer required a completed, replay-verified baseline with the
 same native runtime. It sampled six states per encounter family on distinct
 source routes and separately included legal Warcry opportunities. Random sampling
@@ -475,8 +477,10 @@ imported: the full 128 trials are executed for every state in this calibration r
 The historical multi-target budget diagnostic retains its
 selection record (`outputs/inspection/teacher-gold-multitarget-v1/selection.json`)
 and partial standard-budget report (`outputs/inspection/teacher-gold-multitarget-v1/budget-2048/formal/report.json`).
-Its preparer and 8192-budget configs are retired. The 2048-budget configs remain
-because formal training-source selection references their excluded routes.
+Its preparer and both budget variants' configs are retired. Their excluded tuning
+routes are preserved in the source-bound
+[GOLD exclusion input](../../assets/datasets/continuous/gold-exclusions.json);
+formal training-source selection does not open the retired configs.
 The diagnostic shuffled declared route/seed-group/combat slots, rejected unreached
 combats or those without a public multi-target action opportunity, and sampled one eligible decision uniformly
 within each accepted combat. Each source route appears once. This samples combat

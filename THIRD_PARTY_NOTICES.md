@@ -63,17 +63,15 @@ The public [STS Metrics mod page](https://steamcommunity.com/sharedfiles/filedet
 credits **PaoPaoYue** and links its
 [card-pick dashboard](https://www.defectno4.space/public/dashboard/dee832e7-4edb-476a-85da-56f2c7d69de4)
 and [backend repository](https://github.com/PaoPaoYue/sts-service).
-These identify the upstream project, not an archived download of this CSV.
-The snapshot metadata does not record the acquisition endpoint, mod artifact
-identity or a license; its exact association with that published mod version
-has not been independently verified.
+The statistics were exported from STS Metrics using a temporary local export mod
+because the public data download link was unavailable at collection time. That
+export tool is not distributed. The original mod binary's identity was not
+recorded; the included metadata, CSV and extraction report document this snapshot.
 
-As of 2026-09-28, the reviewed upstream mod page and backend README provide no
-explicit terms for redistribution of this statistics snapshot. The mod page
-describes sharing metrics with players and modders; that statement does not
-establish a license for the included CSV or derived SQLite database.
-Their redistribution permission remains unverified. The project's MIT license
-does not grant rights to these third-party statistics.
+The STS Metrics author has permitted redistribution of these statistics with
+this project (permission confirmed on 2026-10-09). The included CSV and derived
+SQLite database are distributed on that basis. These third-party statistics
+are not relicensed under the project's MIT license.
 
 ## Separately obtained dependencies and assets
 

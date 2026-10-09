@@ -1,575 +1,183 @@
-# Data and training contract
+# Data and training
 
-Dataset inputs, exports, training, compatibility and evidence boundaries.
-See [policy and observation](policy_observation.md) for student inputs and
-[Teacher and GOLD](teacher_gold.md) for collection and replay.
-Stage workflows are in [single](experiments/single.md) and
-[continuous](experiments/continuous.md); setup is in
-[runtime and simulator](runtime_and_simulator.md).
-Original execution results live under `report/` or `outputs/`;
-retained comparisons are in [stage results](stageresult.md).
+The experiments compare learning from acceptable actions with learning from
+preferences between actions. [Teacher and GOLD](teacher_gold.md) explains how
+those targets are obtained; this page covers how they become training data.
+The README summarizes [LoRA and training settings](../../README.md#lora-and-training-settings).
 
 ## Dataset and training interface
 
-### Maintained training inputs
+Training reads a dataset manifest and its declared compressed records. Inputs
+include the public observation, legal actions, targets and source lineage. Labels
+must be legal; observation text must match its recorded content; training and
+development sources stay separate. Tokenization never truncates a sample to fit.
+The shared runner supports SFT and DPO, while configs select model, data and recipe.
 
-Training consumes a validated `dataset_manifest_v1`. The manifest owns task
-type, observation version, stable identity fields, split artifacts, lineage,
-target/preference semantics, record counts, byte sizes, and content hashes.
-The `single` 7B SFT and DPO runs consume `gold_sft.manifest.json` and
-`silver_preferences.manifest.json` respectively under
-`assets/datasets/single/observation-v5/`, with their declared train artifacts.
-The manifest and its content are the maintained training input. Reconstruction
-from retained Teacher V2 exports uses `prepare_dataset.py` and
-`migrate_observation_v5.py` with the explicit single-stage data configs; see
-[the reconstruction workflow](experiments/single.md#rebuilding-v4-and-v5-datasets).
-The earlier collection/certification execution surface remains retired.
-
-`scripts/run_training.py` is the shared SFT/preference entry. An algorithm
-adapter owns record validation, tokenization, loss semantics, prepared-input
-identity, generation-probe prompt, and reference requirements. The runner
-owns model and LoRA loading, deterministic ordering, optimization, resumable
-checkpoint state, fresh-Base reload, and reports. Dataset counts and optimizer
-steps are always derived from the verified manifest.
-
-The completed 1.5B Gold SFT remains the development and live policy. Its V1
-training config remains because `real_game_gold_sft_v5_session.json` and
-`real_game_card_selection_session.json` bind it, its report, and its checkpoint.
-This config is an execution dependency of the live profiles.
-
-Preference support uses the shared adapter and `dpo_lora_v1` recipe. The
-completed 1.5B Silver DPO result did not replace Gold SFT. Its experiment-specific
-config, topology pipeline, evaluation runners, and snapshot tests have been
-removed from the current checkout; the measured result remains in reports.
+The maintained single stage uses V5 Gold SFT and Silver preference datasets.
+Its [reconstruction entries](experiments/single.md#rebuilding-v4-and-v5-datasets)
+start from completed historical certification exports; they do not restore the
+retired certification pipeline. The retained 1.5B training config is also a live
+profile dependency, not a promise to reproduce its original training today.
 
 ### Adapter checkpoint format
 
-Reference adapters under `assets/adapters/` and newly saved final adapters use
-the project's `project_lora_v1` format (`schema_version: 1`). Each directory contains:
+Adapters use the project's `project_lora_v1` format: `adapter_config.json` and
+`adapter_model.safetensors`. Despite the familiar filenames, they are not directly
+loadable PEFT adapters. The project loader requires the declared Base revision,
+module shapes and weight content. Select an adapter through the evaluation
+`checkpoint` or training `initial_checkpoint` field; changing its name does not
+make it compatible with another Base.
 
-| File | Contract |
-| --- | --- |
-| `adapter_config.json` | Format identifiers, exact `base_model_id` and `base_revision`, LoRA `spec` (target module suffixes, rank, alpha, dropout), ordered `replaced_modules`, and the weights filename and SHA-256. |
-| `adapter_model.safetensors` | Adapter tensors only, named `<module>.lora_a.weight` and `<module>.lora_b.weight`; Base weights are obtained separately. |
-
-These filenames are also used by [PEFT](https://huggingface.co/docs/peft/en/developer_guides/checkpoint),
-but the metadata and tensor names differ. Direct loading with `PeftModel.from_pretrained`
-or Transformers' PEFT integration is unsupported. The project loader accepts only
-`project_lora_v1`; no PEFT import/export or automatic conversion is provided.
-
-Use the matching evaluation config's `checkpoint` field (or `checkpoint` in a
-continuous arm), or `initial_checkpoint` in a training config. These paths reach
-[`train.lora.load_lora_checkpoint`](../../src/sts1_llm_policy/train/lora.py)
-through the existing model backend or training runtime. The loader applies the
-adapter to a separately loaded Base with the declared model ID and revision,
-checks the weight hash, and requires matching module names and tensor shapes.
-Unsupported format/schema errors are distinct from Base identity mismatches.
-An adapter for one Base size or revision cannot be substituted for another by
-editing its metadata.
-
-A final adapter supports inference and explicit initialization of a new training
-run. It does not resume optimizer progress. V2 training continuation additionally
-requires the matching run's `latest.json`, checkpoint state, optimizer and RNG
-files under the [current recovery contract](#configuration-and-artifact-reuse-direction).
-The included reference adapters contain no such continuation state.
+Final adapters support inference or initialization of a new run. Continuing an
+interrupted optimizer requires that run's resume checkpoint, optimizer and RNG
+state. The supplied reference adapters do not include these.
 
 ## Dataset exports
 
+Exports read explicitly declared source reports and evidence, then write separate
+dataset destinations. Conflicting files are rejected; identical exports may be
+reused. Writes are atomic per file, not across the whole export. After an I/O
+interruption, retry with the same inputs and inspect any leftover temporary files.
+Training with the supplied datasets does not require rebuilding their raw sources.
+
 ### Executed-GOLD V7 SFT groups
 
-`uv run python scripts/export_gold_sft.py --config configs/data/continuous_gold_sft.json`
-is the SFT export entry point; the retained config describes the original export
-of the completed V4 candidate report and its final verification into
-`outputs/datasets/gold-sft-v7-v1/train.jsonl.gz` and `manifest.json`. The exporter
-checks the verification's report-content binding, declared training partition,
-complete state IDs and execution counts, scope-appropriate replay counts, and reproduces the original
-candidate sets before applying the export HP tolerance.
-The export config explicitly selects both source files, the destination, HP
-tolerance and nonbasic-card multiplier. Conflicting existing exports are refused.
-Re-exporting historical data requires the new receipt and destination described above.
+GOLD SFT trains on a set of acceptable actions at each state. The current export
+uses the collection's win gate and a 1-HP tolerance; empty sets and states where
+all actions pass are omitted. A state contributes one weighted sum of action
+cross-entropies, including the response terminator.
 
-SFT and DPO share collection validation, candidate selection and public decision
-metadata in `data/gold/export_source.py`; each exporter constructs its own record
-schema and weights. DPO does not construct intermediate SFT training records.
-All three exporters build their dataset artifacts and manifests in memory and
-complete their export checks before writing. DPO also completes the A/B/C checks and
-builds its combined report first. Destination, temporary-file and existing-content
-conflicts are checked across the entire export before any file is written.
-Identical existing files can be reused. Writes remain atomic per file; an I/O
-failure or interruption can leave a partial export. Retrying with the same inputs
-reuses identical files and refuses conflicting files or leftover temporary files.
-This is not a multi-file transaction.
+States have equal total weight. Within a state, nonbasic Attack/Skill/Power plays
+receive coefficient 1.5; basic cards, end turn, status plays and secondary choices
+receive 1. Normalize those coefficients within the state. Targets remain distinct
+and a state with more acceptable actions does not gain more total weight.
 
-`decision_sft_group_v1` stores one V7 public observation, its legal action metadata,
-source lineage, and explicit candidate action IDs and positive normalized weights.
-Empty and all-pass states are omitted. The initial export retains the collection's
-floor-rounded encounter win gates and a 1 HP tolerance. Nonbasic Attack/Skill/Power
-play actions receive coefficient 1.5; Strike, Defend and Bash (including upgrades),
-end turn, playable status cards and secondary selections receive coefficient 1.
-Normalize these coefficients within each state. Targets remain distinct actions;
-the rule does not collapse them or multiply the total weight of a state. This is
-an empirical training target, not a new statistical certification of the labels.
-
-The SFT adapter accepts the group schema alongside historical single-label records.
-It checks prompt/action membership, observation integrity, unique candidates and
-normalized weights. Every candidate supervises the existing response-only token
-cross entropy, including the assistant terminator. The state loss is the weighted
-sum of candidate losses; batches and epochs count states. Training backpropagates
-each candidate before computing the next to bound activation memory. Recovery
-identities include every candidate's tokens and weight. Generation probes consume
-only the shared prompt. Historical single-label records retain their behavior;
-secondary-selection labels require the new group schema.
-
-`configs/runs/training/continuous_qwen2_5_7b_gold_sft.json` selects the fresh 7B Base,
-the exported manifest and existing `sft_lora_v1` recipe: one epoch, eight states
-per optimizer step, learning rate 1e-4, q/v LoRA rank 8 and alpha 16. Tokenization
-must fit the 3,072-token cap without truncation. GPU recovery and longest-state
-backward, followed by optimizer/save/reload smoke, apply to this new run.
-
-Training consumes the train-only manifest and its declared dataset artifact.
-Source reports and continuation archives are export provenance, not training
-inputs. The loader verifies the artifact, record count, sample semantics and
-weights, and rejects development/test splits before reading their assets.
-Model/tokenizer assets and any initial checkpoint must be available at the
-configured paths. Dataset validity and execution readiness are separate checks.
-The existing 20-topology/four-seed continuous development panel supports subsequent
-closed-loop evaluation; observation and simulator comparability with historical
-Base results must be checked. A separate GOLD-labeled offline validation collection
-is optional and is not a prerequisite for this first run.
+[The export config](../../configs/data/continuous_gold_sft.json) selects sources and
+weights. The [training config](../../configs/runs/training/continuous_qwen2_5_7b_gold_sft.json)
+connects the dataset, Base model and SFT recipe.
 
 ### Matched V7 DPO preference datasets
 
-`uv run python scripts/export_gold_dpo.py --config configs/data/continuous_dpo.json`
-is the DPO export entry point. The retained config describes the original three
-train-only datasets from the completed GOLD collection and an explicitly scoped replay verification
-in `outputs/datasets/gold-dpo-v7-v1/{a,b,c}/`,
-each containing `train.jsonl.gz` and `manifest.json`. The original export result is
-[gold_dpo_v7_v1.json](../../report/data/gold_dpo_v7_v1.json). Export takes a few
-seconds locally and does not run new continuations or load a model.
-It shares the GOLD source report-content binding check and historical-receipt requirements;
-the archived config and existing datasets retain their original identities.
+Chosen actions come from the 1-HP GOLD set; rejected actions are outside it.
+Every pair needs at least 64 paired continuations, no lower observed chosen win
+count, no unpriced persistent-resource conflict, and
+`mean HP gap - 2 × paired standard error > 1`. Defeat contributes zero carried HP.
+These are empirical filters on adaptively sampled outcomes, not confidence
+certificates or route-optimal values.
 
-Chosen actions come from the current 1-HP GOLD set; rejected actions are outside
-that set. Every retained pair has at least 64 paired continuations, no unpriced
-persistent-resource conflict, no lower observed chosen win count, and
-`mean_carried_hp_gap - 2 * paired_standard_error > 1`. Defeat contributes zero
-carried HP. These adaptive-sample estimates are heuristic preference labels,
-not statistically certified or route-optimal values. No within-GOLD pairs,
-sole-action states, or development trajectories are added.
+All variants use the same ordered states, each containing at least one eligible
+pair whose mean HP gap is strictly greater than 3:
 
-All arms use the same ordered states, restricted to states with at least one
-eligible pair whose raw mean HP gap is **strictly greater than 3**:
+| Variant | Selection and weighting |
+| --- | --- |
+| A | All eligible pairs; equal state weight, divided equally among its pairs. |
+| B | Only pairs with mean HP gap strictly greater than 3; equal state weight, divided over the remaining pairs. |
+| C | A's pairs, with each base weight multiplied by `min(1, HP gap / 5)`. Small-gap states also lose weight; a global normalization keeps the mean state weight at one. |
 
-- A retains every eligible pair, with equal state mass and equal pair mass within
-  each state.
-- B retains only pairs with raw gap `> 3`, then divides each state's mass equally
-  among its remaining pairs. Exactly 3 is excluded.
-- C retains exactly A's pairs and multiplies each base pair weight by
-  `f = min(1, mean_carried_hp_gap / 5)`. Let `f_bar_s` be the mean factor within
-  state s and `Z` the mean of `f_bar_s` over all states. The serialized edge weight
-  is `f / sum_state(f)` and state `loss_weight` is `f_bar_s / Z`. Their product is
-  `f / (state_pair_count * Z)`: small-gap states remain downweighted, while the
-  dataset mean state coefficient stays one. Weights are not normalized again
-  within minibatches. Factors are fixed from the recorded outcomes, not scheduled
-  by training step.
-
-The three run configs are
-`configs/runs/training/continuous_qwen2_5_7b_dpo_{a,b,c}.json`. They use the existing
-`scripts/run_training.py`, the same `dpo_lora_v1` recipe and seed, and the completed
-mixed SFT checkpoint as both policy initialization and frozen reference. Each
-runs one epoch with eight states per optimizer update, learning rate `2e-5` and
-beta `0.1`. Each run has separate reference-cache, checkpoint and report outputs.
-
-`decision_preference_group_v1` accepts optional positive state `loss_weight` only
-with explicit manifest semantics and complete mean-one weights. State weights
-participate in training/recovery identity. Each pair is backpropagated before the
-next pair's graphs are allocated, preserving the weighted group gradient without
-holding all pair graphs at once. V7 secondary selections use the same action-only
-response boundary as SFT. Historical groups without state weights retain weight one.
-
-Local export and CPU gradient checks do not establish 7B CUDA readiness. Before
-formal training, each configured dataset needs current tokenizer/length checks,
-longest-sample backward evidence and optimizer/save/reload smoke. Training
-consumes the exported manifest and artifact, the declared Base assets and mixed
-SFT checkpoint; it does not reconstruct data from the Teacher collection.
-
-The corresponding evaluation configs are
-`configs/runs/evaluation/continuous_qwen2_5_7b_dpo_{a,b,c}.json`.
-Each loads its own final DPO checkpoint and writes to a separate generation output
-directory. Route construction, all RNG streams, fixed noncombat strategies,
-V7 protocol and the 20-topology/four-seed development panel match the mixed SFT
-evaluation. The primary comparison is final Boss completion; original route
-records and combat trajectories remain available for local analysis.
+C's weighting is not renormalized separately per state or minibatch in a way that
+would erase that downweighting. All three start independently from mixed SFT,
+which is also the frozen reference, with the same seed, state-update budget and
+DPO recipe. Pair counts and compute cost can still differ.
+See [export settings](../../configs/data/continuous_dpo.json) and the
+[original export report](../../report/data/gold_dpo_v7_v1.json).
 
 ### Mixed GOLD and Teacher V7 SFT
 
-`scripts/export_gold_sft.py --config configs/data/continuous_mixed_sft.json`
-uses the existing GOLD manifest and the explicitly selected Teacher pool. It
-selects the first three combats of each training route, with the same seed group
-as the GOLD collection. The excluded tuning routes, reserved routes and development
-sources remain outside training. `--mode smoke` replays only the configured representative
-combats and writes a separate smoke dataset; the training run uses the formal dataset.
+Mixed SFT adds complete victorious Teacher combats from the first three fights
+of the selected training routes and seed groups. Later Boss success is not a
+filter, but truncated route executions are rejected. Source states already in
+GOLD keep only their GOLD targets. Other Teacher choices are imitation labels,
+not certified GOLD. Sole-legal end-turn states are separated as formatting examples.
 
-The GOLD input must be a train-only V7 SFT manifest; its type and split boundary
-are checked before any split artifact is read. Mixture weights, dataset identity,
-encounter-family declarations and destination paths are checked before native
-replay. Source integrity, route isolation, transition replay and training-loader
-validation remain separate checks at their respective input boundaries.
+The loss mixture is **70% GOLD, 25% Teacher strategy, 5% forced end turn**.
+Within each source, GOLD/formatting states are equally weighted; strategy combats
+are equally weighted and divide their mass among their retained decisions.
+Candidate weights within GOLD states are preserved. The dataset's mean state
+coefficient is one, without per-minibatch renormalization.
 
-Pool location is separate from provenance. Optional `source_locations` in a mixed
-export config maps a historical pool-report path to an object with `path` and
-`sha256`. Set `path` to the relocated report and `sha256` to its previously verified
-content digest. References in the GOLD manifest and selection are resolved through
-this mapping without rewriting those files. The current `source_report` may retain
-its historical reference or point directly to the new report. Every referenced
-report must have identical content; mapped files must also match their declared
-digest. Missing references and mismatches fail before simulator startup. A digest
-chosen alongside a replacement file does not authenticate its historical origin.
-
-Move the pool as a directory, keeping `teacher/routes/` and each trajectory's
-report-relative path intact. This mapping applies only to the declared pool reports,
-not arbitrary dataset files or a global asset search. Route identity, excluded and
-reserved routes, trajectory hashes, and GOLD overlap checks still apply. New mixed
-manifests record the resolved pool path/content digest and the selection digest.
-
-Public route context is constructed in `env/route_context.py`, shared by generation,
-GOLD replay and mixed export. Counterfactual picker lookup and Teacher evaluation
-live in `eval/counterfactual_reward_picker_v2.py`; both generators consume that module.
-
-Every selected combat is replayed from its recorded input snapshot and action tape,
-including secondary choices. Original observations, states, transitions and outcomes
-are checked. Public draw memory is exposed without sampling a new RNG world, and
-current V7 observations are rebuilt. Old source files retain their original text
-and identity. Hidden order, RNG and search evidence are not student inputs.
-Reconstruction mismatches fail export instead of silently changing labels.
-
-Teacher demonstrations must come from complete victorious combats. They are
-single-action imitation targets, not certified GOLD or route-optimal labels.
-The containing route may subsequently end in defeat; later Boss success is not
-a filter on early demonstrations. Truncated route executions remain rejected.
-At source states already represented in GOLD, only the original GOLD candidate
-set is retained; rebuilt observations and action mappings must agree. Other
-demonstrations preserve every decision, with sole-legal END states separately
-marked as formatting supervision. Active END and secondary choices remain
-strategy demonstrations. Winning trajectories are not a proof of optimal play.
-
-The initial loss mixture is 70% GOLD, 25% Teacher strategy and 5% sole-legal END.
-GOLD states remain equally weighted within their source and retain the original
-candidate coefficients. Strategy combats contribute equally; each combat divides
-its mass among its retained strategy states. Formatting states are equally weighted.
-For N total records, a state's `loss_weight` is N times its normalized source mass:
-`N * source_mass / source_states` for GOLD and formatting, or
-`N * source_mass / (strategy_combats * retained_states_in_combat)` for strategy.
-The dataset mean coefficient is one. Candidate weights still sum to one within
-each state. The existing SFT adapter multiplies each candidate CE by both weights;
-it does not renormalize source weights within individual minibatches. Manifests
-declare and loaders verify the source masses; state weights participate in recovery
-identity. Historical groups without explicit state weights retain weight one.
-
-`configs/runs/training/continuous_qwen2_5_7b_mixed_sft.json` uses the existing
-`run_training.py` and `sft_lora_v1` recipe, fresh 7B Base and one epoch over all
-mixed records. Eight states form an optimizer step. More records imply more
-optimizer steps than GOLD-only training; this comparison therefore includes a
-training-budget difference. Changed dataset inputs require current longest-sample
-backward and optimizer/save/reload smoke before formal training. Source manifests,
-trajectories and native binaries are export inputs; training needs only
-the resulting manifest and its declared compressed training artifact.
+[The export config](../../configs/data/continuous_mixed_sft.json) declares sources
+and mixture weights. Export replays the recorded actions and rebuilds public V7
+observations, including draw memory; hidden order and search evidence never enter
+student text. Source mismatches fail export. Relocated pools need explicit
+`source_locations` mapping with unchanged report content and internal layout.
+Mixed SFT starts from fresh Base. More records mean more optimizer steps than
+GOLD-only SFT, so the comparison does not isolate data mixture at equal cost.
 
 ## Configuration and artifact reuse direction
 
-Configuration locations follow their consumers: `configs/runtime/` owns model
-and execution settings; `configs/runs/training/` and `configs/runs/evaluation/`
-own offline runs; `configs/generation/` owns Teacher/GOLD and frozen input
-production; `configs/live/` owns real-game sessions. Shared training recipes,
-panels, data-export settings and experiment member lists remain in
-`configs/profiles/`, `configs/panels/`, `configs/data/` and `configs/experiments/`.
-Historical report paths describe the original executions and are not rewritten.
-
-`artifacts.py` owns shared file/path operations and `configuration.py` owns
-configuration documents. `data/manifest.py` validates dataset manifests.
-`workflows/` composes experiment preparation and continuous-route execution;
-its `continuous_config.py` expands the shared panel without introducing generic
-configuration inheritance. Data, training and evaluation import the foundational
-modules directly rather than through workflow orchestration.
-
-Shared model configuration and asset checks live in `model_runtime.py`;
-dependency and hardware checks live in `execution_environment.py`. Training and
-policy inference consume these modules directly. Data, policy, training and
-evaluation interfaces are imported from their defining modules, without
-package-wide eager imports. For example, use `data.trajectory.TrajectoryLogger`,
-`policy.llm_policy.LLMPolicy` and `train.lora.load_lora_checkpoint`.
-
-Within training, `identity.py` owns run bindings, `runtime.py` owns Base and
-initial-adapter loading, and `readiness.py` validates recovery evidence.
-SFT tokenization, collation and batch transfer live in `sft_data.py`.
-`recovery.py` executes recovery probes through the training runner; the runner
-consumes readiness checks without importing the recovery workflow. Module moves
-preserve portable compatibility contracts. Legacy byte-bound runs still reject
-changed source bindings; their original reports are not rewritten.
-
-Reward construction uses `eval/card_profiles.py` for card tags and coverage,
-`eval/reward_support.py` for shared scores and counterfactual snapshots, and
-`eval/counterfactual_reward_picker_v2.py` for the maintained selection algorithm.
-Live and simulator environments share `env.errors.CombatEndedError`;
-replay verification uses `data.trajectory_replay.comparable_execution_state`
-to compare raw states without bridge-session decision IDs.
-
-| Layer | Responsibility |
-|---|---|
-| Engine (`src/`) | Reusable validation, tokenization, loss, resume, and runtime behavior. CLI scripts only adapt arguments. |
-| Profile/run (`configs/`) | Select model/runtime semantics, recipe, dataset manifest, seed, allowed modes, and optional destinations. |
-| Manifest/assets | Bind dataset, model, tokenizer, adapter, and checkpoint content whose exact bytes matter. |
-| Result (`outputs/`, published `report/`) | Store resolved configuration, fingerprints, execution evidence, and measurements. |
-
-Execution outcomes such as `training_started` and `stable_claim` belong in
-reports, not continuous or frozen evaluation run inputs.
-
-Generation follows the same split. A continuous-route run config selects its
-strategies, operation schedule, observation/interaction protocol, legal reward
-scope, policy arms, target panels, and independent RNG streams. Resolved asset and
-runtime identities are generated into results for resume/audit; they are not
-hand-authored expected bindings in the run config. In particular, a Teacher
-upgrade target panel must be distinct from the actual next encounter and formal
-combat seeds so its decision cannot consume hidden route information.
+Configs choose behavior; manifests identify data and model assets; outputs record
+what actually ran. Model, checkpoint, dataset and panel changes reach their actual
+consumers. Changing a display name alone is not a model switch, and the V5 single
+runner does not accept arbitrary observation versions.
 
 ### Prepare independent training and evaluation configs
 
-The recorded configs select supplied reference adapters for evaluation.
-Use `prepare_experiment.py` to connect new training outputs and evaluations without
-overwriting those inputs. From the repository root (typically under five seconds;
-configuration files only, no model or simulator execution):
+The included evaluation configs select reference adapters. For newly trained
+models, prepare connected copies with separate outputs:
 
 ```text
 uv run --locked python scripts/prepare_experiment.py --config configs/experiments/single_7b.json --config configs/experiments/continuous_7b.json --output outputs/reproduction
 ```
 
-Select either member list on its own to prepare one stage. For another experiment,
-create an explicit `experiment_preparation_v1` list with `training` and `evaluation` arrays;
-list upstream training before its dependents. Optional `reference_checkpoints` maps
-each supplied adapter directory to its upstream training config. Preparation replaces
-both reference-adapter inputs and original training-output references with the new
-checkpoint locations. Every mapped training config must be a selected member;
-config filenames and adapter directory names are not interpreted.
-Missing upstream members, duplicate members/output identities, unknown schemas and
-conflicting destinations fail before any prepared configs are written. The command
-prints all generated paths on success and exits nonzero on a conflict. It does not
-start or schedule training/evaluation.
+Preparation takes a few seconds and starts no experiment. Either member list can
+be used alone. It connects DPO initialization/reference and evaluation to the new
+upstream checkpoints, and expands continuous panels. Use the generated configs
+under `outputs/reproduction/` for the subsequent stage commands.
 
-Continuous evaluation panels are expanded into the generated config snapshots.
-Those generated copies preserve the selected conditions even if a shared panel is
-later edited; the maintained source configs reference the single shared definition.
-The existing runners perform full runtime and asset validation when invoked.
-
-Use the generated paths, prefixed with `outputs/reproduction/`, for both training
-and evaluation of these new models. Dataset, Base, recipe and environment
-inputs remain explicit references to the original configs/assets. Single DPO uses
-the new single SFT checkpoint; continuous DPO A/B/C each use the new mixed SFT
-checkpoint. The DPO recipe freezes that same initial checkpoint as its reference.
-Evaluation configs select the corresponding new checkpoints, while Base arms remain
-unadapted. DPO readiness and adapted-policy evaluation require their upstream
-training to have completed.
-
-Repeating preparation with unchanged inputs preserves existing files. To start
-another independent experiment, choose another `--output` and use that prefix throughout;
-to resume, retain the existing configs and output directories. An input/config
-conflict stops preparation without overwriting an earlier run. Evaluate the
-included reference adapters with the original evaluation configs instead.
+Member lists declare dependencies explicitly, with upstream training first;
+filenames are not interpreted. Missing dependencies, duplicate identities and
+conflicting destinations fail. Repeating unchanged preparation preserves files;
+choose a new output root for a new experiment.
 
 ### Asset validation and compatibility
 
-Git records source and ordinary configuration revisions. Model weights, datasets,
-adapters, and native binaries have content identities in their manifests or
-metadata. Loaders validate the declared assets and reuse validated metadata
-within an operation. Training and evaluation use semantic bindings to determine
-whether saved results or checkpoint state can be reused.
-
-These checks cover input/action validity, split isolation, complete counts,
-finite values, and exact adapter reload onto a fresh Base model. Deduplication
-and deterministic ordering also use semantic fingerprints as part of their
-algorithms. The binding rules and compatibility limits are described below.
+Code and ordinary configs are tracked by Git. Dataset, model, adapter and native
+content is checked against its declared identity. A hash detects mismatched bytes;
+it does not authenticate a publisher who can replace both data and expected hash.
+Keep raw output trees for resume and analysis, not just their summary reports.
 
 ### Current configuration and identity implementation
 
-Continuous generation and evaluation use
-`continuous_combat_configuration_identity_v2`. This binds resolved scope, route and
-seed rules, reward/Teacher strategies, observation and interaction contracts,
-decision limits, model/tokenizer/decoding semantics, dependency versions, adapter
-content, picker database bytes, and native binary/revision. Candidate-source
-exclusions bind explicitly declared source-route identities and exact RNG seed
-sets rather than the locations of retired configuration files. Exclusion inputs
-retain original run/output identities and configuration labels as provenance;
-those configuration labels are never opened.
+Reuse depends on the inputs and behavior that affect execution: data/tokens,
+model and tokenizer, recipe, observation, seed rules, adapters and native mechanics.
+Formatting, comments and relocated paths alone generally do not change that
+identity. Relocation must preserve content and referenced artifacts. Candidate
+pool run IDs remain bound to trajectory lineage, and scope identity includes the
+selected reward cards and ordered encounter pools, not descriptive text.
 
-The scope fingerprint binds the resolved allowed reward-card set, the selected
-act's encounter pools (including their order), and the scope interaction contract.
-Documentation links, explanatory text, descriptive counts and unused acts are
-excluded. Reward-card ordering does not affect eligibility or this fingerprint.
-Earlier whole-scope fingerprints are not automatically accepted for resume;
-historical outputs retain their recorded identities.
+Current training and route execution reject older or unidentified resume state.
+Historical reports are not rewritten to pass new checks. Final reference adapters
+remain valid for inference or explicit initialization; that does not restore old
+optimizer state. A new run needs readiness on its actual machine. Optimizer changes
+invalidate continuation even when optimizer-free backward evidence can be reused.
 
-JSON formatting, object-key order, configuration paths, model-cache and adapter
-directory locations and output destinations do not change this identity.
-Evaluation run labels are excluded; a Teacher candidate pool's `run_id` remains
-bound because exports require it to match the original trajectory lineage.
-A relocated output must retain its route records and referenced
-trajectories; resume still verifies snapshot and trajectory content. Hardware
-requirements remain separate and are enforced when the backend loads a model;
-reading completed routes does not load the model or certify the current GPU.
-The existing supported dtype and decoding protocol remain enforced by the
-runtime parser.
+Resume restores Python/PyTorch/CUDA RNG state, including for nonzero LoRA dropout;
+missing or corrupt state fails. A completed report is reused only if its final
+adapter still matches. Interrupted final saves can resume from the last valid
+checkpoint. Changing implementation behavior requires updating its compatibility
+contract; source-file renaming alone is not a semantic change.
 
-Before execution writes output, it checks existing route and summary identities
-across all arms. A generated `configuration_identity.json` also identifies a
-run interrupted before its first completed route. V1 or unidentified partial
-output directories are rejected; new executions must select a new directory.
-Historical V1 reports and trajectories retain their original identities and
-remain readable for analysis, validation and supported data exports. They are
-not migrated or re-signed for V2 resume. Continuing an interrupted V1 run requires
-its original implementation; a current release snapshot does not provide it.
-
-`training_run_v2` requires only `schema_version`, `run_id`, `allowed_modes`,
-`training_recipe`, `model_runtime`, `dataset_manifest`, `execution_profile`, and
-`seed`. It derives `outputs/training/<run_id>/report.json` and separate
-`backward/` and `smoke/` destinations. Explicit destination overrides and
-`required_simulator_capabilities` remain available. Optional `initial_checkpoint`
-names a project-relative adapter directory; DPO requires it even at preflight,
-and SFT may use it to continue from an explicit adapter. The loader validates
-the adapter's declared Base identity and weight content. Unknown fields, including
-legacy hand-maintained `expected_*` digests and `implementation_components`,
-are rejected. The loader enforces the train-only and no-sealed-data boundary.
-
-Both single and grouped SFT/DPO inputs bind the observation text to its content
-digest. Legal action IDs must be unique and contiguous from `ACTION_0`, match the
-record's action metadata, and contain every supervised or preferred action. These
-checks apply to V5 as well as V7 before tokenization reaches model execution.
-
-`training_recipe_v1` validates required and unknown fields at the root and in
-each section before opening model/runtime or dataset references. Numeric fields
-require JSON numbers of the declared kind, excluding booleans and non-finite
-values. Errors name the field or section, such as `optimizer.learning_rate` or
-`dpo.beta`. SFT recipes omit the DPO section; DPO requires positive beta, zero
-label smoothing, and the frozen initial-checkpoint reference. Existing numerical
-and tokenization limits remain enforced for both algorithms.
-
-`train/identity.py` owns checkpoint and recovery identities. It generates
-fingerprints from resolved model/tokenizer semantics, the recipe values relevant
-to the requested mode, dataset semantics and content, and actual ordered input
-IDs, attention masks, labels, and prompt boundaries. DPO additionally binds all
-ordered chosen/rejected branches, edge and state weights, beta, and the initial checkpoint
-content used as the frozen reference. Implementation compatibility uses an
-engine-owned backward contract, an algorithm-owned loss contract and, for smoke
-or training, an update/resume contract. These are implementation constants, not
-config overrides. Changes to batching, loss computation, or optimizer/update order
-must update the affected contract when previous evidence or continuation is no
-longer valid. Git records source provenance; source-file bytes are not a portable
-compatibility gate.
-
-JSON formatting, object-key order, source comments or module relocation, profile paths,
-cache paths, output destinations, and observed hardware do not change training
-identity. Token, label, relevant recipe, model, dataset content or compatibility
-contract changes do. Micro-batch and gradient-checkpointing settings participate
-in backward compatibility. Optimizer/schedule changes invalidate continuation but not the
-optimizer-free backward probe; checkpoint save frequency is also excluded.
-Initial-checkpoint relocation or JSON formatting preserves identity; changing its
-weights does not. `portable_training_identity_v3` rejects earlier portable
-training/recovery identities; no source-hash fields are silently discarded to
-accept an old checkpoint or receipt. Existing reports and checkpoints retain their
-original bindings and require their matching implementation for continuation.
-A new run needs current recovery evidence; published final adapters remain usable
-as inference or explicitly declared initialization assets. Frozen `training_run_v1`
-keeps its original byte-bound contract.
-
-The update/resume contract is `adamw_ordered_accumulation_rng_resume_v2`.
-Each resume checkpoint includes a content-bound `rng.pt` with Python, PyTorch CPU
-and the selected CUDA device's random state. Recovery checks this state; continuation
-restores it after model and optimizer construction so nonzero LoRA dropout resumes
-the same random stream. Earlier update contracts or missing/corrupt RNG state are
-rejected, without rewriting historical checkpoints. The backward contract is unchanged;
-matching optimizer-free readiness evidence remains reusable under its existing rules.
-
-Final adapters are written to a temporary sibling directory and renamed only after
-both weights and metadata have been saved. An interrupted final save can be retried
-from the last resume checkpoint. Reusing a completed training report first checks
-the final adapter's Base identity, metadata and weight content against that report;
-missing or changed artifacts fail instead of returning the previous success status.
-This check does not load another Base model or rerun training.
-
-DPO computes reference log probabilities from the declared initial checkpoint
-before optimization, persists bound per-group values, then releases its reference
-model before loading the trainable model. Recovery reuses its already loaded
-initial model under inference mode for reference values and then backward; it
-neither loads a second Base simultaneously nor freezes the trainable adapter.
-Response log probabilities normalize logits and sum response-token scores in FP32
-in both reference inference and training. The loss contract
-`frozen_reference_weighted_dpo_fp32_v2` invalidates earlier DPO reference caches,
-backward receipts and resumable training state. Use fresh output directories and
-current readiness evidence; historical reports and final inference adapters retain
-their original identities. This numerical correction has not been evaluated by
-rerunning the published DPO experiments.
-
-Existing V2 reports and checkpoint state carry a generated `configuration`
-snapshot and versioned `binding`; no hand-authored lock file or migration asset
-inventory is required. Execution-profile compatibility and the observed machine
-environment are checked separately before backward evidence is reused. A
-different machine requires current recovery evidence and does not imply bitwise
-equivalent continuation.
-
-SHA-256 here detects a mismatch relative to chosen inputs. It does not
-authenticate a publisher who can replace both an artifact and its expected
-digest. Source provenance comes from the chosen Git revision or release snapshot;
-asset hashes establish content identity relative to the declared inputs.
+DPO computes response log probabilities in FP32 for both policy and reference.
+The current numerical contract rejects older reference caches, backward receipts
+and resume state. The published DPO experiments have not been rerun under that
+correction; their reports and inference adapters retain their original identity.
 
 ## Evidence and tests
 
-Training and policy-evaluation preflight share their execution's existing
-configuration/input preparation paths.
-Preflight returns after those checks; execution continues with the prepared inputs.
-In portable training, preparation checks model metadata, tokenizer assets, dataset
-content and any initial adapter. Recovery or training then checks the current
-environment and Base weights once before model execution. Reference, trainable
-and final-reload Base models reuse that same execution's validation. A separate
-invocation checks its own environment and assets; no CI result or process-global
-cache bypasses these checks. Runtime legality, finite values, checkpoint integrity
-and final-output checks remain at their consumption or production boundaries.
+Before a long run, readiness loads verified assets, generates a short response and
+checks the longest-sample backward; optimizer smoke covers update/save behavior.
+Training completion means finite loss, all declared steps and exact adapter reload
+onto a fresh Base. Policy improvement requires matched evaluation evidence.
 
-A formal training run requires finite loss, complete sample/step accounting,
-resumable checkpoints, and exact adapter reload onto a fresh Base model. Before
-a long GPU run, recovery must load verified assets, execute a bounded generation,
-and pass longest-sample backward without creating an optimizer.
-
-Default test discovery covers the reusable `policy`, `simulator`, `live`, and
-`training` packages under `tests/`; each package owns one stable behavior area.
-Tests protect behavior that can change experimental results or corrupt artifacts:
-public observations and legal actions, data isolation and label/loss computation,
-checkpoint loading, and resumable execution. Historical configuration snapshots,
-fixed experiment counts, duplicated source hashes and completed one-off rebuild
-checks are not a separate maintained suite. Historical results
-are read from reports or, when the required assets remain available, reproduced
-at their recorded Git revision; they are not a third test suite. The directory
-map is kept in `tests/README.md`.
-
-Recorded comparisons and their original report references are in
-[stage results](stageresult.md); the evidence directory map is in
-[report/README.md](../../report/README.md). Test success does not replace
-experimental results or establish that historical assets are available.
+[Tests](../../tests/README.md) cover observations, actions, data isolation, loss and
+recovery behavior. Passing tests does not reproduce historical experiments or make
+missing raw assets available. [Stage results](stageresult.md) links the evidence.
 
 ## Retention and retirement
 
-The current checkout keeps only files required by a maintained runtime,
-protocol, input manifest, or active configuration. Retained artifacts include
-current inputs, result reports, final adapters, source evidence, and unresolved
-failures. Retired experiment scripts, run configs, profile snapshots, and dedicated
-tests have no consumers among the maintained entries.
-
-After a completed run, redundant shards, smoke artifacts, optimizer/resume state
-and their latest pointers may be retired when the retained results meet its
-remaining uses. Final adapters support inference, not continuation of the old
-optimizer state. Retained per-combat results support recorded outcome comparisons;
-deleting step trajectories ends step-by-step replay and action-level reanalysis.
-
-Retired experiment execution files were recorded at Git commit `9278d51` before
-decoupling. That historical implementation is not included in a release snapshot.
-Historical reproduction requires the original source and the assets named by its
-report, which this release does not distribute. Git does not restore ignored artifacts, and retired runs are
-not guaranteed to be exactly reproducible. The current checkout does not make a
-historical byte-bound config runnable by replacing its old digest.
+The snapshot includes maintained code/configs, datasets, reference adapters and
+reports. Earlier development commits, retired executors and original raw
+reconstruction/replay collections are not distributed. Historical paths and hashes
+identify provenance, not downloadable inputs. Final adapters do not replace resume
+state; per-combat summaries do not replace trajectories for action-level replay.
+Do not make historical configurations appear current by replacing their digests.

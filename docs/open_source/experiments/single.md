@@ -152,13 +152,14 @@ uv run --locked python scripts/run_frozen_policy_panel_evaluation.py --config "$
 )
 ```
 
-Budget estimates, not measured 7B training times: recovery plus smoke roughly
-5–20 minutes per algorithm; reserve several hours for each formal training run.
-Historical 1.5B reports recorded about 2.68 hours
-SFT and 5.24 hours DPO on different hardware. Group count alone does not predict
-DPO duration. Use the new smoke's measured step time to refine the training
-budget (1,028 SFT / 59 DPO steps for these manifests), allowing extra reference
-calculation and load/save time. Longest-biased smoke can overestimate step cost.
+Allow **roughly 5–20 minutes per algorithm** for recovery plus smoke. The
+[historical 7B training results](../stageresult.md#training-completion) recorded
+about 33 minutes for SFT and 4 minutes for DPO, with 1,028 and 59 optimizer steps
+respectively. These timings describe the original implementation and machine;
+they are not a current-runtime guarantee. Use the new smoke's measured step time
+to estimate the run, allowing extra reference calculation and load/save time.
+Group count alone does not predict DPO duration, and longest-biased smoke can
+overestimate step cost.
 The recorded 7B Base panel took about 15 minutes including load; allow roughly
 15–45 minutes per candidate evaluation, with policy-dependent combat length.
 
@@ -175,29 +176,16 @@ is needed. These commands do not change the default policy.
 
 ## Downloads and starting points
 
-These stage inputs are included at the repository-relative paths below.
-[Asset acquisition](../../../assets/README.md) owns external downloads, adapter
-format and availability; the table connects each input to its use in this stage.
+V5 Gold SFT, Silver preference and separate development datasets are included in
+`assets/datasets/single/observation-v5/`. The 7B SFT/DPO and 1.5B live reference
+adapters are under `assets/adapters/single/`. The [asset index](../../../assets/README.md)
+lists their files and external Base downloads.
 
-| Asset | Repository path | Availability | Generation / compatibility |
-| --- | --- | --- | --- |
-| V5 Gold SFT dataset | `assets/datasets/single/observation-v5/gold_sft.manifest.json` and its declared split artifact | Included | Retained training input; reconstruction from V2 exports is described below |
-| V5 Silver preference dataset | `assets/datasets/single/observation-v5/silver_preferences.manifest.json` and its declared split artifact | Included | Retained DPO input; reconstruction from V2 exports is described below |
-| V5 development SFT dataset | `assets/datasets/single/observation-v5/development_sft.manifest.json` and its declared split artifact | Included | Separate development split; excluded from training |
-| 7B Gold SFT adapter | `assets/adapters/single/qwen2_5_7b_gold_sft_v1/` | Included | `run_training.py` with the 7B Gold SFT config below |
-| 7B Silver DPO adapter | `assets/adapters/single/qwen2_5_7b_silver_dpo_v1/` | Included | `run_training.py` with the 7B Silver DPO config below, initialized from Gold SFT |
-| 1.5B Gold SFT live adapter | `assets/adapters/single/qwen2-5-1-5b-teacher-v2-gold-sft-observation-v5-v1/` | Included | Frozen V5 live checkpoint; its original training has additional historical bindings |
-
-Use the [new-training sequence](#running-the-7b-comparison) with these manifests,
-or [evaluate reference weights](#evaluate-reference-adapters) directly. Rebuilding
-the Boss input panel additionally uses the included picker database. Detailed
-replay of a historical run needs its original trajectories.
-
-The V5 datasets are included; their original Teacher V2 source assets are retained
-locally and are not distributed. Reconstruction starts from completed certification exports; it does not rerun
-the retired Teacher certification pipeline. The 1.5B historical
-adapter and reports also do not establish that current code can reproduce its
-original training. These limits are separate from the maintained 7B entries.
+Training and reference evaluation use these included assets directly. Historical
+reconstruction instead needs local Teacher V2 certification exports and original
+source records, which are not distributed. It does not rerun the retired
+certification pipeline. The retained 1.5B adapter supports the live profile;
+its presence does not promise reproduction of the original training.
 
 ## Training and checkpoints
 
@@ -217,27 +205,15 @@ links recovered training reports and evaluation outputs.
 
 ## Evaluation and delivery
 
-[Boss input configuration](../../../configs/generation/single_boss_inputs.json)
-generates new inputs with corrected simulator mechanics. Evaluation uses
-[Base](../../../configs/runs/evaluation/single_qwen2_5_7b_base_boss.json),
-[SFT](../../../configs/runs/evaluation/single_qwen2_5_7b_sft_boss.json) and
-[DPO](../../../configs/runs/evaluation/single_qwen2_5_7b_dpo_boss.json) configs through
-[run_frozen_policy_panel_evaluation.py](../../../scripts/run_frozen_policy_panel_evaluation.py).
-The [Boss record](frozen_boss_192.md) retains panel identities, results, seed rules,
-raw-output locations and reproduction limits. Other historical panels remain in
-their original reports; the Boss subset does not stand in for all evaluations.
+The included frozen panel is evaluated with corrected simulator mechanics on
+Windows and Linux. Current configs write separate `*-boss-corrected-v1` outputs;
+they need not reproduce the [historical Boss scores](frozen_boss_192.md).
+The reference adapters and historical reports retain their original identities.
 
-Current single configs explicitly require `corrected_v1` mechanics on Windows
-and Linux, while retaining V5 single-action observations and the included frozen
-panel. They write new `*-boss-corrected-v1` outputs. Historical training data,
-reference adapters and recorded results keep their original identities; a new
-evaluation under corrected mechanics does not reproduce their original scores.
-Replacing the panel is explicit: use the generated `inputs.json`, its fingerprint
-and counts in each evaluation config, with separate output directories.
-
-The [evaluation commands](#evaluate-reference-adapters) define the completion
-checks and retained output tree. [Training readiness](../runtime_and_simulator.md#training-readiness-on-the-current-machine)
-uses the intended training config so its input and seed identity matches training.
+[Boss input generation](../../../configs/generation/single_boss_inputs.json)
+can build a new panel. Select its `inputs.json`, fingerprint and counts explicitly
+in evaluation configs and use separate outputs. [Evaluation commands](#evaluate-reference-adapters)
+above describe completion and resume.
 
 ## Data and earlier branches
 
@@ -253,8 +229,9 @@ Earlier [Expanded SFT](../../../report/training/expanded_sft_training_v1.json) a
 [topology DPO](../../../report/training/topology_dpo_training_v1.json) retain their
 own [SFT evaluation](../../../report/evaluation/expanded_sft_simulator_v1.json) and
 [DPO evaluation](../../../report/evaluation/topology_dpo_simulator_v1.json).
-Their retired execution surfaces require the separately supplied historical
-source identified in the [retention contract](../data_training.md#retention-and-retirement).
+Their retired execution surfaces require the original historical source and
+assets identified in the [retention contract](../data_training.md#retention-and-retirement).
+That source is not included in the public Git history or offered as a separate download.
 
 The maintained Gold/Silver training inputs are the explicit dataset manifests at
 `assets/datasets/single/observation-v5/{gold_sft,silver_preferences}.manifest.json`.
@@ -265,50 +242,32 @@ remain retired.
 
 ### Rebuilding V4 and V5 datasets
 
-Run from the project root, after supplying the declared source assets:
+With the declared historical source assets available, run from the project root:
 
 ```powershell
 uv run python scripts/prepare_dataset.py --config configs/data/single_teacher_v2.json
 uv run python scripts/migrate_observation_v5.py --config configs/data/single_observation_v5.json
 ```
 
-The first command reads the completed V2 certification report, its Gold/Silver
-artifacts and the historical eligible source JSONL. If that JSONL is absent,
-first use [the existing summary rebuild](#rebuilding-expanded-source-summaries).
-It checks source identity, counts, accepted training membership, public state,
-legal labels and disjoint Gold/Silver identities. Output is V4 SFT/preference
-data under `outputs/datasets/single-rebuilt-v4/`.
+The first command reads completed V2 certification exports and eligible source
+JSONL, writing V4 data to `outputs/datasets/single-rebuilt-v4/`. If the source
+JSONL is absent, [rebuild its summaries](#rebuilding-expanded-source-summaries) first.
+The second writes V5 data to `outputs/datasets/single-rebuilt-v5/`, adding the
+glossary while preserving actions, labels and weights. The formal config also
+rebuilds the separate development split. Neither command runs a model or Teacher.
 
-The second command consumes those manifests and writes V5 records under
-`outputs/datasets/single-rebuilt-v5/`. It reuses the current V4-to-V5 text
-conversion, preserves actions, labels and preference weights, and records each
-old observation hash. The formal config also reconstructs the separate
-development SFT split from the declared historical source. No Teacher search,
-model loading or training runs. Each output directory contains manifests,
-compressed records and an original execution `report.json`.
+Configs select inputs and destinations. Migration accepts one train or development
+split per manifest; test data and overlapping source episodes are rejected.
+Different existing content is never overwritten. Each output contains manifests,
+compressed records and `report.json`; compare records as JSON, since gzip bytes
+and provenance paths can differ. Point new training configs at the rebuilt manifests.
 
-Both configs select input and output paths; dataset IDs are explicit and counts
-come from the inputs. Migration supports one train or development split per V4
-SFT/preference manifest; test splits and other observation versions are rejected.
-The optional `development` input may be omitted for training-only reconstruction.
-Train/development source episodes cannot overlap. Source artifacts retain content
-checks; ordinary source/config files are tracked by Git rather than pinned by byte hash.
-
-Existing files are never overwritten with different content. Repeating an
-identical export is safe; use new output paths for changed inputs. Rebuilt
-manifests record their actual source paths and identities, so they are not
-byte-identical historical manifests. Record-by-record JSON equality is the
-reproduction criterion; gzip encoding and provenance metadata can differ.
-Point a new training config at the rebuilt manifest to train from it. Historical
-training configs and datasets retain their original bindings.
-
-The entries accept relocated inputs and reject source leakage, invalid labels
-and conflicting outputs. Local full reconstruction on 2026-09-23 matched all V4/V5
-Gold (8,221 each), Silver (471 each), and V5 development (2,406) records. Restoring
-the 4,680-episode source summaries also matched both original audit hashes.
-Source restoration, export, migration and comparison together took 108.3 seconds
-on the collection machine; allow roughly 1–5 minutes depending on storage and CPU.
-These checks used retained local evidence; that evidence is not distributed.
+Local reconstruction on 2026-09-23 matched V4/V5 Gold (8,221 records each), Silver
+(471 each), and V5 development (2,406). Restoring the 4,680-episode summaries also
+matched both original audit hashes. The full local check took 108.3 seconds;
+allow roughly 1–5 minutes depending on storage and CPU. These raw inputs are not
+distributed. Ctrl+C stops reconstruction; retry unchanged inputs to reuse
+identical outputs, or choose a new destination for changed inputs.
 
 ## Historical artifact retention
 
@@ -342,11 +301,9 @@ reconstructs the hashes in memory without writing the views. Existing destinatio
 files are not overwritten; both reconstructed hashes must match the original audit
 before publication.
 
-This standalone standard-library script preserves the export rule from commit
-`7b7a76e`: sort episodes by index, flatten their original record arrays, and
-exclude audited quarantined episode IDs and hidden-order-invalid observation hashes
-from the eligible view. It also verifies the quarantine against train/dev deck
-overlap. JSON uses sorted keys, compact separators, UTF-8 and LF. Existing observation
-strings, labels and the audit remain unchanged; no model, Teacher search, current
-serializer or retired collection pipeline is loaded. The two restored views are
-historical provenance/export inputs, not the maintained training manifest artifacts.
+The script preserves original records and labels, excludes audited quarantined
+sources from the eligible view, and checks train/development deck isolation.
+It uses no model, Teacher search or current serializer. See the
+[implementation](../../../scripts/rebuild_expanded_sft_summaries.py) for the exact
+serialization rules. The restored views are historical export inputs, not the
+maintained training manifests.

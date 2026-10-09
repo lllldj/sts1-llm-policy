@@ -36,11 +36,10 @@ Status meanings:
 
 ## Closeout status (2026-09-05)
 
-The operator reports Act 1 monster adaptation complete. The latest retained
-Guardian trajectory also closes its full mode-cycle retest. Row statuses below
-remain machine-evidence statuses: partial, retest, and untested entries are
-not silently promoted by the overall adaptation report. They describe missing
-terminal evidence for particular compositions or event variants.
+The latest retained Guardian trajectory closes its full mode-cycle retest.
+Row statuses below describe the retained evidence: partial, retest, and untested
+entries still lack terminal evidence for particular compositions or event variants.
+Session directories are retained locally, outside the public source snapshot.
 
 ## Natural Act 1 encounter pool
 
