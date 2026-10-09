@@ -38,9 +38,8 @@ SOFTWARE.
 
 ## Included experiment assets
 
-The stage tables in [single](docs/open_source/experiments/single.md#downloads-and-starting-points)
-and [continuous](docs/open_source/experiments/continuous.md#downloads-and-starting-points)
-identify the included project datasets and reference LoRA adapters. Their manifests,
+The [asset index](assets/README.md) identifies the included project datasets and
+reference LoRA adapters. Their manifests,
 adapter metadata and original reports preserve source and model identities.
 The adapters contain project-trained LoRA parameters, not the Base weights;
 the terms accompanying the identified Qwen model snapshots remain applicable.

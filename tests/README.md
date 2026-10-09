@@ -9,7 +9,7 @@ Tests are grouped by stable code responsibility:
 | `live/` | Communication-mod adaptation, preflight, sessions, and card-selection interaction. |
 | `training/` | Data adapters, LoRA, model backend, checkpoints, recovery, configuration, and artifact I/O. |
 
-Run commands remain in the repository [README](../README.md#setup-and-verification).
+Run commands remain in the repository [README](../docs/open_source/README.md#setup).
 Shared synthetic inputs and doubles live in the owning package's fixture modules;
 `tests/support.py` only writes temporary JSON inputs. Tests import fixtures, not
 other `test_*.py` modules. Fixtures contain no test cases or import-time execution.
@@ -20,10 +20,7 @@ reason; pure Python tests still run. On Windows, a valid base installation witho
 the optional card-selection extension also skips selection tests. Partial builds,
 invalid bindings, unsupported profiles and protocol errors remain test errors.
 Skipped classes do not count as simulator validation. Build instructions are in the
-[runtime guide](../docs/open_source/runtime_and_simulator.md#callable-native-environment-selection).
-
-Test ownership and retirement rules live only in the
-[configuration contract](../docs/open_source/data_training.md#evidence-and-tests).
+[runtime guide](../docs/open_source/README.md#build-the-simulator).
 
 ## Continuous integration
 
@@ -35,5 +32,5 @@ pushes to `main`/`master`, and manual dispatch. Logs are in the repository's Act
 Tests use CPU models and synthetic inputs. CI does not download Base weights or
 build the native simulator; skipped native tests remain unverified. Actual runs
 still perform runtime input validation, and training requires
-[current-machine readiness](../docs/open_source/runtime_and_simulator.md#training-readiness-on-the-current-machine).
+[current-machine readiness](../docs/open_source/README.md#train-new-adapters).
 CI success does not establish GPU readiness or reproduce experimental results.

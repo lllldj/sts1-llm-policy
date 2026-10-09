@@ -9,7 +9,7 @@ live trajectories are not training data.
 The default [session profile](../../configs/live/real_game_gold_sft_v5_session.json)
 uses Qwen2.5-1.5B with Gold SFT and V5 observations. The model controls combat;
 you handle rewards, map routing, shops, events and other non-combat screens.
-The process waits between combats. [V6 card selection](combat_card_selection.md)
+The process waits between combats. [V6 card selection](#optional-card-selection)
 is a separate opt-in profile using the same V5-trained adapter.
 
 ## Prerequisites
@@ -88,3 +88,38 @@ legal low-HP opportunities for each. Setup-buff ordering and survival tradeoffs
 remain limitations. Live failures can motivate a training category, but new
 examples must come from isolated training sources. Further integration checks
 should target a missing encounter variant or a reproducible protocol failure.
+
+## Optional card selection
+
+The opt-in [V6 profile](../../configs/live/real_game_card_selection_session.json)
+adds Armaments, Headbutt, Exhume, Burning Pact, True Grit, Warcry and Dual Wield
+secondary choices and their upgrades. It reuses the V5-trained adapter; it was not
+trained on these choices. The default session remains V5.
+
+Each step is PLAY → feedback → SELECT_CARD → feedback. Selection offers only
+eligible card instances, not PLAY/END_TURN. Automatic/random effects do not create
+artificial choices; combat termination takes precedence. Potion, reward,
+optional multi-card, other-character and mod-added selections are outside scope.
+Unknown or non-combat grids stop safely. The live adapter checks the originating
+action and candidate UUIDs, handles UI ordering, and waits for the selected effect
+before returning to combat. UUIDs remain execution metadata, not student input.
+
+To generate this profile's child command from the repository root (under a
+second, prints only), use:
+
+```powershell
+$projectRoot = (Get-Location).Path
+'"{0}" --directory "{1}" run --locked python "{1}\scripts\run_real_game_session.py" --config "{1}\configs\live\real_game_card_selection_session.json"' -f (Get-Command uv).Source, $projectRoot
+```
+
+Its sessions write to `outputs/real-game-card-selection-sessions/`.
+Simulator and transport-fixture checks exist in the
+[implementation report](../../report/mechanics/combat_card_selection_v1.json) and
+[exhaust-edge checks](../../report/mechanics/combat_card_selection_exhaust_edges_v1.json);
+they do not establish a completed real-game selection retest.
+
+Recorded simulator/live parity is narrower still: 42/42 transitions for starter-deck
+Cultist, Jaw Worm and Two Louse. Expanded simulator support does not expand that
+claim. Old boolean-only snapshots cannot restore repeated Searing Blow upgrades;
+current V2 snapshots preserve the counts. Observation and engine versions cannot
+be made interchangeable by renaming them.

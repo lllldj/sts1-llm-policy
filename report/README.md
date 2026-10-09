@@ -2,10 +2,9 @@
 
 Published JSON evidence is grouped by what it establishes:
 
-Experiment ownership is indexed under [single and continuous](../docs/open_source/experiments/README.md).
-This directory keeps original report filenames and results; stage naming does
-not change recorded execution identities. Backward/smoke and runtime checks are
-supporting evidence for their declared run or environment, not separate stages.
+This directory keeps original execution reports and their recorded identities.
+Cross-report interpretation is in [result analysis](../docs/open_source/stageresult.md).
+Runtime and training checks apply to their recorded run/environment.
 
 | Directory | Evidence |
 |---|---|
@@ -26,8 +25,6 @@ Public copies must not be substituted for original hash-bound replay evidence.
 New simulator descriptions write project-relative paths directly; their commands
 are portable build recipes, not transcripts of machine-local executable locations.
 
-The two 7B cross-run summaries
-are recorded in [stage results](../docs/open_source/stageresult.md), which links
-the original execution evidence. Interpretation of original-run paths
-and hashes, plus retention and reproduction rules, lives in the
-[configuration contract](../docs/open_source/data_training.md#retention-and-retirement).
+Original-run paths and hashes identify provenance. Earlier development commits
+and raw reconstruction/replay collections are not distributed; public reports do
+not replace those inputs. See [reuse boundaries](../docs/open_source/data_training.md#configuration-and-artifact-reuse-direction).

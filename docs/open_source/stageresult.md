@@ -1,11 +1,15 @@
 # Stage results
 
-Configuration, protocol, seed and lifecycle records are in the
-[experiment index](experiments/README.md). The Boss panel and continuous
-Base evaluations are frozen; the continuous V6 Teacher remains a historical
-comparison baseline.
+The [README](../../README.md#current-offline-results) summarizes current results.
+This page retains comparisons, statistical methods and supporting evidence.
+Panels differ, so their win rates are not directly comparable. They are development
+experiments, not held-out tests or evidence of full-game performance.
 
-These completed development comparisons use different experimental panels; their win rates are not directly comparable across panels. These experiments do not read sealed/test data or establish a default-policy promotion. Original execution reports and episode exports remain the source evidence. Raw reconstruction and replay evidence is retained locally and is not distributed. Paths below describe the logical output locations within an experiment checkout; they are not download links or a claim that a source snapshot includes the files. Original checksums and execution identities remain unchanged; [marked public path redactions](../../report/README.md) produce different file bytes without changing the experimental results.
+Original execution reports remain the source evidence. Raw reconstruction and
+replay collections are local and undistributed; `outputs/` paths below are evidence
+locations, not download links. Earlier source revisions identify development history
+outside this repository. [Marked path redactions](../../report/README.md) change
+public report bytes, not experimental results.
 
 ## 7B SFT and DPO on the frozen Boss panel
 
@@ -53,89 +57,59 @@ Status strings describe the original training stage before development evaluatio
 
 ### Contrasts
 
-#### 7B SFT minus 7B Base
+| Comparison | Statistic | Value |
+| --- | --- | --- |
+| 7B SFT minus 7B Base | victory_delta | 49 |
+| 7B SFT minus 7B Base | win_rate_delta | 0.255208 |
+| 7B SFT minus 7B Base | total_hp_loss_mean_delta | -15.677 |
+| 7B SFT minus 7B Base | victory_hp_loss_mean_delta | -7.902 |
+| 7B DPO minus 7B Base | victory_delta | 48 |
+| 7B DPO minus 7B Base | win_rate_delta | 0.25 |
+| 7B DPO minus 7B Base | total_hp_loss_mean_delta | -14.485 |
+| 7B DPO minus 7B Base | victory_hp_loss_mean_delta | -6.806 |
+| 7B DPO minus 7B SFT (paired) | sft_loss_to_dpo_win | 4 |
+| 7B DPO minus 7B SFT (paired) | sft_win_to_dpo_loss | 5 |
+| 7B DPO minus 7B SFT (paired) | net_victory_delta | -1 |
+| 7B DPO minus 7B SFT (paired) | win_rate_delta | -0.005208 |
+| 7B DPO minus 7B SFT (paired) | exact_mcnemar_two_sided_p | 1.0 |
+| 7B DPO minus 7B SFT (paired) | dpo_minus_sft_hp_loss_mean | 1.193 |
+| 7B DPO minus 7B SFT (paired) | dpo_minus_sft_victory_hp_loss_mean | 1.096 |
+| 7B DPO minus 7B SFT (paired) | dpo_hp_loss_lower_same_higher | `[22, 130, 40]` |
+| 7B minus 1.5B (descriptive) | base.victory_delta | 17 |
+| 7B minus 1.5B (descriptive) | base.win_rate_delta | 0.088542 |
+| 7B minus 1.5B (descriptive) | base.total_hp_loss_mean_delta | -7.244 |
+| 7B minus 1.5B (descriptive) | base.victory_hp_loss_mean_delta | -7.719 |
+| 7B minus 1.5B (descriptive) | sft.victory_delta | 10 |
+| 7B minus 1.5B (descriptive) | sft.win_rate_delta | 0.052083 |
+| 7B minus 1.5B (descriptive) | sft.total_hp_loss_mean_delta | -3.921 |
+| 7B minus 1.5B (descriptive) | sft.victory_hp_loss_mean_delta | -2.081 |
+| 7B minus 1.5B (descriptive) | dpo.victory_delta | 7 |
+| 7B minus 1.5B (descriptive) | dpo.win_rate_delta | 0.036458 |
+| 7B minus 1.5B (descriptive) | dpo.total_hp_loss_mean_delta | -4.13 |
+| 7B minus 1.5B (descriptive) | dpo.victory_hp_loss_mean_delta | -3.107 |
+| Teacher minus 7B SFT | victory_delta | 12 |
+| Teacher minus 7B SFT | win_rate_delta | 0.0625 |
+| Teacher minus 7B SFT | total_hp_loss_mean_delta | -13.24 |
+| Teacher minus 7B SFT | victory_hp_loss_mean_delta | -11.103 |
 
-| Statistic | Value |
-| --- | --- |
-| victory_delta | 49 |
-| win_rate_delta | 0.255208 |
-| total_hp_loss_mean_delta | -15.677 |
-| victory_hp_loss_mean_delta | -7.902 |
-
-#### 7B DPO minus 7B Base
-
-| Statistic | Value |
-| --- | --- |
-| victory_delta | 48 |
-| win_rate_delta | 0.25 |
-| total_hp_loss_mean_delta | -14.485 |
-| victory_hp_loss_mean_delta | -6.806 |
-
-#### 7B DPO minus 7B SFT (paired)
-
-| Statistic | Value |
-| --- | --- |
-| sft_loss_to_dpo_win | 4 |
-| sft_win_to_dpo_loss | 5 |
-| net_victory_delta | -1 |
-| win_rate_delta | -0.005208 |
-| exact_mcnemar_two_sided_p | 1.0 |
-| dpo_minus_sft_hp_loss_mean | 1.193 |
-| dpo_minus_sft_victory_hp_loss_mean | 1.096 |
-| dpo_hp_loss_lower_same_higher | `[22, 130, 40]` |
-
-#### 7B minus 1.5B (descriptive)
-
-| Statistic | Value |
-| --- | --- |
-| base.victory_delta | 17 |
-| base.win_rate_delta | 0.088542 |
-| base.total_hp_loss_mean_delta | -7.244 |
-| base.victory_hp_loss_mean_delta | -7.719 |
-| sft.victory_delta | 10 |
-| sft.win_rate_delta | 0.052083 |
-| sft.total_hp_loss_mean_delta | -3.921 |
-| sft.victory_hp_loss_mean_delta | -2.081 |
-| dpo.victory_delta | 7 |
-| dpo.win_rate_delta | 0.036458 |
-| dpo.total_hp_loss_mean_delta | -4.13 |
-| dpo.victory_hp_loss_mean_delta | -3.107 |
-
-#### Teacher minus 7B SFT
-
-| Statistic | Value |
-| --- | --- |
-| victory_delta | 12 |
-| win_rate_delta | 0.0625 |
-| total_hp_loss_mean_delta | -13.24 |
-| victory_hp_loss_mean_delta | -11.103 |
-
-Win-rate deltas are fractions: 0.01 equals one percentage point. The paired HP-loss count vector is ordered lower / same / higher for DPO relative to SFT. Cross-size contrasts are descriptive.
+Win-rate deltas are fractions; 0.01 is one percentage point. The HP-loss vector
+is lower / same / higher for DPO relative to SFT. Cross-size contrasts are descriptive.
 
 ### Interpretation
 
-7B SFT leads learned model candidates at 172/192; 7B DPO is one victory lower and does not establish an improvement over SFT.
-
-Only nine SFT/DPO outcomes are discordant; DPO converts four losses to wins and five wins to losses (exact McNemar p=1.0).
-
-Across all 192 combats, defeated combats contribute their terminal total HP loss (80 on this panel); victory_hp_loss_mean is reported separately over victories only. Relative to 7B SFT, 7B DPO has 1.193 more all-combat mean HP loss, 1.096 more victory-only mean HP loss, 393 more retries and a 6.687 percentage-point lower first-pass legal rate.
-
-The panel is development-only. Cross-size timing is not compared because historical 1.5B and current 7B runs used different runtime/hardware contexts. No default-policy promotion is made.
+7B SFT leads learned candidates at 172/192; DPO is one win lower. Only nine paired
+outcomes differ (four gains, five losses; exact McNemar p=1.0). DPO also adds 393
+retries and lowers first-pass legality by 6.687 percentage points. This does not
+establish improvement over SFT. Cross-size timing is not comparable because
+runtime/hardware differ. The live default remains unchanged.
 
 ### Recorded verification and original evidence
 
-These are recorded verification results from the completed comparison, not new checks performed by reading this document.
-
-| Check | Recorded result |
-| --- | --- |
-| sft_training_complete_with_finite_loss_and_exact_reload | `true` |
-| dpo_training_complete_with_finite_loss_and_exact_reload | `true` |
-| sft_and_dpo_evaluation_reports_completed | `true` |
-| sft_and_dpo_episode_exports_have_192_unique_shared_identities | `true` |
-| all_new_combat_accounting_consistent | `true` |
-| all_new_candidates_match_frozen_panel | `true` |
-| historical_1_5b_report_declares_192_shared_combat_identities | `true` |
-| no_test_or_sealed_data_read | `true` |
+Recorded checks confirmed complete finite-loss training and exact fresh-Base
+reload, completed SFT/DPO evaluation with 192 unique shared combat identities,
+consistent combat accounting and frozen-panel bindings. The historical 1.5B report
+declares the same 192 identities. No test/sealed data was read. These are historical
+checks, not new verification performed by reading this page.
 
 | Evidence field | Value |
 | --- | --- |
@@ -222,34 +196,22 @@ The topology-cluster exact sign test is the primary paired uncertainty summary. 
 
 ### Interpretation
 
-Teacher wins 68/80 continuous routes versus 1/80 for Qwen2.5-7B Base, a 67-win and 83.75 percentage-point difference on the paired development routes.
-
-Base attrition is concentrated at combat 4 and the first elite at combat 5, with 23 deaths at each position; only 12/80 Base executions reach the Boss. Teacher loses four routes at the first elite and eight at the Boss, so 76/80 reach the Boss.
-
-Teacher has more combat victories on 77/80 paired route executions and a higher four-seed Boss-win count on all 20 route topologies. The topology-cluster exact sign result is the primary paired uncertainty summary; the 80-execution McNemar result is descriptive because seed groups are nested within topologies.
-
-Both arms produce every one of their 14,546 combined decisions legally on the first pass, with no retry or fallback. All 443 executed upgrade decisions retain complete 12-cell evidence for every compared candidate.
-
-This is a configured Act-1/A0 development generator, not a native full run or sealed evaluation. Results support a large Teacher-versus-fresh-Base gap on this generator only and do not change the default policy or establish a stable deployment claim.
+Teacher's advantage spans all 20 topologies. Base loses 23 routes at combat four
+and another 23 at the first elite, reaching the Boss only 12 times; Teacher loses
+four at the first elite and eight at the Boss. Conditional Boss and combat win
+rates compare different survivor populations. The topology sign test is the
+primary paired uncertainty summary; the 80-execution McNemar value is descriptive.
+Both arms make all 14,546 decisions legally on the first pass; all 443 upgrade
+events retain 12-cell evidence per candidate. This supports a gap on this configured
+development generator, not native full-game performance.
 
 ### Recorded verification and original evidence
 
-These are recorded verification results from the completed comparison, not new checks performed by reading this document.
-
-| Check | Recorded result |
-| --- | --- |
-| combined_and_arm_reports_completed | `true` |
-| configuration_identities_match | `true` |
-| combined_routes_equal_arm_only_routes | `true` |
-| combined_arm_records_equal_arm_only_records | `true` |
-| twenty_unique_route_topologies | `true` |
-| four_groups_share_topology_within_each_route | `true` |
-| encounters_do_not_repeat_before_category_exhaustion | `true` |
-| all_640_formal_combat_seeds_unique | `true` |
-| all_640_policy_seeds_unique | `true` |
-| all_observed_upgrade_candidates_have_12_target_cells | `true` |
-| all_policy_outputs_legal_on_first_pass | `true` |
-| no_test_or_sealed_data_read | `true` |
+Recorded checks matched combined and per-arm reports/inputs, with 20 unique
+topologies and four groups sharing each schedule. Encounter bags exhausted before
+repeats; all 640 combat seeds and all 640 policy seeds were unique. Upgrade
+comparisons retained 12 cells per candidate, all policy outputs were legal on the
+first pass, and no test/sealed data was read.
 
 | Evidence field | Value |
 | --- | --- |
@@ -387,7 +349,7 @@ panels are distinct from the focused 7B comparison above.
 These historical panels explain tested choices and their limits. They do not
 define the current collection/export contract. Original `outputs/` evidence
 is retained separately from the source snapshot; the current algorithms are
-specified in the [GOLD contract](teacher_gold.md#gold-execution-and-replay).
+specified in the [GOLD method](data_training.md#teacher-and-gold).
 
 ### Targeted order diagnostic
 
@@ -516,3 +478,50 @@ The first local regression of the shared native resolver recorded 330 passing
 tests, including native fixtures, with no skips. That historical result is not
 a current test count or acceptance of a different native build. Fresh compilation
 was covered through dispatch fixtures; builders retain their separate acceptance.
+
+## Reconstruction and source evidence
+
+The historical Boss panel contains **24 route-derived loadouts × eight seeds**,
+64 combats per Boss, with 80 entry HP. Each fight is independent; preceding route
+damage is not carried in. The [frozen input manifest](../../assets/eval/qwen2_5_7b_base_act1_a0_boss_inputs_v1.json)
+contains exact combat identities. Historical Teacher search used 8,192 simulations
+and search seed 101. The [input reconstruction report](../../report/data/counterfactual_v2_act1_a0_boss_inputs_v2.json)
+matched the original panel in 131.923 seconds on Windows at development revision
+`4c46b83`. Current [generation](../../configs/generation/single_boss_inputs.json)
+and single evaluation use corrected mechanics; new loadouts and scores need not
+match that historical engine. Generating new inputs never implicitly replaces
+the frozen panel.
+
+The early continuous V6 Base/Teacher comparison predates the hand-upgrade
+correction. Its V7 Base successor also predates known draw-prefix memory.
+Observation and mechanics changed together; the V6 Teacher is not a matched
+current V7 control. Routes contain up to eight combats with rewards, upgrades,
+removals, relics and healing, not native map/shop/event play. Settings and seed
+streams are recorded in inputs; the [current panel](../../configs/panels/continuous_act1_development.json)
+declares the maintained route family.
+
+The historical Teacher candidate pool completed **800 routes × four seed groups**:
+25,541 combats, 25,166 combat wins, 3,176 Boss arrivals, 2,825 Boss wins and 337,769
+decisions, with no truncations/retries/fallbacks. All reached decisions, including
+losing routes, were retained and raw-transition replay completed. These counts
+establish collection, not GOLD label quality or route-optimal supervision.
+The original report is `outputs/generation/teacher-act1-candidate-pool-v1/formal/report.json`;
+source revisions are `c4d3b44d194d4938e917ecd4585b6e9d935988fe` and
+`f718ab57cba8a2a462deae4318227d98267c690f`. Its V7 text predates draw memory.
+The [generation config](../../configs/generation/continuous_teacher_pool.json)
+and [development exclusions](../../assets/datasets/continuous/development-exclusions.json)
+remain available, but the raw pool is not distributed. Current V2 route execution
+cannot resume this historical V1 pool in place.
+
+Local reconstruction on 2026-09-23 matched V4/V5 Gold (8,221 records each), Silver
+(471 each) and V5 development (2,406), including both audit hashes for the restored
+4,680-episode summaries. The full check took 108.3 seconds. Original certification
+exports and episode sources are required and are not distributed; maintained
+reconstruction does not rerun the retired certification pipeline.
+
+The same local reconstruction matched all continuous GOLD SFT, mixed SFT and
+DPO A/B/C records. Mixed export replayed all 1,440 selected Teacher combats.
+GOLD replay covered **240 of 7,134 complete states**: 216 stratified random plus
+24 targeted, totaling 89,664 continuations and 901,211 decisions. Other states
+were not replayed. Full export equality is not full continuation verification;
+the raw inputs, imported V3 trials and new report-bound receipt are undistributed.

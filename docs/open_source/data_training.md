@@ -1,183 +1,191 @@
-# Data and training
+# Methods and training
 
-The experiments compare learning from acceptable actions with learning from
-preferences between actions. [Teacher and GOLD](teacher_gold.md) explains how
-those targets are obtained; this page covers how they become training data.
-The README summarizes [LoRA and training settings](../../README.md#lora-and-training-settings).
+The [README](../../README.md#experiment-design) gives the overview. This page
+keeps the main algorithm choices and limits; exact settings live in the linked
+configs. Commands are in the [running guide](README.md).
 
-## Dataset and training interface
+## Model inputs and routes
 
-Training reads a dataset manifest and its declared compressed records. Inputs
-include the public observation, legal actions, targets and source lineage. Labels
-must be legal; observation text must match its recorded content; training and
-development sources stay separate. Tokenization never truncates a sample to fit.
-The shared runner supports SFT and DPO, while configs select model, data and recipe.
+Each decision reads public state and legal actions, without conversation history,
+and returns one `ACTION_n`. Base, SFT and DPO share serialization, parsing, one
+retry and a logged, seeded legal fallback. Equivalent playable card copies share
+an action per target; secondary choices preserve individual candidates. Unknown
+outcome-relevant mechanics are rejected. Hidden draw order, future RNG, execution
+IDs and Teacher scores are excluded from student text.
 
-The maintained single stage uses V5 Gold SFT and Silver preference datasets.
-Its [reconstruction entries](experiments/single.md#rebuilding-v4-and-v5-datasets)
-start from completed historical certification exports; they do not restore the
-retired certification pipeline. The retained 1.5B training config is also a live
-profile dependency, not a promise to reproduce its original training today.
+| Interface | Use |
+| --- | --- |
+| V5 | Single combat and the default live policy: state, legal actions and mechanics glossary. |
+| V6 | Opt-in live secondary card selection, using the existing V5-trained adapter. |
+| V7 | Continuous combat: selection context, upgrade previews, remaining route and known draw-prefix memory. |
 
-### Adapter checkpoint format
+V7 exposes the public Boss and remaining operation types, but not future ordinary
+monsters, random offers or seeds. Headbutt/Warcry can establish known draw order;
+draws consume it, and shuffle or unknown insertion clears it. Upgrade previews
+come from copies without advancing combat. Missing context causes an error rather
+than a guessed prompt. Earlier V7 records predate this memory correction; the
+version name alone does not make their observations equivalent.
 
-Adapters use the project's `project_lora_v1` format: `adapter_config.json` and
-`adapter_model.safetensors`. Despite the familiar filenames, they are not directly
-loadable PEFT adapters. The project loader requires the declared Base revision,
-module shapes and weight content. Select an adapter through the evaluation
-`checkpoint` or training `initial_checkpoint` field; changing its name does not
-make it compatible with another Base.
+The [continuous panel](../../configs/panels/continuous_act1_development.json)
+controls rewards, upgrades, removals, relics and healing. HP and persistent relic
+counters carry after victory; temporary combat effects do not. Burning Blood
+heals once; route healing occurs only at its declared node. Death ends a route,
+while decision-limit truncation is a separate non-victory in the denominator.
+Later-stage HP comparisons are conditional on reaching that stage.
 
-Final adapters support inference or initialization of a new run. Continuing an
-interrupted optimizer requires that run's resume checkpoint, optimizer and RNG
-state. The supplied reference adapters do not include these.
+The [reward picker](../../src/sts1_llm_policy/eval/counterfactual_reward_picker_v2.py)
+compares each offered card with skipping, using search, pick-rate priors and deck
+synergy. Its reward evaluation uses the configured final Boss seed and conflict
+offsets. Upgrades instead compare all Act 1 elites and the public Boss with separate
+seeds; they do not inspect the actual next monster or formal combat seed. These
+are different search uses from GOLD certification. Shared schedules do not force
+policies to reach the same later states or construct identical decks.
 
-## Dataset exports
+## Teacher and GOLD
 
-Exports read explicitly declared source reports and evidence, then write separate
-dataset destinations. Conflicting files are rejected; identical exports may be
-reused. Writes are atomic per file, not across the whole export. After an I/O
-interruption, retry with the same inputs and inspect any leftover temporary files.
-Training with the supplied datasets does not require rebuilding their raw sources.
+The source [Teacher pool](../../configs/generation/continuous_teacher_pool.json)
+retains reached decisions, including losing routes, and replays each new combat
+before finalization. GOLD restores selected states, forces every legal model-action
+class and plays each continuation to combat end with paired execution seeds.
+A prompt alone cannot restore a simulator state.
 
-### Executed-GOLD V7 SFT groups
+Outer execution and inner search use independent random streams. Known draw-prefix
+cards and current enemy intent stay fixed; unknown order and future RNG are
+resampled. Search sees each sampled world's internal state, but not the actual
+execution world's future. This is a conditional-state experiment, not recovery
+of the original game's hidden seed. The Teacher optimizes local combat, not the
+student's full-route objective.
 
-GOLD SFT trains on a set of acceptable actions at each state. The current export
-uses the collection's win gate and a 1-HP tolerance; empty sets and states where
-all actions pass are omitted. A state contributes one weighted sum of action
-cross-entropies, including the response terminator.
+At each continuation decision, search estimates are averaged across inner worlds.
+The default ranks win rate then victory HP; formal collection instead chooses
+maximum expected carried HP among actions meeting an internal win threshold,
+falling back to win-rate priority if none qualify. The external GOLD gate uses
+completed battles, not these internal search estimates.
 
-States have equal total weight. Within a state, nonbasic Attack/Skill/Power plays
-receive coefficient 1.5; basic cards, end turn, status plays and secondary choices
-receive 1. Normalize those coefficients within the state. Targets remain distinct
-and a state with more acceptable actions does not gain more total weight.
+Victory contributes settled ending HP; defeat contributes zero. Acceptable
+choices meet the external win floor and fall within **1 HP** of the best eligible
+action. Required wins are `floor(trials × target rate)`: a 98.9% target permits
+31/32 or 126/128. Incomplete continuations yield no candidates, not defeats.
+Max-HP and relic-resource differences have no invented HP exchange rate. Binomial
+bounds and paired standard errors describe uncertainty; they do not certify
+HP non-inferiority or route-optimal actions.
 
-[The export config](../../configs/data/continuous_gold_sft.json) selects sources and
-weights. The [training config](../../configs/runs/training/continuous_qwen2_5_7b_gold_sft.json)
-connects the dataset, Base model and SFT recipe.
+### Sampling and replay
 
-### Matched V7 DPO preference datasets
+[Formal collection](../../configs/generation/continuous_gold_collection.json)
+uses 480 training routes, one seed group each, excluding development and tuning
+routes. All groups of a source route stay in the same partition. Repeated opening
+hands are not leakage; sharing a source route is. Single-action states are omitted.
+Reached combats contribute at most 1 weak, 2 strong/elite or 4 Boss states.
+Sampling mixes 40% turn start, 30% event and 30% uniform draws without replacement;
+empty channels transfer mass to uniform. Event buckets balance public opportunities,
+not outcomes or Teacher choices. These are probabilities, not quotas, and the
+result is an enriched sample rather than a population-frequency estimate.
 
-Chosen actions come from the 1-HP GOLD set; rejected actions are outside it.
-Every pair needs at least 64 paired continuations, no lower observed chosen win
-count, no unpriced persistent-resource conflict, and
-`mean HP gap - 2 × paired standard error > 1`. Defeat contributes zero carried HP.
-These are empirical filters on adaptively sampled outcomes, not confidence
-certificates or route-optimal values.
+Paired trials follow **32 → 64 → 128**. Proper candidate subsets continue at 32;
+changed sets or near-boundary results advance at 64, with a deterministic 10%
+audit of other stops. The HP boundary is 0.25 initially, then `max(0.25, 2 × paired
+SE)` at 64. Relevant win counts at the threshold or one short trigger scrutiny;
+empty sets stop early only when every root is at least two wins below the gate.
+See the [scheduler](../../src/sts1_llm_policy/data/gold/sampling_ladder.py) for exact
+rules. Early stopping can miss high-variance actions; even 128 trials are an
+empirical reference. One-trial smoke checks execution only, with a possible
+zero-win gate from floor rounding.
 
-All variants use the same ordered states, each containing at least one eligible
-pair whose mean HP gap is strictly greater than 3:
+Compact storage retains all action tapes, trial identities and terminal outcomes,
+including rejected/all-pass cases, after full state replay. Detailed traces remain
+for trial zero, a deterministic 1% sample and selected boundary trials (overlapping
+categories). Replay checks action tapes and terminal scores for selected states;
+raw-state/search checks cover only retained detailed traces. Regenerated intermediate
+text is not a comparison against deleted text. Storage savings do not raise
+label confidence or recover deleted search evidence.
+
+Exports require a receipt bound to the actual report. `collect_gold.py --verify`
+writes a new receipt via `--verification-output`; sampled replay also needs an
+explicit selection and export's `verification_scope: sampled`. Old receipts cannot
+be fixed by adding a digest manually. Terminal records allow rescoring tolerances,
+not inventing trials or changing the continuation policy. Imports require matching
+execution/native inputs and retain their original evidence.
+
+## SFT and preference targets
+
+**GOLD-only SFT** omits empty and all-pass action sets. Each state contributes one
+weighted sum of response cross-entropies, including the terminator. States have
+equal total weight; nonbasic Attack/Skill/Power plays have coefficient 1.5, other
+actions 1, normalized within the state. More acceptable actions do not increase
+state weight. See [export settings](../../configs/data/continuous_gold_sft.json).
+
+**Mixed SFT** adds victorious complete Teacher combats from the selected routes'
+first three fights; it does not require later Boss success, but rejects truncated
+routes. GOLD wins at overlaps. Other Teacher choices are imitation labels, not
+GOLD-certified. Loss mass is **70% GOLD / 25% Teacher strategy / 5% sole-legal END**.
+GOLD/formatting states are equal within source; strategy combats divide equal mass
+among their states. Mean state coefficient is one without minibatch renormalization.
+Mixed starts from fresh Base and has more steps than GOLD-only, so the comparison
+does not isolate mixture quality at equal cost. See [mixed export](../../configs/data/continuous_mixed_sft.json).
+
+**DPO** pairs a 1-HP GOLD action with a rejected action. Each pair needs at least
+64 paired continuations, no lower chosen win count, no unpriced persistent-resource
+conflict, and `mean HP gap - 2 × paired SE > 1`. All variants share ordered states,
+each with at least one eligible pair whose mean gap is strictly greater than 3.
 
 | Variant | Selection and weighting |
 | --- | --- |
-| A | All eligible pairs; equal state weight, divided equally among its pairs. |
-| B | Only pairs with mean HP gap strictly greater than 3; equal state weight, divided over the remaining pairs. |
-| C | A's pairs, with each base weight multiplied by `min(1, HP gap / 5)`. Small-gap states also lose weight; a global normalization keeps the mean state weight at one. |
+| A | All eligible pairs, sharing equal total weight per state. |
+| B | Only pairs with mean HP gap > 3, sharing equal total weight per state. |
+| C | A's pairs multiplied by `min(1, HP gap / 5)`; global normalization keeps mean state weight at one. |
 
-C's weighting is not renormalized separately per state or minibatch in a way that
-would erase that downweighting. All three start independently from mixed SFT,
-which is also the frozen reference, with the same seed, state-update budget and
-DPO recipe. Pair counts and compute cost can still differ.
-See [export settings](../../configs/data/continuous_dpo.json) and the
-[original export report](../../report/data/gold_dpo_v7_v1.json).
-
-### Mixed GOLD and Teacher V7 SFT
-
-Mixed SFT adds complete victorious Teacher combats from the first three fights
-of the selected training routes and seed groups. Later Boss success is not a
-filter, but truncated route executions are rejected. Source states already in
-GOLD keep only their GOLD targets. Other Teacher choices are imitation labels,
-not certified GOLD. Sole-legal end-turn states are separated as formatting examples.
-
-The loss mixture is **70% GOLD, 25% Teacher strategy, 5% forced end turn**.
-Within each source, GOLD/formatting states are equally weighted; strategy combats
-are equally weighted and divide their mass among their retained decisions.
-Candidate weights within GOLD states are preserved. The dataset's mean state
-coefficient is one, without per-minibatch renormalization.
-
-[The export config](../../configs/data/continuous_mixed_sft.json) declares sources
-and mixture weights. Export replays the recorded actions and rebuilds public V7
-observations, including draw memory; hidden order and search evidence never enter
-student text. Source mismatches fail export. Relocated pools need explicit
-`source_locations` mapping with unchanged report content and internal layout.
-Mixed SFT starts from fresh Base. More records mean more optimizer steps than
-GOLD-only SFT, so the comparison does not isolate data mixture at equal cost.
+C retains downweighting across states; per-state or minibatch renormalization must
+not erase it. All arms start independently from mixed SFT, also their frozen
+reference, with the same seed and state-update budget. Pair counts and compute can
+differ. These are empirical filters on adaptive samples, not confidence certificates.
+See [DPO export](../../configs/data/continuous_dpo.json) and the
+[export report](../../report/data/gold_dpo_v7_v1.json).
 
 ## Configuration and artifact reuse direction
 
-Configs choose behavior; manifests identify data and model assets; outputs record
-what actually ran. Model, checkpoint, dataset and panel changes reach their actual
-consumers. Changing a display name alone is not a model switch, and the V5 single
-runner does not accept arbitrary observation versions.
+Configs choose the actual model, dataset, recipe, checkpoint and panel; manifests
+identify assets and outputs record execution. Changing a display name is not a
+model switch. The single runner remains V5-specific; a new observation name does
+not make an unsupported protocol work. Continuous panels are complete inputs,
+not partial/nested overrides. An omitted checkpoint selects Base; an invalid
+checkpoint or unknown field fails instead of silently selecting Base.
 
-### Prepare independent training and evaluation configs
+Training validates legal labels, source isolation, finite values and input length
+without truncation. Development and sealed/test sources are excluded from training.
+Exports use declared sources and separate destinations, rejecting conflicting
+files. Writes are atomic per file, not across an export; after interruption retry
+unchanged inputs or choose a new destination. Historical lineage paths are
+provenance, not implicit runtime dependencies.
 
-The included evaluation configs select reference adapters. For newly trained
-models, prepare connected copies with separate outputs:
+### Adapters and resume
 
-```text
-uv run --locked python scripts/prepare_experiment.py --config configs/experiments/single_7b.json --config configs/experiments/continuous_7b.json --output outputs/reproduction
-```
+`project_lora_v1` adapters contain `adapter_config.json` and
+`adapter_model.safetensors`, but are **not directly loadable PEFT adapters**.
+The project loader requires matching Base revision, shapes and weight content.
+Final adapters support inference or new-run initialization; continuing an optimizer
+needs the run's checkpoint, optimizer and Python/PyTorch/CUDA RNG state, including
+for nonzero dropout. Missing/corrupt state fails. Completed training is reused
+only when the final adapter still matches; interrupted saves resume from the last
+valid checkpoint.
 
-Preparation takes a few seconds and starts no experiment. Either member list can
-be used alone. It connects DPO initialization/reference and evaluation to the new
-upstream checkpoints, and expands continuous panels. Use the generated configs
-under `outputs/reproduction/` for the subsequent stage commands.
+Reuse depends on model/tokenizer, data, recipe, observation, seeds and native
+mechanics. Path relocation must preserve content and referenced artifacts; comments
+and source-file renaming alone are not behavior changes. Candidate-pool run IDs
+remain bound to trajectory lineage. Scope identity includes selected reward cards
+and ordered encounter pools, not descriptive text. Hashes detect mismatches, not
+a malicious publisher who can replace both bytes and expected hashes.
 
-Member lists declare dependencies explicitly, with upstream training first;
-filenames are not interpreted. Missing dependencies, duplicate identities and
-conflicting destinations fail. Repeating unchanged preparation preserves files;
-choose a new output root for a new experiment.
+Changed behavior requires updated compatibility contracts and separate outputs;
+old/unidentified resume state is rejected. Readiness must apply to the actual
+machine and run. Optimizer changes invalidate resume even if optimizer-free
+backward evidence remains reusable. Reports preserve their original identities.
+Current DPO uses FP32 response log probabilities and rejects older reference caches,
+backward receipts and resume state. Published DPO experiments were not rerun under
+that correction; their reports and inference adapters remain historical results.
 
-### Asset validation and compatibility
-
-Code and ordinary configs are tracked by Git. Dataset, model, adapter and native
-content is checked against its declared identity. A hash detects mismatched bytes;
-it does not authenticate a publisher who can replace both data and expected hash.
-Keep raw output trees for resume and analysis, not just their summary reports.
-
-### Current configuration and identity implementation
-
-Reuse depends on the inputs and behavior that affect execution: data/tokens,
-model and tokenizer, recipe, observation, seed rules, adapters and native mechanics.
-Formatting, comments and relocated paths alone generally do not change that
-identity. Relocation must preserve content and referenced artifacts. Candidate
-pool run IDs remain bound to trajectory lineage, and scope identity includes the
-selected reward cards and ordered encounter pools, not descriptive text.
-
-Current training and route execution reject older or unidentified resume state.
-Historical reports are not rewritten to pass new checks. Final reference adapters
-remain valid for inference or explicit initialization; that does not restore old
-optimizer state. A new run needs readiness on its actual machine. Optimizer changes
-invalidate continuation even when optimizer-free backward evidence can be reused.
-
-Resume restores Python/PyTorch/CUDA RNG state, including for nonzero LoRA dropout;
-missing or corrupt state fails. A completed report is reused only if its final
-adapter still matches. Interrupted final saves can resume from the last valid
-checkpoint. Changing implementation behavior requires updating its compatibility
-contract; source-file renaming alone is not a semantic change.
-
-DPO computes response log probabilities in FP32 for both policy and reference.
-The current numerical contract rejects older reference caches, backward receipts
-and resume state. The published DPO experiments have not been rerun under that
-correction; their reports and inference adapters retain their original identity.
-
-## Evidence and tests
-
-Before a long run, readiness loads verified assets, generates a short response and
-checks the longest-sample backward; optimizer smoke covers update/save behavior.
-Training completion means finite loss, all declared steps and exact adapter reload
-onto a fresh Base. Policy improvement requires matched evaluation evidence.
-
-[Tests](../../tests/README.md) cover observations, actions, data isolation, loss and
-recovery behavior. Passing tests does not reproduce historical experiments or make
-missing raw assets available. [Stage results](stageresult.md) links the evidence.
-
-## Retention and retirement
-
-The snapshot includes maintained code/configs, datasets, reference adapters and
-reports. Earlier development commits, retired executors and original raw
-reconstruction/replay collections are not distributed. Historical paths and hashes
-identify provenance, not downloadable inputs. Final adapters do not replace resume
-state; per-combat summaries do not replace trajectories for action-level replay.
-Do not make historical configurations appear current by replacing their digests.
+Complete training means finite loss, all declared steps and exact fresh-Base
+adapter reload; policy improvement needs matched evaluation. Keep whole output
+trees for resume and analysis: reports alone cannot replace trajectories. Earlier
+development commits, retired executors and original raw reconstruction evidence
+are not distributed. Do not alter historical digests to make them appear current.
