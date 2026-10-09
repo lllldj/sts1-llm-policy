@@ -215,6 +215,148 @@ needed to verify them. Private deployment tools and machine-local artifacts are
 excluded. [Scripts](scripts/README.md) lists entry points; the
 [documentation index](docs/open_source/README.md) links methods and results.
 
+## Retrospective and possible next steps / 实验回顾与可能的后续方向
+
+[English](#english) · [中文](#中文)
+
+### English
+
+This project started with a relatively simple question: can supervision generated
+by a simulator help a language model make better combat decisions in Slay the Spire?
+
+I began with a 1.5B model in standalone combats, starting at full HP with preset
+decks. The objective was to defeat the enemy while losing as little HP as possible.
+Fine-tuning brought a clear improvement over Base, but performance in the real
+game remained disappointing, particularly in defense, damage control and survival
+at low HP. The model did not seem to fully learn many of the Teacher's ways of
+preserving HP. I suspect that full-HP starts did not adequately cover the resource
+pressure of consecutive fights, although I did not test that explanation in a
+separate controlled experiment. DPO also showed no clear additional benefit over
+SFT at this stage. As a pilot experiment, these results helped identify what to
+investigate next.
+
+I then moved to Qwen2.5-7B-Instruct and repeated fine-tuning and comparison using
+the same training data. The larger Base improved, and its fine-tuned version also
+achieved better results. This suggests that model capacity was one limitation,
+but increasing model size did not resolve the gaps in data coverage and task design.
+
+Next, I extended the experiment to continuous routes. HP and some relic counters
+persisted between combats, while the deck evolved through card rewards, removals
+and upgrades. I also revised the deck-building strategy and training-data generation
+before training again. Across the current 80 route executions, Boss victories rose
+from **4/80** for Base to **13/80** for GOLD-only SFT, **26/80** for mixed SFT, and
+**31/80** for DPO A.
+
+The absolute completion rate is still low for Act 1 at Ascension 0. Even so, I am
+satisfied with the outcome relative to the project's original question:
+simulator-generated supervision helped the model improve its combat performance
+on this development panel. DPO A recorded the most victories, although its
+additional gain over mixed SFT is not enough to establish a consistent advantage.
+
+For reference, the Teacher, with access to simulator search and internal state,
+achieved **68/80** on the historical panel. It can explore alternative actions in
+the simulator, somewhat like a player who can repeatedly save and reload ("SL"),
+while the model acts step by step using only public information. This result is
+clearly insufficient for Ascension 0, Act 1. It makes me suspect that deck building
+and route strategy, as well as combat decisions, have considerable room for improvement.
+
+I consider this stage to have answered the main questions I wanted to explore.
+There are currently no definite plans to continue the project. The following are
+possible directions, also offered to anyone interested in taking it further.
+
+#### 1. Improve card reward, upgrade and removal strategies
+
+This is the direction I would most like to explore first. The current strategies
+support the experiments but remain fairly crude. More refined rules, search
+methods, or giving these decisions to a model and training it (which I consider
+the most suitable approach) are all worth trying.
+
+The main difficulties are data and tooling. Manually organizing card-picking
+knowledge is one starting point, but it is time-consuming and can miss important
+situations. My preferred approach would be to obtain the creators' permission and
+build decision datasets from high-level players' recorded runs on Bilibili or
+other video platforms. This would require reconstructing the deck, relics, HP,
+offered cards and route context at each decision, while paying attention to
+coverage and bias toward successful runs. Recording only the card eventually
+chosen would provide incomplete training examples.
+
+The collection, state reconstruction and annotation tools needed for this work
+were beyond what I could invest in this lightweight project. That is the main
+reason I used simpler strategies here.
+
+#### 2. Try larger models
+
+The move from 1.5B to 7B suggests that further scaling is worth exploring. I do
+not yet know what size would be sufficient, and I do not expect parameter count
+alone to solve the data and deck-building problems. A more useful experiment
+would keep data and evaluation conditions as consistent as possible and measure
+how much further improvement model size brings.
+
+#### 3. Improve the tooling
+
+A considerable part of this project went into simulator adaptation, data
+generation, state reconstruction and real-game integration. Gaps in the tooling
+also limited which experiments were practical.
+
+If I return to the project, I would like to improve these foundations first,
+making it easier to add new strategies and data, and to observe and analyze
+failures. I hope the existing implementation provides a starting point that saves
+others from rebuilding some of these tools.
+
+### 中文
+
+这个项目从一个相对简单的问题开始：通过模拟器生成的监督数据，能否让语言模型更好地完成《杀戮尖塔》的战斗决策？
+
+我首先使用 1.5B 模型，在满血、预设卡组的单场战斗中进行实验，目标是在战胜敌人的同时尽量减少损血。
+微调后的模型相较于 Base 有了明显提升，但接入真实游戏后，表现仍然不够理想，尤其是在防御、控损和低血量下的生存决策方面。
+Teacher 能够做到的许多控损操作，模型似乎没有充分学会。我怀疑，满血开局的实验设置没有充分覆盖连续作战中的资源压力，
+但这并没有通过单独的对照实验验证。此外，这一阶段的 DPO 相较于仅做 SFT，没有显示出明显的额外收益。
+作为先导实验，这些结果帮助我看清了下一步的问题。
+
+随后，我换用了 Qwen2.5-7B-Instruct，使用相同训练数据进行微调和比较。更大的 Base 有所改善，微调后也取得了更好的结果。
+这说明模型能力可能是此前表现的限制因素之一，但扩大模型并没有消除数据覆盖和任务设置上的不足。
+
+接下来，我将实验扩展到连续路线：血量和部分遗物状态在战斗之间延续，卡组通过沿途的奖励选卡、删卡和强化逐步形成。
+同时，我调整了卡组构建策略与训练数据的生成方式，重新进行了微调。在当前的 80 次路线执行中，Boss 胜场数从 Base 的 **4/80**，
+提升到 GOLD-only SFT 的 **13/80**、mixed SFT 的 **26/80**，再到 DPO A 的 **31/80**。
+
+对 Act 1、进阶 0 而言，这个绝对通关率仍然偏低，但相对于项目最初的问题，我对这一阶段的结果是满意的：
+模拟器生成的监督数据确实帮助模型改善了这个开发面板上的战斗表现。DPO A 取得了最高胜场数，
+不过它相较 mixed SFT 的额外收益，仍不足以证明稳定优势。
+
+作为参考，具有模拟搜索和内部状态访问优势的 Teacher，在历史面板上的结果为 **68/80**。
+它可以在模拟器中探索多种行动，某种程度上类似于能够反复试错的“SL 视角”；模型执行时则只能依据公开信息逐步行动。
+这个数据在 A0、Act 1 中明显是不足的。这让我怀疑，除了战斗决策，卡组构建和路线策略也有较大的改进空间。
+
+我认为，这个阶段已经回答了自己想探索的主要问题。项目目前没有继续推进的明确计划；
+下面是一些可能的方向，也供希望接着完善它的人参考。
+
+#### 1. 改善选卡、强化和删卡策略
+
+这是我最希望优先探索的方向。当前策略能够支撑实验，但仍然比较粗糙。
+更精细的规则、搜索方法，或者将这些操作也交给模型并进行训练（我认为这是最合适的方案），都值得尝试。
+
+困难主要在于数据和工具。手工整理选卡经验是一个起点，但耗时较多，也容易遗漏场景。
+我更倾向于在获得创作者同意的前提下，从高水平玩家在 B站或其他视频站点发布的历史对局中整理决策数据。
+不过，这需要还原当时的卡组、遗物、血量、备选牌和路线环境，也需要关注数据覆盖与成功对局偏向。
+仅记录“最后选了哪张牌”，很难构成充分的训练样本。
+
+完成这些工作所需的采集、状态还原和标注工具，已经超出了这个轻量项目当时的投入范围。
+这也是我目前采用较简单策略的主要原因。
+
+#### 2. 尝试更大的模型
+
+从 1.5B 到 7B 的结果让我认为，继续扩大模型仍然值得尝试。但我目前无法判断多大的模型才足够，
+也不认为单纯增加参数量就能解决数据和卡组构建的问题。更有价值的实验，是在尽量一致的数据与评估条件下，
+观察模型规模还能带来多少改善。
+
+#### 3. 完善工具链
+
+这个项目有不少时间花在了模拟器适配、数据生成、状态还原和实机接入上。工具链的不足也限制了能够尝试的实验范围。
+
+如果以后继续投入，我希望先改善这些基础工具，让新策略和新数据更容易接入，也让失败行为更容易被观察和分析。
+希望这些已有实现能够成为一个起点，减少后来者重复搭建基础工具的工作。
+
 ## License
 
 Project-authored material is licensed under the [MIT license](LICENSE).
