@@ -1,5 +1,7 @@
 # STS1 LLM Policy
 
+This project was developed in collaboration with OpenAI Codex.
+
 A small experiment in teaching language models to play Ironclad combat in
 **Slay the Spire 1**: can simulator-generated supervision improve decisions,
 and does preference training help beyond supervised fine-tuning?
